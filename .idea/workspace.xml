@@ -11,60 +11,18 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c2fc254d-4c34-4822-9cbb-ed6000c1b396" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/backend-pictum.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/codeStyles/codeStyleConfig.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/deployment.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/phpunit.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Blacklist.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Creneaux.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Departement.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/EstPrete.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Gestionnaire.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/BlacklistController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/CreneauxController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/DepartementController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/EstPreteController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/GestionnaireController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/IndisponibiliteController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/MaletteController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/ReservationController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/TypeController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Indisponibilite.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Malette.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Reservation.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Type.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/database/factories/BlacklistFactory.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/database/factories/CreneauxFactory.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/database/factories/DepartementFactory.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/database/factories/EstPreteFactory.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/database/factories/GestionnaireFactory.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/database/factories/IndisponibiliteFactory.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/database/factories/MaletteFactory.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/database/factories/ReservationFactory.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/database/factories/TypeFactory.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/database/migrations/2020_11_07_111417_create_reservations_table.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/database/migrations/2020_11_07_111439_create_est_pretes_table.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/database/migrations/2020_11_07_111456_create_departements_table.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/database/migrations/2020_11_07_111513_create_creneauxes_table.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/database/migrations/2020_11_07_111551_create_indisponibilites_table.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/database/migrations/2020_11_07_111607_create_gestionnaires_table.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/database/seeds/BlacklistSeeder.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/database/seeds/CreneauxSeeder.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/database/seeds/DepartementSeeder.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/database/seeds/EstPreteSeeder.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/database/seeds/GestionnaireSeeder.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/database/seeds/IndisponibiliteSeeder.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/database/seeds/MaletteSeeder.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/database/seeds/ReservationSeeder.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/database/seeds/TypeSeeder.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2014_10_12_000000_create_users_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_11_07_111243_create_types_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2014_10_12_100000_create_password_resets_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_11_07_111212_create_blacklists_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2019_08_19_000000_create_failed_jobs_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_11_07_111311_create_malettes_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/api.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/api.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/MaterielController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Materiel.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database/factories/MaterielFactory.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database/migrations/2020_11_07_111418_create_materiels_table.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database/seeds/MaterielSeeder.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2020_11_07_111212_create_blacklists_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_11_07_111212_create_blacklists_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2020_11_07_111243_create_types_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_11_07_111243_create_types_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2020_11_07_111311_create_malettes_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_11_07_111311_create_malettes_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2020_11_07_111417_create_reservations_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_11_07_111417_create_reservations_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2020_11_07_111439_create_est_pretes_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_11_07_111439_create_est_pretes_table.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -195,6 +153,7 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="true" />
     <property name="nodejs_package_manager_path" value="npm" />
@@ -214,7 +173,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1604745447026</updated>
-      <workItem from="1604745448082" duration="2229000" />
+      <workItem from="1604745448082" duration="2969000" />
     </task>
     <task id="LOCAL-00001" summary="initial commit">
       <created>1604745505978</created>
@@ -223,7 +182,14 @@
       <option name="project" value="LOCAL" />
       <updated>1604745505978</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="creation controller + model + factory + migration pour toute la base de donnée">
+      <created>1604747830817</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1604747830817</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -242,12 +208,13 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="initial commit" />
-    <option name="LAST_COMMIT_MESSAGE" value="initial commit" />
+    <MESSAGE value="creation controller + model + factory + migration pour toute la base de donnée" />
+    <option name="LAST_COMMIT_MESSAGE" value="creation controller + model + factory + migration pour toute la base de donnée" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="585" y="88" key="CommitChangelistDialog2" timestamp="1604745505116">
+    <state x="585" y="88" key="CommitChangelistDialog2" timestamp="1604747830059">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="585" y="88" key="CommitChangelistDialog2/0.0.1920.1040/-1280.0.1280.984@0.0.1920.1040" timestamp="1604745505116" />
+    <state x="585" y="88" key="CommitChangelistDialog2/0.0.1920.1040/-1280.0.1280.984@0.0.1920.1040" timestamp="1604747830059" />
   </component>
 </project>

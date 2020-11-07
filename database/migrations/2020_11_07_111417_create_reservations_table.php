@@ -13,9 +13,15 @@ class CreateReservationsTable extends Migration
      */
     public function up()
     {
-        Schema::create('reservations', function (Blueprint $table) {
+        Schema::create('reservation', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
+            $table->boolean("valide")->default(true);
+            $table->boolean("prof")->default(false);
+            $table->string("nom_emprunteur", 32);
+            $table->string("prenom_emprunteur", 32);
+            $table->string("mail_emprunteur", 100);
+            $table->string("id_univ_emprunteur", 100);
         });
     }
 

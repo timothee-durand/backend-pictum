@@ -13,9 +13,13 @@ class CreateBlacklistsTable extends Migration
      */
     public function up()
     {
-        Schema::create('blacklists', function (Blueprint $table) {
+        Schema::create('blacklist', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
+            $table->string("nom", 32);
+            $table->string("prenom", 32);
+            $table->string("mail", 100);
+            $table->integer("id_univ");
         });
     }
 
