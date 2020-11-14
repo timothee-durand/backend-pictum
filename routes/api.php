@@ -18,4 +18,7 @@ use Illuminate\Support\Facades\Route;
 Route::apiResource('types', 'TypeController');
 Route::apiResource('blacklists', 'BlacklistController');
 Route::apiResource('malettes', 'MaletteController');
+Route::apiResource('departements', 'DepartementController');
+Route::apiResource('reservations', 'ReservationController');
+Route::apiResource('estpretes', 'EstPreteController');
 

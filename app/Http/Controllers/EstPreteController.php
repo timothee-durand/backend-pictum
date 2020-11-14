@@ -10,11 +10,20 @@ class EstPreteController extends Controller
     /**
      * Display a listing of the resource.
      *
-     * @return \Illuminate\Http\Response
+     * @return string
      */
     public function index()
     {
-        //
+        //récupération de toutes les lignes
+        $estprestes = EstPrete::all();
+
+        //requetes annexes pour completer la réponse
+        foreach ($estprestes as $pret) {
+            $pret->materiel;
+            $pret->reservation;
+        }
+
+        return $estprestes->toJson(JSON_PRETTY_PRINT);
     }
 
     /**

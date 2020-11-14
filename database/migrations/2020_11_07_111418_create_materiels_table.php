@@ -25,7 +25,7 @@ class CreateMaterielsTable extends Migration
             $table->boolean("indisp")->default(false);
             $table->string("indisp_raison");
             $table->foreignId('type_id')->constrained("type");
-            $table->foreignId('malette_id')->constrained("malette");
+            $table->foreignId('malette_id')->constrained("malette")->nullable();
             $table->foreignId('departement_id')->constrained("departement");
 
         });
