@@ -11,12 +11,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c2fc254d-4c34-4822-9cbb-ed6000c1b396" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/app/Blacklist.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Blacklist.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Creneaux.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Creneaux.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Departement.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Departement.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/EstPrete.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/EstPrete.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Gestionnaire.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Gestionnaire.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Indisponibilite.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Indisponibilite.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/factories/BlacklistFactory.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/factories/BlacklistFactory.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/factories/CreneauxFactory.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/factories/CreneauxFactory.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/factories/DepartementFactory.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/factories/DepartementFactory.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/factories/EstPreteFactory.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/factories/EstPreteFactory.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/factories/GestionnaireFactory.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/factories/GestionnaireFactory.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/factories/IndisponibiliteFactory.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/factories/IndisponibiliteFactory.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/factories/MaletteFactory.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/factories/MaletteFactory.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/factories/MaterielFactory.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/factories/MaterielFactory.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/factories/ReservationFactory.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/factories/ReservationFactory.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/factories/TypeFactory.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/factories/TypeFactory.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -168,7 +173,7 @@
       <option name="presentableId" value="Default" />
       <updated>1604745447026</updated>
       <workItem from="1604745448082" duration="3101000" />
-      <workItem from="1605343507553" duration="4549000" />
+      <workItem from="1605343507553" duration="6620000" />
     </task>
     <task id="LOCAL-00001" summary="initial commit">
       <created>1604745505978</created>
@@ -205,7 +210,14 @@
       <option name="project" value="LOCAL" />
       <updated>1605347946477</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="ajout table dans model">
+      <created>1605348185916</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1605348185916</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -229,12 +241,13 @@
     <MESSAGE value="creation controller + model + factory + migration pour Materiel&#10;remplissage des migrations pour resrevation, blacklist, malette, est prete et type" />
     <MESSAGE value="modifs de down pour migrations et ajout de département, materiel, gestionnaire, creneaux et indispo" />
     <MESSAGE value="modifs pour migrate" />
-    <option name="LAST_COMMIT_MESSAGE" value="modifs pour migrate" />
+    <MESSAGE value="ajout table dans model" />
+    <option name="LAST_COMMIT_MESSAGE" value="ajout table dans model" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="585" y="88" key="CommitChangelistDialog2" timestamp="1605347944691">
+    <state x="585" y="88" key="CommitChangelistDialog2" timestamp="1605348183743">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="585" y="88" key="CommitChangelistDialog2/0.0.1920.1040/-1280.0.1280.984@0.0.1920.1040" timestamp="1605347944691" />
+    <state x="585" y="88" key="CommitChangelistDialog2/0.0.1920.1040/-1280.0.1280.984@0.0.1920.1040" timestamp="1605348183743" />
   </component>
 </project>

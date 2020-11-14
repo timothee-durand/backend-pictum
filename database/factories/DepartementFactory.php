@@ -7,6 +7,8 @@ use Faker\Generator as Faker;
 
 $factory->define(Departement::class, function (Faker $faker) {
     return [
-        //
+        "lat"=>$faker->latitude,
+        "long"=>$faker->longitude,
+        "nom"=>$faker->city
     ];
 });
