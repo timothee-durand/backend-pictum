@@ -12,12 +12,10 @@
   <component name="ChangeListManager">
     <list default="true" id="c2fc254d-4c34-4822-9cbb-ed6000c1b396" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2020_11_07_111212_create_blacklists_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_11_07_111212_create_blacklists_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2020_11_07_111243_create_types_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_11_07_111243_create_types_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2020_11_07_111311_create_malettes_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_11_07_111311_create_malettes_table.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/database/migrations/2020_11_07_111417_create_reservations_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_11_07_111417_create_reservations_table.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/database/migrations/2020_11_07_111418_create_materiels_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_11_07_111418_create_materiels_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2020_11_07_111456_create_departements_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_11_07_111456_create_departements_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2020_11_07_111439_create_est_pretes_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_11_07_111439_create_est_pretes_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2020_11_07_111456_create_departements_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_11_07_111350_create_departements_table.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/database/migrations/2020_11_07_111513_create_creneauxes_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_11_07_111513_create_creneauxes_table.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/database/migrations/2020_11_07_111551_create_indisponibilites_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_11_07_111551_create_indisponibilites_table.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/database/migrations/2020_11_07_111607_create_gestionnaires_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_11_07_111607_create_gestionnaires_table.php" afterDir="false" />
@@ -172,7 +170,7 @@
       <option name="presentableId" value="Default" />
       <updated>1604745447026</updated>
       <workItem from="1604745448082" duration="3101000" />
-      <workItem from="1605343507553" duration="1487000" />
+      <workItem from="1605343507553" duration="4084000" />
     </task>
     <task id="LOCAL-00001" summary="initial commit">
       <created>1604745505978</created>
@@ -195,7 +193,14 @@
       <option name="project" value="LOCAL" />
       <updated>1604748654776</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="modifs de down pour migrations et ajout de département, materiel, gestionnaire, creneaux et indispo">
+      <created>1605345077996</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1605345077996</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -217,12 +222,13 @@
     <MESSAGE value="initial commit" />
     <MESSAGE value="creation controller + model + factory + migration pour toute la base de donnée" />
     <MESSAGE value="creation controller + model + factory + migration pour Materiel&#10;remplissage des migrations pour resrevation, blacklist, malette, est prete et type" />
-    <option name="LAST_COMMIT_MESSAGE" value="creation controller + model + factory + migration pour Materiel&#10;remplissage des migrations pour resrevation, blacklist, malette, est prete et type" />
+    <MESSAGE value="modifs de down pour migrations et ajout de département, materiel, gestionnaire, creneaux et indispo" />
+    <option name="LAST_COMMIT_MESSAGE" value="modifs de down pour migrations et ajout de département, materiel, gestionnaire, creneaux et indispo" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="585" y="88" key="CommitChangelistDialog2" timestamp="1604748654204">
+    <state x="585" y="88" key="CommitChangelistDialog2" timestamp="1605345076176">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="585" y="88" key="CommitChangelistDialog2/0.0.1920.1040/-1280.0.1280.984@0.0.1920.1040" timestamp="1604748654204" />
+    <state x="585" y="88" key="CommitChangelistDialog2/0.0.1920.1040/-1280.0.1280.984@0.0.1920.1040" timestamp="1605345076176" />
   </component>
 </project>

@@ -16,10 +16,10 @@ class CreateEstPretesTable extends Migration
         Schema::create('est_pretes', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
-            $table->foreignId("materiel_id")->constrained("materiel");
-            $table->foreignId("reservation_id")->constrained("reservation");
             $table->dateTime("date_debut");
             $table->dateTime("date_fin");
+            $table->foreignId("materiel_id")->constrained("materiel");
+            $table->foreignId("reservation_id")->constrained("reservation");
         });
     }
 

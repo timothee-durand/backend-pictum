@@ -24,9 +24,9 @@ class CreateMaterielsTable extends Migration
             $table->string("notice", 255);
             $table->boolean("indisp")->default(false);
             $table->string("indisp_raison");
-            $table->foreignId('type_id')->index()->constrained()->onDelete('cascade');
-            $table->foreignId('malette_id')->index()->constrained()->onDelete('cascade');
-            $table->foreignId('departement_id')->index()->constrained()->onDelete('cascade');
+            $table->foreignId('type_id')->constrained("type");
+            $table->foreignId('malette_id')->constrained("malette");
+            $table->foreignId('departement_id')->constrained("departement");
 
         });
     }
@@ -38,6 +38,6 @@ class CreateMaterielsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('materiels');
+        Schema::dropIfExists('materiel');
     }
 }
