@@ -16,6 +16,18 @@ class CreateMaterielsTable extends Migration
         Schema::create('materiel', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
+            $table->string("ref", 32);
+            $table->string("photo", 255);
+            $table->string("usage", 300);
+            $table->string("carac", 300);
+            $table->json("tutos");
+            $table->string("notice", 255);
+            $table->boolean("indisp")->default(false);
+            $table->string("indisp_raison");
+            $table->foreignId('type_id')->index()->constrained()->onDelete('cascade');
+            $table->foreignId('malette_id')->index()->constrained()->onDelete('cascade');
+            $table->foreignId('departement_id')->index()->constrained()->onDelete('cascade');
+
         });
     }
 

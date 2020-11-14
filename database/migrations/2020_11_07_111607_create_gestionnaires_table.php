@@ -13,9 +13,16 @@ class CreateGestionnairesTable extends Migration
      */
     public function up()
     {
-        Schema::create('gestionnaires', function (Blueprint $table) {
+        Schema::create('gestionnaire', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
+            $table->string("nom", 50);
+            $table->string("prenom", 50);
+            $table->string("mail", 100);
+            $table->integer("id_univ");
+            $table->boolean("admin")->default(false);
+            $table->foreignId('departement_id')->index()->constrained();
+
         });
     }
 
@@ -26,6 +33,6 @@ class CreateGestionnairesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('gestionnaires');
+        Schema::dropIfExists('gestionnaire');
     }
 }

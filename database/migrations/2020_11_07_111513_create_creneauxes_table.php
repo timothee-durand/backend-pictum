@@ -13,9 +13,15 @@ class CreateCreneauxesTable extends Migration
      */
     public function up()
     {
-        Schema::create('creneauxes', function (Blueprint $table) {
+        Schema::create('creneaux', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
+            $table->integer("jour");
+            $table->time("heure_debut_matin");
+            $table->time("heure_fin_matin");
+            $table->time("heure_debut_am");
+            $table->time("heure_fin_am");
+            $table->foreignId('gestionnaire_id')->index()->constrained()->onDelete('cascade');
         });
     }
 
@@ -26,6 +32,6 @@ class CreateCreneauxesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('creneauxes');
+        Schema::dropIfExists('creneaux');
     }
 }

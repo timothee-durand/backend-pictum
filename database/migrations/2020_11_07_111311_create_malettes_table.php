@@ -29,6 +29,6 @@ class CreateMalettesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('malettes');
+        Schema::dropIfExists('malette');
     }
 }

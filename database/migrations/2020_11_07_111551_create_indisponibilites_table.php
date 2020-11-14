@@ -13,9 +13,12 @@ class CreateIndisponibilitesTable extends Migration
      */
     public function up()
     {
-        Schema::create('indisponibilites', function (Blueprint $table) {
+        Schema::create('indisponibilite', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
+            $table->dateTime("date_debut");
+            $table->dateTime("date_fin");
+            $table->foreignId('gestionnaire_id')->index()->constrained()->onDelete('cascade');
         });
     }
 
@@ -26,6 +29,6 @@ class CreateIndisponibilitesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('indisponibilites');
+        Schema::dropIfExists('indisponibilite');
     }
 }
