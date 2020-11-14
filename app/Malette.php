@@ -6,5 +6,5 @@ use Illuminate\Database\Eloquent\Model;
 
 class Malette extends Model
 {
-    //
+    protected $table = "malette";
 }

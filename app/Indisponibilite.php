@@ -6,5 +6,5 @@ use Illuminate\Database\Eloquent\Model;
 
 class Indisponibilite extends Model
 {
-    //
+    protected $table = "indisponibilite";
 }
