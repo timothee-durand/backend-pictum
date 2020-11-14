@@ -12,16 +12,20 @@
   <component name="ChangeListManager">
     <list default="true" id="c2fc254d-4c34-4822-9cbb-ed6000c1b396" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Blacklist.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Blacklist.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/EstPrete.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/EstPrete.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/BlacklistController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/BlacklistController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/MaletteController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/MaletteController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/TypeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/TypeController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Malette.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Malette.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Type.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Type.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/database/factories/BlacklistFactory.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/factories/BlacklistFactory.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/factories/CreneauxFactory.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/factories/CreneauxFactory.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/factories/DepartementFactory.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/factories/DepartementFactory.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/factories/EstPreteFactory.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/factories/EstPreteFactory.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/database/factories/GestionnaireFactory.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/factories/GestionnaireFactory.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/factories/IndisponibiliteFactory.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/factories/IndisponibiliteFactory.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/factories/MaletteFactory.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/factories/MaletteFactory.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/database/factories/MaterielFactory.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/factories/MaterielFactory.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/database/factories/ReservationFactory.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/factories/ReservationFactory.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/factories/TypeFactory.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/factories/TypeFactory.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/seeds/DatabaseSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeds/DatabaseSeeder.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/api.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/api.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -173,7 +177,7 @@
       <option name="presentableId" value="Default" />
       <updated>1604745447026</updated>
       <workItem from="1604745448082" duration="3101000" />
-      <workItem from="1605343507553" duration="6620000" />
+      <workItem from="1605343507553" duration="10760000" />
     </task>
     <task id="LOCAL-00001" summary="initial commit">
       <created>1604745505978</created>
@@ -217,7 +221,14 @@
       <option name="project" value="LOCAL" />
       <updated>1605348185916</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="ajout factory pour tout">
+      <created>1605350158004</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1605350158004</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -242,12 +253,26 @@
     <MESSAGE value="modifs de down pour migrations et ajout de département, materiel, gestionnaire, creneaux et indispo" />
     <MESSAGE value="modifs pour migrate" />
     <MESSAGE value="ajout table dans model" />
-    <option name="LAST_COMMIT_MESSAGE" value="ajout table dans model" />
+    <MESSAGE value="ajout factory pour tout" />
+    <option name="LAST_COMMIT_MESSAGE" value="ajout factory pour tout" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="585" y="88" key="CommitChangelistDialog2" timestamp="1605348183743">
+    <state x="-943" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1605367394352">
+      <screen x="-1280" y="0" width="1280" height="984" />
+    </state>
+    <state x="-943" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1920.1040/-1280.0.1280.984@-1280.0.1280.984" timestamp="1605367394352" />
+    <state x="690" y="275" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1605368804039">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="585" y="88" key="CommitChangelistDialog2/0.0.1920.1040/-1280.0.1280.984@0.0.1920.1040" timestamp="1605348183743" />
+    <state x="-820" y="260" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1920.1040/-1280.0.1280.984@-1280.0.1280.984" timestamp="1605367672111" />
+    <state x="690" y="275" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1920.1040/-1280.0.1280.984@0.0.1920.1040" timestamp="1605368804039" />
+    <state x="585" y="88" key="CommitChangelistDialog2" timestamp="1605350155934">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="585" y="88" key="CommitChangelistDialog2/0.0.1920.1040/-1280.0.1280.984@0.0.1920.1040" timestamp="1605350155934" />
+    <state x="616" y="240" key="run.anything.popup" timestamp="1605368535972">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="616" y="240" key="run.anything.popup/0.0.1920.1040/-1280.0.1280.984@0.0.1920.1040" timestamp="1605368535972" />
   </component>
 </project>

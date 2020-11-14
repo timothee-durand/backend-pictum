@@ -14,12 +14,8 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/test-database', function (Request $request) {
-    try {
-        DB::connection()->getPdo();
-        return true;
-    } catch (\Exception $e) {
-        die("Could not connect to the database.  Please check your configuration. error:" . $e );
-    }
-});
+//routes api
+Route::apiResource('types', 'TypeController');
+Route::apiResource('blacklists', 'BlacklistController');
+Route::apiResource('malettes', 'MaletteController');
 
