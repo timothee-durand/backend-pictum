@@ -18,7 +18,7 @@ class CreateIndisponibilitesTable extends Migration
             $table->timestamps();
             $table->dateTime("date_debut");
             $table->dateTime("date_fin");
-            $table->foreignId('gestionnaire_id')->constrained("gestionnaire");
+            $table->foreignId('gestionnaire_id')->constrained("gestionnaire")->onDelete("cascade");
         });
     }
 

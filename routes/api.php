@@ -22,4 +22,5 @@ Route::apiResource('departements', 'DepartementController');
 Route::apiResource('reservations', 'ReservationController');
 Route::apiResource('estpretes', 'EstPreteController');
 Route::apiResource('materiels', 'MaterielController');
+Route::apiResource('gestionnaires', 'GestionnaireController');
 

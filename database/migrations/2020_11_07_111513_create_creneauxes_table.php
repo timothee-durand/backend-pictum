@@ -21,7 +21,7 @@ class CreateCreneauxesTable extends Migration
             $table->time("heure_fin_matin");
             $table->time("heure_debut_am");
             $table->time("heure_fin_am");
-            $table->foreignId('gestionnaire_id')->constrained("gestionnaire");
+            $table->foreignId('gestionnaire_id')->constrained("gestionnaire")->onDelete("cascade");
         });
     }
 

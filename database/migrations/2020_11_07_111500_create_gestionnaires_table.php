@@ -21,7 +21,7 @@ class CreateGestionnairesTable extends Migration
             $table->string("mail", 100);
             $table->integer("id_univ");
             $table->boolean("admin")->default(false);
-            $table->foreignId('departement_id')->index()->constrained("departement");
+            $table->foreignId('departement_id')->constrained("departement");
 
         });
     }
