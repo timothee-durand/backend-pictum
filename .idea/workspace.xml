@@ -12,13 +12,11 @@
   <component name="ChangeListManager">
     <list default="true" id="c2fc254d-4c34-4822-9cbb-ed6000c1b396" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Departement.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Departement.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/EstPrete.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/EstPrete.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/DepartementController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/DepartementController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/EstPreteController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/EstPreteController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/ReservationController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/ReservationController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Reservation.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Reservation.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/MaterielController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/MaterielController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Materiel.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Materiel.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/database/migrations/2020_11_07_111418_create_materiels_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_11_07_111418_create_materiels_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2020_11_07_111439_create_est_pretes_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_11_07_111439_create_est_pretes_table.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/api.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/api.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -171,7 +169,8 @@
       <option name="presentableId" value="Default" />
       <updated>1604745447026</updated>
       <workItem from="1604745448082" duration="3101000" />
-      <workItem from="1605343507553" duration="13530000" />
+      <workItem from="1605343507553" duration="15781000" />
+      <workItem from="1605456614031" duration="167000" />
     </task>
     <task id="LOCAL-00001" summary="initial commit">
       <created>1604745505978</created>
@@ -229,7 +228,14 @@
       <option name="project" value="LOCAL" />
       <updated>1605369005952</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="ajout controller département, estprete, reservation et modification README.md&#10;+ modfification migration materiel">
+      <created>1605371978630</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1605371978630</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -256,30 +262,39 @@
     <MESSAGE value="ajout table dans model" />
     <MESSAGE value="ajout factory pour tout" />
     <MESSAGE value="ajout controller type, blacklist et malette" />
-    <option name="LAST_COMMIT_MESSAGE" value="ajout controller type, blacklist et malette" />
+    <MESSAGE value="ajout controller département, estprete, reservation et modification README.md&#10;+ modfification migration materiel" />
+    <option name="LAST_COMMIT_MESSAGE" value="ajout controller département, estprete, reservation et modification README.md&#10;+ modfification migration materiel" />
   </component>
   <component name="WindowStateProjectService">
+    <state x="710" y="322" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1605371771537">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="710" y="322" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1920.1040/-1280.0.1280.984@0.0.1920.1040" timestamp="1605371771537" />
     <state x="-943" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1605367394352">
       <screen x="-1280" y="0" width="1280" height="984" />
     </state>
     <state x="-943" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1920.1040/-1280.0.1280.984@-1280.0.1280.984" timestamp="1605367394352" />
-    <state x="690" y="275" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1605369873466">
+    <state x="690" y="275" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1605372978956">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="-820" y="260" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1920.1040/-1280.0.1280.984@-1280.0.1280.984" timestamp="1605367672111" />
-    <state x="690" y="275" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1920.1040/-1280.0.1280.984@0.0.1920.1040" timestamp="1605369873466" />
-    <state x="585" y="88" key="CommitChangelistDialog2" timestamp="1605369005236">
+    <state x="690" y="275" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1920.1040/-1280.0.1280.984@0.0.1920.1040" timestamp="1605372978956" />
+    <state x="585" y="88" key="CommitChangelistDialog2" timestamp="1605371977849">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="585" y="88" key="CommitChangelistDialog2/0.0.1920.1040/-1280.0.1280.984@0.0.1920.1040" timestamp="1605369005236" />
+    <state x="585" y="88" key="CommitChangelistDialog2/0.0.1920.1040/-1280.0.1280.984@0.0.1920.1040" timestamp="1605371977849" />
     <state x="821" y="418" key="Github.ShareDialog" timestamp="1605371701994">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="821" y="418" key="Github.ShareDialog/0.0.1920.1040/-1280.0.1280.984@0.0.1920.1040" timestamp="1605371701994" />
-    <state x="552" y="253" key="Vcs.Push.Dialog.v2" timestamp="1605371681742">
+    <state x="552" y="253" key="Vcs.Push.Dialog.v2" timestamp="1605371984075">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040/-1280.0.1280.984@0.0.1920.1040" timestamp="1605371681742" />
+    <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040/-1280.0.1280.984@0.0.1920.1040" timestamp="1605371984075" />
+    <state x="561" y="130" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1605372313142">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="561" y="130" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/0.0.1920.1040/-1280.0.1280.984@0.0.1920.1040" timestamp="1605372313142" />
     <state x="616" y="240" key="run.anything.popup" timestamp="1605368535972">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
