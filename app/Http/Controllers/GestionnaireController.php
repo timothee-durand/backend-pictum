@@ -28,6 +28,18 @@ class GestionnaireController extends Controller
     }
 
     /**
+     * Display a listing of the rendez-vous of this Gestionnaire
+     *
+     * @return string
+     */
+
+    public function getRendezVous($id){
+
+
+        return ;
+    }
+
+    /**
      * Store a newly created resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request

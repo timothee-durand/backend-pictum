@@ -11,14 +11,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c2fc254d-4c34-4822-9cbb-ed6000c1b396" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/app/Http/Resources/GestionnaireCollection.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Http/Resources/GestionnaireResource.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Gestionnaire.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Gestionnaire.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/CreneauxController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/CreneauxController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/GestionnaireController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/GestionnaireController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2020_11_07_111500_create_gestionnaires_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_11_07_111500_create_gestionnaires_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2020_11_07_111513_create_creneauxes_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_11_07_111513_create_creneauxes_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2020_11_07_111551_create_indisponibilites_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_11_07_111551_create_indisponibilites_table.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/api.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/api.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -173,7 +168,9 @@
       <workItem from="1604745448082" duration="3101000" />
       <workItem from="1605343507553" duration="15781000" />
       <workItem from="1605456614031" duration="167000" />
-      <workItem from="1605456884726" duration="3486000" />
+      <workItem from="1605456884726" duration="3539000" />
+      <workItem from="1605533793383" duration="39000" />
+      <workItem from="1605622809410" duration="1600000" />
     </task>
     <task id="LOCAL-00001" summary="initial commit">
       <created>1604745505978</created>
@@ -245,7 +242,14 @@
       <option name="project" value="LOCAL" />
       <updated>1605457060757</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="ajout controller pour gestionnaire, modif migration aussi et gestion d'envoi avec des ressources pour gestionnaire">
+      <created>1605460416288</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1605460416288</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -274,7 +278,8 @@
     <MESSAGE value="ajout controller type, blacklist et malette" />
     <MESSAGE value="ajout controller département, estprete, reservation et modification README.md&#10;+ modfification migration materiel" />
     <MESSAGE value="ajout champ rendu dans est prete" />
-    <option name="LAST_COMMIT_MESSAGE" value="ajout champ rendu dans est prete" />
+    <MESSAGE value="ajout controller pour gestionnaire, modif migration aussi et gestion d'envoi avec des ressources pour gestionnaire" />
+    <option name="LAST_COMMIT_MESSAGE" value="ajout controller pour gestionnaire, modif migration aussi et gestion d'envoi avec des ressources pour gestionnaire" />
   </component>
   <component name="WindowStateProjectService">
     <state x="710" y="322" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1605371771537">
@@ -291,10 +296,10 @@
     </state>
     <state x="-820" y="260" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1920.1040/-1280.0.1280.984@-1280.0.1280.984" timestamp="1605367672111" />
     <state x="690" y="275" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1920.1040/-1280.0.1280.984@0.0.1920.1040" timestamp="1605457685989" />
-    <state x="585" y="88" key="CommitChangelistDialog2" timestamp="1605457060056">
+    <state x="585" y="88" key="CommitChangelistDialog2" timestamp="1605460415651">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="585" y="88" key="CommitChangelistDialog2/0.0.1920.1040/-1280.0.1280.984@0.0.1920.1040" timestamp="1605457060056" />
+    <state x="585" y="88" key="CommitChangelistDialog2/0.0.1920.1040/-1280.0.1280.984@0.0.1920.1040" timestamp="1605460415651" />
     <state x="821" y="418" key="Github.ShareDialog" timestamp="1605371701994">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
