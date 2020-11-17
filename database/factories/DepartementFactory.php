@@ -9,6 +9,7 @@ $factory->define(Departement::class, function (Faker $faker) {
     return [
         "lat"=>$faker->latitude,
         "long"=>$faker->longitude,
-        "nom"=>$faker->city
+        "nom"=>$faker->city,
+        "gestionnaire_id"=>\App\Gestionnaire::all()->random()->id,
     ];
 });

@@ -12,6 +12,5 @@ $factory->define(Gestionnaire::class, function (Faker $faker) {
         "mail"=>$faker->email,
         "id_univ"=>$faker->randomElement([06574, 98467, 3748, 34563]),
         "admin"=>$faker->boolean(10),
-        "departement_id"=>\App\Departement::all()->random()->id
     ];
 });

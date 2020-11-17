@@ -33,12 +33,12 @@ class TypeController extends Controller
         if ($type->save()) {
             return json_encode([
                 "method" => "store",
-                "status" => "OK"
+                "status" => "200"
             ]);
         } else {
             return json_encode([
                 "method" => "store",
-                "status" => "FAILED"
+                "status" => "400"
             ]);
         }
     }
@@ -74,35 +74,35 @@ class TypeController extends Controller
      */
     public function update(Request $request, Type $type)
     {
-        $type = Type::find($type->id);
+         return Type::find($type->id)->update($request->all());
 
-        if($type!=null) {
-            if($request->input("nom") != null) {
-                $type->nom = $request->input("nom");
-            }
-
-            if ($request->input("picto") != null) {
-                $type->picto = $request->input("picto");
-            }
-
-            if ($type->save()) {
-                return json_encode([
-                    "method" => "update",
-                    "status" => "OK"
-                ]);
-            } else {
-                return json_encode([
-                    "method" => "update",
-                    "status" => "FAILED"
-                ]);
-            }
-        } else {
-            //si pas d'entree correspondante
-            return json_encode([
-                "method" => "show",
-                "status" => "!FIND"
-            ]);
-        }
+//        if($type!=null) {
+//            if($request->input("nom") != null) {
+//                $type->nom = $request->input("nom");
+//            }
+//
+//            if ($request->input("picto") != null) {
+//                $type->picto = $request->input("picto");
+//            }
+//
+//            if ($type->save()) {
+//                return json_encode([
+//                    "method" => "update",
+//                    "status" => "OK"
+//                ]);
+//            } else {
+//                return json_encode([
+//                    "method" => "update",
+//                    "status" => "FAILED"
+//                ]);
+//            }
+//        } else {
+//            //si pas d'entree correspondante
+//            return json_encode([
+//                "method" => "show",
+//                "status" => "!FIND"
+//            ]);
+//        }
 
 
 

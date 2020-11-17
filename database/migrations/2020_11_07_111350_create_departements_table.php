@@ -19,6 +19,7 @@ class CreateDepartementsTable extends Migration
             $table->float("lat");
             $table->float("long");
             $table->string("nom", 50);
+            $table->foreignId("gestionnaire_id")->constrained("gestionnaire");
         });
     }
 

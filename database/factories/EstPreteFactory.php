@@ -12,5 +12,6 @@ $factory->define(EstPrete::class, function (Faker $faker) {
         "materiel_id"=>\App\Materiel::all()->random()->id,
         "reservation_id"=>\App\Reservation::all()->random()->id,
         "rendu"=>$faker->dateTime(),
+        "gestionnaire_id"=>\App\Gestionnaire::all()->random()->id,
     ];
 });
