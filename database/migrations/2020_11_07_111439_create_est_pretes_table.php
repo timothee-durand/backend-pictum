@@ -20,7 +20,7 @@ class CreateEstPretesTable extends Migration
             $table->dateTime("date_fin");
             $table->dateTime("rendu")->nullable();
             $table->foreignId("materiel_id")->constrained("materiel");
-            $table->foreignId("reservation_id")->constrained("reservation");
+            $table->foreignId("reservation_id")->nullable()->constrained("reservation")->nullOnDelete();
             $table->foreignId("gestionnaire_id")->constrained("gestionnaire");
 
         });

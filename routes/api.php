@@ -23,6 +23,7 @@ Route::apiResource('reservations', 'ReservationController');
 Route::apiResource('estpretes', 'EstPreteController');
 Route::apiResource('materiels', 'MaterielController');
 Route::apiResource('gestionnaires', 'GestionnaireController');
+Route::apiResource('indisponibilites', 'IndisponibiliteController');
 
 Route::get("gestionnaires/{id}/rdv", "GestionnaireController@getRendezVous");
 Route::prefix("creneaux")->group(function(){

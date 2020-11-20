@@ -3,7 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Departement;
+use App\Http\Resources\DepartementResource;
 use Illuminate\Http\Request;
+use Illuminate\Http\Response;
 
 class DepartementController extends Controller
 {
@@ -14,7 +16,7 @@ class DepartementController extends Controller
      */
     public function index()
     {
-        return Departement::all()->toJson(JSON_PRETTY_PRINT);
+        return DepartementResource::collection(Departement::all())->toJson();
     }
 
     /**
@@ -25,18 +27,9 @@ class DepartementController extends Controller
      */
     public function store(Request $request)
     {
-        $departement = new Departement([
-            "nom"=>$request->input("nom"),
-            "lat"=>$request->input("lat"),
-            "long"=>$request->input("long"),
-        ]);
-
-        if ($departement->save()) {
-            return json_encode([
-                "method" => "store",
-                "status" => "OK"
-            ]);
-        }
+       if( Departement::create($request->all())) {
+           return new Response("Create OK", 200);
+       }
     }
 
     /**
@@ -47,9 +40,7 @@ class DepartementController extends Controller
      */
     public function show(Departement $departement)
     {
-        $departement = Departement::find($departement->id);
-
-        return $departement->toJSON(JSON_PRETTY_PRINT);
+        return new DepartementResource($departement);
     }
 
     /**
@@ -61,29 +52,13 @@ class DepartementController extends Controller
      */
     public function update(Request $request, Departement $departement)
     {
-        $departement = Departement::find($departement->id);
-
-        //verif modif et mise à jour
-        if($request->input("nom")!=null) {
-            $departement->nom = $request->input("nom");
-        }
-
-        if($request->input("lat")!=null) {
-            $departement->lat = $request->input("lat");
-        }
-
-        if($request->input("long")!=null) {
-            $departement->long = $request->input("long");
-        }
+       if($departement->update($request->all())) {
+           return new Response("Update OK", 200);
+       } else {
+           return new Response("Update Failed", 404);
+       }
 
 
-        //envoi modifs
-        if ($departement->save()) {
-            return json_encode([
-                "method" => "update",
-                "status" => "OK"
-            ]);
-        }
     }
 
     /**
@@ -94,11 +69,8 @@ class DepartementController extends Controller
      */
     public function destroy(Departement $departement)
     {
-        if (Departement::find($departement->id)->delete()) {
-            return json_encode([
-                "method" => "destroy",
-                "status" => "OK"
-            ]);
+        if ($departement->delete()) {
+            return new Response("Destroy OK", 200);
 
         }
     }

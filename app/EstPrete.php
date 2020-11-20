@@ -11,7 +11,9 @@ class EstPrete extends Model
         "id_materiel",
         "id_reservation",
         "date_debut",
-        "date_fin"
+        "date_fin",
+        "rendu",
+        "gestionnaire_id"
     ];
 
     public function materiel () {
@@ -20,5 +22,9 @@ class EstPrete extends Model
 
     public function reservation() {
         return $this->belongsTo("App\Reservation");
+    }
+
+    public function gestionnaire(){
+        return $this->belongsTo("App\Gestionnaire");
     }
 }

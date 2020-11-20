@@ -10,20 +10,27 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c2fc254d-4c34-4822-9cbb-ed6000c1b396" name="Default Changelist" comment="">
+    <list default="true" id="c2fc254d-4c34-4822-9cbb-ed6000c1b396" name="Default Changelist" comment="modif de ré">
+      <change afterPath="$PROJECT_DIR$/app/Http/Resources/DepartementResource.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Http/Resources/EstPreteResource.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Http/Resources/MaletteResource.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Http/Resources/ReservationResource.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Creneaux.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Creneaux.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Gestionnaire.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Gestionnaire.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/CreneauxController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/CreneauxController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Departement.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Departement.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/EstPrete.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/EstPrete.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/DepartementController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/DepartementController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/EstPreteController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/EstPreteController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/GestionnaireController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/GestionnaireController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/TypeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/TypeController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/factories/CreneauxFactory.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/factories/CreneauxFactory.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/factories/DepartementFactory.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/factories/DepartementFactory.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/factories/EstPreteFactory.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/factories/EstPreteFactory.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/factories/GestionnaireFactory.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/factories/GestionnaireFactory.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2020_11_07_111350_create_departements_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_11_07_111350_create_departements_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/IndisponibiliteController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/IndisponibiliteController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/MaletteController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/MaletteController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/ReservationController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/ReservationController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Indisponibilite.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Indisponibilite.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Malette.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Malette.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Materiel.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Materiel.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Reservation.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Reservation.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/factories/ReservationFactory.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/factories/ReservationFactory.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2020_11_07_111417_create_reservations_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_11_07_111417_create_reservations_table.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/database/migrations/2020_11_07_111439_create_est_pretes_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_11_07_111439_create_est_pretes_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2020_11_07_111500_create_gestionnaires_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_11_07_111320_create_gestionnaires_table.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/database/seeds/DatabaseSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeds/DatabaseSeeder.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/api.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/api.php" afterDir="false" />
     </list>
@@ -150,12 +157,15 @@
     </include_path>
   </component>
   <component name="ProjectId" id="1jxUt08eyzngbbNGzvPfTHPTvtv" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="true" />
@@ -182,7 +192,10 @@
       <workItem from="1605456884726" duration="3539000" />
       <workItem from="1605533793383" duration="39000" />
       <workItem from="1605622809410" duration="2195000" />
-      <workItem from="1605627979038" duration="15810000" />
+      <workItem from="1605627979038" duration="15914000" />
+      <workItem from="1605692584042" duration="5287000" />
+      <workItem from="1605778666866" duration="2877000" />
+      <workItem from="1605782863905" duration="2653000" />
     </task>
     <task id="LOCAL-00001" summary="initial commit">
       <created>1604745505978</created>
@@ -268,7 +281,14 @@
       <option name="project" value="LOCAL" />
       <updated>1605624660340</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="ajout de rendez-vous, modif base de donnée pour ajout gestionnaire attitré a département et réservation">
+      <created>1605647384699</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1605647384699</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -287,6 +307,7 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="initial commit" />
     <MESSAGE value="creation controller + model + factory + migration pour toute la base de donnée" />
     <MESSAGE value="creation controller + model + factory + migration pour Materiel&#10;remplissage des migrations pour resrevation, blacklist, malette, est prete et type" />
@@ -299,7 +320,8 @@
     <MESSAGE value="ajout champ rendu dans est prete" />
     <MESSAGE value="ajout controller pour gestionnaire, modif migration aussi et gestion d'envoi avec des ressources pour gestionnaire" />
     <MESSAGE value="commencement modif CreneauxController.php" />
-    <option name="LAST_COMMIT_MESSAGE" value="commencement modif CreneauxController.php" />
+    <MESSAGE value="ajout de rendez-vous, modif base de donnée pour ajout gestionnaire attitré a département et réservation" />
+    <option name="LAST_COMMIT_MESSAGE" value="ajout de rendez-vous, modif base de donnée pour ajout gestionnaire attitré a département et réservation" />
   </component>
   <component name="WindowStateProjectService">
     <state x="710" y="322" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1605371771537">
@@ -311,15 +333,19 @@
     </state>
     <state x="-943" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1920.1040/-1280.0.1280.984@-1280.0.1280.984" timestamp="1605367394352" />
     <state x="506" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1920.1040/-1280.0.1280.984@0.0.1920.1040" timestamp="1605632617513" />
-    <state x="690" y="275" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1605457685989">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state x="-820" y="260" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1605780451057">
+      <screen x="-1280" y="0" width="1280" height="984" />
     </state>
-    <state x="-820" y="260" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1920.1040/-1280.0.1280.984@-1280.0.1280.984" timestamp="1605367672111" />
+    <state x="-820" y="260" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1920.1040/-1280.0.1280.984@-1280.0.1280.984" timestamp="1605780451057" />
     <state x="690" y="275" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1920.1040/-1280.0.1280.984@0.0.1920.1040" timestamp="1605457685989" />
-    <state x="585" y="88" key="CommitChangelistDialog2" timestamp="1605624659636">
+    <state x="-821" y="192" key="#com.jetbrains.php.refactoring.extractMethod.PhpExtractMethodDialog#method1" timestamp="1605785125115">
+      <screen x="-1280" y="0" width="1280" height="984" />
+    </state>
+    <state x="-821" y="192" key="#com.jetbrains.php.refactoring.extractMethod.PhpExtractMethodDialog#method1/0.0.1920.1040/-1280.0.1280.984@-1280.0.1280.984" timestamp="1605785125115" />
+    <state x="585" y="88" key="CommitChangelistDialog2" timestamp="1605647383844">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="585" y="88" key="CommitChangelistDialog2/0.0.1920.1040/-1280.0.1280.984@0.0.1920.1040" timestamp="1605624659636" />
+    <state x="585" y="88" key="CommitChangelistDialog2/0.0.1920.1040/-1280.0.1280.984@0.0.1920.1040" timestamp="1605647383844" />
     <state x="92" y="92" width="1736" height="856" key="DiffContextDialog" timestamp="1605630802028">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -328,10 +354,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="821" y="418" key="Github.ShareDialog/0.0.1920.1040/-1280.0.1280.984@0.0.1920.1040" timestamp="1605371701994" />
-    <state x="552" y="253" key="Vcs.Push.Dialog.v2" timestamp="1605624661822">
+    <state x="552" y="253" key="Vcs.Push.Dialog.v2" timestamp="1605647386521">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040/-1280.0.1280.984@0.0.1920.1040" timestamp="1605624661822" />
+    <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040/-1280.0.1280.984@0.0.1920.1040" timestamp="1605647386521" />
     <state x="561" y="130" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1605372313142">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -340,9 +366,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="616" y="240" key="run.anything.popup/0.0.1920.1040/-1280.0.1280.984@0.0.1920.1040" timestamp="1605368535972" />
-    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1605635173683">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state x="-865" y="213" width="672" height="642" key="search.everywhere.popup" timestamp="1605780350280">
+      <screen x="-1280" y="0" width="1280" height="984" />
     </state>
+    <state x="-865" y="213" width="672" height="642" key="search.everywhere.popup/0.0.1920.1040/-1280.0.1280.984@-1280.0.1280.984" timestamp="1605780350280" />
     <state x="623" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040/-1280.0.1280.984@0.0.1920.1040" timestamp="1605635173683" />
   </component>
 </project>

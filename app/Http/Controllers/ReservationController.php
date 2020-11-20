@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Resources\ReservationResource;
 use App\Reservation;
 use Illuminate\Http\Request;
+use Illuminate\Http\Response;
 
 class ReservationController extends Controller
 {
@@ -14,11 +16,14 @@ class ReservationController extends Controller
      */
     public function index()
     {
-        return Reservation::all()->toJson(JSON_PRETTY_PRINT);
+        return ReservationResource::collection(Reservation::all())->toJson();
     }
 
     /**
      * Store a newly created resource in storage.
+     *
+     * formdata reservation
+     * + json parsed array of est_prete
      *
      * @param  \Illuminate\Http\Request  $request
      * @return false|\Illuminate\Http\Response|string
@@ -40,6 +45,8 @@ class ReservationController extends Controller
                 "status" => "OK"
             ]);
         }
+
+
     }
 
     /**
@@ -50,7 +57,7 @@ class ReservationController extends Controller
      */
     public function show(Reservation $reservation)
     {
-        return Reservation::find($reservation->id)->toJSON(JSON_PRETTY_PRINT);
+        return new ReservationResource($reservation);
     }
 
     /**
@@ -62,37 +69,8 @@ class ReservationController extends Controller
      */
     public function update(Request $request, Reservation $reservation)
     {
-        $reservation = Reservation::find($reservation->id);
-
-        //verif modif et mise à jour
-        if($request->input("valide")!=null) {
-            $reservation->valide = $request->input("valide");
-        }
-
-        if($request->input("prof")!=null) {
-            $reservation->prof = $request->input("prof");
-        }
-
-        if($request->input("nom_emprunteur")!=null) {
-            $reservation->nom_emprunteur = $request->input("nom_emprunteur");
-        }
-        if($request->input("prenom_emprunteur")!=null) {
-            $reservation->prenom_emprunteur = $request->input("prenom_emprunteur");
-        }
-        if($request->input("mail_emprunteur")!=null) {
-            $reservation->mail_emprunteur = $request->input("mail_emprunteur");
-        }
-        if($request->input("id_univ_emprunteur")!=null) {
-            $reservation->id_univ_emprunteur = $request->input("id_univ_emprunteur");
-        }
-
-
-        //envoi modifs
-        if ($reservation->save()) {
-            return json_encode([
-                "method" => "update",
-                "status" => "OK"
-            ]);
+        if($reservation->update($request->all())){
+            return new Response("Update OK", 200);
         }
     }
 

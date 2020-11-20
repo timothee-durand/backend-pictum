@@ -11,6 +11,11 @@ class Departement extends Model
     protected $fillable = [
         "lat",
         "long",
-        "nom"
+        "nom",
+        "gestionnaire_id"
     ];
+
+    public function gestionnaire(){
+        return $this->belongsTo("App\Gestionnaire");
+    }
 }

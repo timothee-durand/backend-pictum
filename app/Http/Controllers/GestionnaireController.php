@@ -20,12 +20,6 @@ class GestionnaireController extends Controller
      */
     public function index()
     {
-//        $gestionnaires = Gestionnaire::all();
-//
-//        foreach ($gestionnaires as $gestionnaire)  {
-//            $gestionnaire->departement;
-//        }
-
         return GestionnaireResource::collection(Gestionnaire::all())->toJson(JSON_PRETTY_PRINT);
     }
 
@@ -79,18 +73,6 @@ class GestionnaireController extends Controller
      */
     private function getDateFromIndexDay($index_day, $start_date, $day_max = 7)
     {
-//        $end = false;
-//        while (!$end) {
-//            if ($this->getWeekday($start_date) != $index_day) {
-//                //si la date de départ ne correspond pas au bon jour
-//                $start_date = strtotime($start_date . "+1 day");
-//                echo $start_date;
-//            } else {
-//                //si c'est le bon jour
-//                $end = true;
-//                return $start_date;
-//            }
-//        }
         //si il est après dans la semaine
         if($index_day >= $this->getWeekday($start_date)) {
             $difdate = $index_day - $this->getWeekday($start_date);
@@ -193,12 +175,6 @@ class GestionnaireController extends Controller
      */
     public function store(Request $request)
     {
-//        //validation envoi
-//        $this->validate( $request, [
-//                "id_univ"=>"required",
-//                "admin"=>"required"
-//            ]
-//        );
 
         /*TODO : faire en sorte que le remplissage nom/prenom/mail se fasse automatiquement avec LDAP */
 

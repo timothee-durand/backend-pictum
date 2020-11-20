@@ -12,4 +12,8 @@ class Malette extends Model
         "ref",
         "photo"
     ];
+
+    public function materiels(){
+        return $this->hasMany("App\Materiel");
+    }
 }

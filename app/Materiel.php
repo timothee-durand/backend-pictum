@@ -33,4 +33,8 @@ class Materiel extends Model
     public function est_prete() {
         return $this->hasMany("App\EstPrete");
     }
+
+    public function gestionnaire() {
+        return $this->hasOneThrough("App\Gestionnaire", "App\Departement");
+    }
 }

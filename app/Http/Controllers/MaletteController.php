@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Resources\MaletteResource;
 use App\Malette;
 use Illuminate\Http\Request;
+use Illuminate\Http\Response;
 
 class MaletteController extends Controller
 {
@@ -14,7 +16,7 @@ class MaletteController extends Controller
      */
     public function index()
     {
-       return Malette::all()->toJSON(JSON_PRETTY_PRINT);
+       return MaletteResource::collection(Malette::all())->toJSON();
     }
 
     /**
@@ -25,17 +27,8 @@ class MaletteController extends Controller
      */
     public function store(Request $request)
     {
-        $malette = new Malette([
-            "nom" => $request->input("nom"),
-            "ref" => $request->input("ref"),
-            "photo" => $request->input("photo"),
-        ]);
-
-        if ($malette->save()) {
-            return json_encode([
-                "method" => "store",
-                "status" => "OK"
-            ]);
+        if(Malette::create($request->all())){
+            return new Response("Create OK", 200);
         }
     }
 
@@ -69,38 +62,9 @@ class MaletteController extends Controller
      */
     public function update(Request $request, Malette $malette)
     {
-        $malette = Malette::find($malette->id);
-
-        if($malette != null) {
-
-            if($request->input("nom")!=null) {
-                $malette->nom = $request->input("nom");
-            }
-
-            if($request->input("ref")!=null) {
-                $malette->ref = $request->input("ref");
-            }
-
-            if($request->input("photo")!=null) {
-                $malette->photo = $request->input("photo");
-            }
-
-
-            //envoi modifs
-            if ($malette->save()) {
-                return json_encode([
-                    "method" => "store",
-                    "status" => "OK"
-                ]);
-            } else {
-                return json_encode([
-                    "method" => "store",
-                    "status" => "FAILED"
-                ]);
-            }
+        if($malette->update($request->all())){
+            return new Response("Update OK", 200);
         }
-
-
     }
 
     /**
@@ -111,11 +75,8 @@ class MaletteController extends Controller
      */
     public function destroy(Malette $malette)
     {
-        if (Malette::find($malette->id)->delete()) {
-            return json_encode([
-                "method" => "destroy",
-                "status" => "OK"
-            ]);
+        if ($malette->delete()) {
+            return new Response("Delete OK", 200);
 
         }
     }
