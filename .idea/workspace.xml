@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="BranchesTreeState">
     <expand>
       <path>
@@ -10,17 +13,11 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c2fc254d-4c34-4822-9cbb-ed6000c1b396" name="Default Changelist" comment="beacuoup de modifs">
-      <change afterPath="$PROJECT_DIR$/app/Utils/Utils.php" afterDir="false" />
+    <list default="true" id="c2fc254d-4c34-4822-9cbb-ed6000c1b396" name="Default Changelist" comment="principalement pour la gestion de la genération des rdv">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Creneaux.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Creneaux.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Gestionnaire.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Gestionnaire.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/CreneauxController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/CreneauxController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/GestionnaireController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/GestionnaireController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Resources/GestionnaireResource.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Resources/GestionnaireResource.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/factories/EstPreteFactory.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/factories/EstPreteFactory.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/factories/IndisponibiliteFactory.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/factories/IndisponibiliteFactory.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/seeds/DatabaseSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeds/DatabaseSeeder.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -188,7 +185,7 @@
       <workItem from="1605946256632" duration="14369000" />
       <workItem from="1606203860699" duration="7000" />
       <workItem from="1606333840060" duration="6305000" />
-      <workItem from="1606380658295" duration="1478000" />
+      <workItem from="1606380658295" duration="16279000" />
     </task>
     <task id="LOCAL-00001" summary="initial commit">
       <created>1604745505978</created>
@@ -288,7 +285,14 @@
       <option name="project" value="LOCAL" />
       <updated>1605877758531</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="principalement pour la gestion de la genération des rdv">
+      <created>1606382410239</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1606382410239</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -322,13 +326,18 @@
     <MESSAGE value="commencement modif CreneauxController.php" />
     <MESSAGE value="ajout de rendez-vous, modif base de donnée pour ajout gestionnaire attitré a département et réservation" />
     <MESSAGE value="beacuoup de modifs" />
-    <option name="LAST_COMMIT_MESSAGE" value="beacuoup de modifs" />
+    <MESSAGE value="principalement pour la gestion de la genération des rdv" />
+    <option name="LAST_COMMIT_MESSAGE" value="principalement pour la gestion de la genération des rdv" />
   </component>
   <component name="WindowStateProjectService">
     <state x="710" y="322" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1605371771537">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="710" y="322" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1920.1040/-1280.0.1280.984@0.0.1920.1040" timestamp="1605371771537" />
+    <state x="765" y="202" key="#com.intellij.ide.util.MemberChooser" timestamp="1606406678667">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="765" y="202" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1040/-1280.0.1280.984@0.0.1920.1040" timestamp="1606406678667" />
     <state x="506" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1605632617513">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -368,10 +377,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="520" height="446" key="SwitcherDM/0.0.1920.1040/-1280.0.1280.984@0.0.1920.1040" timestamp="1605948598993" />
-    <state x="552" y="253" key="Vcs.Push.Dialog.v2" timestamp="1605647386521">
+    <state x="552" y="253" key="Vcs.Push.Dialog.v2" timestamp="1606382413336">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040/-1280.0.1280.984@0.0.1920.1040" timestamp="1605647386521" />
+    <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040/-1280.0.1280.984@0.0.1920.1040" timestamp="1606382413336" />
     <state x="561" y="130" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1605372313142">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -380,10 +389,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="616" y="240" key="run.anything.popup/0.0.1920.1040/-1280.0.1280.984@0.0.1920.1040" timestamp="1605882193591" />
-    <state x="-865" y="213" width="672" height="642" key="search.everywhere.popup" timestamp="1605780350280">
-      <screen x="-1280" y="0" width="1280" height="984" />
+    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1606409517349">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="-865" y="213" width="672" height="642" key="search.everywhere.popup/0.0.1920.1040/-1280.0.1280.984@-1280.0.1280.984" timestamp="1605780350280" />
-    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040/-1280.0.1280.984@0.0.1920.1040" timestamp="1605635173683" />
+    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040/-1280.0.1280.984@0.0.1920.1040" timestamp="1606409517349" />
   </component>
 </project>

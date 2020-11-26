@@ -29,6 +29,6 @@ class Gestionnaire extends Model
     }
 
     public function rendezVous(){
-        return $this->hasMany("App\EstPrete");
+        return $this->hasMany(EstPrete::class, "gestionnaire_id");
     }
 }

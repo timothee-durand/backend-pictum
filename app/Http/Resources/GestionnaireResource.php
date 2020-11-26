@@ -21,7 +21,7 @@ class GestionnaireResource extends JsonResource
             "id_univ" => $this->id_univ,
             "admin" => $this->admin,
             "departement" => $this->departement,
-            "rdvs"=>$this->rendezVous,
+            "rdv"=>$this->rendezVous,
             "creneaux"=>$this->creneaux,
             "indisponibilites"=>$this->indisponibilites
         ];
