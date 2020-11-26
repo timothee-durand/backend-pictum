@@ -21,6 +21,14 @@ class Gestionnaire extends Model
     }
 
     public function creneaux() {
-        return $this->belongsToMany("app\Creneaux");
+        return $this->hasMany("App\Creneaux");
+    }
+
+    public function indisponibilites(){
+        return $this->hasMany("App\Indisponibilite");
+    }
+
+    public function rendezVous(){
+        return $this->hasMany("App\EstPrete");
     }
 }

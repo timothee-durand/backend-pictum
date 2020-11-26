@@ -15,4 +15,5 @@ class Creneaux extends Model
         "heure_fin_am",
         "gestionnaire_id"
     ];
+
 }

@@ -10,29 +10,17 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c2fc254d-4c34-4822-9cbb-ed6000c1b396" name="Default Changelist" comment="modif de ré">
-      <change afterPath="$PROJECT_DIR$/app/Http/Resources/DepartementResource.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Http/Resources/EstPreteResource.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Http/Resources/MaletteResource.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Http/Resources/ReservationResource.php" afterDir="false" />
+    <list default="true" id="c2fc254d-4c34-4822-9cbb-ed6000c1b396" name="Default Changelist" comment="beacuoup de modifs">
+      <change afterPath="$PROJECT_DIR$/app/Utils/Utils.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Departement.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Departement.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/EstPrete.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/EstPrete.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/DepartementController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/DepartementController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/EstPreteController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/EstPreteController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Creneaux.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Creneaux.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Gestionnaire.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Gestionnaire.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/CreneauxController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/CreneauxController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/GestionnaireController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/GestionnaireController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/IndisponibiliteController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/IndisponibiliteController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/MaletteController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/MaletteController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/ReservationController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/ReservationController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Indisponibilite.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Indisponibilite.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Malette.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Malette.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Materiel.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Materiel.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Reservation.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Reservation.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/factories/ReservationFactory.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/factories/ReservationFactory.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2020_11_07_111417_create_reservations_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_11_07_111417_create_reservations_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2020_11_07_111439_create_est_pretes_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_11_07_111439_create_est_pretes_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Resources/GestionnaireResource.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Resources/GestionnaireResource.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/factories/EstPreteFactory.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/factories/EstPreteFactory.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/factories/IndisponibiliteFactory.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/factories/IndisponibiliteFactory.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/database/seeds/DatabaseSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeds/DatabaseSeeder.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/api.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/api.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -196,6 +184,11 @@
       <workItem from="1605692584042" duration="5287000" />
       <workItem from="1605778666866" duration="2877000" />
       <workItem from="1605782863905" duration="2653000" />
+      <workItem from="1605877693819" duration="6865000" />
+      <workItem from="1605946256632" duration="14369000" />
+      <workItem from="1606203860699" duration="7000" />
+      <workItem from="1606333840060" duration="6305000" />
+      <workItem from="1606380658295" duration="1478000" />
     </task>
     <task id="LOCAL-00001" summary="initial commit">
       <created>1604745505978</created>
@@ -288,7 +281,14 @@
       <option name="project" value="LOCAL" />
       <updated>1605647384699</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="beacuoup de modifs">
+      <created>1605877758531</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1605877758531</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -321,7 +321,8 @@
     <MESSAGE value="ajout controller pour gestionnaire, modif migration aussi et gestion d'envoi avec des ressources pour gestionnaire" />
     <MESSAGE value="commencement modif CreneauxController.php" />
     <MESSAGE value="ajout de rendez-vous, modif base de donnée pour ajout gestionnaire attitré a département et réservation" />
-    <option name="LAST_COMMIT_MESSAGE" value="ajout de rendez-vous, modif base de donnée pour ajout gestionnaire attitré a département et réservation" />
+    <MESSAGE value="beacuoup de modifs" />
+    <option name="LAST_COMMIT_MESSAGE" value="beacuoup de modifs" />
   </component>
   <component name="WindowStateProjectService">
     <state x="710" y="322" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1605371771537">
@@ -338,10 +339,11 @@
     </state>
     <state x="-820" y="260" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1920.1040/-1280.0.1280.984@-1280.0.1280.984" timestamp="1605780451057" />
     <state x="690" y="275" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1920.1040/-1280.0.1280.984@0.0.1920.1040" timestamp="1605457685989" />
-    <state x="-821" y="192" key="#com.jetbrains.php.refactoring.extractMethod.PhpExtractMethodDialog#method1" timestamp="1605785125115">
-      <screen x="-1280" y="0" width="1280" height="984" />
+    <state x="760" y="144" key="#com.jetbrains.php.refactoring.extractMethod.PhpExtractMethodDialog#method1" timestamp="1606335514262">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="-821" y="192" key="#com.jetbrains.php.refactoring.extractMethod.PhpExtractMethodDialog#method1/0.0.1920.1040/-1280.0.1280.984@-1280.0.1280.984" timestamp="1605785125115" />
+    <state x="760" y="144" key="#com.jetbrains.php.refactoring.extractMethod.PhpExtractMethodDialog#method1/0.0.1920.1040/-1280.0.1280.984@0.0.1920.1040" timestamp="1606335514262" />
     <state x="585" y="88" key="CommitChangelistDialog2" timestamp="1605647383844">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -354,6 +356,18 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="821" y="418" key="Github.ShareDialog/0.0.1920.1040/-1280.0.1280.984@0.0.1920.1040" timestamp="1605371701994" />
+    <state x="754" y="243" key="NewPhpClassDialog" timestamp="1605981146513">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="754" y="243" key="NewPhpClassDialog/0.0.1920.1040/-1280.0.1280.984@0.0.1920.1040" timestamp="1605981146513" />
+    <state x="794" y="443" key="NewPhpFileDialog" timestamp="1605981253522">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="794" y="443" key="NewPhpFileDialog/0.0.1920.1040/-1280.0.1280.984@0.0.1920.1040" timestamp="1605981253522" />
+    <state width="520" height="446" key="SwitcherDM" timestamp="1605948598993">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="520" height="446" key="SwitcherDM/0.0.1920.1040/-1280.0.1280.984@0.0.1920.1040" timestamp="1605948598993" />
     <state x="552" y="253" key="Vcs.Push.Dialog.v2" timestamp="1605647386521">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -362,10 +376,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="561" y="130" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/0.0.1920.1040/-1280.0.1280.984@0.0.1920.1040" timestamp="1605372313142" />
-    <state x="616" y="240" key="run.anything.popup" timestamp="1605368535972">
+    <state x="616" y="240" key="run.anything.popup" timestamp="1605882193591">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="616" y="240" key="run.anything.popup/0.0.1920.1040/-1280.0.1280.984@0.0.1920.1040" timestamp="1605368535972" />
+    <state x="616" y="240" key="run.anything.popup/0.0.1920.1040/-1280.0.1280.984@0.0.1920.1040" timestamp="1605882193591" />
     <state x="-865" y="213" width="672" height="642" key="search.everywhere.popup" timestamp="1605780350280">
       <screen x="-1280" y="0" width="1280" height="984" />
     </state>

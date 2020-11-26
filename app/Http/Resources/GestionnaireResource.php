@@ -20,7 +20,10 @@ class GestionnaireResource extends JsonResource
             "mail" => $this->mail,
             "id_univ" => $this->id_univ,
             "admin" => $this->admin,
-            "departement" => $this->departement
+            "departement" => $this->departement,
+            "rdvs"=>$this->rendezVous,
+            "creneaux"=>$this->creneaux,
+            "indisponibilites"=>$this->indisponibilites
         ];
     }
 }

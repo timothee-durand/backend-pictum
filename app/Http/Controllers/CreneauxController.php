@@ -21,6 +21,7 @@ class CreneauxController extends Controller
     /**
      * Store a newly created resource in storage.
      * Send an Array
+     * Send only creneaux who are used
      *
      * @param \Illuminate\Http\Request $request
      * @return \Illuminate\Http\Response

@@ -2,16 +2,26 @@
 
 namespace App\Http\Controllers;
 
-use App\Creneaux;
 use App\Gestionnaire;
 use App\Http\Resources\GestionnaireResource;
-use App\Indisponibilite;
 use App\Reservation;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 use function MongoDB\BSON\toJSON;
 
 class GestionnaireController extends Controller
 {
+    //variables globales pour simplifier le nombre de paramètres des fonctions
+
+    private $indexStartDay = 0;
+    private $startDay = null;
+    private $jourMax = 0;
+    //semaine commence lundi donc a 1
+    private $jourMin = 1;
+    private $indexEndWeek = 6;
+    private $jourOuvresCreneaux = [];
+    private $creneaux = [];
+
 
     /**
      * Display a listing of the resource.
@@ -51,17 +61,18 @@ class GestionnaireController extends Controller
         return $array_reponse;
     }
 
+
     /**
-     * Get the index of the day from a date
+     *Get the index of the day from a date
      * Semaine commence le dimanche : Di = 0, Lu = 1...
      * https://gist.github.com/samcrosoft/6550473
      *
-     * @param string $date
-     * @return false|string
+     * @param $date
+     * @return int
      */
     private function getWeekday($date)
     {
-        return date('w', strtotime($date));
+        return (int) date('w', strtotime($date));
     }
 
     /**
@@ -69,25 +80,201 @@ class GestionnaireController extends Controller
      *
      * @param $index_day
      * @param $start_date
+     * @param $index_start_day
+     * @param int $day_max
      * @return false|int
      */
-    private function getDateFromIndexDay($index_day, $start_date, $day_max = 7)
+    private function getDateFromIndexDay($index_day, $start_date)
     {
-        //si il est après dans la semaine
-        if($index_day >= $this->getWeekday($start_date)) {
+         //echo "start_day : ".$start_date." index :".$this->indexStartDay." indexday:".$index_day."\n";
+
+        if ($index_day >=  $this->indexStartDay) {
+            //si il est après dans la semaine
             $difdate = $index_day - $this->getWeekday($start_date);
-            $strindate = strtotime($start_date."+".$difdate." day");
-            return date("Y-m-d", $strindate);
-        }
-        else {
+
+            return date('Y-m-d', strtotime($start_date . " + " . $difdate . " days"));
+        } else {
             //on se replace par rapport au début de la semaine
-            $difdate = $index_day + ($day_max - $index_day) + $this->getWeekday($start_date);
-            $strindate = strtotime($start_date."+".$difdate." day");
+
+            //echo "difsem ".($index_day + ($this->indexEndWeek - $this->indexStartDay) + $this->jourMin)."\n";
+            $difdate = $index_day + ($this->indexEndWeek - $this->indexStartDay) + $this->jourMin;
+            $strindate = strtotime($start_date . "+" . $difdate . " day");
+
             return date("Y-m-d", $strindate);
         }
 
     }
 
+    /**
+     *
+     * Return next correct index day
+     *
+     * @param $indexDay
+     * @param $jourMax
+     * @param $jourMin
+     *
+     * @return int
+     */
+    function getNextIndexDay($indexDay) {
+            $indexDay++;
+
+            if($indexDay < $this->jourMin) {
+
+                $indexDay = $this->jourMin;
+            }
+
+            if($indexDay > $this->jourMax) {
+                $indexDay = $this->jourMin;
+            }
+
+            return $indexDay;
+    }
+
+    function getNextCreneaux ($indexStart, $numberCreneaux, $indisponibilites ) {
+
+        $indexStart = $this->getNextIndexDay($indexStart);
+
+        $creneauReturn = [];
+
+        //echo json_encode($indexStart)."\n";
+
+        do{
+            $creneauReturn [] = $this->findCreneau($indexStart, $indisponibilites);
+
+            if (count($creneauReturn) < $numberCreneaux) {
+
+                $indexStart =  $this->getNextIndexDay($indexStart);
+
+            }
+
+           echo"creneaureturn : ". json_encode($creneauReturn). 'indextsrat : '. $indexStart."\n";
+
+        } while (count($creneauReturn) < $numberCreneaux);
+
+        return $creneauReturn;
+
+    }
+
+    /**
+     *
+     * @param int $indexStart
+     * @param  $startDate
+
+     * @return array
+     */
+    public function findCreneau(int $indexStart, $indisponibilites)
+    {
+       // echo "this->creneaux".json_encode($this->creneaux)."\n";
+        foreach ($this->creneaux as $test) {
+            if ($test["jour"] == $indexStart) {
+                $creneauAjout = $test;
+                $creneauAjout["date"] = $this->getDateFromIndexDay($creneauAjout["jour"], $this->startDay);
+                echo "creneauAjout". json_encode($creneauAjout)."\n";
+
+                //ajuste le créneaux aux indisponibilités du gestionnaire
+                $creneauAjout = $this->verifyIndispo($creneauAjout, $indisponibilites);
+
+                return $creneauAjout;
+            }
+        }
+
+        return null;
+    }
+
+
+    /**
+     * @param $creneaux
+     *
+     * @return
+     */
+
+    private function getMaxDate($creneaux){
+        $maxDate = $this->startDay;
+
+
+        foreach ($creneaux as $creneau) {
+            //echo "dateTest : ".json_encode($creneau)."\n";
+            $dateTest = $creneau["date"];
+
+            if(Carbon::parse($dateTest)->isAfter($maxDate)) {
+                $maxDate = $dateTest;
+            }
+        }
+
+       // echo "maxDate : ".$maxDate."\n";
+
+        return $maxDate;
+    }
+
+    /**
+     * @param array $creneauToVerify
+     * @param array $indisponibilites
+     * @return array
+     */
+    private function verifyIndispo (array $creneauToVerify, $indisponibilites) {
+
+        $dateTimeDebut = Carbon::createFromFormat("Y-m-d", $creneauToVerify["date"]);
+        $dateTimeDebut->setTimeFromTimeString($creneauToVerify["heure_debut_matin"]);
+
+        $dateTimeFin = Carbon::createFromFormat("Y-m-d", $creneauToVerify["date"]);
+        $dateTimeFin->setTimeFromTimeString($creneauToVerify["heure_fin_am"]);
+
+
+        foreach ($indisponibilites as $indisponibilite) {
+            //echo "indispo :".json_encode($indisponibilite)."\n creneeau :".$dateTimeDebut->toDateTimeString()."->".$dateTimeFin->toDateTimeString()."\n";
+            $dateDebutIndispo = Carbon::createFromFormat("Y-m-d H:i:s", $indisponibilite["date_debut"]);
+            $dateFinIndispo = Carbon::createFromFormat("Y-m-d H:i:s", $indisponibilite["date_fin"]);
+
+
+            //on regarde si l'indisponibilité concerne le creneau
+            if($dateTimeDebut->isBetween($dateDebutIndispo, $dateFinIndispo) || $dateTimeFin->isBetween($dateDebutIndispo, $dateFinIndispo)){
+                echo "creneau : ".$dateTimeDebut->toDateTimeString()."->".$dateTimeFin->toDateTimeString(),", indispo : ".$dateDebutIndispo->toDateTimeString()."->".$dateFinIndispo->toDateTimeString()."\n";
+
+                if($dateTimeDebut->isBefore($dateDebutIndispo)){
+                    //si cela commence pendant le creneau
+                    echo "before";
+
+                    if (Carbon::parse($dateDebutIndispo->toDateTimeString())->isBetween($creneauToVerify["heure_debut_matin"],$creneauToVerify["heure_fin_matin"])) {
+                        //et que cela commence le matin
+                        $creneauToVerify["heure_fin_matin"] = $dateDebutIndispo->toTimeString();
+                    }
+
+                    if (Carbon::parse($dateDebutIndispo->toDateTimeString())->isBetween($creneauToVerify["heure_debut_am"],$creneauToVerify["heure_fin_am"])) {
+                        //et que cela commence l'après-midi
+                        $creneauToVerify["heure_fin_am"] = $dateDebutIndispo->toTimeString();
+                    }
+                }
+
+                if($dateTimeDebut->isAfter($dateDebutIndispo) && $dateTimeFin->isBefore($dateFinIndispo)) {
+                    //si c'est pendant l'indisponibilité
+                    //on change le créneau pour qu'il soit le prochain jour ouvré dispo
+                    echo"between"."\n";
+
+                    $creneauToVerify = $this->getNextCreneaux($this->getWeekday($this->getMaxDate($this->jourOuvresCreneaux)), 1, $indisponibilites);
+
+                    // echo "jourouvre2".json_encode($creneau)."\n";
+                }
+
+                if($dateTimeFin->isAfter($dateFinIndispo)) {
+                    //si l'indisponibilité se finit avant la fin du creneau
+                    echo"after";
+
+                    if (Carbon::parse($dateDebutIndispo->toDateTimeString())->isBetween($creneauToVerify["heure_debut_matin"],$creneauToVerify["heure_fin_matin"])) {
+                        //et que ca se finit pendant le matin
+                        $creneauToVerify["heure_debut_matin"] = $dateDebutIndispo->toTimeString();
+                    }
+
+                    if (Carbon::parse($dateDebutIndispo->toDateTimeString())->isBetween($creneauToVerify["heure_debut_am"],$creneauToVerify["heure_fin_am"])) {
+                        //et que ca se finit pendant l'après-midi
+                        $creneauToVerify["heure_debut_am"] = $dateDebutIndispo->toTimeString();
+                    }
+                }
+
+            }
+        }
+
+        return $creneauToVerify;
+    }
 
     /**
      *
@@ -100,65 +287,118 @@ class GestionnaireController extends Controller
 
     public function getRendezVous(Request $request, $id)
     {
-        $creneaux = Creneaux::where("gestionnaire_id", $id)->get();
-        $indisponibilites = Indisponibilite::where("gestionnaire_id", $id)->get();
+        $gestionnaires = new GestionnaireResource(Gestionnaire::find($id));
 
-        echo "indisponibilites :".$indisponibilites->toJSON(JSON_PRETTY_PRINT);
+        $this->creneaux =  $gestionnaires->creneaux->toArray();
+        $indisponibilites = $gestionnaires->indisponibilites;
+//        $rdvExistants = $gestionnaires->rdvs;
+//
+//        dd($rdvExistants);
 
-        //jour de demande : un int
-        $startDay = $request->input("start_day");
-        $startDayIndex = $this->getWeekday($startDay);
+        //echo "inds:" . json_encode($this-> ). "\n";
+
+        //jour de demande : une date
+        $this->startDay = $request->input("start_day");
+        $this->indexStartDay = $this->getWeekday($this->startDay);
+
+
 
         //fait un tableau contenant les jours ouvrés possibles avec date correspondantes
-        $joursOuvresCreneaux = array();
+        $this->jourOuvresCreneaux = [$this->findCreneau($this->indexStartDay, $indisponibilites)];
 
-        $indexJoursOuvres = array();
-        $indexJoursOuvres[] = (object)["index" => $startDayIndex, "date" => $startDay];
+//        $indexJoursOuvres = array();
+//        $indexJoursOuvres[] = (object)["index" => $startDayIndex, "date" => $startDay];
 
         //on regarde quel est le jour ou la semaine se termine ==> ou il n'y a plus de creneaux
-        $jourMax = 0;
-        foreach ($creneaux as $creneau) {
-            if ($creneau->jour > $jourMax) {
-                $jourMax = $creneau->jour;
+        foreach ($this->creneaux as $creneau) {
+            if ($creneau["jour"] > $this->jourMax) {
+                $this->jourMax =  $creneau["jour"];
             }
         }
 
-        //regarde quels jours de la semaine sont les 2 jours ouvrés après le jour de départ
-        $indexJour = $startDayIndex + 1;
+        //on ajoute les 2 jours ouvrés suivant
+        $this->jourOuvresCreneaux = array_merge($this->jourOuvresCreneaux, $this->getNextCreneaux($this->indexStartDay, 2, $indisponibilites)) ;
 
-        for ($i = 0; $i < 2; $i++) {
-            //vérifie si le jour est dans l'interval de la semaine
-            if ($indexJour >= 0 && $indexJour <= $jourMax) {
-                //si oui on le rajoute au tableau de jours
-                $indexJoursOuvres[] = (object)["index" => $indexJour, "date" => $this->getDateFromIndexDay($indexJour, $startDay)];
-            } else {
-                //sinon on retourne au début de la semaine
-                $indexJour = 0;
-                //puis on rajoute
-                $indexJoursOuvres[] = (object)["index" => $indexJour, "date" => $this->getDateFromIndexDay($indexJour, $startDay)];
-            }
-            //echo $this->getDateFromIndexDay($indexJour, $startDay)."\n";
-            $indexJour++;
-        }
+        echo "jourouvrecreb :" . json_encode($this->jourOuvresCreneaux) . "\n";
 
-        //puis on ne garde que les crenaux dont les jours correspondent
-        foreach ($creneaux as $creneau) {
-            foreach ($indexJoursOuvres as $indexJour) {
-                if ($creneau->jour == $indexJour->index) {
-                    $joursOuvresCreneaux[] = $creneau;
-                }
-            }
-        }
+        //echo "indispo".json_encode($indisponibilites)."\n";
+
+  //      foreach ($this->jourOuvresCreneaux as $joursOuvresCreneau) {
+//
+//            $dateTimeDebut = Carbon::createFromFormat("Y-m-d", $joursOuvresCreneau["date"]);
+//            $dateTimeDebut->setTimeFromTimeString($joursOuvresCreneau["heure_debut_matin"]);
+//
+//            $dateTimeFin = Carbon::createFromFormat("Y-m-d", $joursOuvresCreneau["date"]);
+//            $dateTimeFin->setTimeFromTimeString($joursOuvresCreneau["heure_fin_am"]);
+//
+//
+//            foreach ($indisponibilites as $indisponibilite) {
+//                //echo "indispo :".json_encode($indisponibilite)."\n creneeau :".$dateTimeDebut->toDateTimeString()."->".$dateTimeFin->toDateTimeString()."\n";
+//                $dateDebutIndispo = Carbon::createFromFormat("Y-m-d H:i:s", $indisponibilite["date_debut"]);
+//                $dateFinIndispo = Carbon::createFromFormat("Y-m-d H:i:s", $indisponibilite["date_fin"]);
+//
+//
+//                //on regarde si l'indisponibilité concerne le creneau
+//                if($dateTimeDebut->isBetween($dateDebutIndispo, $dateFinIndispo) || $dateTimeFin->isBetween($dateDebutIndispo, $dateFinIndispo)){
+//                    echo "creneau : ".$dateTimeDebut->toDateTimeString()."->".$dateTimeFin->toDateTimeString(),", indispo : ".$dateDebutIndispo->toDateTimeString()."->".$dateFinIndispo->toDateTimeString()."\n";
+//
+//
+//                    if($dateTimeDebut->isBefore($dateDebutIndispo)){
+//                        //si cela commence pendant le creneau
+//                        echo "before";
+//
+//                        if (Carbon::parse($dateDebutIndispo->toDateTimeString())->isBetween($joursOuvresCreneau["heure_debut_matin"],$joursOuvresCreneau["heure_fin_matin"])) {
+//                            //et que cela commence le matin
+//                            $joursOuvresCreneau["heure_fin_matin"] = $dateDebutIndispo->toTimeString();
+//                        }
+//
+//                        if (Carbon::parse($dateDebutIndispo->toDateTimeString())->isBetween($joursOuvresCreneau["heure_debut_am"],$joursOuvresCreneau["heure_fin_am"])) {
+//                            //et que cela commence l'après-midi
+//                            $joursOuvresCreneau["heure_fin_am"] = $dateDebutIndispo->toTimeString();
+//                        }
+//                    }
+//
+//                    if($dateTimeDebut->isAfter($dateDebutIndispo) && $dateTimeFin->isBefore($dateFinIndispo)) {
+//                        //si c'est pendant l'indisponibilité
+//                        //on change le créneau pour qu'il soit le prochain jour ouvré dispo
+//                        echo"between"."\n";
+//
+//                        $joursOuvresCreneaux [] = $this->getNextCreneaux($this->getWeekday($this->getMaxDate($joursOuvresCreneaux)),$this->creneaux, 1);
+//
+//                        unset ($joursOuvresCreneau);
+//
+//                       // echo "jourouvre2".json_encode($joursOuvresCreneau)."\n";
+//                    }
+//
+//                    if($dateTimeFin->isAfter($dateFinIndispo)) {
+//                        //si l'indisponibilité se finit avant la fin du creneau
+//                        echo"after";
+//
+//                        if (Carbon::parse($dateDebutIndispo->toDateTimeString())->isBetween($joursOuvresCreneau["heure_debut_matin"],$joursOuvresCreneau["heure_fin_matin"])) {
+//                            //et que ca se finit pendant le matin
+//                            $joursOuvresCreneau["heure_debut_matin"] = $dateDebutIndispo->toTimeString();
+//                        }
+//
+//                        if (Carbon::parse($dateDebutIndispo->toDateTimeString())->isBetween($joursOuvresCreneau["heure_debut_am"],$joursOuvresCreneau["heure_fin_am"])) {
+//                            //et que ca se finit pendant l'après-midi
+//                            $joursOuvresCreneau["heure_debut_am"] = $dateDebutIndispo->toTimeString();
+//                        }
+//                    }
+//
+//                }
+//            }
+
+     //   }
 
 
         //enfin on fait les rendez-vous pour chaque jours
         $arrayRDV = array();
-        foreach ($joursOuvresCreneaux as $jour) {
+        foreach ($this->jourOuvresCreneaux as $jour) {
             $jourR = array();
-            $jourR["indexJour"] = $jour->jour;
-
-            $jourR["rdvMatin"] = $this->getRendezVousFromPeriod($jour->heure_debut_matin, $jour->heure_fin_matin, "10");
-            $jourR["rdvAm"] = $this->getRendezVousFromPeriod($jour->heure_debut_am, $jour->heure_fin_am, "10");
+            $jourR["indexJour"] = $jour["jour"];
+            $jourR["date_jour"] = $jour["date"];
+            $jourR["rdvMatin"] = $this->getRendezVousFromPeriod($jour["heure_debut_matin"], $jour["heure_fin_matin"], "10");
+            $jourR["rdvAm"] = $this->getRendezVousFromPeriod($jour["heure_debut_matin"], $jour["heure_fin_matin"], "10");
 
             $arrayRDV[] = (object)$jourR;
         }
@@ -265,4 +505,6 @@ class GestionnaireController extends Controller
 
         }
     }
+
+
 }

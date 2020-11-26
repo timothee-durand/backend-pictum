@@ -21,6 +21,6 @@ class DatabaseSeeder extends Seeder
         factory(\App\EstPrete::class, 100)->create();
 
         factory(\App\Creneaux::class, 35)->create();
-        factory(\App\Indisponibilite::class, 10)->create();
+        factory(\App\Indisponibilite::class, 20)->create();
     }
 }
