@@ -13,11 +13,11 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c2fc254d-4c34-4822-9cbb-ed6000c1b396" name="Default Changelist" comment="principalement pour la gestion de la genération des rdv">
+    <list default="true" id="c2fc254d-4c34-4822-9cbb-ed6000c1b396" name="Default Changelist" comment="finalisation de la route de demande de rendez-vous">
+      <change afterPath="$PROJECT_DIR$/app/Http/Resources/MaterielResource.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Gestionnaire.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Gestionnaire.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/GestionnaireController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/GestionnaireController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Resources/GestionnaireResource.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Resources/GestionnaireResource.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/MaterielController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/MaterielController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Materiel.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Materiel.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -185,7 +185,8 @@
       <workItem from="1605946256632" duration="14369000" />
       <workItem from="1606203860699" duration="7000" />
       <workItem from="1606333840060" duration="6305000" />
-      <workItem from="1606380658295" duration="16279000" />
+      <workItem from="1606380658295" duration="16330000" />
+      <workItem from="1606464824637" duration="1009000" />
     </task>
     <task id="LOCAL-00001" summary="initial commit">
       <created>1604745505978</created>
@@ -292,7 +293,14 @@
       <option name="project" value="LOCAL" />
       <updated>1606382410239</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="finalisation de la route de demande de rendez-vous">
+      <created>1606410420078</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1606410420078</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -327,7 +335,8 @@
     <MESSAGE value="ajout de rendez-vous, modif base de donnée pour ajout gestionnaire attitré a département et réservation" />
     <MESSAGE value="beacuoup de modifs" />
     <MESSAGE value="principalement pour la gestion de la genération des rdv" />
-    <option name="LAST_COMMIT_MESSAGE" value="principalement pour la gestion de la genération des rdv" />
+    <MESSAGE value="finalisation de la route de demande de rendez-vous" />
+    <option name="LAST_COMMIT_MESSAGE" value="finalisation de la route de demande de rendez-vous" />
   </component>
   <component name="WindowStateProjectService">
     <state x="710" y="322" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1605371771537">
@@ -377,10 +386,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="520" height="446" key="SwitcherDM/0.0.1920.1040/-1280.0.1280.984@0.0.1920.1040" timestamp="1605948598993" />
-    <state x="552" y="253" key="Vcs.Push.Dialog.v2" timestamp="1606382413336">
+    <state x="552" y="253" key="Vcs.Push.Dialog.v2" timestamp="1606410437100">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040/-1280.0.1280.984@0.0.1920.1040" timestamp="1606382413336" />
+    <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040/-1280.0.1280.984@0.0.1920.1040" timestamp="1606410437100" />
     <state x="561" y="130" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1605372313142">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>

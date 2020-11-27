@@ -37,4 +37,8 @@ class Materiel extends Model
     public function gestionnaire() {
         return $this->hasOneThrough("App\Gestionnaire", "App\Departement");
     }
+
+    public function type() {
+        return $this->belongsTo("App\Type");
+    }
 }
