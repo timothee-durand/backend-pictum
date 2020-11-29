@@ -27,6 +27,7 @@ class MaterielResource extends JsonResource
             "malette" => $this->malette,
             "departement" => $this->departement,
             "prets"=>$this->est_prete,
+            "jour_dispo"=>$this->dayDispo()
         ];
     }
 }

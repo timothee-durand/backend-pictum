@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Resources\MaterielResource;
 use App\Materiel;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 use function MongoDB\BSON\toJSON;
@@ -92,8 +93,7 @@ class MaterielController extends Controller
     }
 
 
-    private function getDisponibilite($id) {
 
 
-    }
+
 }

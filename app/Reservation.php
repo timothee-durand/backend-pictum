@@ -2,6 +2,8 @@
 
 namespace App;
 
+use App\Events\ReservationCreationEvent;
+use App\Listeners\ReservationCreation;
 use Illuminate\Database\Eloquent\Model;
 
 class Reservation extends Model
@@ -16,6 +18,10 @@ class Reservation extends Model
         "mail_emprunteur",
         "id_univ_emprunteur",
         "raison_pro"
+    ];
+
+    protected $dispatchesEvents = [
+        "created"=>ReservationCreationEvent::class
     ];
 
     /**

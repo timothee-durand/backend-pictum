@@ -37,6 +37,7 @@ class ReservationController extends Controller
             "prenom_emprunteur"=>$request->input("prenom_emprunteur"),
             "mail_emprunteur"=>$request->input("mail_emprunteur"),
             "id_univ_emprunteur"=>$request->input("id_univ_emprunteur"),
+            "raison_pro"=>$request->input("raison_pro")
         ]);
 
         if ($reservation->save()) {

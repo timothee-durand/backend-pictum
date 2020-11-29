@@ -32,3 +32,11 @@ Route::prefix("creneaux")->group(function(){
     Route::put("/", "CreneauxController@update");
 });
 
+Route::get("mail/test", function () {
+    return new App\Mail\Contact([
+        'nom' => 'Durand',
+        'email' => 'durand@chezlui.com',
+        'message' => 'Je voulais vous dire que votre site est magnifique !'
+    ]);
+});
+

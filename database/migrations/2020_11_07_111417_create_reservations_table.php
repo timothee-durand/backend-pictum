@@ -21,7 +21,7 @@ class CreateReservationsTable extends Migration
             $table->string("nom_emprunteur", 32);
             $table->string("prenom_emprunteur", 32);
             $table->string("mail_emprunteur", 100);
-            $table->string("raison_pro", 300);
+            $table->string("raison_pro", 300)->nullable();
             $table->integer("id_univ_emprunteur");
         });
     }

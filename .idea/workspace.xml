@@ -13,11 +13,38 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c2fc254d-4c34-4822-9cbb-ed6000c1b396" name="Default Changelist" comment="finalisation de la route de demande de rendez-vous">
-      <change afterPath="$PROJECT_DIR$/app/Http/Resources/MaterielResource.php" afterDir="false" />
+    <list default="true" id="c2fc254d-4c34-4822-9cbb-ed6000c1b396" name="Default Changelist" comment="mise à jour materiel controller">
+      <change afterPath="$PROJECT_DIR$/app/Events/ReservationCreationEvent.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/TestMailController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Jobs/SendMail.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Listeners/ReservationCreation.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Mail/Contact.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Mail/ReservationCreation.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/config/sanctum.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database/migrations/2019_12_14_000001_create_personal_access_tokens_table.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database/migrations/2020_11_29_193054_create_jobs_table.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database/migrations/2020_11_29_195258_create_failed_jobs_table.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/public/favicon.ico" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/public/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/emails/reservation-creation.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/emails/test.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/backend-pictum.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/backend-pictum.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/MaterielController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/MaterielController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/ReservationController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/ReservationController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Kernel.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Kernel.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Resources/MaterielResource.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Resources/MaterielResource.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Materiel.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Materiel.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Providers/EventServiceProvider.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Providers/EventServiceProvider.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Reservation.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Reservation.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/cors.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/cors.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2020_11_07_111417_create_reservations_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_11_07_111417_create_reservations_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/web.config" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/api.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/api.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -139,6 +166,7 @@
       <path value="$PROJECT_DIR$/vendor/nesbot/carbon" />
       <path value="$PROJECT_DIR$/vendor/ralouphie/getallheaders" />
       <path value="$PROJECT_DIR$/vendor/phar-io/manifest" />
+      <path value="$PROJECT_DIR$/vendor/laravel/sanctum" />
     </include_path>
   </component>
   <component name="ProjectId" id="1jxUt08eyzngbbNGzvPfTHPTvtv" />
@@ -154,8 +182,14 @@
     <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/public" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="vue.rearranger.settings.migration" value="true" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\laragon\www\backend-pictum\public" />
+    </key>
   </component>
   <component name="RunManager">
     <configuration name="phpunit.xml" type="PHPUnitRunConfigurationType" factoryName="PHPUnit">
@@ -186,7 +220,10 @@
       <workItem from="1606203860699" duration="7000" />
       <workItem from="1606333840060" duration="6305000" />
       <workItem from="1606380658295" duration="16330000" />
-      <workItem from="1606464824637" duration="1009000" />
+      <workItem from="1606464824637" duration="4613000" />
+      <workItem from="1606554503093" duration="7459000" />
+      <workItem from="1606592256081" duration="64000" />
+      <workItem from="1606670872640" duration="5956000" />
     </task>
     <task id="LOCAL-00001" summary="initial commit">
       <created>1604745505978</created>
@@ -300,7 +337,14 @@
       <option name="project" value="LOCAL" />
       <updated>1606410420078</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="mise à jour materiel controller">
+      <created>1606465949309</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1606465949309</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -336,13 +380,15 @@
     <MESSAGE value="beacuoup de modifs" />
     <MESSAGE value="principalement pour la gestion de la genération des rdv" />
     <MESSAGE value="finalisation de la route de demande de rendez-vous" />
-    <option name="LAST_COMMIT_MESSAGE" value="finalisation de la route de demande de rendez-vous" />
+    <MESSAGE value="mise à jour materiel controller" />
+    <option name="LAST_COMMIT_MESSAGE" value="mise à jour materiel controller" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="710" y="322" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1605371771537">
+    <state x="710" y="322" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1606671118227">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="710" y="322" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1920.1040/-1280.0.1280.984@0.0.1920.1040" timestamp="1605371771537" />
+    <state x="710" y="322" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1606671118227" />
     <state x="765" y="202" key="#com.intellij.ide.util.MemberChooser" timestamp="1606406678667">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -352,11 +398,11 @@
     </state>
     <state x="-943" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1920.1040/-1280.0.1280.984@-1280.0.1280.984" timestamp="1605367394352" />
     <state x="506" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1920.1040/-1280.0.1280.984@0.0.1920.1040" timestamp="1605632617513" />
-    <state x="-820" y="260" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1605780451057">
-      <screen x="-1280" y="0" width="1280" height="984" />
+    <state x="690" y="275" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1606467869310">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="-820" y="260" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1920.1040/-1280.0.1280.984@-1280.0.1280.984" timestamp="1605780451057" />
-    <state x="690" y="275" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1920.1040/-1280.0.1280.984@0.0.1920.1040" timestamp="1605457685989" />
+    <state x="690" y="275" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1920.1040/-1280.0.1280.984@0.0.1920.1040" timestamp="1606467869310" />
     <state x="760" y="144" key="#com.jetbrains.php.refactoring.extractMethod.PhpExtractMethodDialog#method1" timestamp="1606335514262">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -370,6 +416,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="92" y="92" width="1736" height="856" key="DiffContextDialog/0.0.1920.1040/-1280.0.1280.984@0.0.1920.1040" timestamp="1605630802028" />
+    <state x="740" y="262" key="FileChooserDialogImpl" timestamp="1606592307500">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="740" y="262" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1606592307500" />
     <state x="821" y="418" key="Github.ShareDialog" timestamp="1605371701994">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -386,10 +436,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="520" height="446" key="SwitcherDM/0.0.1920.1040/-1280.0.1280.984@0.0.1920.1040" timestamp="1605948598993" />
-    <state x="552" y="253" key="Vcs.Push.Dialog.v2" timestamp="1606410437100">
+    <state x="552" y="253" key="Vcs.Push.Dialog.v2" timestamp="1606465958733">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040/-1280.0.1280.984@0.0.1920.1040" timestamp="1606410437100" />
+    <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040/-1280.0.1280.984@0.0.1920.1040" timestamp="1606465958733" />
     <state x="561" y="130" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1605372313142">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
