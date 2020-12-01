@@ -13,22 +13,24 @@ use Illuminate\Support\Facades\Route;
 | is assigned the "api" middleware group. Enjoy building your API!
 |
 */
+Route::group(['middleware' => ['cors', 'json.response']], function () {
+    //routes api
+    Route::apiResource('types', 'TypeController');
+    Route::apiResource('blacklists', 'BlacklistController');
+    Route::apiResource('malettes', 'MaletteController');
+    Route::apiResource('departements', 'DepartementController');
+    Route::apiResource('reservations', 'ReservationController');
+    Route::apiResource('estpretes', 'EstPreteController');
+    Route::apiResource('materiels', 'MaterielController');
+    Route::apiResource('gestionnaires', 'GestionnaireController');
+    Route::apiResource('indisponibilites', 'IndisponibiliteController');
 
-//routes api
-Route::apiResource('types', 'TypeController');
-Route::apiResource('blacklists', 'BlacklistController');
-Route::apiResource('malettes', 'MaletteController');
-Route::apiResource('departements', 'DepartementController');
-Route::apiResource('reservations', 'ReservationController');
-Route::apiResource('estpretes', 'EstPreteController');
-Route::apiResource('materiels', 'MaterielController');
-Route::apiResource('gestionnaires', 'GestionnaireController');
-Route::apiResource('indisponibilites', 'IndisponibiliteController');
-
-Route::get("gestionnaires/{id}/rdv", "GestionnaireController@getRendezVous");
-Route::prefix("creneaux")->group(function(){
-    Route::get("/", "CreneauxController@index");
-    Route::post("/", "CreneauxController@store");
-    Route::put("/", "CreneauxController@update");
+    Route::get("gestionnaires/{id}/rdv", "GestionnaireController@getRendezVous");
+    Route::prefix("creneaux")->group(function(){
+        Route::get("/", "CreneauxController@index");
+        Route::post("/", "CreneauxController@store");
+        Route::put("/", "CreneauxController@update");
+    });
 });
+
 
