@@ -13,6 +13,6 @@ $factory->define(Reservation::class, function (Faker $faker) {
         "prenom_emprunteur"=>$faker->lastName,
         "mail_emprunteur"=>$faker->email,
         "raison_pro"=>$faker->realText(250),
-        "id_univ_emprunteur"=>$faker->randomElement([06574, 98467, 3748, 34563])
+        "id_univ_emprunteur"=>$faker->userName
     ];
 });

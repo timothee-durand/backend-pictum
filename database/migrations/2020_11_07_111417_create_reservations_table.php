@@ -22,7 +22,7 @@ class CreateReservationsTable extends Migration
             $table->string("prenom_emprunteur", 32);
             $table->string("mail_emprunteur", 100);
             $table->string("raison_pro", 300);
-            $table->integer("id_univ_emprunteur");
+            $table->string("id_univ_emprunteur")->unique();
         });
     }
 
