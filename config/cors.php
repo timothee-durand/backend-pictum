@@ -15,11 +15,10 @@ return [
     |
     */
 
-    'paths' => ['api/*'],
 
     'allowed_methods' => ['*'],
 
-    'allowed_origins' => ['*'],
+    'allowed_origins' => ['http://app.backend-pictum.test:8080'],
 
     'allowed_origins_patterns' => [],
 
@@ -29,6 +28,13 @@ return [
 
     'max_age' => 0,
 
-    'supports_credentials' => false,
+    'paths' => [
+        'api/*',
+        '/login',
+        '/logout',
+        '/sanctum/csrf-cookie'
+    ],
+
+    'supports_credentials' => true,
 
 ];

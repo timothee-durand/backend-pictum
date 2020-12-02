@@ -41,11 +41,17 @@ return [
             'provider' => 'users',
         ],
 
-        'api' => [
+        /*pour les authentification non administrative*/
+
+        'res' => [
             'driver' => 'token',
             'provider' => 'users',
             'hash' => false,
         ],
+
+        /*pour les authentifications admin*/
+
+
     ],
 
     /*
@@ -66,15 +72,16 @@ return [
     */
 
     'providers' => [
-        'users' => [
+        'gestionnaire' => [
             'driver' => 'eloquent',
-            'model' => App\User::class,
+            'model' => App\Gestionnaire::class,
         ],
 
-        // 'users' => [
-        //     'driver' => 'database',
-        //     'table' => 'users',
-        // ],
+        'reservation' => [
+            'driver' => 'eloquent',
+            'model' => App\Reservation::class,
+        ],
+
     ],
 
     /*
