@@ -1,6 +1,5 @@
 <?php
 
-use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -14,29 +13,48 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-//routes api
-Route::apiResource('types', 'TypeController');
-Route::apiResource('blacklists', 'BlacklistController');
-Route::apiResource('malettes', 'MaletteController');
-Route::apiResource('departements', 'DepartementController');
-Route::apiResource('reservations', 'ReservationController');
-Route::apiResource('estpretes', 'EstPreteController');
-Route::apiResource('materiels', 'MaterielController');
-Route::apiResource('gestionnaires', 'GestionnaireController');
-Route::apiResource('indisponibilites', 'IndisponibiliteController');
+Route::middleware(['cors', 'force.json'])->group(function () {
+    Route::middleware(['auth:sanctum'])->group(function () {
+        //routes api
+        Route::apiResource('types', 'TypeController', ["only"=>["index", "show"]]);
+        Route::apiResource('blacklists', 'BlacklistController', ["only"=>["index", "show"]]);
+        Route::apiResource('malettes', 'MaletteController', ["only"=>["index", "show"]]);
+        Route::apiResource('departements', 'DepartementController', ["only"=>["index", "show"]]);
+        Route::apiResource('reservations', 'ReservationController', ["only"=>["index", "show"]]);
+        Route::apiResource('estpretes', 'EstPreteController', ["only"=>["index", "show"]]);
+        Route::apiResource('materiels', 'MaterielController', ["only"=>["index", "show"]]);
+        Route::apiResource('gestionnaires', 'GestionnaireController', ["only"=>["index", "show"]]);
+        Route::apiResource('indisponibilites', 'IndisponibiliteController', ["only"=>["index", "show"]]);
+        Route::apiResource('creneaux', 'CreneauxController', ["only"=>["index"]]);
 
-Route::get("gestionnaires/{id}/rdv", "GestionnaireController@getRendezVous");
-Route::prefix("creneaux")->group(function(){
-    Route::get("/", "CreneauxController@index");
-    Route::post("/", "CreneauxController@store");
-    Route::put("/", "CreneauxController@update");
+        Route::get("gestionnaires/{id}/rdv", "GestionnaireController@getRendezVous");
+
+
+        Route::middleware("only.gest")->group(function () {
+
+            Route::post("send-mail", "MailPersoController@makeMailPerso");
+
+            Route::apiResources([
+                'types' => 'TypeController',
+                'blacklists' => 'BlacklistController',
+                'malettes' => 'MaletteController',
+                'departements' => 'DepartementController',
+                'materiels' => 'MaterielController',
+                'gestionnaires' => 'GestionnaireController',
+                'indisponibilites' => 'IndisponibiliteController'
+            ],
+            ['only'=>["store", "update", "destroy"]]);
+
+            Route::apiResource('creneaux', 'CreneauxController', ["only"=>["store", "update"]]);
+
+
+        });
+    });
+
+    Route::post('login', "LoginController@login");
+
+
 });
 
-Route::get("mail/test", function () {
-    return new App\Mail\Contact([
-        'nom' => 'Durand',
-        'email' => 'durand@chezlui.com',
-        'message' => 'Je voulais vous dire que votre site est magnifique !'
-    ]);
-});
+
 
