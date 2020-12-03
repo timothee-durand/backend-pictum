@@ -5,18 +5,22 @@ namespace App;
 use App\Events\ReservationCreationEvent;
 use App\Listeners\ReservationCreation;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Foundation\Auth\User as Authenticatable;
+use Laravel\Sanctum\HasApiTokens;
 
-class Reservation extends Model
+class Reservation extends Authenticatable
 {
+    use HasApiTokens;
+    protected $guard = 'res';
     protected $table = "reservation";
 
     protected $fillable = [
         "valide",
         "prof",
-        "nom_emprunteur",
-        "prenom_emprunteur",
-        "mail_emprunteur",
-        "id_univ_emprunteur",
+        "nom",
+        "prenom",
+        "mail",
+        "id_univ",
         "raison_pro"
     ];
 

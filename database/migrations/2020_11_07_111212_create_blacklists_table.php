@@ -19,7 +19,7 @@ class CreateBlacklistsTable extends Migration
             $table->string("nom", 32);
             $table->string("prenom", 32);
             $table->string("mail", 100);
-            $table->integer("id_univ");
+            $table->string("id_univ")->unique();
         });
     }
 

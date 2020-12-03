@@ -38,14 +38,23 @@ return [
     'guards' => [
         'web' => [
             'driver' => 'session',
-            'provider' => 'users',
+            'provider' => 'gestionnaire',
         ],
 
-        'api' => [
-            'driver' => 'token',
-            'provider' => 'users',
-            'hash' => false,
+        /*pour les authentification non administrative*/
+
+        'res' => [
+            'driver' => 'session',
+            'provider' => 'reservation',
         ],
+
+        /*pour les authentifications admin*/
+
+        'gest' => [
+            'driver' => 'session',
+            'provider' => 'gestionnaire',
+        ],
+
     ],
 
     /*
@@ -66,15 +75,16 @@ return [
     */
 
     'providers' => [
-        'users' => [
+        'gestionnaire' => [
             'driver' => 'eloquent',
-            'model' => App\User::class,
+            'model' => App\Gestionnaire::class,
         ],
 
-        // 'users' => [
-        //     'driver' => 'database',
-        //     'table' => 'users',
-        // ],
+        'reservation' => [
+            'driver' => 'eloquent',
+            'model' => App\Reservation::class,
+        ],
+
     ],
 
     /*
