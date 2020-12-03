@@ -38,19 +38,22 @@ return [
     'guards' => [
         'web' => [
             'driver' => 'session',
-            'provider' => 'users',
+            'provider' => 'gestionnaire',
         ],
 
         /*pour les authentification non administrative*/
 
         'res' => [
-            'driver' => 'token',
-            'provider' => 'users',
-            'hash' => false,
+            'driver' => 'session',
+            'provider' => 'reservation',
         ],
 
         /*pour les authentifications admin*/
 
+        'gest' => [
+            'driver' => 'session',
+            'provider' => 'gestionnaire',
+        ],
 
     ],
 

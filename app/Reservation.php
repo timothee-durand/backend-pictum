@@ -3,18 +3,20 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Foundation\Auth\User as Authenticatable;
 
-class Reservation extends Model
+class Reservation extends Authenticatable
 {
+    protected $guard = 'res';
     protected $table = "reservation";
 
     protected $fillable = [
         "valide",
         "prof",
-        "nom_emprunteur",
-        "prenom_emprunteur",
-        "mail_emprunteur",
-        "id_univ_emprunteur",
+        "nom",
+        "prenom",
+        "mail",
+        "id_univ",
         "raison_pro"
     ];
 

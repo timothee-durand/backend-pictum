@@ -18,11 +18,11 @@ class CreateReservationsTable extends Migration
             $table->timestamps();
             $table->boolean("valide")->default(true);
             $table->boolean("prof")->default(false);
-            $table->string("nom_emprunteur", 32);
-            $table->string("prenom_emprunteur", 32);
-            $table->string("mail_emprunteur", 100);
+            $table->string("nom", 32);
+            $table->string("prenom", 32);
+            $table->string("mail", 100);
             $table->string("raison_pro", 300);
-            $table->string("id_univ_emprunteur")->unique();
+            $table->string("id_univ")->unique();
         });
     }
 

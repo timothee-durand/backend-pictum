@@ -3,9 +3,11 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Foundation\Auth\User as Authenticatable;
 
-class Gestionnaire extends Model
+class Gestionnaire extends Authenticatable
 {
+    protected $guard = "gest";
     protected $table = "gestionnaire";
     protected $fillable = [
         "nom",

@@ -9,10 +9,10 @@ $factory->define(Reservation::class, function (Faker $faker) {
     return [
         "valide"=>$faker->boolean(50),
         "prof"=> $faker->boolean(30),
-        "nom_emprunteur"=> $faker->firstName,
-        "prenom_emprunteur"=>$faker->lastName,
-        "mail_emprunteur"=>$faker->email,
+        "nom"=> $faker->firstName,
+        "prenom"=>$faker->lastName,
+        "mail"=>$faker->email,
         "raison_pro"=>$faker->realText(250),
-        "id_univ_emprunteur"=>$faker->userName
+        "id_univ"=>$faker->userName
     ];
 });

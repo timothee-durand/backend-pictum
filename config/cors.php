@@ -18,7 +18,7 @@ return [
 
     'allowed_methods' => ['*'],
 
-    'allowed_origins' => ['http://app.backend-pictum.test:8080'],
+    'allowed_origins' => ['*'],
 
     'allowed_origins_patterns' => [],
 
