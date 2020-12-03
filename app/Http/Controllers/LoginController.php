@@ -31,24 +31,36 @@ class LoginController extends Controller
         if($username === $this->notFind || $username === $this->blackliste) {
             //si pas trouvé ou blacklisté
             return response($username, 403);
+
         } else {
             //sinon je l'authentifie
-            //echo json_encode($username);
+
             //on regarde si c'est un gestionnaire ou une réservation
             if(array_key_exists("admin", $username->toArray())) {
-                //c'est un gestionnaire
-                if(Auth::guard('gest')->loginUsingId($username->id)){
-                    return response($this->gestionnaire, 200);
-                } else {
-                    return response("Authentification non réussie en tant que " . $this->gestionnaire, 403);
-                }
+
+//                //c'est un gestionnaire
+
+                $token = $username->createToken("user-token")->plainTextToken;
+
+                $response = [
+                    "userType" => $this->gestionnaire,
+                    "user" => $username,
+                    "token" => $token
+                ];
+
+                return response($response, 201);
+
             } else {
-                //si c'est une reservation
-                if(Auth::guard("res")->loginUsingId($username->id)){
-                    return response($this->reservation, 200);
-                } else {
-                    return response("Authentification non réussie en tant que " . $this->reservation, 403);
-                }
+
+                $token = $username->createToken("user-token")->plainTextToken;
+
+                $response = [
+                    "userType" => $this->reservation,
+                    "user" => $username,
+                    "token" => $token
+                ];
+
+                return response($response, 201);
             }
         }
 
@@ -59,15 +71,19 @@ class LoginController extends Controller
 
         //regarde déjà si il est blacklisté
         if(Blacklist::where('id_univ', $username)->first()) {
+
             return $this->blackliste;
 
         } elseif (Gestionnaire::where('id_univ', $username)->first()){
+
             $result = Gestionnaire::where('id_univ', $username)->first();
 
         } elseif (Reservation::where('id_univ', $username)->first()){
+
             $result = Reservation::where('id_univ', $username)->first();
 
         } else {
+
             $result = $this->notFind;
         }
         return $result;

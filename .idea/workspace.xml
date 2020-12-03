@@ -19,30 +19,12 @@
     </select>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c2fc254d-4c34-4822-9cbb-ed6000c1b396" name="Default Changelist" comment="change id_univ to string (to fit with LDAP)">
-      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/LoginController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Providers/TelescopeServiceProvider.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/config/telescope.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/vendor/telescope/app-dark.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/vendor/telescope/app.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/vendor/telescope/app.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/vendor/telescope/favicon.ico" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/vendor/telescope/mix-manifest.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/backend-pictum.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/backend-pictum.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
+    <list default="true" id="c2fc254d-4c34-4822-9cbb-ed6000c1b396" name="Default Changelist" comment="finalisation essai sanctum - ne marche pas">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Gestionnaire.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Gestionnaire.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Kernel.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Kernel.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Providers/AuthServiceProvider.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Providers/AuthServiceProvider.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Providers/RouteServiceProvider.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Providers/RouteServiceProvider.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/LoginController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/LoginController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Reservation.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Reservation.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/app.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/app.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/auth.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/auth.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/cors.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/cors.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/factories/ReservationFactory.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/factories/ReservationFactory.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2020_11_07_111417_create_reservations_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_11_07_111417_create_reservations_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/sanctum.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/sanctum.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/api.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/api.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -225,6 +207,8 @@
       <workItem from="1606897597544" duration="3078000" />
       <workItem from="1606913229095" duration="7852000" />
       <workItem from="1606927521420" duration="4852000" />
+      <workItem from="1606987851132" duration="105000" />
+      <workItem from="1606989851015" duration="1821000" />
     </task>
     <task id="LOCAL-00001" summary="initial commit">
       <created>1604745505978</created>
@@ -359,7 +343,14 @@
       <option name="project" value="LOCAL" />
       <updated>1606913635585</updated>
     </task>
-    <option name="localTasksCounter" value="20" />
+    <task id="LOCAL-00020" summary="finalisation essai sanctum - ne marche pas">
+      <created>1606987924753</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1606987924753</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -410,7 +401,8 @@
     <MESSAGE value="ajout middleware cors et json" />
     <MESSAGE value="mise en place sanctum" />
     <MESSAGE value="change id_univ to string (to fit with LDAP)" />
-    <option name="LAST_COMMIT_MESSAGE" value="change id_univ to string (to fit with LDAP)" />
+    <MESSAGE value="finalisation essai sanctum - ne marche pas" />
+    <option name="LAST_COMMIT_MESSAGE" value="finalisation essai sanctum - ne marche pas" />
   </component>
   <component name="WindowStateProjectService">
     <state x="710" y="322" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1605371771537">
@@ -464,10 +456,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="520" height="446" key="SwitcherDM/0.0.1920.1040/-1280.0.1280.984@0.0.1920.1040" timestamp="1605948598993" />
-    <state x="552" y="253" key="Vcs.Push.Dialog.v2" timestamp="1606913640895">
+    <state x="552" y="253" key="Vcs.Push.Dialog.v2" timestamp="1606987926655">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040/-1280.0.1280.984@0.0.1920.1040" timestamp="1606913640895" />
+    <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040/-1280.0.1280.984@0.0.1920.1040" timestamp="1606987926655" />
     <state x="561" y="130" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1605372313142">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
