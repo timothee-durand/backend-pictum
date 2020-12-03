@@ -19,27 +19,18 @@
     </select>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c2fc254d-4c34-4822-9cbb-ed6000c1b396" name="Default Changelist" comment="mise à jour materiel controller">
-      <change afterPath="$PROJECT_DIR$/app/Console/Commands/SendRappelsPreventifs.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/MailPersoController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Http/Middleware/VerifyGest.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Mail/MailRappelRDV.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Mail/Personnalise.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Mail/RappelRDV.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/emails/content/rappel-rdv.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/emails/mail-empty.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/emails/mail-perso.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/backend-pictum.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/backend-pictum.iml" afterDir="false" />
+    <list default="true" id="c2fc254d-4c34-4822-9cbb-ed6000c1b396" name="Default Changelist" comment="mise en place mail de rappel des rdv">
+      <change afterPath="$PROJECT_DIR$/app/Console/Commands/SendRappelNonRendu.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Mail/RappelNonRendu.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/emails/rappel-rdv.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Console/Kernel.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Console/Kernel.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Kernel.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Kernel.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Jobs/SendMail.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Jobs/SendMail.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Listeners/ReservationCreation.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Listeners/ReservationCreation.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/vendor/telescope/app-dark.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/vendor/telescope/app-dark.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/vendor/telescope/app.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/vendor/telescope/app.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/vendor/telescope/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/vendor/telescope/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/vendor/telescope/mix-manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/public/vendor/telescope/mix-manifest.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/api.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/api.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/MaterielController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/MaterielController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Mail/RappelRDV.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Mail/RappelRDV.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Materiel.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Materiel.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/factories/MaterielFactory.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/factories/MaterielFactory.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2020_11_07_111417_create_reservations_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_11_07_111417_create_reservations_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2020_11_07_111418_create_materiels_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_11_07_111418_create_materiels_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/emails/content/rappel-rdv.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/emails/rappel-non-rendu.blade.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -186,9 +177,13 @@
     <property name="WebServerToolWindowFactoryState" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/resources/views/emails" />
     <property name="nodejs_package_manager_path" value="npm" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\laragon\www\backend-pictum\resources\views\emails" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\laragon\www\backend-pictum\resources\views\emails" />
       <recent name="C:\laragon\www\backend-pictum\app\Mail" />
@@ -348,7 +343,14 @@
       <option name="project" value="LOCAL" />
       <updated>1606465949309</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="mise en place mail de rappel des rdv">
+      <created>1607013818258</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1607013818258</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -412,28 +414,33 @@
     <MESSAGE value="principalement pour la gestion de la genération des rdv" />
     <MESSAGE value="finalisation de la route de demande de rendez-vous" />
     <MESSAGE value="mise à jour materiel controller" />
-    <option name="LAST_COMMIT_MESSAGE" value="mise à jour materiel controller" />
+    <MESSAGE value="mise en place mail de rappel des rdv" />
+    <option name="LAST_COMMIT_MESSAGE" value="mise en place mail de rappel des rdv" />
   </component>
   <component name="WindowStateProjectService">
+    <state x="666" y="291" key="#Log_Highlighting_(ideolog)" timestamp="1607013699098">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="666" y="291" key="#Log_Highlighting_(ideolog)/0.0.1920.1040/-1280.0.1280.984@0.0.1920.1040" timestamp="1607013699098" />
     <state x="710" y="322" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1606671118227">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="710" y="322" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1920.1040/-1280.0.1280.984@0.0.1920.1040" timestamp="1605371771537" />
     <state x="710" y="322" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1606671118227" />
-    <state x="765" y="202" key="#com.intellij.ide.util.MemberChooser" timestamp="1607012379529">
+    <state x="765" y="202" key="#com.intellij.ide.util.MemberChooser" timestamp="1607014747434">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="765" y="202" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1040/-1280.0.1280.984@0.0.1920.1040" timestamp="1607012379529" />
+    <state x="765" y="202" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1040/-1280.0.1280.984@0.0.1920.1040" timestamp="1607014747434" />
     <state x="506" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1607005620287">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="-943" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1920.1040/-1280.0.1280.984@-1280.0.1280.984" timestamp="1605367394352" />
     <state x="506" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1920.1040/-1280.0.1280.984@0.0.1920.1040" timestamp="1607005620287" />
-    <state x="690" y="275" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1607013240686">
+    <state x="690" y="275" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1607013969150">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="-820" y="260" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1920.1040/-1280.0.1280.984@-1280.0.1280.984" timestamp="1605780451057" />
-    <state x="690" y="275" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1920.1040/-1280.0.1280.984@0.0.1920.1040" timestamp="1607013240686" />
+    <state x="690" y="275" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1920.1040/-1280.0.1280.984@0.0.1920.1040" timestamp="1607013969150" />
     <state x="760" y="144" key="#com.jetbrains.php.refactoring.extractMethod.PhpExtractMethodDialog#method1" timestamp="1606335514262">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -471,14 +478,18 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="794" y="443" key="NewPhpFileDialog/0.0.1920.1040/-1280.0.1280.984@0.0.1920.1040" timestamp="1605981253522" />
+    <state x="461" y="165" key="SettingsEditor" timestamp="1607013750227">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="461" y="165" key="SettingsEditor/0.0.1920.1040/-1280.0.1280.984@0.0.1920.1040" timestamp="1607013750227" />
     <state width="520" height="446" key="SwitcherDM" timestamp="1605948598993">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="520" height="446" key="SwitcherDM/0.0.1920.1040/-1280.0.1280.984@0.0.1920.1040" timestamp="1605948598993" />
-    <state x="552" y="253" key="Vcs.Push.Dialog.v2" timestamp="1606992386534">
+    <state x="552" y="253" key="Vcs.Push.Dialog.v2" timestamp="1607013821516">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040/-1280.0.1280.984@0.0.1920.1040" timestamp="1606992386534" />
+    <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040/-1280.0.1280.984@0.0.1920.1040" timestamp="1607013821516" />
     <state x="561" y="130" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1605372313142">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>

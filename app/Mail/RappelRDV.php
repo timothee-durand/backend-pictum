@@ -49,7 +49,7 @@ class RappelRDV extends Mailable
      */
     public function build()
     {
-        return $this->from($this->mailData ["from_address"])->subject($this->mailData["subject"])->view('emails.content.rappel-rdv');
+        return $this->from($this->mailData ["from_address"])->subject($this->mailData["subject"])->view('emails.rappel-rdv');
     }
 
 }

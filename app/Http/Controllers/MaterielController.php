@@ -27,22 +27,8 @@ class MaterielController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return false|\Illuminate\Http\Response|string
      */
-    public function store(Request $request)
+    public function store(Materiel $materiel)
     {
-        $materiel = new Materiel([
-            "ref"           =>$request->input("ref"),
-            "photo"         =>$request->input("photo"),
-            "usage"         =>$request->input("usage"),
-            "carac"         =>$request->input("carac"),
-            "tutos"         =>$request->input("tutos"),
-            "notice"         =>$request->input("notice"),
-            "indisp"         =>$request->input("indisp"),
-            "indisp_raison"  =>$request->input("indisp_raison"),
-            "type_id"        =>$request->input("type_id"),
-            "malette_id"     =>$request->input("malette_id"),
-            "departement_id" =>$request->input("departement_id"),
-        ]);
-
         if ($materiel->save()) {
             return json_encode([
                 "method" => "store",
