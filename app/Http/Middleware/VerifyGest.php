@@ -18,12 +18,14 @@ class VerifyGest
     {
        // echo "idgest".json_encode(Gestionnaire::where("id_univ", $request->id_gestionnaire)->first() );
 
+        if($request->id_gestionnaire == null ){
+            return response("Il manque le paramètre id_gestionnaire", 401);
+        }
         //vérifie si la requête est faite par un gestionnaire
         if(Gestionnaire::where("id_univ", $request->id_gestionnaire)->first() != null) {
-            echo "la";
             return $next($request);
         } else {
-            return response ("Seuls les gestionnaires ont accès à cette route", 401);
+            return response ("Seuls les gestionnaires ont accès à cette route.", 401);
         }
 
 

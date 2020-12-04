@@ -14,6 +14,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::middleware(['cors', 'force.json'])->group(function () {
+
     Route::middleware(['auth:sanctum'])->group(function () {
         //routes api
         Route::apiResource('types', 'TypeController', ["only"=>["index", "show"]]);
