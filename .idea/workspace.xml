@@ -28,8 +28,19 @@
     </select>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c2fc254d-4c34-4822-9cbb-ed6000c1b396" name="Default Changelist" comment="documentation creneaux + modif doc blacklist">
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/DepartementController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/DepartementController.php" afterDir="false" />
+    <list default="true" id="c2fc254d-4c34-4822-9cbb-ed6000c1b396" name="Default Changelist" comment="documentation departement">
+      <change afterPath="$PROJECT_DIR$/resources/docs/groups/estprete.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/EstPreteController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/EstPreteController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/docs/collection.json" beforeDir="false" afterPath="$PROJECT_DIR$/public/docs/collection.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/docs/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/docs/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/docs/.filemtimes" beforeDir="false" afterPath="$PROJECT_DIR$/resources/docs/.filemtimes" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/docs/authentication.md" beforeDir="false" afterPath="$PROJECT_DIR$/resources/docs/authentication.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/docs/groups/blacklist.md" beforeDir="false" afterPath="$PROJECT_DIR$/resources/docs/groups/blacklist.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/docs/groups/creneaux.md" beforeDir="false" afterPath="$PROJECT_DIR$/resources/docs/groups/creneaux.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/docs/groups/departement.md" beforeDir="false" afterPath="$PROJECT_DIR$/resources/docs/groups/departement.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/docs/groups/endpoints.md" beforeDir="false" afterPath="$PROJECT_DIR$/resources/docs/groups/endpoints.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/api.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/api.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -245,7 +256,7 @@
       <workItem from="1606592256081" duration="64000" />
       <workItem from="1606670872640" duration="5956000" />
       <workItem from="1607075217702" duration="13330000" />
-      <workItem from="1607094493525" duration="3295000" />
+      <workItem from="1607094493525" duration="4623000" />
     </task>
     <task id="LOCAL-00001" summary="initial commit">
       <created>1604745505978</created>
@@ -422,7 +433,14 @@
       <option name="project" value="LOCAL" />
       <updated>1607097554041</updated>
     </task>
-    <option name="localTasksCounter" value="26" />
+    <task id="LOCAL-00026" summary="documentation departement">
+      <created>1607097995811</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1607097995811</updated>
+    </task>
+    <option name="localTasksCounter" value="27" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -469,7 +487,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="initial commit" />
     <MESSAGE value="creation controller + model + factory + migration pour toute la base de donnée" />
     <MESSAGE value="creation controller + model + factory + migration pour Materiel&#10;remplissage des migrations pour resrevation, blacklist, malette, est prete et type" />
     <MESSAGE value="modifs de down pour migrations et ajout de département, materiel, gestionnaire, creneaux et indispo" />
@@ -494,7 +511,8 @@
     <MESSAGE value="ajout de scribe pour la documentation" />
     <MESSAGE value="documentation blacklist" />
     <MESSAGE value="documentation creneaux + modif doc blacklist" />
-    <option name="LAST_COMMIT_MESSAGE" value="documentation creneaux + modif doc blacklist" />
+    <MESSAGE value="documentation departement" />
+    <option name="LAST_COMMIT_MESSAGE" value="documentation departement" />
   </component>
   <component name="WindowStateProjectService">
     <state x="552" y="178" key="#Deployment" timestamp="1607090229972">

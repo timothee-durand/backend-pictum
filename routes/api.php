@@ -22,7 +22,7 @@ Route::middleware(['cors', 'force.json'])->group(function () {
         Route::apiResource('malettes', 'MaletteController', ["only"=>["index", "show"]]);
         Route::apiResource('departements', 'DepartementController', ["only"=>["index", "show"]]);
         Route::apiResource('reservations', 'ReservationController', ["only"=>["index", "show"]]);
-        Route::apiResource('estpretes', 'EstPreteController', ["only"=>["index", "show"]]);
+        Route::apiResource('estpretes', 'EstPreteController', ["only"=>["index", "store"]]);
         Route::apiResource('materiels', 'MaterielController', ["only"=>["index", "show"]]);
         Route::apiResource('gestionnaires', 'GestionnaireController', ["only"=>["index", "show"]]);
         Route::apiResource('indisponibilites', 'IndisponibiliteController', ["only"=>["index", "show"]]);
@@ -49,6 +49,7 @@ Route::middleware(['cors', 'force.json'])->group(function () {
             ['only'=>["store", "update", "destroy"]]);
 
             Route::apiResource('creneaux', 'CreneauxController', ["only"=>["store", "update"]]);
+            Route::apiResource('estpretes', 'EstPreteController', ["only"=>["delete", "update"]]);
 
 
         });

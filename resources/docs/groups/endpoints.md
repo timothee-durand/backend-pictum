@@ -111,7 +111,7 @@ fetch(url, {
 
 ```javascript
 const url = new URL(
-    "http://127.0.0.1:8000/api/types/provident"
+    "http://127.0.0.1:8000/api/types/tempore"
 );
 
 let headers = {
@@ -225,7 +225,7 @@ fetch(url, {
 
 ```javascript
 const url = new URL(
-    "http://127.0.0.1:8000/api/malettes/quae"
+    "http://127.0.0.1:8000/api/malettes/alias"
 );
 
 let headers = {
@@ -339,7 +339,7 @@ fetch(url, {
 
 ```javascript
 const url = new URL(
-    "http://127.0.0.1:8000/api/reservations/sunt"
+    "http://127.0.0.1:8000/api/reservations/exercitationem"
 );
 
 let headers = {
@@ -385,120 +385,6 @@ fetch(url, {
 <p>
 <b><code>reservation</code></b>&nbsp;&nbsp;<small>string</small>  &nbsp;
 <input type="text" name="reservation" data-endpoint="GETapi-reservations--reservation-" data-component="url" required  hidden>
-<br>
-</p>
-</form>
-
-
-## Display a listing of the resource.
-
-
-
-
-> Example request:
-
-```javascript
-const url = new URL(
-    "http://127.0.0.1:8000/api/estpretes"
-);
-
-let headers = {
-    "Content-Type": "application/json",
-    "Accept": "application/json",
-};
-
-
-fetch(url, {
-    method: "GET",
-    headers,
-}).then(response => response.json());
-```
-
-
-> Example response (401):
-
-```json
-{
-    "message": "Unauthenticated."
-}
-```
-<div id="execution-results-GETapi-estpretes" hidden>
-    <blockquote>Received response<span id="execution-response-status-GETapi-estpretes"></span>:</blockquote>
-    <pre class="json"><code id="execution-response-content-GETapi-estpretes"></code></pre>
-</div>
-<div id="execution-error-GETapi-estpretes" hidden>
-    <blockquote>Request failed with error:</blockquote>
-    <pre><code id="execution-error-message-GETapi-estpretes"></code></pre>
-</div>
-<form id="form-GETapi-estpretes" data-method="GET" data-path="api/estpretes" data-authed="0" data-hasfiles="0" data-headers='{"Content-Type":"application\/json","Accept":"application\/json"}' onsubmit="event.preventDefault(); executeTryOut('GETapi-estpretes', this);">
-<h3>
-    Request&nbsp;&nbsp;&nbsp;
-        <button type="button" style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;" id="btn-tryout-GETapi-estpretes" onclick="tryItOut('GETapi-estpretes');">Try it out ⚡</button>
-    <button type="button" style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;" id="btn-canceltryout-GETapi-estpretes" onclick="cancelTryOut('GETapi-estpretes');" hidden>Cancel</button>&nbsp;&nbsp;
-    <button type="submit" style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;" id="btn-executetryout-GETapi-estpretes" hidden>Send Request 💥</button>
-    </h3>
-<p>
-<small class="badge badge-green">GET</small>
- <b><code>api/estpretes</code></b>
-</p>
-</form>
-
-
-## Display the specified resource.
-
-
-
-
-> Example request:
-
-```javascript
-const url = new URL(
-    "http://127.0.0.1:8000/api/estpretes/praesentium"
-);
-
-let headers = {
-    "Content-Type": "application/json",
-    "Accept": "application/json",
-};
-
-
-fetch(url, {
-    method: "GET",
-    headers,
-}).then(response => response.json());
-```
-
-
-> Example response (401):
-
-```json
-{
-    "message": "Unauthenticated."
-}
-```
-<div id="execution-results-GETapi-estpretes--estprete-" hidden>
-    <blockquote>Received response<span id="execution-response-status-GETapi-estpretes--estprete-"></span>:</blockquote>
-    <pre class="json"><code id="execution-response-content-GETapi-estpretes--estprete-"></code></pre>
-</div>
-<div id="execution-error-GETapi-estpretes--estprete-" hidden>
-    <blockquote>Request failed with error:</blockquote>
-    <pre><code id="execution-error-message-GETapi-estpretes--estprete-"></code></pre>
-</div>
-<form id="form-GETapi-estpretes--estprete-" data-method="GET" data-path="api/estpretes/{estprete}" data-authed="0" data-hasfiles="0" data-headers='{"Content-Type":"application\/json","Accept":"application\/json"}' onsubmit="event.preventDefault(); executeTryOut('GETapi-estpretes--estprete-', this);">
-<h3>
-    Request&nbsp;&nbsp;&nbsp;
-        <button type="button" style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;" id="btn-tryout-GETapi-estpretes--estprete-" onclick="tryItOut('GETapi-estpretes--estprete-');">Try it out ⚡</button>
-    <button type="button" style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;" id="btn-canceltryout-GETapi-estpretes--estprete-" onclick="cancelTryOut('GETapi-estpretes--estprete-');" hidden>Cancel</button>&nbsp;&nbsp;
-    <button type="submit" style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;" id="btn-executetryout-GETapi-estpretes--estprete-" hidden>Send Request 💥</button>
-    </h3>
-<p>
-<small class="badge badge-green">GET</small>
- <b><code>api/estpretes/{estprete}</code></b>
-</p>
-<h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
-<p>
-<b><code>estprete</code></b>&nbsp;&nbsp;<small>string</small>  &nbsp;
-<input type="text" name="estprete" data-endpoint="GETapi-estpretes--estprete-" data-component="url" required  hidden>
 <br>
 </p>
 </form>
@@ -567,7 +453,7 @@ fetch(url, {
 
 ```javascript
 const url = new URL(
-    "http://127.0.0.1:8000/api/materiels/ea"
+    "http://127.0.0.1:8000/api/materiels/esse"
 );
 
 let headers = {
@@ -681,7 +567,7 @@ fetch(url, {
 
 ```javascript
 const url = new URL(
-    "http://127.0.0.1:8000/api/gestionnaires/similique"
+    "http://127.0.0.1:8000/api/gestionnaires/ducimus"
 );
 
 let headers = {
@@ -795,7 +681,7 @@ fetch(url, {
 
 ```javascript
 const url = new URL(
-    "http://127.0.0.1:8000/api/indisponibilites/unde"
+    "http://127.0.0.1:8000/api/indisponibilites/ea"
 );
 
 let headers = {
@@ -855,7 +741,7 @@ fetch(url, {
 
 ```javascript
 const url = new URL(
-    "http://127.0.0.1:8000/api/gestionnaires/occaecati/rdv"
+    "http://127.0.0.1:8000/api/gestionnaires/doloribus/rdv"
 );
 
 let headers = {
@@ -1056,7 +942,7 @@ fetch(url, {
 
 ```javascript
 const url = new URL(
-    "http://127.0.0.1:8000/api/types/omnis"
+    "http://127.0.0.1:8000/api/types/sint"
 );
 
 let headers = {
@@ -1113,7 +999,7 @@ fetch(url, {
 
 ```javascript
 const url = new URL(
-    "http://127.0.0.1:8000/api/types/tempore"
+    "http://127.0.0.1:8000/api/types/velit"
 );
 
 let headers = {
@@ -1213,7 +1099,7 @@ fetch(url, {
 
 ```javascript
 const url = new URL(
-    "http://127.0.0.1:8000/api/malettes/cum"
+    "http://127.0.0.1:8000/api/malettes/id"
 );
 
 let headers = {
@@ -1270,7 +1156,7 @@ fetch(url, {
 
 ```javascript
 const url = new URL(
-    "http://127.0.0.1:8000/api/malettes/expedita"
+    "http://127.0.0.1:8000/api/malettes/rerum"
 );
 
 let headers = {
@@ -1370,7 +1256,7 @@ fetch(url, {
 
 ```javascript
 const url = new URL(
-    "http://127.0.0.1:8000/api/materiels/est"
+    "http://127.0.0.1:8000/api/materiels/voluptatibus"
 );
 
 let headers = {
@@ -1427,7 +1313,7 @@ fetch(url, {
 
 ```javascript
 const url = new URL(
-    "http://127.0.0.1:8000/api/materiels/neque"
+    "http://127.0.0.1:8000/api/materiels/repudiandae"
 );
 
 let headers = {
@@ -1527,7 +1413,7 @@ fetch(url, {
 
 ```javascript
 const url = new URL(
-    "http://127.0.0.1:8000/api/gestionnaires/natus"
+    "http://127.0.0.1:8000/api/gestionnaires/est"
 );
 
 let headers = {
@@ -1584,7 +1470,7 @@ fetch(url, {
 
 ```javascript
 const url = new URL(
-    "http://127.0.0.1:8000/api/gestionnaires/et"
+    "http://127.0.0.1:8000/api/gestionnaires/occaecati"
 );
 
 let headers = {
@@ -1684,7 +1570,7 @@ fetch(url, {
 
 ```javascript
 const url = new URL(
-    "http://127.0.0.1:8000/api/indisponibilites/illo"
+    "http://127.0.0.1:8000/api/indisponibilites/dolorum"
 );
 
 let headers = {
@@ -1741,7 +1627,7 @@ fetch(url, {
 
 ```javascript
 const url = new URL(
-    "http://127.0.0.1:8000/api/indisponibilites/ut"
+    "http://127.0.0.1:8000/api/indisponibilites/est"
 );
 
 let headers = {

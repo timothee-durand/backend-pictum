@@ -10,7 +10,7 @@
     ],
     "info": {
         "name": "Laravel",
-        "_postman_id": "c1cea09e-6fb0-4b75-a3bb-60bccef9422d",
+        "_postman_id": "4efd28a1-5d5d-4372-b653-7c405030f218",
         "description": "Backend du service de gestion de mat\u00e9riel du Campus des Portes du Jura de l`'IUT BM",
         "schema": "https:\/\/schema.getpostman.com\/json\/collection\/v2.1.0\/collection.json"
     },
@@ -58,13 +58,13 @@
                                 {
                                     "id": "blacklist",
                                     "key": "blacklist",
-                                    "value": "suscipit",
+                                    "value": "et",
                                     "description": ""
                                 },
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "ut",
+                                    "value": "tempora",
                                     "description": "ID Pictum"
                                 }
                             ]
@@ -95,30 +95,30 @@
                             "query": [
                                 {
                                     "key": "nom",
-                                    "value": "nulla",
+                                    "value": "minima",
                                     "description": "string Nom de la personne",
                                     "disabled": false
                                 },
                                 {
                                     "key": "prenom",
-                                    "value": "commodi",
+                                    "value": "non",
                                     "description": "string Pr\u00e9nom de la personne",
                                     "disabled": false
                                 },
                                 {
                                     "key": "mail",
-                                    "value": "impedit",
+                                    "value": "aut",
                                     "description": "string Mail de la personne",
                                     "disabled": false
                                 },
                                 {
                                     "key": "id_univ",
-                                    "value": "qui",
+                                    "value": "ex",
                                     "description": "string Id universitaire de la personne",
                                     "disabled": false
                                 }
                             ],
-                            "raw": "http:\/\/{{baseUrl}}\/api\/blacklists?nom=nulla&prenom=commodi&mail=impedit&id_univ=qui"
+                            "raw": "http:\/\/{{baseUrl}}\/api\/blacklists?nom=minima&prenom=non&mail=aut&id_univ=ex"
                         },
                         "method": "POST",
                         "header": [
@@ -146,35 +146,35 @@
                             "query": [
                                 {
                                     "key": "nom",
-                                    "value": "libero",
+                                    "value": "atque",
                                     "description": "Nom de la personne",
                                     "disabled": false
                                 },
                                 {
                                     "key": "prenom",
-                                    "value": "quam",
+                                    "value": "et",
                                     "description": "Pr\u00e9nom de la personne",
                                     "disabled": false
                                 },
                                 {
                                     "key": "mail",
-                                    "value": "sit",
+                                    "value": "minima",
                                     "description": "Mail de la personne",
                                     "disabled": false
                                 },
                                 {
                                     "key": "id_univ",
-                                    "value": "cum",
+                                    "value": "ea",
                                     "description": "Id universitaire de la personne",
                                     "disabled": false
                                 }
                             ],
-                            "raw": "http:\/\/{{baseUrl}}\/api\/blacklists\/:blacklist?nom=libero&prenom=quam&mail=sit&id_univ=cum",
+                            "raw": "http:\/\/{{baseUrl}}\/api\/blacklists\/:blacklist?nom=atque&prenom=et&mail=minima&id_univ=ea",
                             "variable": [
                                 {
                                     "id": "blacklist",
                                     "key": "blacklist",
-                                    "value": "7",
+                                    "value": "20",
                                     "description": "ID Pictum"
                                 }
                             ]
@@ -211,7 +211,7 @@
                                 {
                                     "id": "blacklist",
                                     "key": "blacklist",
-                                    "value": "20",
+                                    "value": "9",
                                     "description": "ID Pictum correspondant"
                                 }
                             ]
@@ -290,7 +290,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\n    \"creneaux[]\": \"reprehenderit\"\n}"
+                            "raw": "{\n    \"creneaux[]\": \"ut\"\n}"
                         },
                         "description": ""
                     },
@@ -309,7 +309,7 @@
                                 {
                                     "id": "creneaux",
                                     "key": "creneaux",
-                                    "value": "dolore",
+                                    "value": "id",
                                     "description": ""
                                 }
                             ]
@@ -381,7 +381,7 @@
                                 {
                                     "id": "departement",
                                     "key": "departement",
-                                    "value": "3",
+                                    "value": "14",
                                     "description": "ID du d\u00e9partement concern\u00e9"
                                 }
                             ]
@@ -415,30 +415,30 @@
                             "query": [
                                 {
                                     "key": "lat",
-                                    "value": "46",
+                                    "value": "1184338.326815",
                                     "description": "Latitude du d\u00e9partement",
                                     "disabled": false
                                 },
                                 {
                                     "key": "long",
-                                    "value": "8112877.85",
+                                    "value": "2442.4004",
                                     "description": "Longitude du d\u00e9partement",
                                     "disabled": false
                                 },
                                 {
                                     "key": "nom",
-                                    "value": "ut",
+                                    "value": "earum",
                                     "description": "Nom du d\u00e9partement",
                                     "disabled": false
                                 },
                                 {
                                     "key": "gestionnaire_id",
-                                    "value": "14",
+                                    "value": "1",
                                     "description": "ID Pictum du gestionnaire concern\u00e9",
                                     "disabled": false
                                 }
                             ],
-                            "raw": "http:\/\/{{baseUrl}}\/api\/departements?lat=46&long=8112877.85&nom=ut&gestionnaire_id=14"
+                            "raw": "http:\/\/{{baseUrl}}\/api\/departements?lat=1184338.326815&long=2442.4004&nom=earum&gestionnaire_id=1"
                         },
                         "method": "POST",
                         "header": [
@@ -466,35 +466,35 @@
                             "query": [
                                 {
                                     "key": "lat",
-                                    "value": "64713025.052277",
+                                    "value": "46674.611",
                                     "description": "Latitude du d\u00e9partement",
                                     "disabled": false
                                 },
                                 {
                                     "key": "long",
-                                    "value": "59880",
+                                    "value": "59.69",
                                     "description": "Longitude du d\u00e9partement",
                                     "disabled": false
                                 },
                                 {
                                     "key": "nom",
-                                    "value": "enim",
+                                    "value": "repellat",
                                     "description": "Nom du d\u00e9partement",
                                     "disabled": false
                                 },
                                 {
                                     "key": "gestionnaire_id",
-                                    "value": "10",
+                                    "value": "13",
                                     "description": "ID Pictum du gestionnaire concern\u00e9",
                                     "disabled": false
                                 }
                             ],
-                            "raw": "http:\/\/{{baseUrl}}\/api\/departements\/:departement?lat=64713025.052277&long=59880&nom=enim&gestionnaire_id=10",
+                            "raw": "http:\/\/{{baseUrl}}\/api\/departements\/:departement?lat=46674.611&long=59.69&nom=repellat&gestionnaire_id=13",
                             "variable": [
                                 {
                                     "id": "departement",
                                     "key": "departement",
-                                    "value": "3",
+                                    "value": "17",
                                     "description": "ID du d\u00e9partement concern\u00e9"
                                 }
                             ]
@@ -528,7 +528,7 @@
                                 {
                                     "id": "departement",
                                     "key": "departement",
-                                    "value": "11",
+                                    "value": "17",
                                     "description": "ID du d\u00e9partement concern\u00e9"
                                 }
                             ]
@@ -629,7 +629,7 @@
                                 {
                                     "id": "type",
                                     "key": "type",
-                                    "value": "provident",
+                                    "value": "tempore",
                                     "description": ""
                                 }
                             ]
@@ -695,7 +695,7 @@
                                 {
                                     "id": "malette",
                                     "key": "malette",
-                                    "value": "quae",
+                                    "value": "alias",
                                     "description": ""
                                 }
                             ]
@@ -761,73 +761,7 @@
                                 {
                                     "id": "reservation",
                                     "key": "reservation",
-                                    "value": "sunt",
-                                    "description": ""
-                                }
-                            ]
-                        },
-                        "method": "GET",
-                        "header": [
-                            {
-                                "key": "Content-Type",
-                                "value": "application\/json"
-                            },
-                            {
-                                "key": "Accept",
-                                "value": "application\/json"
-                            }
-                        ],
-                        "body": null,
-                        "description": "",
-                        "auth": {
-                            "type": "noauth"
-                        }
-                    },
-                    "response": []
-                },
-                {
-                    "name": "Display a listing of the resource.",
-                    "request": {
-                        "url": {
-                            "protocol": "http",
-                            "host": "{{baseUrl}}",
-                            "path": "api\/estpretes",
-                            "query": [],
-                            "raw": "http:\/\/{{baseUrl}}\/api\/estpretes"
-                        },
-                        "method": "GET",
-                        "header": [
-                            {
-                                "key": "Content-Type",
-                                "value": "application\/json"
-                            },
-                            {
-                                "key": "Accept",
-                                "value": "application\/json"
-                            }
-                        ],
-                        "body": null,
-                        "description": "",
-                        "auth": {
-                            "type": "noauth"
-                        }
-                    },
-                    "response": []
-                },
-                {
-                    "name": "Display the specified resource.",
-                    "request": {
-                        "url": {
-                            "protocol": "http",
-                            "host": "{{baseUrl}}",
-                            "path": "api\/estpretes\/:estprete",
-                            "query": [],
-                            "raw": "http:\/\/{{baseUrl}}\/api\/estpretes\/:estprete",
-                            "variable": [
-                                {
-                                    "id": "estprete",
-                                    "key": "estprete",
-                                    "value": "praesentium",
+                                    "value": "exercitationem",
                                     "description": ""
                                 }
                             ]
@@ -893,7 +827,7 @@
                                 {
                                     "id": "materiel",
                                     "key": "materiel",
-                                    "value": "ea",
+                                    "value": "esse",
                                     "description": ""
                                 }
                             ]
@@ -959,7 +893,7 @@
                                 {
                                     "id": "gestionnaire",
                                     "key": "gestionnaire",
-                                    "value": "similique",
+                                    "value": "ducimus",
                                     "description": ""
                                 }
                             ]
@@ -1025,7 +959,7 @@
                                 {
                                     "id": "indisponibilite",
                                     "key": "indisponibilite",
-                                    "value": "unde",
+                                    "value": "ea",
                                     "description": ""
                                 }
                             ]
@@ -1062,7 +996,7 @@
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "occaecati",
+                                    "value": "doloribus",
                                     "description": ""
                                 }
                             ]
@@ -1186,7 +1120,7 @@
                                 {
                                     "id": "type",
                                     "key": "type",
-                                    "value": "omnis",
+                                    "value": "sint",
                                     "description": ""
                                 }
                             ]
@@ -1223,7 +1157,7 @@
                                 {
                                     "id": "type",
                                     "key": "type",
-                                    "value": "tempore",
+                                    "value": "velit",
                                     "description": ""
                                 }
                             ]
@@ -1289,7 +1223,7 @@
                                 {
                                     "id": "malette",
                                     "key": "malette",
-                                    "value": "cum",
+                                    "value": "id",
                                     "description": ""
                                 }
                             ]
@@ -1326,7 +1260,7 @@
                                 {
                                     "id": "malette",
                                     "key": "malette",
-                                    "value": "expedita",
+                                    "value": "rerum",
                                     "description": ""
                                 }
                             ]
@@ -1392,7 +1326,7 @@
                                 {
                                     "id": "materiel",
                                     "key": "materiel",
-                                    "value": "est",
+                                    "value": "voluptatibus",
                                     "description": ""
                                 }
                             ]
@@ -1429,7 +1363,7 @@
                                 {
                                     "id": "materiel",
                                     "key": "materiel",
-                                    "value": "neque",
+                                    "value": "repudiandae",
                                     "description": ""
                                 }
                             ]
@@ -1495,7 +1429,7 @@
                                 {
                                     "id": "gestionnaire",
                                     "key": "gestionnaire",
-                                    "value": "natus",
+                                    "value": "est",
                                     "description": ""
                                 }
                             ]
@@ -1532,7 +1466,7 @@
                                 {
                                     "id": "gestionnaire",
                                     "key": "gestionnaire",
-                                    "value": "et",
+                                    "value": "occaecati",
                                     "description": ""
                                 }
                             ]
@@ -1598,7 +1532,7 @@
                                 {
                                     "id": "indisponibilite",
                                     "key": "indisponibilite",
-                                    "value": "illo",
+                                    "value": "dolorum",
                                     "description": ""
                                 }
                             ]
@@ -1635,7 +1569,7 @@
                                 {
                                     "id": "indisponibilite",
                                     "key": "indisponibilite",
-                                    "value": "ut",
+                                    "value": "est",
                                     "description": ""
                                 }
                             ]
@@ -1699,6 +1633,142 @@
                             "raw": "http:\/\/{{baseUrl}}\/\/"
                         },
                         "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": []
+                }
+            ]
+        },
+        {
+            "name": "EstPrete",
+            "description": "",
+            "item": [
+                {
+                    "name": "Display a listing of the resource.",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "{{baseUrl}}",
+                            "path": "api\/estpretes",
+                            "query": [],
+                            "raw": "http:\/\/{{baseUrl}}\/api\/estpretes"
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Store some new EstPrete in storage.",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "{{baseUrl}}",
+                            "path": "api\/estpretes",
+                            "query": [
+                                {
+                                    "key": "id_malettes%5B%5D",
+                                    "value": "19",
+                                    "description": "Tableau d'ID pictum des malettes concern\u00e9es par la r\u00e9servation - Peut \u00eatre vide",
+                                    "disabled": false
+                                },
+                                {
+                                    "key": "id_materiels%5B%5D",
+                                    "value": "6",
+                                    "description": "Tableau d'ID pictum des mat\u00e9riels individuels concern\u00e9es par la r\u00e9servation - Peut \u00eatre vide",
+                                    "disabled": false
+                                },
+                                {
+                                    "key": "reservation_id",
+                                    "value": "7",
+                                    "description": "ID Pictum de la r\u00e9servation correspondante",
+                                    "disabled": false
+                                },
+                                {
+                                    "key": "date_debut",
+                                    "value": "tempora",
+                                    "description": "DateTime Rendez-vous de prise de mat\u00e9riel",
+                                    "disabled": false
+                                },
+                                {
+                                    "key": "date_fin",
+                                    "value": "in",
+                                    "description": "DateTime Rendez-vous de retour de mat\u00e9riel",
+                                    "disabled": false
+                                }
+                            ],
+                            "raw": "http:\/\/{{baseUrl}}\/api\/estpretes?id_malettes%5B%5D=19&id_materiels%5B%5D=6&reservation_id=7&date_debut=tempora&date_fin=in"
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": ""
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Set the group of EstPrete as rendu",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "{{baseUrl}}",
+                            "path": "api\/estpretes\/:estprete",
+                            "query": [
+                                {
+                                    "key": "id_estprete%5B%5D",
+                                    "value": "13",
+                                    "description": "ID des est-prete \u00e0 marquer comme rendu",
+                                    "disabled": false
+                                }
+                            ],
+                            "raw": "http:\/\/{{baseUrl}}\/api\/estpretes\/:estprete?id_estprete%5B%5D=13",
+                            "variable": [
+                                {
+                                    "id": "estprete",
+                                    "key": "estprete",
+                                    "value": "neque",
+                                    "description": ""
+                                }
+                            ]
+                        },
+                        "method": "PUT",
                         "header": [
                             {
                                 "key": "Content-Type",
