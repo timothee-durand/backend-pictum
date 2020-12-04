@@ -111,7 +111,7 @@ fetch(url, {
 
 ```javascript
 const url = new URL(
-    "http://127.0.0.1:8000/api/types/tempore"
+    "http://127.0.0.1:8000/api/types/omnis"
 );
 
 let headers = {
@@ -225,7 +225,7 @@ fetch(url, {
 
 ```javascript
 const url = new URL(
-    "http://127.0.0.1:8000/api/malettes/alias"
+    "http://127.0.0.1:8000/api/malettes/fugit"
 );
 
 let headers = {
@@ -339,7 +339,7 @@ fetch(url, {
 
 ```javascript
 const url = new URL(
-    "http://127.0.0.1:8000/api/reservations/exercitationem"
+    "http://127.0.0.1:8000/api/reservations/omnis"
 );
 
 let headers = {
@@ -453,7 +453,7 @@ fetch(url, {
 
 ```javascript
 const url = new URL(
-    "http://127.0.0.1:8000/api/materiels/esse"
+    "http://127.0.0.1:8000/api/materiels/quis"
 );
 
 let headers = {
@@ -499,120 +499,6 @@ fetch(url, {
 <p>
 <b><code>materiel</code></b>&nbsp;&nbsp;<small>string</small>  &nbsp;
 <input type="text" name="materiel" data-endpoint="GETapi-materiels--materiel-" data-component="url" required  hidden>
-<br>
-</p>
-</form>
-
-
-## Display a listing of the resource.
-
-
-
-
-> Example request:
-
-```javascript
-const url = new URL(
-    "http://127.0.0.1:8000/api/gestionnaires"
-);
-
-let headers = {
-    "Content-Type": "application/json",
-    "Accept": "application/json",
-};
-
-
-fetch(url, {
-    method: "GET",
-    headers,
-}).then(response => response.json());
-```
-
-
-> Example response (401):
-
-```json
-{
-    "message": "Unauthenticated."
-}
-```
-<div id="execution-results-GETapi-gestionnaires" hidden>
-    <blockquote>Received response<span id="execution-response-status-GETapi-gestionnaires"></span>:</blockquote>
-    <pre class="json"><code id="execution-response-content-GETapi-gestionnaires"></code></pre>
-</div>
-<div id="execution-error-GETapi-gestionnaires" hidden>
-    <blockquote>Request failed with error:</blockquote>
-    <pre><code id="execution-error-message-GETapi-gestionnaires"></code></pre>
-</div>
-<form id="form-GETapi-gestionnaires" data-method="GET" data-path="api/gestionnaires" data-authed="0" data-hasfiles="0" data-headers='{"Content-Type":"application\/json","Accept":"application\/json"}' onsubmit="event.preventDefault(); executeTryOut('GETapi-gestionnaires', this);">
-<h3>
-    Request&nbsp;&nbsp;&nbsp;
-        <button type="button" style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;" id="btn-tryout-GETapi-gestionnaires" onclick="tryItOut('GETapi-gestionnaires');">Try it out ⚡</button>
-    <button type="button" style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;" id="btn-canceltryout-GETapi-gestionnaires" onclick="cancelTryOut('GETapi-gestionnaires');" hidden>Cancel</button>&nbsp;&nbsp;
-    <button type="submit" style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;" id="btn-executetryout-GETapi-gestionnaires" hidden>Send Request 💥</button>
-    </h3>
-<p>
-<small class="badge badge-green">GET</small>
- <b><code>api/gestionnaires</code></b>
-</p>
-</form>
-
-
-## Display the specified resource.
-
-
-
-
-> Example request:
-
-```javascript
-const url = new URL(
-    "http://127.0.0.1:8000/api/gestionnaires/ducimus"
-);
-
-let headers = {
-    "Content-Type": "application/json",
-    "Accept": "application/json",
-};
-
-
-fetch(url, {
-    method: "GET",
-    headers,
-}).then(response => response.json());
-```
-
-
-> Example response (401):
-
-```json
-{
-    "message": "Unauthenticated."
-}
-```
-<div id="execution-results-GETapi-gestionnaires--gestionnaire-" hidden>
-    <blockquote>Received response<span id="execution-response-status-GETapi-gestionnaires--gestionnaire-"></span>:</blockquote>
-    <pre class="json"><code id="execution-response-content-GETapi-gestionnaires--gestionnaire-"></code></pre>
-</div>
-<div id="execution-error-GETapi-gestionnaires--gestionnaire-" hidden>
-    <blockquote>Request failed with error:</blockquote>
-    <pre><code id="execution-error-message-GETapi-gestionnaires--gestionnaire-"></code></pre>
-</div>
-<form id="form-GETapi-gestionnaires--gestionnaire-" data-method="GET" data-path="api/gestionnaires/{gestionnaire}" data-authed="0" data-hasfiles="0" data-headers='{"Content-Type":"application\/json","Accept":"application\/json"}' onsubmit="event.preventDefault(); executeTryOut('GETapi-gestionnaires--gestionnaire-', this);">
-<h3>
-    Request&nbsp;&nbsp;&nbsp;
-        <button type="button" style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;" id="btn-tryout-GETapi-gestionnaires--gestionnaire-" onclick="tryItOut('GETapi-gestionnaires--gestionnaire-');">Try it out ⚡</button>
-    <button type="button" style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;" id="btn-canceltryout-GETapi-gestionnaires--gestionnaire-" onclick="cancelTryOut('GETapi-gestionnaires--gestionnaire-');" hidden>Cancel</button>&nbsp;&nbsp;
-    <button type="submit" style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;" id="btn-executetryout-GETapi-gestionnaires--gestionnaire-" hidden>Send Request 💥</button>
-    </h3>
-<p>
-<small class="badge badge-green">GET</small>
- <b><code>api/gestionnaires/{gestionnaire}</code></b>
-</p>
-<h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
-<p>
-<b><code>gestionnaire</code></b>&nbsp;&nbsp;<small>string</small>  &nbsp;
-<input type="text" name="gestionnaire" data-endpoint="GETapi-gestionnaires--gestionnaire-" data-component="url" required  hidden>
 <br>
 </p>
 </form>
@@ -681,7 +567,7 @@ fetch(url, {
 
 ```javascript
 const url = new URL(
-    "http://127.0.0.1:8000/api/indisponibilites/ea"
+    "http://127.0.0.1:8000/api/indisponibilites/quaerat"
 );
 
 let headers = {
@@ -727,66 +613,6 @@ fetch(url, {
 <p>
 <b><code>indisponibilite</code></b>&nbsp;&nbsp;<small>string</small>  &nbsp;
 <input type="text" name="indisponibilite" data-endpoint="GETapi-indisponibilites--indisponibilite-" data-component="url" required  hidden>
-<br>
-</p>
-</form>
-
-
-## Display a listing of the rendez-vous of this Gestionnaire
-
-
-
-
-> Example request:
-
-```javascript
-const url = new URL(
-    "http://127.0.0.1:8000/api/gestionnaires/doloribus/rdv"
-);
-
-let headers = {
-    "Content-Type": "application/json",
-    "Accept": "application/json",
-};
-
-
-fetch(url, {
-    method: "GET",
-    headers,
-}).then(response => response.json());
-```
-
-
-> Example response (401):
-
-```json
-{
-    "message": "Unauthenticated."
-}
-```
-<div id="execution-results-GETapi-gestionnaires--id--rdv" hidden>
-    <blockquote>Received response<span id="execution-response-status-GETapi-gestionnaires--id--rdv"></span>:</blockquote>
-    <pre class="json"><code id="execution-response-content-GETapi-gestionnaires--id--rdv"></code></pre>
-</div>
-<div id="execution-error-GETapi-gestionnaires--id--rdv" hidden>
-    <blockquote>Request failed with error:</blockquote>
-    <pre><code id="execution-error-message-GETapi-gestionnaires--id--rdv"></code></pre>
-</div>
-<form id="form-GETapi-gestionnaires--id--rdv" data-method="GET" data-path="api/gestionnaires/{id}/rdv" data-authed="0" data-hasfiles="0" data-headers='{"Content-Type":"application\/json","Accept":"application\/json"}' onsubmit="event.preventDefault(); executeTryOut('GETapi-gestionnaires--id--rdv', this);">
-<h3>
-    Request&nbsp;&nbsp;&nbsp;
-        <button type="button" style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;" id="btn-tryout-GETapi-gestionnaires--id--rdv" onclick="tryItOut('GETapi-gestionnaires--id--rdv');">Try it out ⚡</button>
-    <button type="button" style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;" id="btn-canceltryout-GETapi-gestionnaires--id--rdv" onclick="cancelTryOut('GETapi-gestionnaires--id--rdv');" hidden>Cancel</button>&nbsp;&nbsp;
-    <button type="submit" style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;" id="btn-executetryout-GETapi-gestionnaires--id--rdv" hidden>Send Request 💥</button>
-    </h3>
-<p>
-<small class="badge badge-green">GET</small>
- <b><code>api/gestionnaires/{id}/rdv</code></b>
-</p>
-<h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
-<p>
-<b><code>id</code></b>&nbsp;&nbsp;<small>string</small>  &nbsp;
-<input type="text" name="id" data-endpoint="GETapi-gestionnaires--id--rdv" data-component="url" required  hidden>
 <br>
 </p>
 </form>
@@ -942,7 +768,7 @@ fetch(url, {
 
 ```javascript
 const url = new URL(
-    "http://127.0.0.1:8000/api/types/sint"
+    "http://127.0.0.1:8000/api/types/cum"
 );
 
 let headers = {
@@ -999,7 +825,7 @@ fetch(url, {
 
 ```javascript
 const url = new URL(
-    "http://127.0.0.1:8000/api/types/velit"
+    "http://127.0.0.1:8000/api/types/omnis"
 );
 
 let headers = {
@@ -1099,7 +925,7 @@ fetch(url, {
 
 ```javascript
 const url = new URL(
-    "http://127.0.0.1:8000/api/malettes/id"
+    "http://127.0.0.1:8000/api/malettes/blanditiis"
 );
 
 let headers = {
@@ -1156,7 +982,7 @@ fetch(url, {
 
 ```javascript
 const url = new URL(
-    "http://127.0.0.1:8000/api/malettes/rerum"
+    "http://127.0.0.1:8000/api/malettes/repudiandae"
 );
 
 let headers = {
@@ -1256,7 +1082,7 @@ fetch(url, {
 
 ```javascript
 const url = new URL(
-    "http://127.0.0.1:8000/api/materiels/voluptatibus"
+    "http://127.0.0.1:8000/api/materiels/sint"
 );
 
 let headers = {
@@ -1313,7 +1139,7 @@ fetch(url, {
 
 ```javascript
 const url = new URL(
-    "http://127.0.0.1:8000/api/materiels/repudiandae"
+    "http://127.0.0.1:8000/api/materiels/dignissimos"
 );
 
 let headers = {
@@ -1352,163 +1178,6 @@ fetch(url, {
 <p>
 <b><code>materiel</code></b>&nbsp;&nbsp;<small>string</small>  &nbsp;
 <input type="text" name="materiel" data-endpoint="DELETEapi-materiels--materiel-" data-component="url" required  hidden>
-<br>
-</p>
-</form>
-
-
-## Store a newly created resource in storage.
-
-
-
-
-> Example request:
-
-```javascript
-const url = new URL(
-    "http://127.0.0.1:8000/api/gestionnaires"
-);
-
-let headers = {
-    "Content-Type": "application/json",
-    "Accept": "application/json",
-};
-
-
-fetch(url, {
-    method: "POST",
-    headers,
-}).then(response => response.json());
-```
-
-
-<div id="execution-results-POSTapi-gestionnaires" hidden>
-    <blockquote>Received response<span id="execution-response-status-POSTapi-gestionnaires"></span>:</blockquote>
-    <pre class="json"><code id="execution-response-content-POSTapi-gestionnaires"></code></pre>
-</div>
-<div id="execution-error-POSTapi-gestionnaires" hidden>
-    <blockquote>Request failed with error:</blockquote>
-    <pre><code id="execution-error-message-POSTapi-gestionnaires"></code></pre>
-</div>
-<form id="form-POSTapi-gestionnaires" data-method="POST" data-path="api/gestionnaires" data-authed="0" data-hasfiles="0" data-headers='{"Content-Type":"application\/json","Accept":"application\/json"}' onsubmit="event.preventDefault(); executeTryOut('POSTapi-gestionnaires', this);">
-<h3>
-    Request&nbsp;&nbsp;&nbsp;
-        <button type="button" style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;" id="btn-tryout-POSTapi-gestionnaires" onclick="tryItOut('POSTapi-gestionnaires');">Try it out ⚡</button>
-    <button type="button" style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;" id="btn-canceltryout-POSTapi-gestionnaires" onclick="cancelTryOut('POSTapi-gestionnaires');" hidden>Cancel</button>&nbsp;&nbsp;
-    <button type="submit" style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;" id="btn-executetryout-POSTapi-gestionnaires" hidden>Send Request 💥</button>
-    </h3>
-<p>
-<small class="badge badge-black">POST</small>
- <b><code>api/gestionnaires</code></b>
-</p>
-</form>
-
-
-## Update the specified resource in storage.
-
-
-
-
-> Example request:
-
-```javascript
-const url = new URL(
-    "http://127.0.0.1:8000/api/gestionnaires/est"
-);
-
-let headers = {
-    "Content-Type": "application/json",
-    "Accept": "application/json",
-};
-
-
-fetch(url, {
-    method: "PUT",
-    headers,
-}).then(response => response.json());
-```
-
-
-<div id="execution-results-PUTapi-gestionnaires--gestionnaire-" hidden>
-    <blockquote>Received response<span id="execution-response-status-PUTapi-gestionnaires--gestionnaire-"></span>:</blockquote>
-    <pre class="json"><code id="execution-response-content-PUTapi-gestionnaires--gestionnaire-"></code></pre>
-</div>
-<div id="execution-error-PUTapi-gestionnaires--gestionnaire-" hidden>
-    <blockquote>Request failed with error:</blockquote>
-    <pre><code id="execution-error-message-PUTapi-gestionnaires--gestionnaire-"></code></pre>
-</div>
-<form id="form-PUTapi-gestionnaires--gestionnaire-" data-method="PUT" data-path="api/gestionnaires/{gestionnaire}" data-authed="0" data-hasfiles="0" data-headers='{"Content-Type":"application\/json","Accept":"application\/json"}' onsubmit="event.preventDefault(); executeTryOut('PUTapi-gestionnaires--gestionnaire-', this);">
-<h3>
-    Request&nbsp;&nbsp;&nbsp;
-        <button type="button" style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;" id="btn-tryout-PUTapi-gestionnaires--gestionnaire-" onclick="tryItOut('PUTapi-gestionnaires--gestionnaire-');">Try it out ⚡</button>
-    <button type="button" style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;" id="btn-canceltryout-PUTapi-gestionnaires--gestionnaire-" onclick="cancelTryOut('PUTapi-gestionnaires--gestionnaire-');" hidden>Cancel</button>&nbsp;&nbsp;
-    <button type="submit" style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;" id="btn-executetryout-PUTapi-gestionnaires--gestionnaire-" hidden>Send Request 💥</button>
-    </h3>
-<p>
-<small class="badge badge-darkblue">PUT</small>
- <b><code>api/gestionnaires/{gestionnaire}</code></b>
-</p>
-<p>
-<small class="badge badge-purple">PATCH</small>
- <b><code>api/gestionnaires/{gestionnaire}</code></b>
-</p>
-<h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
-<p>
-<b><code>gestionnaire</code></b>&nbsp;&nbsp;<small>string</small>  &nbsp;
-<input type="text" name="gestionnaire" data-endpoint="PUTapi-gestionnaires--gestionnaire-" data-component="url" required  hidden>
-<br>
-</p>
-</form>
-
-
-## Remove the specified resource from storage.
-
-
-
-
-> Example request:
-
-```javascript
-const url = new URL(
-    "http://127.0.0.1:8000/api/gestionnaires/occaecati"
-);
-
-let headers = {
-    "Content-Type": "application/json",
-    "Accept": "application/json",
-};
-
-
-fetch(url, {
-    method: "DELETE",
-    headers,
-}).then(response => response.json());
-```
-
-
-<div id="execution-results-DELETEapi-gestionnaires--gestionnaire-" hidden>
-    <blockquote>Received response<span id="execution-response-status-DELETEapi-gestionnaires--gestionnaire-"></span>:</blockquote>
-    <pre class="json"><code id="execution-response-content-DELETEapi-gestionnaires--gestionnaire-"></code></pre>
-</div>
-<div id="execution-error-DELETEapi-gestionnaires--gestionnaire-" hidden>
-    <blockquote>Request failed with error:</blockquote>
-    <pre><code id="execution-error-message-DELETEapi-gestionnaires--gestionnaire-"></code></pre>
-</div>
-<form id="form-DELETEapi-gestionnaires--gestionnaire-" data-method="DELETE" data-path="api/gestionnaires/{gestionnaire}" data-authed="0" data-hasfiles="0" data-headers='{"Content-Type":"application\/json","Accept":"application\/json"}' onsubmit="event.preventDefault(); executeTryOut('DELETEapi-gestionnaires--gestionnaire-', this);">
-<h3>
-    Request&nbsp;&nbsp;&nbsp;
-        <button type="button" style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;" id="btn-tryout-DELETEapi-gestionnaires--gestionnaire-" onclick="tryItOut('DELETEapi-gestionnaires--gestionnaire-');">Try it out ⚡</button>
-    <button type="button" style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;" id="btn-canceltryout-DELETEapi-gestionnaires--gestionnaire-" onclick="cancelTryOut('DELETEapi-gestionnaires--gestionnaire-');" hidden>Cancel</button>&nbsp;&nbsp;
-    <button type="submit" style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;" id="btn-executetryout-DELETEapi-gestionnaires--gestionnaire-" hidden>Send Request 💥</button>
-    </h3>
-<p>
-<small class="badge badge-red">DELETE</small>
- <b><code>api/gestionnaires/{gestionnaire}</code></b>
-</p>
-<h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
-<p>
-<b><code>gestionnaire</code></b>&nbsp;&nbsp;<small>string</small>  &nbsp;
-<input type="text" name="gestionnaire" data-endpoint="DELETEapi-gestionnaires--gestionnaire-" data-component="url" required  hidden>
 <br>
 </p>
 </form>
@@ -1570,7 +1239,7 @@ fetch(url, {
 
 ```javascript
 const url = new URL(
-    "http://127.0.0.1:8000/api/indisponibilites/dolorum"
+    "http://127.0.0.1:8000/api/indisponibilites/dolor"
 );
 
 let headers = {
@@ -1627,7 +1296,7 @@ fetch(url, {
 
 ```javascript
 const url = new URL(
-    "http://127.0.0.1:8000/api/indisponibilites/est"
+    "http://127.0.0.1:8000/api/indisponibilites/velit"
 );
 
 let headers = {

@@ -28,6 +28,99 @@ class GestionnaireController extends Controller
 
     /**
      * Display a listing of the resource.
+     * @group Gestionnaire
+     * @response [
+    {
+    "nom": "Terrance",
+    "prenom": "Rohan",
+    "mail": "kemmer.osvaldo@gmail.com",
+    "id_univ": "waino62",
+    "admin": 0,
+    "departement": null,
+    "rdv": [
+    {
+    "id": 7,
+    "created_at": "2020-12-03T17:31:13.000000Z",
+    "updated_at": "2020-12-03T17:31:13.000000Z",
+    "date_debut": "2020-08-22 21:41:09",
+    "date_fin": "2020-03-01 13:58:20",
+    "rendu": "2020-03-01 13:58:20",
+    "materiel_id": 5,
+    "reservation_id": 20,
+    "gestionnaire_id": 1
+    },
+    {
+    "id": 16,
+    "created_at": "2020-12-03T17:31:13.000000Z",
+    "updated_at": "2020-12-03T17:31:13.000000Z",
+    "date_debut": "2020-05-19 22:39:51",
+    "date_fin": "2020-11-10 00:33:21",
+    "rendu": "2021-01-15 21:20:41",
+    "materiel_id": 28,
+    "reservation_id": 70,
+    "gestionnaire_id": 1
+    },
+
+    {
+    "id": 92,
+    "created_at": "2020-12-03T17:31:14.000000Z",
+    "updated_at": "2020-12-03T17:31:14.000000Z",
+    "date_debut": "2020-08-27 10:40:07",
+    "date_fin": "2020-11-13 12:50:28",
+    "rendu": "2021-01-23 03:45:21",
+    "materiel_id": 6,
+    "reservation_id": 73,
+    "gestionnaire_id": 1
+    }
+    ],
+    "creneaux": [
+    {
+    "id": 5,
+    "created_at": "2020-12-03T17:31:14.000000Z",
+    "updated_at": "2020-12-03T17:31:14.000000Z",
+    "jour": 3,
+    "heure_debut_matin": "06:51:04",
+    "heure_fin_matin": "11:13:07",
+    "heure_debut_am": "13:09:21",
+    "heure_fin_am": "17:05:33",
+    "gestionnaire_id": 1
+    },
+    {
+    "id": 16,
+    "created_at": "2020-12-03T17:31:14.000000Z",
+    "updated_at": "2020-12-03T17:31:14.000000Z",
+    "jour": 5,
+    "heure_debut_matin": "08:42:31",
+    "heure_fin_matin": "11:14:53",
+    "heure_debut_am": "13:44:13",
+    "heure_fin_am": "16:08:51",
+    "gestionnaire_id": 1
+    },
+    {
+    "id": 30,
+    "created_at": "2020-12-03T17:31:14.000000Z",
+    "updated_at": "2020-12-03T17:31:14.000000Z",
+    "jour": 5,
+    "heure_debut_matin": "07:12:41",
+    "heure_fin_matin": "11:12:16",
+    "heure_debut_am": "13:26:06",
+    "heure_fin_am": "16:18:56",
+    "gestionnaire_id": 1
+    },
+    {
+    "id": 32,
+    "created_at": "2020-12-03T17:31:14.000000Z",
+    "updated_at": "2020-12-03T17:31:14.000000Z",
+    "jour": 3,
+    "heure_debut_matin": "08:49:42",
+    "heure_fin_matin": "11:45:22",
+    "heure_debut_am": "13:48:19",
+    "heure_fin_am": "17:54:38",
+    "gestionnaire_id": 1
+    }
+    ],
+    "indisponibilites": []
+    }]
      *
      * @return string
      */
@@ -41,6 +134,23 @@ class GestionnaireController extends Controller
     /**
      *
      * Display a listing of the rendez-vous of this Gestionnaire
+     * @group Gestionnaire
+     * @urlParam id int ID du gestionnaire concerné
+     * @queryParam start_day Date required Jour à partir duquel on veut les rendez-vous
+     * @response [
+     *      {
+     *  indexJour:0,
+     * date_jour:2020-11-03,
+     * rdvMatin:[
+     *      08:00,
+     *      08:15
+     * ],
+     * rdvAm:[
+     *      14:00,
+     *      14:15
+     * ]
+     * }
+     * ]
      *
      * @param Request $request
      * @param int $id
@@ -106,7 +216,10 @@ class GestionnaireController extends Controller
 
 
     /**
-     * Store a newly created resource in storage.
+     * Store a newly Gestionnaire resource in storage.
+     * @group Gestionnaire
+     *
+     *
      *
      * @param \Illuminate\Http\Request $request
      * @return false|\Illuminate\Http\Response|string
@@ -134,7 +247,9 @@ class GestionnaireController extends Controller
     }
 
     /**
-     * Display the specified resource.
+     * Display the specified Gestionnaire
+     * @group Gestionnaire
+     * @urlParam gestionnaire int ID du gestionnaire à afficher
      *
      * @param \App\Gestionnaire $gestionnaire
      * @return GestionnaireResource
@@ -147,6 +262,18 @@ class GestionnaireController extends Controller
 
     /**
      * Update the specified resource in storage.
+     * @group Gestionnaire
+     * @urlParam gestionnaire int ID du gestionnaire à afficher
+     * @queryParam nom string
+     * @queryParam prenom string
+     * @queryParam mail string
+     * @queryParam id_univ string
+     * @queryParam admin bool True si le gestionnaire est un administrateur
+     * @queryParam departement_id int ID Pictum du département correspondant
+     *
+     * @response {
+     * "Update OK"
+     * }
      *
      * @param \Illuminate\Http\Request $request
      * @param \App\Gestionnaire $gestionnaire
@@ -180,26 +307,24 @@ class GestionnaireController extends Controller
 
         //envoi modifs
         if ($gestionnaire->save()) {
-            return json_encode([
-                "method" => "update",
-                "status" => "OK"
-            ]);
+            return response("Update OK");
         }
     }
 
     /**
      * Remove the specified resource from storage.
-     *
+     * @group Gestionnaire
+     * @urlParam gestionnaire int ID du gestionnaire à afficher
+     * @response {
+     * "Delete OK"
+     * }
      * @param \App\Gestionnaire $gestionnaire
      * @return false|\Illuminate\Http\Response|string
      */
     public function destroy(Gestionnaire $gestionnaire)
     {
         if (Reservation::find($gestionnaire->id)->delete()) {
-            return json_encode([
-                "method" => "destroy",
-                "status" => "OK"
-            ]);
+            return response("Delete OK");
 
         }
     }

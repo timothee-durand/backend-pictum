@@ -156,11 +156,11 @@ const url = new URL(
 );
 
 let params = {
-    "id_malettes[]": "19",
-    "id_materiels[]": "6",
-    "reservation_id": "7",
-    "date_debut": "tempora",
-    "date_fin": "in",
+    "id_malettes[]": "6",
+    "id_materiels[]": "12",
+    "reservation_id": "9",
+    "date_debut": "labore",
+    "date_fin": "suscipit",
 };
 Object.keys(params)
     .forEach(key => url.searchParams.append(key, params[key]));
@@ -231,6 +231,7 @@ DateTime Rendez-vous de retour de matériel</p>
 
 
 ## Set the group of EstPrete as rendu
+Required to be gestionnaire
 
 
 
@@ -239,11 +240,11 @@ DateTime Rendez-vous de retour de matériel</p>
 
 ```javascript
 const url = new URL(
-    "http://127.0.0.1:8000/api/estpretes/neque"
+    "http://127.0.0.1:8000/api/estpretes/perferendis"
 );
 
 let params = {
-    "id_estprete[]": "13",
+    "id_estprete[]": "12",
 };
 Object.keys(params)
     .forEach(key => url.searchParams.append(key, params[key]));
