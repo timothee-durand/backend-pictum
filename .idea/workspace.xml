@@ -28,9 +28,31 @@
     </select>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c2fc254d-4c34-4822-9cbb-ed6000c1b396" name="Default Changelist" comment="ajout prise en compte image pour les malettes">
+    <list default="true" id="c2fc254d-4c34-4822-9cbb-ed6000c1b396" name="Default Changelist" comment="documentation blacklist">
+      <change afterPath="$PROJECT_DIR$/public/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/docs/collection.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/docs/css/highlight-atelier-cave-light.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/docs/css/highlight-darcula.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/docs/css/highlight-monokai-sublime.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/docs/css/highlight-monokai.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/docs/css/highlight-vs2015.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/docs/css/print.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/docs/css/style.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/docs/images/logo.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/docs/images/navbar.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/docs/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/docs/js/all.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/docs/js/highlight.pack.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/docs/js/tryitout-2.4.2.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/docs/openapi.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/docs/.filemtimes" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/docs/authentication.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/docs/groups/blacklist.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/docs/groups/endpoints.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/docs/index.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/MaterielController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/MaterielController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/BlacklistController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/BlacklistController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/scribe.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/scribe.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -161,6 +183,18 @@
       <path value="$PROJECT_DIR$/vendor/phpseclib/bcmath_compat" />
       <path value="$PROJECT_DIR$/vendor/moontoast/math" />
       <path value="$PROJECT_DIR$/vendor/laravel/telescope" />
+      <path value="$PROJECT_DIR$/vendor/knuckleswtf/scribe" />
+      <path value="$PROJECT_DIR$/vendor/knuckleswtf/pastel" />
+      <path value="$PROJECT_DIR$/vendor/symfony/var-exporter" />
+      <path value="$PROJECT_DIR$/vendor/php-di/invoker" />
+      <path value="$PROJECT_DIR$/vendor/symfony/yaml" />
+      <path value="$PROJECT_DIR$/vendor/erusev/parsedown" />
+      <path value="$PROJECT_DIR$/vendor/mpociot/reflection-docblock" />
+      <path value="$PROJECT_DIR$/vendor/shalvah/clara" />
+      <path value="$PROJECT_DIR$/vendor/mnapoli/front-yaml" />
+      <path value="$PROJECT_DIR$/vendor/windwalker/renderer" />
+      <path value="$PROJECT_DIR$/vendor/windwalker/structure" />
+      <path value="$PROJECT_DIR$/vendor/mnapoli/silly" />
     </include_path>
   </component>
   <component name="ProjectId" id="1jxUt08eyzngbbNGzvPfTHPTvtv" />
@@ -181,22 +215,22 @@
     <property name="WebServerToolWindowPanel.toolwindow.show.date" value="false" />
     <property name="WebServerToolWindowPanel.toolwindow.show.permissions" value="false" />
     <property name="WebServerToolWindowPanel.toolwindow.show.size" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/public" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="web.server" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\laragon\www\backend-pictum" />
-      <recent name="C:\laragon\www\backend-pictum\public" />
-      <recent name="C:\laragon\www\backend-pictum\resources\views\emails" />
-      <recent name="C:\laragon\www\backend-pictum\app\Mail" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\laragon\www\backend-pictum\public_html" />
       <recent name="C:\laragon\www\backend-pictum\public" />
       <recent name="C:\laragon\www\backend-pictum\resources\views\emails" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\laragon\www\backend-pictum\public" />
+      <recent name="C:\laragon\www\backend-pictum" />
+      <recent name="C:\laragon\www\backend-pictum\resources\views\emails" />
+      <recent name="C:\laragon\www\backend-pictum\app\Mail" />
     </key>
   </component>
   <component name="RunManager">
@@ -233,6 +267,7 @@
       <workItem from="1606592256081" duration="64000" />
       <workItem from="1606670872640" duration="5956000" />
       <workItem from="1607075217702" duration="13330000" />
+      <workItem from="1607094493525" duration="2123000" />
     </task>
     <task id="LOCAL-00001" summary="initial commit">
       <created>1604745505978</created>
@@ -388,7 +423,14 @@
       <option name="project" value="LOCAL" />
       <updated>1607093567860</updated>
     </task>
-    <option name="localTasksCounter" value="23" />
+    <task id="LOCAL-00023" summary="ajout de scribe pour la documentation">
+      <created>1607094714890</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1607094714890</updated>
+    </task>
+    <option name="localTasksCounter" value="24" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -457,7 +499,9 @@
     <MESSAGE value="mise en place mail contact admin" />
     <MESSAGE value="ajout prise en compte image pour les types" />
     <MESSAGE value="ajout prise en compte image pour les malettes" />
-    <option name="LAST_COMMIT_MESSAGE" value="ajout prise en compte image pour les malettes" />
+    <MESSAGE value="ajout de scribe pour la documentation" />
+    <MESSAGE value="documentation blacklist" />
+    <option name="LAST_COMMIT_MESSAGE" value="documentation blacklist" />
   </component>
   <component name="WindowStateProjectService">
     <state x="552" y="178" key="#Deployment" timestamp="1607090229972">
@@ -537,10 +581,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="520" height="446" key="SwitcherDM/0.0.1920.1040/-1280.0.1280.984@0.0.1920.1040" timestamp="1605948598993" />
-    <state x="552" y="253" key="Vcs.Push.Dialog.v2" timestamp="1607079530552">
+    <state x="552" y="253" key="Vcs.Push.Dialog.v2" timestamp="1607096545649">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040/-1280.0.1280.984@0.0.1920.1040" timestamp="1607079530552" />
+    <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040/-1280.0.1280.984@0.0.1920.1040" timestamp="1607096545649" />
     <state x="561" y="130" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1605372313142">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
