@@ -35,7 +35,7 @@ Route::middleware(['cors', 'force.json'])->group(function () {
 
         Route::middleware("only.gest")->group(function () {
 
-            Route::post("send-mail-gest", "MailPersoController@contactAdmin");
+            Route::post("send-mail-gest", "MailPersoController@makeMailPerso");
 
             Route::apiResources([
                 'types' => 'TypeController',

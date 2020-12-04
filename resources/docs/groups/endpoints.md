@@ -111,7 +111,7 @@ fetch(url, {
 
 ```javascript
 const url = new URL(
-    "http://127.0.0.1:8000/api/types/aliquid"
+    "http://127.0.0.1:8000/api/types/nisi"
 );
 
 let headers = {
@@ -225,7 +225,7 @@ fetch(url, {
 
 ```javascript
 const url = new URL(
-    "http://127.0.0.1:8000/api/malettes/nostrum"
+    "http://127.0.0.1:8000/api/malettes/eum"
 );
 
 let headers = {
@@ -339,7 +339,7 @@ fetch(url, {
 
 ```javascript
 const url = new URL(
-    "http://127.0.0.1:8000/api/reservations/corrupti"
+    "http://127.0.0.1:8000/api/reservations/quisquam"
 );
 
 let headers = {
@@ -453,7 +453,7 @@ fetch(url, {
 
 ```javascript
 const url = new URL(
-    "http://127.0.0.1:8000/api/materiels/occaecati"
+    "http://127.0.0.1:8000/api/materiels/labore"
 );
 
 let headers = {
@@ -500,100 +500,6 @@ fetch(url, {
 <b><code>materiel</code></b>&nbsp;&nbsp;<small>string</small>  &nbsp;
 <input type="text" name="materiel" data-endpoint="GETapi-materiels--materiel-" data-component="url" required  hidden>
 <br>
-</p>
-</form>
-
-
-## api/send-mail-contact-admin
-
-
-
-
-> Example request:
-
-```javascript
-const url = new URL(
-    "http://127.0.0.1:8000/api/send-mail-contact-admin"
-);
-
-let headers = {
-    "Content-Type": "application/json",
-    "Accept": "application/json",
-};
-
-
-fetch(url, {
-    method: "POST",
-    headers,
-}).then(response => response.json());
-```
-
-
-<div id="execution-results-POSTapi-send-mail-contact-admin" hidden>
-    <blockquote>Received response<span id="execution-response-status-POSTapi-send-mail-contact-admin"></span>:</blockquote>
-    <pre class="json"><code id="execution-response-content-POSTapi-send-mail-contact-admin"></code></pre>
-</div>
-<div id="execution-error-POSTapi-send-mail-contact-admin" hidden>
-    <blockquote>Request failed with error:</blockquote>
-    <pre><code id="execution-error-message-POSTapi-send-mail-contact-admin"></code></pre>
-</div>
-<form id="form-POSTapi-send-mail-contact-admin" data-method="POST" data-path="api/send-mail-contact-admin" data-authed="0" data-hasfiles="0" data-headers='{"Content-Type":"application\/json","Accept":"application\/json"}' onsubmit="event.preventDefault(); executeTryOut('POSTapi-send-mail-contact-admin', this);">
-<h3>
-    Request&nbsp;&nbsp;&nbsp;
-        <button type="button" style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;" id="btn-tryout-POSTapi-send-mail-contact-admin" onclick="tryItOut('POSTapi-send-mail-contact-admin');">Try it out ⚡</button>
-    <button type="button" style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;" id="btn-canceltryout-POSTapi-send-mail-contact-admin" onclick="cancelTryOut('POSTapi-send-mail-contact-admin');" hidden>Cancel</button>&nbsp;&nbsp;
-    <button type="submit" style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;" id="btn-executetryout-POSTapi-send-mail-contact-admin" hidden>Send Request 💥</button>
-    </h3>
-<p>
-<small class="badge badge-black">POST</small>
- <b><code>api/send-mail-contact-admin</code></b>
-</p>
-</form>
-
-
-## api/send-mail-gest
-
-
-
-
-> Example request:
-
-```javascript
-const url = new URL(
-    "http://127.0.0.1:8000/api/send-mail-gest"
-);
-
-let headers = {
-    "Content-Type": "application/json",
-    "Accept": "application/json",
-};
-
-
-fetch(url, {
-    method: "POST",
-    headers,
-}).then(response => response.json());
-```
-
-
-<div id="execution-results-POSTapi-send-mail-gest" hidden>
-    <blockquote>Received response<span id="execution-response-status-POSTapi-send-mail-gest"></span>:</blockquote>
-    <pre class="json"><code id="execution-response-content-POSTapi-send-mail-gest"></code></pre>
-</div>
-<div id="execution-error-POSTapi-send-mail-gest" hidden>
-    <blockquote>Request failed with error:</blockquote>
-    <pre><code id="execution-error-message-POSTapi-send-mail-gest"></code></pre>
-</div>
-<form id="form-POSTapi-send-mail-gest" data-method="POST" data-path="api/send-mail-gest" data-authed="0" data-hasfiles="0" data-headers='{"Content-Type":"application\/json","Accept":"application\/json"}' onsubmit="event.preventDefault(); executeTryOut('POSTapi-send-mail-gest', this);">
-<h3>
-    Request&nbsp;&nbsp;&nbsp;
-        <button type="button" style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;" id="btn-tryout-POSTapi-send-mail-gest" onclick="tryItOut('POSTapi-send-mail-gest');">Try it out ⚡</button>
-    <button type="button" style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;" id="btn-canceltryout-POSTapi-send-mail-gest" onclick="cancelTryOut('POSTapi-send-mail-gest');" hidden>Cancel</button>&nbsp;&nbsp;
-    <button type="submit" style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;" id="btn-executetryout-POSTapi-send-mail-gest" hidden>Send Request 💥</button>
-    </h3>
-<p>
-<small class="badge badge-black">POST</small>
- <b><code>api/send-mail-gest</code></b>
 </p>
 </form>
 
@@ -654,7 +560,7 @@ fetch(url, {
 
 ```javascript
 const url = new URL(
-    "http://127.0.0.1:8000/api/types/quod"
+    "http://127.0.0.1:8000/api/types/necessitatibus"
 );
 
 let headers = {
@@ -711,7 +617,7 @@ fetch(url, {
 
 ```javascript
 const url = new URL(
-    "http://127.0.0.1:8000/api/types/eum"
+    "http://127.0.0.1:8000/api/types/et"
 );
 
 let headers = {
@@ -811,7 +717,7 @@ fetch(url, {
 
 ```javascript
 const url = new URL(
-    "http://127.0.0.1:8000/api/malettes/voluptate"
+    "http://127.0.0.1:8000/api/malettes/sunt"
 );
 
 let headers = {
@@ -868,7 +774,7 @@ fetch(url, {
 
 ```javascript
 const url = new URL(
-    "http://127.0.0.1:8000/api/malettes/rerum"
+    "http://127.0.0.1:8000/api/malettes/magni"
 );
 
 let headers = {
@@ -968,7 +874,7 @@ fetch(url, {
 
 ```javascript
 const url = new URL(
-    "http://127.0.0.1:8000/api/materiels/sed"
+    "http://127.0.0.1:8000/api/materiels/laudantium"
 );
 
 let headers = {
@@ -1025,7 +931,7 @@ fetch(url, {
 
 ```javascript
 const url = new URL(
-    "http://127.0.0.1:8000/api/materiels/voluptatem"
+    "http://127.0.0.1:8000/api/materiels/a"
 );
 
 let headers = {
@@ -1065,53 +971,6 @@ fetch(url, {
 <b><code>materiel</code></b>&nbsp;&nbsp;<small>string</small>  &nbsp;
 <input type="text" name="materiel" data-endpoint="DELETEapi-materiels--materiel-" data-component="url" required  hidden>
 <br>
-</p>
-</form>
-
-
-## Connexion
-
-
-
-
-> Example request:
-
-```javascript
-const url = new URL(
-    "http://127.0.0.1:8000/api/login"
-);
-
-let headers = {
-    "Content-Type": "application/json",
-    "Accept": "application/json",
-};
-
-
-fetch(url, {
-    method: "POST",
-    headers,
-}).then(response => response.json());
-```
-
-
-<div id="execution-results-POSTapi-login" hidden>
-    <blockquote>Received response<span id="execution-response-status-POSTapi-login"></span>:</blockquote>
-    <pre class="json"><code id="execution-response-content-POSTapi-login"></code></pre>
-</div>
-<div id="execution-error-POSTapi-login" hidden>
-    <blockquote>Request failed with error:</blockquote>
-    <pre><code id="execution-error-message-POSTapi-login"></code></pre>
-</div>
-<form id="form-POSTapi-login" data-method="POST" data-path="api/login" data-authed="0" data-hasfiles="0" data-headers='{"Content-Type":"application\/json","Accept":"application\/json"}' onsubmit="event.preventDefault(); executeTryOut('POSTapi-login', this);">
-<h3>
-    Request&nbsp;&nbsp;&nbsp;
-        <button type="button" style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;" id="btn-tryout-POSTapi-login" onclick="tryItOut('POSTapi-login');">Try it out ⚡</button>
-    <button type="button" style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;" id="btn-canceltryout-POSTapi-login" onclick="cancelTryOut('POSTapi-login');" hidden>Cancel</button>&nbsp;&nbsp;
-    <button type="submit" style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;" id="btn-executetryout-POSTapi-login" hidden>Send Request 💥</button>
-    </h3>
-<p>
-<small class="badge badge-black">POST</small>
- <b><code>api/login</code></b>
 </p>
 </form>
 

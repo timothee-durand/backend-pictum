@@ -17,7 +17,10 @@ class LoginController extends Controller
     private $reservation = "RES";
 
     /**
-     * Connexion
+     * Connexion à Pictum
+     * Pas final
+     * @group Login
+     *
      *
      * @param Request $request
      * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\Routing\ResponseFactory|\Illuminate\Http\Response|void
@@ -90,6 +93,8 @@ class LoginController extends Controller
     }
 
     /**
+     * @hideFromAPIDocumentation
+     *
      * @return false|\Illuminate\Contracts\Auth\Authenticatable|string|null
      */
     public function getLoggedUsers() {
