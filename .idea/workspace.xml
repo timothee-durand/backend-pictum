@@ -22,38 +22,16 @@
     <select>
       <path>
         <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
-        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
-        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
-        <item name="BRANCH:origin/ajout_mail" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="BRANCH:ajout_mail" type="e8cecc67:BranchNodeDescriptor" />
       </path>
     </select>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c2fc254d-4c34-4822-9cbb-ed6000c1b396" name="Default Changelist" comment="mise en place mail contact admin">
-      <change afterPath="$PROJECT_DIR$/.env-infomaniak" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.htaccess" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/install_composer.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/manuel-utilisation-panasonic-lumix-dmc-fz300.pdf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public_html/.htaccess" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public_html/favicon.ico" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public_html/indexggy.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public_html/install_composer.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public_html/robots.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public_html/vendor/telescope/app-dark.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public_html/vendor/telescope/app.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public_html/vendor/telescope/app.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public_html/vendor/telescope/favicon.ico" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public_html/vendor/telescope/mix-manifest.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/deployment.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/deployment.xml" afterDir="false" />
+    <list default="true" id="c2fc254d-4c34-4822-9cbb-ed6000c1b396" name="Default Changelist" comment="ajout prise en compte image pour les types">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/MaletteController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/MaletteController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/TypeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/TypeController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Middleware/Cors.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Middleware/Cors.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Middleware/VerifyGest.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Middleware/VerifyGest.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/app.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/app.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/public/index.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/public/favicon.ico" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/public/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/api.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/api.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -255,7 +233,7 @@
       <workItem from="1606554503093" duration="7459000" />
       <workItem from="1606592256081" duration="64000" />
       <workItem from="1606670872640" duration="5956000" />
-      <workItem from="1607075217702" duration="12234000" />
+      <workItem from="1607075217702" duration="12527000" />
     </task>
     <task id="LOCAL-00001" summary="initial commit">
       <created>1604745505978</created>
@@ -397,7 +375,14 @@
       <option name="project" value="LOCAL" />
       <updated>1607079527627</updated>
     </task>
-    <option name="localTasksCounter" value="21" />
+    <task id="LOCAL-00021" summary="ajout prise en compte image pour les types">
+      <created>1607093233275</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1607093233276</updated>
+    </task>
+    <option name="localTasksCounter" value="22" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -414,7 +399,7 @@
                   <entry key="branch">
                     <value>
                       <list>
-                        <option value="origin/ajout_mail" />
+                        <option value="ajout_mail" />
                       </list>
                     </value>
                   </entry>
@@ -464,7 +449,8 @@
     <MESSAGE value="mise en place mail de rappel des rdv" />
     <MESSAGE value="mise en place mail de rappel des non rendu" />
     <MESSAGE value="mise en place mail contact admin" />
-    <option name="LAST_COMMIT_MESSAGE" value="mise en place mail contact admin" />
+    <MESSAGE value="ajout prise en compte image pour les types" />
+    <option name="LAST_COMMIT_MESSAGE" value="ajout prise en compte image pour les types" />
   </component>
   <component name="WindowStateProjectService">
     <state x="552" y="178" key="#Deployment" timestamp="1607090229972">

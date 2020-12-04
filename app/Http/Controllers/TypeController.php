@@ -46,7 +46,7 @@ class TypeController extends Controller
     protected function storeImage(Request $request) {
         $fileName = $request->get('nom') . '.' . $request->file('picto')->extension();
         $path = $request->file('picto')->storeAs('public/picto-type', $fileName);
-        return substr($path, strlen('public/'));
+        return substr($path, strlen('storage/'));
     }
 
     /**

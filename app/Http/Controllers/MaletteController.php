@@ -27,9 +27,20 @@ class MaletteController extends Controller
      */
     public function store(Request $request)
     {
-        if(Malette::create($request->all())){
+        $malette = new Malette([
+            'nom'=>$request->nom,
+            "ref"=>$request->ref,
+            "photo"=>$this->storeImage($request)
+        ]);
+        if($malette->save()){
             return new Response("Create OK", 200);
         }
+    }
+
+    protected function storeImage(Request $request) {
+        $fileName = $request->get('nom') . '.' . $request->file('photo')->extension();
+        $path = $request->file('photo')->storeAs('public/photo-malette', $fileName);
+        return substr($path, strlen('storage/'));
     }
 
     /**
