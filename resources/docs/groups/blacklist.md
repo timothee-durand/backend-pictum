@@ -87,7 +87,7 @@ fetch(url, {
 
 ```javascript
 const url = new URL(
-    "http://127.0.0.1:8000/api/blacklists/est"
+    "http://127.0.0.1:8000/api/blacklists/non"
 );
 
 let headers = {
@@ -167,10 +167,10 @@ const url = new URL(
 );
 
 let params = {
-    "nom": "nihil",
-    "prenom": "quae",
-    "mail": "sunt",
-    "id_univ": "sunt",
+    "nom": "quos",
+    "prenom": "minima",
+    "mail": "qui",
+    "id_univ": "iste",
 };
 Object.keys(params)
     .forEach(key => url.searchParams.append(key, params[key]));
@@ -245,7 +245,6 @@ string Id universitaire de la personne</p>
 
 ## Update the specified blacklisted person in storage.
 
-<small class="badge badge-darkred">requires authentication</small>
 
 
 
@@ -253,20 +252,19 @@ string Id universitaire de la personne</p>
 
 ```javascript
 const url = new URL(
-    "http://127.0.0.1:8000/api/blacklists/libero"
+    "http://127.0.0.1:8000/api/blacklists/19"
 );
 
 let params = {
-    "nom": "eligendi",
-    "prenom": "tenetur",
-    "mail": "amet",
-    "id_univ": "recusandae",
+    "nom": "qui",
+    "prenom": "non",
+    "mail": "velit",
+    "id_univ": "soluta",
 };
 Object.keys(params)
     .forEach(key => url.searchParams.append(key, params[key]));
 
 let headers = {
-    "Authorization": "Bearer {YOUR_AUTH_KEY}",
     "Content-Type": "application/json",
     "Accept": "application/json",
 };
@@ -295,7 +293,7 @@ fetch(url, {
     <blockquote>Request failed with error:</blockquote>
     <pre><code id="execution-error-message-PUTapi-blacklists--blacklist-"></code></pre>
 </div>
-<form id="form-PUTapi-blacklists--blacklist-" data-method="PUT" data-path="api/blacklists/{blacklist}" data-authed="1" data-hasfiles="0" data-headers='{"Authorization":"Bearer {YOUR_AUTH_KEY}","Content-Type":"application\/json","Accept":"application\/json"}' onsubmit="event.preventDefault(); executeTryOut('PUTapi-blacklists--blacklist-', this);">
+<form id="form-PUTapi-blacklists--blacklist-" data-method="PUT" data-path="api/blacklists/{blacklist}" data-authed="0" data-hasfiles="0" data-headers='{"Content-Type":"application\/json","Accept":"application\/json"}' onsubmit="event.preventDefault(); executeTryOut('PUTapi-blacklists--blacklist-', this);">
 <h3>
     Request&nbsp;&nbsp;&nbsp;
         <button type="button" style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;" id="btn-tryout-PUTapi-blacklists--blacklist-" onclick="tryItOut('PUTapi-blacklists--blacklist-');">Try it out ⚡</button>
@@ -310,18 +308,10 @@ fetch(url, {
 <small class="badge badge-purple">PATCH</small>
  <b><code>api/blacklists/{blacklist}</code></b>
 </p>
-<p>
-<label id="auth-PUTapi-blacklists--blacklist-" hidden>Authorization header: <b><code>Bearer </code></b><input type="text" name="Authorization" data-prefix="Bearer " data-endpoint="PUTapi-blacklists--blacklist-" data-component="header"></label>
-</p>
 <h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
 <p>
-<b><code>blacklist</code></b>&nbsp;&nbsp;<small>string</small>  &nbsp;
-<input type="text" name="blacklist" data-endpoint="PUTapi-blacklists--blacklist-" data-component="url" required  hidden>
-<br>
-</p>
-<p>
-<b><code>id</code></b>&nbsp;&nbsp;<small>string</small>     <i>optional</i> &nbsp;
-<input type="text" name="id" data-endpoint="PUTapi-blacklists--blacklist-" data-component="url"  hidden>
+<b><code>blacklist</code></b>&nbsp;&nbsp;<small>integer</small>     <i>optional</i> &nbsp;
+<input type="number" name="blacklist" data-endpoint="PUTapi-blacklists--blacklist-" data-component="url"  hidden>
 <br>
 ID Pictum</p>
 <h4 class="fancy-heading-panel"><b>Query Parameters</b></h4>
@@ -358,7 +348,7 @@ Id universitaire de la personne</p>
 
 ```javascript
 const url = new URL(
-    "http://127.0.0.1:8000/api/blacklists/aut"
+    "http://127.0.0.1:8000/api/blacklists/19"
 );
 
 let headers = {
@@ -399,15 +389,10 @@ fetch(url, {
 </p>
 <h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
 <p>
-<b><code>blacklist</code></b>&nbsp;&nbsp;<small>string</small>  &nbsp;
-<input type="text" name="blacklist" data-endpoint="DELETEapi-blacklists--blacklist-" data-component="url" required  hidden>
+<b><code>blacklist</code></b>&nbsp;&nbsp;<small>integer</small>     <i>optional</i> &nbsp;
+<input type="number" name="blacklist" data-endpoint="DELETEapi-blacklists--blacklist-" data-component="url"  hidden>
 <br>
-</p>
-<p>
-<b><code>id</code></b>&nbsp;&nbsp;<small>string</small>     <i>optional</i> &nbsp;
-<input type="text" name="id" data-endpoint="DELETEapi-blacklists--blacklist-" data-component="url"  hidden>
-<br>
-ID Pictum</p>
+ID Pictum correspondant</p>
 </form>
 
 

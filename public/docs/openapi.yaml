@@ -55,42 +55,42 @@ paths:
                     in: query
                     name: nom
                     description: 'string Nom de la personne'
-                    example: nihil
+                    example: quos
                     required: true
                     schema:
                         type: string
                         description: 'string Nom de la personne'
-                        example: nihil
+                        example: quos
                 -
                     in: query
                     name: prenom
                     description: 'string Prénom de la personne'
-                    example: quae
+                    example: minima
                     required: true
                     schema:
                         type: string
                         description: 'string Prénom de la personne'
-                        example: quae
+                        example: minima
                 -
                     in: query
                     name: mail
                     description: 'string Mail de la personne'
-                    example: sunt
+                    example: qui
                     required: true
                     schema:
                         type: string
                         description: 'string Mail de la personne'
-                        example: sunt
+                        example: qui
                 -
                     in: query
                     name: id_univ
                     description: 'string Id universitaire de la personne'
-                    example: sunt
+                    example: iste
                     required: true
                     schema:
                         type: string
                         description: 'string Id universitaire de la personne'
-                        example: sunt
+                        example: iste
                 -
                     in: header
                     name: Authorization
@@ -181,49 +181,42 @@ paths:
                     in: query
                     name: nom
                     description: 'Nom de la personne'
-                    example: eligendi
+                    example: qui
                     required: false
                     schema:
                         type: string
                         description: 'Nom de la personne'
-                        example: eligendi
+                        example: qui
                 -
                     in: query
                     name: prenom
                     description: 'Prénom de la personne'
-                    example: tenetur
+                    example: non
                     required: false
                     schema:
                         type: string
                         description: 'Prénom de la personne'
-                        example: tenetur
+                        example: non
                 -
                     in: query
                     name: mail
                     description: 'Mail de la personne'
-                    example: amet
+                    example: velit
                     required: false
                     schema:
                         type: string
                         description: 'Mail de la personne'
-                        example: amet
+                        example: velit
                 -
                     in: query
                     name: id_univ
                     description: 'Id universitaire de la personne'
-                    example: recusandae
+                    example: soluta
                     required: false
                     schema:
                         type: string
                         description: 'Id universitaire de la personne'
-                        example: recusandae
-                -
-                    in: header
-                    name: Authorization
-                    description: ''
-                    example: 'Bearer {YOUR_AUTH_KEY}'
-                    schema:
-                        type: string
+                        example: soluta
                 -
                     in: header
                     name: Content-Type
@@ -248,6 +241,7 @@ paths:
                                 example: "{\n\"Not Find\"\n}"
             tags:
                 - Blacklist
+            security: []
         delete:
             summary: 'Remove the specified resource from storage.'
             description: ''
@@ -281,7 +275,7 @@ paths:
                 in: path
                 name: blacklist
                 description: ''
-                example: est
+                example: non
                 required: true
                 schema:
                     type: string
@@ -298,7 +292,117 @@ paths:
                         value: ''
                     present:
                         summary: 'When the value is present'
-                        value: aliquam
+                        value: saepe
+    /api/creneaux:
+        get:
+            summary: 'Display a listing of the resource.'
+            description: ''
+            parameters:
+                -
+                    in: header
+                    name: Content-Type
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+                -
+                    in: header
+                    name: Accept
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+            responses:
+                200:
+                    description: '200'
+                    content:
+                        application/json:
+                            schema:
+                                type: array
+                                items:
+                                    type: object
+                                example:
+                                    - { id: 1, created_at: '2020-12-03T17:31:14.000000Z', updated_at: '2020-12-03T17:31:14.000000Z', jour: 1, heure_debut_matin: '07:20:32', heure_fin_matin: '11:49:03', heure_debut_am: '13:34:21', heure_fin_am: '17:53:21', gestionnaire_id: 7 }
+                                    - { id: 2, created_at: '2020-12-03T17:31:14.000000Z', updated_at: '2020-12-03T17:31:14.000000Z', jour: 1, heure_debut_matin: '07:00:32', heure_fin_matin: '11:41:31', heure_debut_am: '13:48:33', heure_fin_am: '16:57:37', gestionnaire_id: 9 }
+            tags:
+                - Creneaux
+            security: []
+        post:
+            summary: "Store Gestionnaire's Creneaux\nSend only creneaux who are used"
+            description: ''
+            parameters:
+                -
+                    in: header
+                    name: Authorization
+                    description: ''
+                    example: 'Bearer {YOUR_AUTH_KEY}'
+                    schema:
+                        type: string
+                -
+                    in: header
+                    name: Content-Type
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+                -
+                    in: header
+                    name: Accept
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+            responses: {  }
+            tags:
+                - Creneaux
+            requestBody:
+                required: false
+                content:
+                    application/json:
+                        schema:
+                            type: object
+                            properties:
+                                'creneaux[]':
+                                    type: required
+                                    description: 'Array of the creneaux of a gestionnaire'
+                                    example: quae
+                                creneaux:
+                                    type: object
+                                    description: ''
+                                    example: { gestionnaire_id: 8 }
+                                    properties: { jour: { type: integer, description: 'Index du jour correspondant (0 => Dimanche)', example: 2 }, heure_debut_matin: { type: Time, description: 'Heure de début de la période du matin', example: minus }, heure_fin_matin: { type: Time, description: 'Heure de fin de la période du matin', example: autem }, heure_debut_am: { type: Time, description: 'Heure de début de la période de l''après-midi', example: et }, heure_fin_am: { type: Time, description: 'Heure de fin de la période de l''après-midi', example: modi }, gestionnaire_id: { type: integer, description: 'ID du gestionnaire correspondant', example: 8 } }
+    '/api/creneaux/{creneaux}':
+        put:
+            summary: 'Update the specifieds resources in storage.'
+            description: ''
+            parameters:
+                -
+                    in: header
+                    name: Content-Type
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+                -
+                    in: header
+                    name: Accept
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+            responses: {  }
+            tags:
+                - Creneaux
+            security: []
+        parameters:
+            -
+                in: path
+                name: creneaux
+                description: ''
+                example: saepe
+                required: true
+                schema:
+                    type: string
     /sanctum/csrf-cookie:
         get:
             summary: 'Return an empty response simply to trigger the storage of the CSRF cookie in the browser.'
@@ -306,13 +410,6 @@ paths:
             parameters:
                 -
                     in: header
-                    name: Authorization
-                    description: ''
-                    example: 'Bearer {YOUR_AUTH_KEY}'
-                    schema:
-                        type: string
-                -
-                    in: header
                     name: Content-Type
                     description: ''
                     example: application/json
@@ -328,6 +425,7 @@ paths:
             responses: {  }
             tags:
                 - Endpoints
+            security: []
     /api/types:
         get:
             summary: 'Display a listing of the resource.'
@@ -335,13 +433,6 @@ paths:
             parameters:
                 -
                     in: header
-                    name: Authorization
-                    description: ''
-                    example: 'Bearer {YOUR_AUTH_KEY}'
-                    schema:
-                        type: string
-                -
-                    in: header
                     name: Content-Type
                     description: ''
                     example: application/json
@@ -367,17 +458,11 @@ paths:
                                     message: { type: string, example: Unauthenticated. }
             tags:
                 - Endpoints
+            security: []
         post:
             summary: 'Store a newly created resource in storage.'
             description: ''
             parameters:
-                -
-                    in: header
-                    name: Authorization
-                    description: ''
-                    example: 'Bearer {YOUR_AUTH_KEY}'
-                    schema:
-                        type: string
                 -
                     in: header
                     name: Content-Type
@@ -395,6 +480,7 @@ paths:
             responses: {  }
             tags:
                 - Endpoints
+            security: []
     '/api/types/{type}':
         get:
             summary: 'Display the specified resource.'
@@ -402,13 +488,6 @@ paths:
             parameters:
                 -
                     in: header
-                    name: Authorization
-                    description: ''
-                    example: 'Bearer {YOUR_AUTH_KEY}'
-                    schema:
-                        type: string
-                -
-                    in: header
                     name: Content-Type
                     description: ''
                     example: application/json
@@ -434,19 +513,13 @@ paths:
                                     message: { type: string, example: Unauthenticated. }
             tags:
                 - Endpoints
+            security: []
         put:
             summary: 'Update the specified resource in storage.'
             description: ''
             parameters:
                 -
                     in: header
-                    name: Authorization
-                    description: ''
-                    example: 'Bearer {YOUR_AUTH_KEY}'
-                    schema:
-                        type: string
-                -
-                    in: header
                     name: Content-Type
                     description: ''
                     example: application/json
@@ -462,19 +535,13 @@ paths:
             responses: {  }
             tags:
                 - Endpoints
+            security: []
         delete:
             summary: 'Remove the specified resource from storage.'
             description: ''
             parameters:
                 -
                     in: header
-                    name: Authorization
-                    description: ''
-                    example: 'Bearer {YOUR_AUTH_KEY}'
-                    schema:
-                        type: string
-                -
-                    in: header
                     name: Content-Type
                     description: ''
                     example: application/json
@@ -490,12 +557,13 @@ paths:
             responses: {  }
             tags:
                 - Endpoints
+            security: []
         parameters:
             -
                 in: path
                 name: type
                 description: ''
-                example: est
+                example: itaque
                 required: true
                 schema:
                     type: string
@@ -506,13 +574,6 @@ paths:
             parameters:
                 -
                     in: header
-                    name: Authorization
-                    description: ''
-                    example: 'Bearer {YOUR_AUTH_KEY}'
-                    schema:
-                        type: string
-                -
-                    in: header
                     name: Content-Type
                     description: ''
                     example: application/json
@@ -538,17 +599,11 @@ paths:
                                     message: { type: string, example: Unauthenticated. }
             tags:
                 - Endpoints
+            security: []
         post:
             summary: 'Store a newly created resource in storage.'
             description: ''
             parameters:
-                -
-                    in: header
-                    name: Authorization
-                    description: ''
-                    example: 'Bearer {YOUR_AUTH_KEY}'
-                    schema:
-                        type: string
                 -
                     in: header
                     name: Content-Type
@@ -566,6 +621,7 @@ paths:
             responses: {  }
             tags:
                 - Endpoints
+            security: []
     '/api/malettes/{malette}':
         get:
             summary: 'Display the specified resource.'
@@ -573,13 +629,6 @@ paths:
             parameters:
                 -
                     in: header
-                    name: Authorization
-                    description: ''
-                    example: 'Bearer {YOUR_AUTH_KEY}'
-                    schema:
-                        type: string
-                -
-                    in: header
                     name: Content-Type
                     description: ''
                     example: application/json
@@ -605,19 +654,13 @@ paths:
                                     message: { type: string, example: Unauthenticated. }
             tags:
                 - Endpoints
+            security: []
         put:
             summary: 'Update the specified resource in storage.'
             description: ''
             parameters:
                 -
                     in: header
-                    name: Authorization
-                    description: ''
-                    example: 'Bearer {YOUR_AUTH_KEY}'
-                    schema:
-                        type: string
-                -
-                    in: header
                     name: Content-Type
                     description: ''
                     example: application/json
@@ -633,19 +676,13 @@ paths:
             responses: {  }
             tags:
                 - Endpoints
+            security: []
         delete:
             summary: 'Remove the specified resource from storage.'
             description: ''
             parameters:
                 -
                     in: header
-                    name: Authorization
-                    description: ''
-                    example: 'Bearer {YOUR_AUTH_KEY}'
-                    schema:
-                        type: string
-                -
-                    in: header
                     name: Content-Type
                     description: ''
                     example: application/json
@@ -661,12 +698,13 @@ paths:
             responses: {  }
             tags:
                 - Endpoints
+            security: []
         parameters:
             -
                 in: path
                 name: malette
                 description: ''
-                example: qui
+                example: est
                 required: true
                 schema:
                     type: string
@@ -677,13 +715,6 @@ paths:
             parameters:
                 -
                     in: header
-                    name: Authorization
-                    description: ''
-                    example: 'Bearer {YOUR_AUTH_KEY}'
-                    schema:
-                        type: string
-                -
-                    in: header
                     name: Content-Type
                     description: ''
                     example: application/json
@@ -709,17 +740,11 @@ paths:
                                     message: { type: string, example: Unauthenticated. }
             tags:
                 - Endpoints
+            security: []
         post:
             summary: 'Store a newly created resource in storage.'
             description: ''
             parameters:
-                -
-                    in: header
-                    name: Authorization
-                    description: ''
-                    example: 'Bearer {YOUR_AUTH_KEY}'
-                    schema:
-                        type: string
                 -
                     in: header
                     name: Content-Type
@@ -737,6 +762,7 @@ paths:
             responses: {  }
             tags:
                 - Endpoints
+            security: []
     '/api/departements/{departement}':
         get:
             summary: 'Display the specified resource.'
@@ -744,13 +770,6 @@ paths:
             parameters:
                 -
                     in: header
-                    name: Authorization
-                    description: ''
-                    example: 'Bearer {YOUR_AUTH_KEY}'
-                    schema:
-                        type: string
-                -
-                    in: header
                     name: Content-Type
                     description: ''
                     example: application/json
@@ -776,19 +795,13 @@ paths:
                                     message: { type: string, example: Unauthenticated. }
             tags:
                 - Endpoints
+            security: []
         put:
             summary: 'Update the specified resource in storage.'
             description: ''
             parameters:
                 -
                     in: header
-                    name: Authorization
-                    description: ''
-                    example: 'Bearer {YOUR_AUTH_KEY}'
-                    schema:
-                        type: string
-                -
-                    in: header
                     name: Content-Type
                     description: ''
                     example: application/json
@@ -804,19 +817,13 @@ paths:
             responses: {  }
             tags:
                 - Endpoints
+            security: []
         delete:
             summary: 'Remove the specified resource from storage.'
             description: ''
             parameters:
                 -
                     in: header
-                    name: Authorization
-                    description: ''
-                    example: 'Bearer {YOUR_AUTH_KEY}'
-                    schema:
-                        type: string
-                -
-                    in: header
                     name: Content-Type
                     description: ''
                     example: application/json
@@ -832,12 +839,13 @@ paths:
             responses: {  }
             tags:
                 - Endpoints
+            security: []
         parameters:
             -
                 in: path
                 name: departement
                 description: ''
-                example: mollitia
+                example: fuga
                 required: true
                 schema:
                     type: string
@@ -848,13 +856,6 @@ paths:
             parameters:
                 -
                     in: header
-                    name: Authorization
-                    description: ''
-                    example: 'Bearer {YOUR_AUTH_KEY}'
-                    schema:
-                        type: string
-                -
-                    in: header
                     name: Content-Type
                     description: ''
                     example: application/json
@@ -880,6 +881,7 @@ paths:
                                     message: { type: string, example: Unauthenticated. }
             tags:
                 - Endpoints
+            security: []
     '/api/reservations/{reservation}':
         get:
             summary: 'Display the specified resource.'
@@ -887,13 +889,6 @@ paths:
             parameters:
                 -
                     in: header
-                    name: Authorization
-                    description: ''
-                    example: 'Bearer {YOUR_AUTH_KEY}'
-                    schema:
-                        type: string
-                -
-                    in: header
                     name: Content-Type
                     description: ''
                     example: application/json
@@ -919,12 +914,13 @@ paths:
                                     message: { type: string, example: Unauthenticated. }
             tags:
                 - Endpoints
+            security: []
         parameters:
             -
                 in: path
                 name: reservation
                 description: ''
-                example: recusandae
+                example: id
                 required: true
                 schema:
                     type: string
@@ -935,13 +931,6 @@ paths:
             parameters:
                 -
                     in: header
-                    name: Authorization
-                    description: ''
-                    example: 'Bearer {YOUR_AUTH_KEY}'
-                    schema:
-                        type: string
-                -
-                    in: header
                     name: Content-Type
                     description: ''
                     example: application/json
@@ -967,6 +956,7 @@ paths:
                                     message: { type: string, example: Unauthenticated. }
             tags:
                 - Endpoints
+            security: []
     '/api/estpretes/{estprete}':
         get:
             summary: 'Display the specified resource.'
@@ -974,13 +964,6 @@ paths:
             parameters:
                 -
                     in: header
-                    name: Authorization
-                    description: ''
-                    example: 'Bearer {YOUR_AUTH_KEY}'
-                    schema:
-                        type: string
-                -
-                    in: header
                     name: Content-Type
                     description: ''
                     example: application/json
@@ -1006,12 +989,13 @@ paths:
                                     message: { type: string, example: Unauthenticated. }
             tags:
                 - Endpoints
+            security: []
         parameters:
             -
                 in: path
                 name: estprete
                 description: ''
-                example: facere
+                example: voluptatem
                 required: true
                 schema:
                     type: string
@@ -1022,13 +1006,6 @@ paths:
             parameters:
                 -
                     in: header
-                    name: Authorization
-                    description: ''
-                    example: 'Bearer {YOUR_AUTH_KEY}'
-                    schema:
-                        type: string
-                -
-                    in: header
                     name: Content-Type
                     description: ''
                     example: application/json
@@ -1054,17 +1031,11 @@ paths:
                                     message: { type: string, example: Unauthenticated. }
             tags:
                 - Endpoints
+            security: []
         post:
             summary: 'Store a newly created resource in storage.'
             description: ''
             parameters:
-                -
-                    in: header
-                    name: Authorization
-                    description: ''
-                    example: 'Bearer {YOUR_AUTH_KEY}'
-                    schema:
-                        type: string
                 -
                     in: header
                     name: Content-Type
@@ -1082,6 +1053,7 @@ paths:
             responses: {  }
             tags:
                 - Endpoints
+            security: []
     '/api/materiels/{materiel}':
         get:
             summary: 'Display the specified resource.'
@@ -1089,13 +1061,6 @@ paths:
             parameters:
                 -
                     in: header
-                    name: Authorization
-                    description: ''
-                    example: 'Bearer {YOUR_AUTH_KEY}'
-                    schema:
-                        type: string
-                -
-                    in: header
                     name: Content-Type
                     description: ''
                     example: application/json
@@ -1121,19 +1086,13 @@ paths:
                                     message: { type: string, example: Unauthenticated. }
             tags:
                 - Endpoints
+            security: []
         put:
             summary: 'Update the specified resource in storage.'
             description: ''
             parameters:
                 -
                     in: header
-                    name: Authorization
-                    description: ''
-                    example: 'Bearer {YOUR_AUTH_KEY}'
-                    schema:
-                        type: string
-                -
-                    in: header
                     name: Content-Type
                     description: ''
                     example: application/json
@@ -1149,19 +1108,13 @@ paths:
             responses: {  }
             tags:
                 - Endpoints
+            security: []
         delete:
             summary: 'Remove the specified resource from storage.'
             description: ''
             parameters:
                 -
                     in: header
-                    name: Authorization
-                    description: ''
-                    example: 'Bearer {YOUR_AUTH_KEY}'
-                    schema:
-                        type: string
-                -
-                    in: header
                     name: Content-Type
                     description: ''
                     example: application/json
@@ -1177,12 +1130,13 @@ paths:
             responses: {  }
             tags:
                 - Endpoints
+            security: []
         parameters:
             -
                 in: path
                 name: materiel
                 description: ''
-                example: aliquid
+                example: aut
                 required: true
                 schema:
                     type: string
@@ -1193,13 +1147,6 @@ paths:
             parameters:
                 -
                     in: header
-                    name: Authorization
-                    description: ''
-                    example: 'Bearer {YOUR_AUTH_KEY}'
-                    schema:
-                        type: string
-                -
-                    in: header
                     name: Content-Type
                     description: ''
                     example: application/json
@@ -1225,17 +1172,11 @@ paths:
                                     message: { type: string, example: Unauthenticated. }
             tags:
                 - Endpoints
+            security: []
         post:
             summary: 'Store a newly created resource in storage.'
             description: ''
             parameters:
-                -
-                    in: header
-                    name: Authorization
-                    description: ''
-                    example: 'Bearer {YOUR_AUTH_KEY}'
-                    schema:
-                        type: string
                 -
                     in: header
                     name: Content-Type
@@ -1253,6 +1194,7 @@ paths:
             responses: {  }
             tags:
                 - Endpoints
+            security: []
     '/api/gestionnaires/{gestionnaire}':
         get:
             summary: 'Display the specified resource.'
@@ -1260,13 +1202,6 @@ paths:
             parameters:
                 -
                     in: header
-                    name: Authorization
-                    description: ''
-                    example: 'Bearer {YOUR_AUTH_KEY}'
-                    schema:
-                        type: string
-                -
-                    in: header
                     name: Content-Type
                     description: ''
                     example: application/json
@@ -1292,19 +1227,13 @@ paths:
                                     message: { type: string, example: Unauthenticated. }
             tags:
                 - Endpoints
+            security: []
         put:
             summary: 'Update the specified resource in storage.'
             description: ''
             parameters:
                 -
                     in: header
-                    name: Authorization
-                    description: ''
-                    example: 'Bearer {YOUR_AUTH_KEY}'
-                    schema:
-                        type: string
-                -
-                    in: header
                     name: Content-Type
                     description: ''
                     example: application/json
@@ -1320,19 +1249,13 @@ paths:
             responses: {  }
             tags:
                 - Endpoints
+            security: []
         delete:
             summary: 'Remove the specified resource from storage.'
             description: ''
             parameters:
                 -
                     in: header
-                    name: Authorization
-                    description: ''
-                    example: 'Bearer {YOUR_AUTH_KEY}'
-                    schema:
-                        type: string
-                -
-                    in: header
                     name: Content-Type
                     description: ''
                     example: application/json
@@ -1348,12 +1271,13 @@ paths:
             responses: {  }
             tags:
                 - Endpoints
+            security: []
         parameters:
             -
                 in: path
                 name: gestionnaire
                 description: ''
-                example: voluptas
+                example: vel
                 required: true
                 schema:
                     type: string
@@ -1364,13 +1288,6 @@ paths:
             parameters:
                 -
                     in: header
-                    name: Authorization
-                    description: ''
-                    example: 'Bearer {YOUR_AUTH_KEY}'
-                    schema:
-                        type: string
-                -
-                    in: header
                     name: Content-Type
                     description: ''
                     example: application/json
@@ -1396,17 +1313,11 @@ paths:
                                     message: { type: string, example: Unauthenticated. }
             tags:
                 - Endpoints
+            security: []
         post:
             summary: 'Store a newly created resource in storage.'
             description: 'Send a json array of indisponibilites'
             parameters:
-                -
-                    in: header
-                    name: Authorization
-                    description: ''
-                    example: 'Bearer {YOUR_AUTH_KEY}'
-                    schema:
-                        type: string
                 -
                     in: header
                     name: Content-Type
@@ -1424,6 +1335,7 @@ paths:
             responses: {  }
             tags:
                 - Endpoints
+            security: []
     '/api/indisponibilites/{indisponibilite}':
         get:
             summary: 'Display the specified resource.'
@@ -1431,13 +1343,6 @@ paths:
             parameters:
                 -
                     in: header
-                    name: Authorization
-                    description: ''
-                    example: 'Bearer {YOUR_AUTH_KEY}'
-                    schema:
-                        type: string
-                -
-                    in: header
                     name: Content-Type
                     description: ''
                     example: application/json
@@ -1463,19 +1368,13 @@ paths:
                                     message: { type: string, example: Unauthenticated. }
             tags:
                 - Endpoints
+            security: []
         put:
             summary: 'Update the specified resource in storage.'
             description: ''
             parameters:
                 -
                     in: header
-                    name: Authorization
-                    description: ''
-                    example: 'Bearer {YOUR_AUTH_KEY}'
-                    schema:
-                        type: string
-                -
-                    in: header
                     name: Content-Type
                     description: ''
                     example: application/json
@@ -1491,19 +1390,13 @@ paths:
             responses: {  }
             tags:
                 - Endpoints
+            security: []
         delete:
             summary: 'Remove the specified resource from storage.'
             description: ''
             parameters:
                 -
                     in: header
-                    name: Authorization
-                    description: ''
-                    example: 'Bearer {YOUR_AUTH_KEY}'
-                    schema:
-                        type: string
-                -
-                    in: header
                     name: Content-Type
                     description: ''
                     example: application/json
@@ -1519,82 +1412,16 @@ paths:
             responses: {  }
             tags:
                 - Endpoints
+            security: []
         parameters:
             -
                 in: path
                 name: indisponibilite
                 description: ''
-                example: ad
+                example: reprehenderit
                 required: true
                 schema:
                     type: string
-    /api/creneaux:
-        get:
-            summary: 'Display a listing of the resource.'
-            description: ''
-            parameters:
-                -
-                    in: header
-                    name: Authorization
-                    description: ''
-                    example: 'Bearer {YOUR_AUTH_KEY}'
-                    schema:
-                        type: string
-                -
-                    in: header
-                    name: Content-Type
-                    description: ''
-                    example: application/json
-                    schema:
-                        type: string
-                -
-                    in: header
-                    name: Accept
-                    description: ''
-                    example: application/json
-                    schema:
-                        type: string
-            responses:
-                401:
-                    description: ''
-                    content:
-                        application/json:
-                            schema:
-                                type: object
-                                example:
-                                    message: Unauthenticated.
-                                properties:
-                                    message: { type: string, example: Unauthenticated. }
-            tags:
-                - Endpoints
-        post:
-            summary: 'Store a newly created resource in storage.'
-            description: "Send an Array\nSend only creneaux who are used"
-            parameters:
-                -
-                    in: header
-                    name: Authorization
-                    description: ''
-                    example: 'Bearer {YOUR_AUTH_KEY}'
-                    schema:
-                        type: string
-                -
-                    in: header
-                    name: Content-Type
-                    description: ''
-                    example: application/json
-                    schema:
-                        type: string
-                -
-                    in: header
-                    name: Accept
-                    description: ''
-                    example: application/json
-                    schema:
-                        type: string
-            responses: {  }
-            tags:
-                - Endpoints
     '/api/gestionnaires/{id}/rdv':
         get:
             summary: 'Display a listing of the rendez-vous of this Gestionnaire'
@@ -1602,13 +1429,6 @@ paths:
             parameters:
                 -
                     in: header
-                    name: Authorization
-                    description: ''
-                    example: 'Bearer {YOUR_AUTH_KEY}'
-                    schema:
-                        type: string
-                -
-                    in: header
                     name: Content-Type
                     description: ''
                     example: application/json
@@ -1634,12 +1454,13 @@ paths:
                                     message: { type: string, example: Unauthenticated. }
             tags:
                 - Endpoints
+            security: []
         parameters:
             -
                 in: path
                 name: id
                 description: ''
-                example: repellendus
+                example: pariatur
                 required: true
                 schema:
                     type: string
@@ -1650,13 +1471,6 @@ paths:
             parameters:
                 -
                     in: header
-                    name: Authorization
-                    description: ''
-                    example: 'Bearer {YOUR_AUTH_KEY}'
-                    schema:
-                        type: string
-                -
-                    in: header
                     name: Content-Type
                     description: ''
                     example: application/json
@@ -1672,6 +1486,7 @@ paths:
             responses: {  }
             tags:
                 - Endpoints
+            security: []
     /api/send-mail-gest:
         post:
             summary: ''
@@ -1679,13 +1494,6 @@ paths:
             parameters:
                 -
                     in: header
-                    name: Authorization
-                    description: ''
-                    example: 'Bearer {YOUR_AUTH_KEY}'
-                    schema:
-                        type: string
-                -
-                    in: header
                     name: Content-Type
                     description: ''
                     example: application/json
@@ -1701,44 +1509,7 @@ paths:
             responses: {  }
             tags:
                 - Endpoints
-    '/api/creneaux/{creneaux}':
-        put:
-            summary: 'Update the specifieds resources in storage.'
-            description: ''
-            parameters:
-                -
-                    in: header
-                    name: Authorization
-                    description: ''
-                    example: 'Bearer {YOUR_AUTH_KEY}'
-                    schema:
-                        type: string
-                -
-                    in: header
-                    name: Content-Type
-                    description: ''
-                    example: application/json
-                    schema:
-                        type: string
-                -
-                    in: header
-                    name: Accept
-                    description: ''
-                    example: application/json
-                    schema:
-                        type: string
-            responses: {  }
-            tags:
-                - Endpoints
-        parameters:
-            -
-                in: path
-                name: creneaux
-                description: ''
-                example: ipsam
-                required: true
-                schema:
-                    type: string
+            security: []
     /api/login:
         post:
             summary: Connexion
@@ -1746,13 +1517,6 @@ paths:
             parameters:
                 -
                     in: header
-                    name: Authorization
-                    description: ''
-                    example: 'Bearer {YOUR_AUTH_KEY}'
-                    schema:
-                        type: string
-                -
-                    in: header
                     name: Content-Type
                     description: ''
                     example: application/json
@@ -1768,18 +1532,12 @@ paths:
             responses: {  }
             tags:
                 - Endpoints
+            security: []
     /:
         get:
             summary: ''
             description: ''
             parameters:
-                -
-                    in: header
-                    name: Authorization
-                    description: ''
-                    example: 'Bearer {YOUR_AUTH_KEY}'
-                    schema:
-                        type: string
                 -
                     in: header
                     name: Content-Type
@@ -1804,6 +1562,7 @@ paths:
                                 example: /public/
             tags:
                 - Endpoints
+            security: []
 components:
     securitySchemes:
         default:

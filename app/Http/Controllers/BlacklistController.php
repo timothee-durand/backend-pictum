@@ -121,7 +121,7 @@ class BlacklistController extends Controller
     /**
      * Update the specified blacklisted person in storage.
      * @group Blacklist
-     * @urlParam id ID Pictum
+     * @urlParam blacklist int ID Pictum
      *
      * @queryParam nom string Nom de la personne
      * @queryParam prenom string Prénom de la personne
@@ -180,7 +180,7 @@ class BlacklistController extends Controller
      *
      * @group Blacklist
      * @authenticated
-     * @urlParam id ID Pictum
+     * @urlParam blacklist int ID Pictum correspondant
      *
      *
      *
