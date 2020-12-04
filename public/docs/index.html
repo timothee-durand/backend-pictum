@@ -62,7 +62,7 @@ You can switch the language used with the tabs at the top right (or from the nav
 <p>Base URL</p>
 </blockquote>
 <pre><code class="language-yaml">http://127.0.0.1:8000</code></pre><h1>Authenticating requests</h1>
-<p>This API is authenticated by sending an <strong><code>Authorization</code></strong> header with the value <strong><code>"Bearer {YOUR_AUTH_KEY}"</code></strong>.</p>
+<p>Authenticate requests to this API's endpoints by sending an <strong><code>Authorization</code></strong> header with the value <strong><code>"Bearer {YOUR_AUTH_KEY}"</code></strong>.</p>
 <p>All authenticated endpoints are marked with a <code>requires authentication</code> badge in the documentation below.</p>
 <p>A token is generate any time you login correctly. Their lifetime is 1 hour.</p><h1>Blacklist</h1>
 <h2>Display a listing of the user that are in the Blacklist</h2>
@@ -136,7 +136,7 @@ fetch(url, {
 <p>Example request:</p>
 </blockquote>
 <pre><code class="language-javascript">const url = new URL(
-    "http://127.0.0.1:8000/api/blacklists/ducimus"
+    "http://127.0.0.1:8000/api/blacklists/sunt"
 );
 
 let headers = {
@@ -205,9 +205,9 @@ ID Pictum</p>
 );
 
 let params = {
-    "nom": "blanditiis",
-    "prenom": "ratione",
-    "mail": "modi",
+    "nom": "esse",
+    "prenom": "ut",
+    "mail": "reiciendis",
     "id_univ": "asperiores",
 };
 Object.keys(params)
@@ -283,10 +283,10 @@ string Id universitaire de la personne</p>
 );
 
 let params = {
-    "nom": "sint",
-    "prenom": "sint",
-    "mail": "et",
-    "id_univ": "eos",
+    "nom": "facere",
+    "prenom": "deleniti",
+    "mail": "recusandae",
+    "id_univ": "iure",
 };
 Object.keys(params)
     .forEach(key =&gt; url.searchParams.append(key, params[key]));
@@ -364,7 +364,7 @@ Id universitaire de la personne</p>
 <p>Example request:</p>
 </blockquote>
 <pre><code class="language-javascript">const url = new URL(
-    "http://127.0.0.1:8000/api/blacklists/13"
+    "http://127.0.0.1:8000/api/blacklists/19"
 );
 
 let headers = {
@@ -487,7 +487,7 @@ let headers = {
 };
 
 let body = {
-    "creneaux[]": "velit"
+    "creneaux[]": "repudiandae"
 }
 
 fetch(url, {
@@ -569,7 +569,7 @@ ID du gestionnaire correspondant</p>
 <p>Example request:</p>
 </blockquote>
 <pre><code class="language-javascript">const url = new URL(
-    "http://127.0.0.1:8000/api/creneaux/qui"
+    "http://127.0.0.1:8000/api/creneaux/voluptatibus"
 );
 
 let headers = {
@@ -688,7 +688,7 @@ fetch(url, {
 <p>Example request:</p>
 </blockquote>
 <pre><code class="language-javascript">const url = new URL(
-    "http://127.0.0.1:8000/api/departements/16"
+    "http://127.0.0.1:8000/api/departements/19"
 );
 
 let headers = {
@@ -756,10 +756,10 @@ ID du département concerné</p>
 );
 
 let params = {
-    "lat": "2.069",
-    "long": "217246593.4",
-    "nom": "sit",
-    "gestionnaire_id": "19",
+    "lat": "4216.7",
+    "long": "834629.673174",
+    "nom": "non",
+    "gestionnaire_id": "18",
 };
 Object.keys(params)
     .forEach(key =&gt; url.searchParams.append(key, params[key]));
@@ -835,10 +835,10 @@ ID Pictum du gestionnaire concerné</p>
 );
 
 let params = {
-    "lat": "490.79212",
-    "long": "9014027",
-    "nom": "ipsam",
-    "gestionnaire_id": "9",
+    "lat": "208576654.6147",
+    "long": "33160",
+    "nom": "officia",
+    "gestionnaire_id": "8",
 };
 Object.keys(params)
     .forEach(key =&gt; url.searchParams.append(key, params[key]));
@@ -919,7 +919,7 @@ ID Pictum du gestionnaire concerné</p>
 <p>Example request:</p>
 </blockquote>
 <pre><code class="language-javascript">const url = new URL(
-    "http://127.0.0.1:8000/api/departements/10"
+    "http://127.0.0.1:8000/api/departements/20"
 );
 
 let headers = {
@@ -1049,7 +1049,7 @@ fetch(url, {
 <p>Example request:</p>
 </blockquote>
 <pre><code class="language-javascript">const url = new URL(
-    "http://127.0.0.1:8000/api/types/omnis"
+    "http://127.0.0.1:8000/api/types/aliquid"
 );
 
 let headers = {
@@ -1141,7 +1141,7 @@ fetch(url, {
 <p>Example request:</p>
 </blockquote>
 <pre><code class="language-javascript">const url = new URL(
-    "http://127.0.0.1:8000/api/malettes/fugit"
+    "http://127.0.0.1:8000/api/malettes/nostrum"
 );
 
 let headers = {
@@ -1233,7 +1233,7 @@ fetch(url, {
 <p>Example request:</p>
 </blockquote>
 <pre><code class="language-javascript">const url = new URL(
-    "http://127.0.0.1:8000/api/reservations/omnis"
+    "http://127.0.0.1:8000/api/reservations/corrupti"
 );
 
 let headers = {
@@ -1325,7 +1325,7 @@ fetch(url, {
 <p>Example request:</p>
 </blockquote>
 <pre><code class="language-javascript">const url = new URL(
-    "http://127.0.0.1:8000/api/materiels/quis"
+    "http://127.0.0.1:8000/api/materiels/occaecati"
 );
 
 let headers = {
@@ -1366,98 +1366,6 @@ fetch(url, {
 <p>
 <b><code>materiel</code></b>&nbsp;&nbsp;<small>string</small>  &nbsp;
 <input type="text" name="materiel" data-endpoint="GETapi-materiels--materiel-" data-component="url" required  hidden>
-<br>
-</p>
-</form>
-<h2>Display a listing of the resource.</h2>
-<blockquote>
-<p>Example request:</p>
-</blockquote>
-<pre><code class="language-javascript">const url = new URL(
-    "http://127.0.0.1:8000/api/indisponibilites"
-);
-
-let headers = {
-    "Content-Type": "application/json",
-    "Accept": "application/json",
-};
-
-fetch(url, {
-    method: "GET",
-    headers,
-}).then(response =&gt; response.json());</code></pre>
-<blockquote>
-<p>Example response (401):</p>
-</blockquote>
-<pre><code class="language-json">{
-    "message": "Unauthenticated."
-}</code></pre>
-<div id="execution-results-GETapi-indisponibilites" hidden>
-    <blockquote>Received response<span id="execution-response-status-GETapi-indisponibilites"></span>:</blockquote>
-    <pre class="json"><code id="execution-response-content-GETapi-indisponibilites"></code></pre>
-</div>
-<div id="execution-error-GETapi-indisponibilites" hidden>
-    <blockquote>Request failed with error:</blockquote>
-    <pre><code id="execution-error-message-GETapi-indisponibilites"></code></pre>
-</div>
-<form id="form-GETapi-indisponibilites" data-method="GET" data-path="api/indisponibilites" data-authed="0" data-hasfiles="0" data-headers='{"Content-Type":"application\/json","Accept":"application\/json"}' onsubmit="event.preventDefault(); executeTryOut('GETapi-indisponibilites', this);">
-<h3>
-    Request&nbsp;&nbsp;&nbsp;
-        <button type="button" style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;" id="btn-tryout-GETapi-indisponibilites" onclick="tryItOut('GETapi-indisponibilites');">Try it out ⚡</button>
-    <button type="button" style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;" id="btn-canceltryout-GETapi-indisponibilites" onclick="cancelTryOut('GETapi-indisponibilites');" hidden>Cancel</button>&nbsp;&nbsp;
-    <button type="submit" style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;" id="btn-executetryout-GETapi-indisponibilites" hidden>Send Request 💥</button>
-    </h3>
-<p>
-<small class="badge badge-green">GET</small>
- <b><code>api/indisponibilites</code></b>
-</p>
-</form>
-<h2>Display the specified resource.</h2>
-<blockquote>
-<p>Example request:</p>
-</blockquote>
-<pre><code class="language-javascript">const url = new URL(
-    "http://127.0.0.1:8000/api/indisponibilites/quaerat"
-);
-
-let headers = {
-    "Content-Type": "application/json",
-    "Accept": "application/json",
-};
-
-fetch(url, {
-    method: "GET",
-    headers,
-}).then(response =&gt; response.json());</code></pre>
-<blockquote>
-<p>Example response (401):</p>
-</blockquote>
-<pre><code class="language-json">{
-    "message": "Unauthenticated."
-}</code></pre>
-<div id="execution-results-GETapi-indisponibilites--indisponibilite-" hidden>
-    <blockquote>Received response<span id="execution-response-status-GETapi-indisponibilites--indisponibilite-"></span>:</blockquote>
-    <pre class="json"><code id="execution-response-content-GETapi-indisponibilites--indisponibilite-"></code></pre>
-</div>
-<div id="execution-error-GETapi-indisponibilites--indisponibilite-" hidden>
-    <blockquote>Request failed with error:</blockquote>
-    <pre><code id="execution-error-message-GETapi-indisponibilites--indisponibilite-"></code></pre>
-</div>
-<form id="form-GETapi-indisponibilites--indisponibilite-" data-method="GET" data-path="api/indisponibilites/{indisponibilite}" data-authed="0" data-hasfiles="0" data-headers='{"Content-Type":"application\/json","Accept":"application\/json"}' onsubmit="event.preventDefault(); executeTryOut('GETapi-indisponibilites--indisponibilite-', this);">
-<h3>
-    Request&nbsp;&nbsp;&nbsp;
-        <button type="button" style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;" id="btn-tryout-GETapi-indisponibilites--indisponibilite-" onclick="tryItOut('GETapi-indisponibilites--indisponibilite-');">Try it out ⚡</button>
-    <button type="button" style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;" id="btn-canceltryout-GETapi-indisponibilites--indisponibilite-" onclick="cancelTryOut('GETapi-indisponibilites--indisponibilite-');" hidden>Cancel</button>&nbsp;&nbsp;
-    <button type="submit" style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;" id="btn-executetryout-GETapi-indisponibilites--indisponibilite-" hidden>Send Request 💥</button>
-    </h3>
-<p>
-<small class="badge badge-green">GET</small>
- <b><code>api/indisponibilites/{indisponibilite}</code></b>
-</p>
-<h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
-<p>
-<b><code>indisponibilite</code></b>&nbsp;&nbsp;<small>string</small>  &nbsp;
-<input type="text" name="indisponibilite" data-endpoint="GETapi-indisponibilites--indisponibilite-" data-component="url" required  hidden>
 <br>
 </p>
 </form>
@@ -1577,7 +1485,7 @@ fetch(url, {
 <p>Example request:</p>
 </blockquote>
 <pre><code class="language-javascript">const url = new URL(
-    "http://127.0.0.1:8000/api/types/cum"
+    "http://127.0.0.1:8000/api/types/quod"
 );
 
 let headers = {
@@ -1624,7 +1532,7 @@ fetch(url, {
 <p>Example request:</p>
 </blockquote>
 <pre><code class="language-javascript">const url = new URL(
-    "http://127.0.0.1:8000/api/types/omnis"
+    "http://127.0.0.1:8000/api/types/eum"
 );
 
 let headers = {
@@ -1704,7 +1612,7 @@ fetch(url, {
 <p>Example request:</p>
 </blockquote>
 <pre><code class="language-javascript">const url = new URL(
-    "http://127.0.0.1:8000/api/malettes/blanditiis"
+    "http://127.0.0.1:8000/api/malettes/voluptate"
 );
 
 let headers = {
@@ -1751,7 +1659,7 @@ fetch(url, {
 <p>Example request:</p>
 </blockquote>
 <pre><code class="language-javascript">const url = new URL(
-    "http://127.0.0.1:8000/api/malettes/repudiandae"
+    "http://127.0.0.1:8000/api/malettes/rerum"
 );
 
 let headers = {
@@ -1831,7 +1739,7 @@ fetch(url, {
 <p>Example request:</p>
 </blockquote>
 <pre><code class="language-javascript">const url = new URL(
-    "http://127.0.0.1:8000/api/materiels/sint"
+    "http://127.0.0.1:8000/api/materiels/sed"
 );
 
 let headers = {
@@ -1878,7 +1786,7 @@ fetch(url, {
 <p>Example request:</p>
 </blockquote>
 <pre><code class="language-javascript">const url = new URL(
-    "http://127.0.0.1:8000/api/materiels/dignissimos"
+    "http://127.0.0.1:8000/api/materiels/voluptatem"
 );
 
 let headers = {
@@ -1913,134 +1821,6 @@ fetch(url, {
 <p>
 <b><code>materiel</code></b>&nbsp;&nbsp;<small>string</small>  &nbsp;
 <input type="text" name="materiel" data-endpoint="DELETEapi-materiels--materiel-" data-component="url" required  hidden>
-<br>
-</p>
-</form>
-<h2>Store a newly created resource in storage.</h2>
-<p>Send a json array of indisponibilites</p>
-<blockquote>
-<p>Example request:</p>
-</blockquote>
-<pre><code class="language-javascript">const url = new URL(
-    "http://127.0.0.1:8000/api/indisponibilites"
-);
-
-let headers = {
-    "Content-Type": "application/json",
-    "Accept": "application/json",
-};
-
-fetch(url, {
-    method: "POST",
-    headers,
-}).then(response =&gt; response.json());</code></pre>
-<div id="execution-results-POSTapi-indisponibilites" hidden>
-    <blockquote>Received response<span id="execution-response-status-POSTapi-indisponibilites"></span>:</blockquote>
-    <pre class="json"><code id="execution-response-content-POSTapi-indisponibilites"></code></pre>
-</div>
-<div id="execution-error-POSTapi-indisponibilites" hidden>
-    <blockquote>Request failed with error:</blockquote>
-    <pre><code id="execution-error-message-POSTapi-indisponibilites"></code></pre>
-</div>
-<form id="form-POSTapi-indisponibilites" data-method="POST" data-path="api/indisponibilites" data-authed="0" data-hasfiles="0" data-headers='{"Content-Type":"application\/json","Accept":"application\/json"}' onsubmit="event.preventDefault(); executeTryOut('POSTapi-indisponibilites', this);">
-<h3>
-    Request&nbsp;&nbsp;&nbsp;
-        <button type="button" style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;" id="btn-tryout-POSTapi-indisponibilites" onclick="tryItOut('POSTapi-indisponibilites');">Try it out ⚡</button>
-    <button type="button" style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;" id="btn-canceltryout-POSTapi-indisponibilites" onclick="cancelTryOut('POSTapi-indisponibilites');" hidden>Cancel</button>&nbsp;&nbsp;
-    <button type="submit" style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;" id="btn-executetryout-POSTapi-indisponibilites" hidden>Send Request 💥</button>
-    </h3>
-<p>
-<small class="badge badge-black">POST</small>
- <b><code>api/indisponibilites</code></b>
-</p>
-</form>
-<h2>Update the specified resource in storage.</h2>
-<blockquote>
-<p>Example request:</p>
-</blockquote>
-<pre><code class="language-javascript">const url = new URL(
-    "http://127.0.0.1:8000/api/indisponibilites/dolor"
-);
-
-let headers = {
-    "Content-Type": "application/json",
-    "Accept": "application/json",
-};
-
-fetch(url, {
-    method: "PUT",
-    headers,
-}).then(response =&gt; response.json());</code></pre>
-<div id="execution-results-PUTapi-indisponibilites--indisponibilite-" hidden>
-    <blockquote>Received response<span id="execution-response-status-PUTapi-indisponibilites--indisponibilite-"></span>:</blockquote>
-    <pre class="json"><code id="execution-response-content-PUTapi-indisponibilites--indisponibilite-"></code></pre>
-</div>
-<div id="execution-error-PUTapi-indisponibilites--indisponibilite-" hidden>
-    <blockquote>Request failed with error:</blockquote>
-    <pre><code id="execution-error-message-PUTapi-indisponibilites--indisponibilite-"></code></pre>
-</div>
-<form id="form-PUTapi-indisponibilites--indisponibilite-" data-method="PUT" data-path="api/indisponibilites/{indisponibilite}" data-authed="0" data-hasfiles="0" data-headers='{"Content-Type":"application\/json","Accept":"application\/json"}' onsubmit="event.preventDefault(); executeTryOut('PUTapi-indisponibilites--indisponibilite-', this);">
-<h3>
-    Request&nbsp;&nbsp;&nbsp;
-        <button type="button" style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;" id="btn-tryout-PUTapi-indisponibilites--indisponibilite-" onclick="tryItOut('PUTapi-indisponibilites--indisponibilite-');">Try it out ⚡</button>
-    <button type="button" style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;" id="btn-canceltryout-PUTapi-indisponibilites--indisponibilite-" onclick="cancelTryOut('PUTapi-indisponibilites--indisponibilite-');" hidden>Cancel</button>&nbsp;&nbsp;
-    <button type="submit" style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;" id="btn-executetryout-PUTapi-indisponibilites--indisponibilite-" hidden>Send Request 💥</button>
-    </h3>
-<p>
-<small class="badge badge-darkblue">PUT</small>
- <b><code>api/indisponibilites/{indisponibilite}</code></b>
-</p>
-<p>
-<small class="badge badge-purple">PATCH</small>
- <b><code>api/indisponibilites/{indisponibilite}</code></b>
-</p>
-<h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
-<p>
-<b><code>indisponibilite</code></b>&nbsp;&nbsp;<small>string</small>  &nbsp;
-<input type="text" name="indisponibilite" data-endpoint="PUTapi-indisponibilites--indisponibilite-" data-component="url" required  hidden>
-<br>
-</p>
-</form>
-<h2>Remove the specified resource from storage.</h2>
-<blockquote>
-<p>Example request:</p>
-</blockquote>
-<pre><code class="language-javascript">const url = new URL(
-    "http://127.0.0.1:8000/api/indisponibilites/velit"
-);
-
-let headers = {
-    "Content-Type": "application/json",
-    "Accept": "application/json",
-};
-
-fetch(url, {
-    method: "DELETE",
-    headers,
-}).then(response =&gt; response.json());</code></pre>
-<div id="execution-results-DELETEapi-indisponibilites--indisponibilite-" hidden>
-    <blockquote>Received response<span id="execution-response-status-DELETEapi-indisponibilites--indisponibilite-"></span>:</blockquote>
-    <pre class="json"><code id="execution-response-content-DELETEapi-indisponibilites--indisponibilite-"></code></pre>
-</div>
-<div id="execution-error-DELETEapi-indisponibilites--indisponibilite-" hidden>
-    <blockquote>Request failed with error:</blockquote>
-    <pre><code id="execution-error-message-DELETEapi-indisponibilites--indisponibilite-"></code></pre>
-</div>
-<form id="form-DELETEapi-indisponibilites--indisponibilite-" data-method="DELETE" data-path="api/indisponibilites/{indisponibilite}" data-authed="0" data-hasfiles="0" data-headers='{"Content-Type":"application\/json","Accept":"application\/json"}' onsubmit="event.preventDefault(); executeTryOut('DELETEapi-indisponibilites--indisponibilite-', this);">
-<h3>
-    Request&nbsp;&nbsp;&nbsp;
-        <button type="button" style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;" id="btn-tryout-DELETEapi-indisponibilites--indisponibilite-" onclick="tryItOut('DELETEapi-indisponibilites--indisponibilite-');">Try it out ⚡</button>
-    <button type="button" style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;" id="btn-canceltryout-DELETEapi-indisponibilites--indisponibilite-" onclick="cancelTryOut('DELETEapi-indisponibilites--indisponibilite-');" hidden>Cancel</button>&nbsp;&nbsp;
-    <button type="submit" style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;" id="btn-executetryout-DELETEapi-indisponibilites--indisponibilite-" hidden>Send Request 💥</button>
-    </h3>
-<p>
-<small class="badge badge-red">DELETE</small>
- <b><code>api/indisponibilites/{indisponibilite}</code></b>
-</p>
-<h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
-<p>
-<b><code>indisponibilite</code></b>&nbsp;&nbsp;<small>string</small>  &nbsp;
-<input type="text" name="indisponibilite" data-endpoint="DELETEapi-indisponibilites--indisponibilite-" data-component="url" required  hidden>
 <br>
 </p>
 </form>
@@ -2263,11 +2043,11 @@ fetch(url, {
 );
 
 let params = {
-    "id_malettes[]": "6",
-    "id_materiels[]": "12",
-    "reservation_id": "9",
-    "date_debut": "labore",
-    "date_fin": "suscipit",
+    "id_malettes[]": "16",
+    "id_materiels[]": "18",
+    "reservation_id": "5",
+    "date_debut": "officiis",
+    "date_fin": "quia",
 };
 Object.keys(params)
     .forEach(key =&gt; url.searchParams.append(key, params[key]));
@@ -2337,11 +2117,11 @@ DateTime Rendez-vous de retour de matériel</p>
 <p>Example request:</p>
 </blockquote>
 <pre><code class="language-javascript">const url = new URL(
-    "http://127.0.0.1:8000/api/estpretes/perferendis"
+    "http://127.0.0.1:8000/api/estpretes/rem"
 );
 
 let params = {
-    "id_estprete[]": "12",
+    "id_estprete[]": "18",
 };
 Object.keys(params)
     .forEach(key =&gt; url.searchParams.append(key, params[key]));
@@ -2528,7 +2308,7 @@ fetch(url, {
 <p>Example request:</p>
 </blockquote>
 <pre><code class="language-javascript">const url = new URL(
-    "http://127.0.0.1:8000/api/gestionnaires/12"
+    "http://127.0.0.1:8000/api/gestionnaires/13"
 );
 
 let headers = {
@@ -2577,11 +2357,11 @@ ID du gestionnaire à afficher</p>
 <p>Example request:</p>
 </blockquote>
 <pre><code class="language-javascript">const url = new URL(
-    "http://127.0.0.1:8000/api/gestionnaires/7/rdv"
+    "http://127.0.0.1:8000/api/gestionnaires/20/rdv"
 );
 
 let params = {
-    "start_day": "aut",
+    "start_day": "corporis",
 };
 Object.keys(params)
     .forEach(key =&gt; url.searchParams.append(key, params[key]));
@@ -2691,12 +2471,12 @@ fetch(url, {
 );
 
 let params = {
-    "nom": "quae",
-    "prenom": "voluptas",
-    "mail": "illum",
-    "id_univ": "architecto",
-    "admin": "",
-    "departement_id": "14",
+    "nom": "et",
+    "prenom": "quia",
+    "mail": "et",
+    "id_univ": "eius",
+    "admin": "1",
+    "departement_id": "15",
 };
 Object.keys(params)
     .forEach(key =&gt; url.searchParams.append(key, params[key]));
@@ -2784,7 +2564,7 @@ ID Pictum du département correspondant</p>
 <p>Example request:</p>
 </blockquote>
 <pre><code class="language-javascript">const url = new URL(
-    "http://127.0.0.1:8000/api/gestionnaires/2"
+    "http://127.0.0.1:8000/api/gestionnaires/15"
 );
 
 let headers = {
@@ -2828,6 +2608,314 @@ fetch(url, {
 <input type="number" name="gestionnaire" data-endpoint="DELETEapi-gestionnaires--gestionnaire-" data-component="url"  hidden>
 <br>
 ID du gestionnaire à afficher</p>
+</form><h1>Indisponibilites</h1>
+<h2>Display a listing of the resource.</h2>
+<blockquote>
+<p>Example request:</p>
+</blockquote>
+<pre><code class="language-javascript">const url = new URL(
+    "http://127.0.0.1:8000/api/indisponibilites"
+);
+
+let headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+fetch(url, {
+    method: "GET",
+    headers,
+}).then(response =&gt; response.json());</code></pre>
+<blockquote>
+<p>Example response (200):</p>
+</blockquote>
+<pre><code class="language-json">[
+    {
+        "id": 1,
+        "created_at": "2020-12-03T17:31:14.000000Z",
+        "updated_at": "2020-12-03T17:31:14.000000Z",
+        "date_debut": "2020-11-10 17:29:14",
+        "date_fin": "2020-11-24 01:01:31",
+        "gestionnaire_id": 5
+    },
+    {
+        "id": 2,
+        "created_at": "2020-12-03T17:31:14.000000Z",
+        "updated_at": "2020-12-03T17:31:14.000000Z",
+        "date_debut": "2020-06-07 16:14:48",
+        "date_fin": "2020-08-20 02:26:19",
+        "gestionnaire_id": 9
+    }
+]</code></pre>
+<div id="execution-results-GETapi-indisponibilites" hidden>
+    <blockquote>Received response<span id="execution-response-status-GETapi-indisponibilites"></span>:</blockquote>
+    <pre class="json"><code id="execution-response-content-GETapi-indisponibilites"></code></pre>
+</div>
+<div id="execution-error-GETapi-indisponibilites" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-GETapi-indisponibilites"></code></pre>
+</div>
+<form id="form-GETapi-indisponibilites" data-method="GET" data-path="api/indisponibilites" data-authed="0" data-hasfiles="0" data-headers='{"Content-Type":"application\/json","Accept":"application\/json"}' onsubmit="event.preventDefault(); executeTryOut('GETapi-indisponibilites', this);">
+<h3>
+    Request&nbsp;&nbsp;&nbsp;
+        <button type="button" style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;" id="btn-tryout-GETapi-indisponibilites" onclick="tryItOut('GETapi-indisponibilites');">Try it out ⚡</button>
+    <button type="button" style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;" id="btn-canceltryout-GETapi-indisponibilites" onclick="cancelTryOut('GETapi-indisponibilites');" hidden>Cancel</button>&nbsp;&nbsp;
+    <button type="submit" style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;" id="btn-executetryout-GETapi-indisponibilites" hidden>Send Request 💥</button>
+    </h3>
+<p>
+<small class="badge badge-green">GET</small>
+ <b><code>api/indisponibilites</code></b>
+</p>
+</form>
+<h2>Display the specified Indisponibilite.</h2>
+<blockquote>
+<p>Example request:</p>
+</blockquote>
+<pre><code class="language-javascript">const url = new URL(
+    "http://127.0.0.1:8000/api/indisponibilites/ut"
+);
+
+let headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+fetch(url, {
+    method: "GET",
+    headers,
+}).then(response =&gt; response.json());</code></pre>
+<blockquote>
+<p>Example response (401):</p>
+</blockquote>
+<pre><code class="language-json">{
+    "message": "Unauthenticated."
+}</code></pre>
+<div id="execution-results-GETapi-indisponibilites--indisponibilite-" hidden>
+    <blockquote>Received response<span id="execution-response-status-GETapi-indisponibilites--indisponibilite-"></span>:</blockquote>
+    <pre class="json"><code id="execution-response-content-GETapi-indisponibilites--indisponibilite-"></code></pre>
+</div>
+<div id="execution-error-GETapi-indisponibilites--indisponibilite-" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-GETapi-indisponibilites--indisponibilite-"></code></pre>
+</div>
+<form id="form-GETapi-indisponibilites--indisponibilite-" data-method="GET" data-path="api/indisponibilites/{indisponibilite}" data-authed="0" data-hasfiles="0" data-headers='{"Content-Type":"application\/json","Accept":"application\/json"}' onsubmit="event.preventDefault(); executeTryOut('GETapi-indisponibilites--indisponibilite-', this);">
+<h3>
+    Request&nbsp;&nbsp;&nbsp;
+        <button type="button" style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;" id="btn-tryout-GETapi-indisponibilites--indisponibilite-" onclick="tryItOut('GETapi-indisponibilites--indisponibilite-');">Try it out ⚡</button>
+    <button type="button" style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;" id="btn-canceltryout-GETapi-indisponibilites--indisponibilite-" onclick="cancelTryOut('GETapi-indisponibilites--indisponibilite-');" hidden>Cancel</button>&nbsp;&nbsp;
+    <button type="submit" style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;" id="btn-executetryout-GETapi-indisponibilites--indisponibilite-" hidden>Send Request 💥</button>
+    </h3>
+<p>
+<small class="badge badge-green">GET</small>
+ <b><code>api/indisponibilites/{indisponibilite}</code></b>
+</p>
+<h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
+<p>
+<b><code>indisponibilite</code></b>&nbsp;&nbsp;<small>string</small>  &nbsp;
+<input type="text" name="indisponibilite" data-endpoint="GETapi-indisponibilites--indisponibilite-" data-component="url" required  hidden>
+<br>
+</p>
+</form>
+<h2>Store some new Indisponibilite</h2>
+<blockquote>
+<p>Example request:</p>
+</blockquote>
+<pre><code class="language-javascript">const url = new URL(
+    "http://127.0.0.1:8000/api/indisponibilites"
+);
+
+let headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+let body = {
+    "array_indispo[]": "ut"
+}
+
+fetch(url, {
+    method: "POST",
+    headers,
+    body: JSON.stringify(body),
+}).then(response =&gt; response.json());</code></pre>
+<div id="execution-results-POSTapi-indisponibilites" hidden>
+    <blockquote>Received response<span id="execution-response-status-POSTapi-indisponibilites"></span>:</blockquote>
+    <pre class="json"><code id="execution-response-content-POSTapi-indisponibilites"></code></pre>
+</div>
+<div id="execution-error-POSTapi-indisponibilites" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-POSTapi-indisponibilites"></code></pre>
+</div>
+<form id="form-POSTapi-indisponibilites" data-method="POST" data-path="api/indisponibilites" data-authed="0" data-hasfiles="0" data-headers='{"Content-Type":"application\/json","Accept":"application\/json"}' onsubmit="event.preventDefault(); executeTryOut('POSTapi-indisponibilites', this);">
+<h3>
+    Request&nbsp;&nbsp;&nbsp;
+        <button type="button" style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;" id="btn-tryout-POSTapi-indisponibilites" onclick="tryItOut('POSTapi-indisponibilites');">Try it out ⚡</button>
+    <button type="button" style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;" id="btn-canceltryout-POSTapi-indisponibilites" onclick="cancelTryOut('POSTapi-indisponibilites');" hidden>Cancel</button>&nbsp;&nbsp;
+    <button type="submit" style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;" id="btn-executetryout-POSTapi-indisponibilites" hidden>Send Request 💥</button>
+    </h3>
+<p>
+<small class="badge badge-black">POST</small>
+ <b><code>api/indisponibilites</code></b>
+</p>
+<h4 class="fancy-heading-panel"><b>Body Parameters</b></h4>
+<p>
+<b><code>array_indispo[]</code></b>&nbsp;&nbsp;<small>required</small>     <i>optional</i> &nbsp;
+<input type="text" name="array_indispo.0" data-endpoint="POSTapi-indisponibilites" data-component="body"  hidden>
+<br>
+Tableau d'indisponibilités à créer</p>
+<p>
+<details>
+<summary>
+<b><code>array_indispo</code></b>&nbsp;&nbsp;<small>object</small>     <i>optional</i> &nbsp;
+<br>
+</summary>
+<br>
+<p>
+<b><code>array_indispo[].date_debut</code></b>&nbsp;&nbsp;<small>DateTime</small>  &nbsp;
+<input type="text" name="array_indispo.0.date_debut" data-endpoint="POSTapi-indisponibilites" data-component="body" required  hidden>
+<br>
+Date de début de l'indisponibilite</p>
+<p>
+<b><code>array_indispo[].date_fin</code></b>&nbsp;&nbsp;<small>DateTime</small>  &nbsp;
+<input type="text" name="array_indispo.0.date_fin" data-endpoint="POSTapi-indisponibilites" data-component="body" required  hidden>
+<br>
+Date de fin de l'indisponibilite</p>
+<p>
+<b><code>array_indispo[].id_gestionnaire</code></b>&nbsp;&nbsp;<small>integer</small>  &nbsp;
+<input type="number" name="array_indispo.0.id_gestionnaire" data-endpoint="POSTapi-indisponibilites" data-component="body" required  hidden>
+<br>
+Id Pictum du gestionnaire concerné</p>
+</details>
+</p>
+
+</form>
+<h2>Update the specified indisponibilite in storage.</h2>
+<blockquote>
+<p>Example request:</p>
+</blockquote>
+<pre><code class="language-javascript">const url = new URL(
+    "http://127.0.0.1:8000/api/indisponibilites/explicabo"
+);
+
+let params = {
+    "date_debut": "qui",
+    "date_fin": "quo",
+    "id_gestionnaire": "10",
+};
+Object.keys(params)
+    .forEach(key =&gt; url.searchParams.append(key, params[key]));
+
+let headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+fetch(url, {
+    method: "PUT",
+    headers,
+}).then(response =&gt; response.json());</code></pre>
+<blockquote>
+<p>Example response (200):</p>
+</blockquote>
+<pre><code class="language-json">
+{
+ "Update OK"
+}</code></pre>
+<div id="execution-results-PUTapi-indisponibilites--indisponibilite-" hidden>
+    <blockquote>Received response<span id="execution-response-status-PUTapi-indisponibilites--indisponibilite-"></span>:</blockquote>
+    <pre class="json"><code id="execution-response-content-PUTapi-indisponibilites--indisponibilite-"></code></pre>
+</div>
+<div id="execution-error-PUTapi-indisponibilites--indisponibilite-" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-PUTapi-indisponibilites--indisponibilite-"></code></pre>
+</div>
+<form id="form-PUTapi-indisponibilites--indisponibilite-" data-method="PUT" data-path="api/indisponibilites/{indisponibilite}" data-authed="0" data-hasfiles="0" data-headers='{"Content-Type":"application\/json","Accept":"application\/json"}' onsubmit="event.preventDefault(); executeTryOut('PUTapi-indisponibilites--indisponibilite-', this);">
+<h3>
+    Request&nbsp;&nbsp;&nbsp;
+        <button type="button" style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;" id="btn-tryout-PUTapi-indisponibilites--indisponibilite-" onclick="tryItOut('PUTapi-indisponibilites--indisponibilite-');">Try it out ⚡</button>
+    <button type="button" style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;" id="btn-canceltryout-PUTapi-indisponibilites--indisponibilite-" onclick="cancelTryOut('PUTapi-indisponibilites--indisponibilite-');" hidden>Cancel</button>&nbsp;&nbsp;
+    <button type="submit" style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;" id="btn-executetryout-PUTapi-indisponibilites--indisponibilite-" hidden>Send Request 💥</button>
+    </h3>
+<p>
+<small class="badge badge-darkblue">PUT</small>
+ <b><code>api/indisponibilites/{indisponibilite}</code></b>
+</p>
+<p>
+<small class="badge badge-purple">PATCH</small>
+ <b><code>api/indisponibilites/{indisponibilite}</code></b>
+</p>
+<h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
+<p>
+<b><code>indisponibilite</code></b>&nbsp;&nbsp;<small>string</small>     <i>optional</i> &nbsp;
+<input type="text" name="indisponibilite" data-endpoint="PUTapi-indisponibilites--indisponibilite-" data-component="url"  hidden>
+<br>
+ID de l'indisponibilité concernée</p>
+<h4 class="fancy-heading-panel"><b>Query Parameters</b></h4>
+<p>
+<b><code>date_debut</code></b>&nbsp;&nbsp;<small>string</small>     <i>optional</i> &nbsp;
+<input type="text" name="date_debut" data-endpoint="PUTapi-indisponibilites--indisponibilite-" data-component="query"  hidden>
+<br>
+DateTime Date de début de l'indisponibilite</p>
+<p>
+<b><code>date_fin</code></b>&nbsp;&nbsp;<small>string</small>     <i>optional</i> &nbsp;
+<input type="text" name="date_fin" data-endpoint="PUTapi-indisponibilites--indisponibilite-" data-component="query"  hidden>
+<br>
+DateTime Date de fin de l'indisponibilite</p>
+<p>
+<b><code>id_gestionnaire</code></b>&nbsp;&nbsp;<small>integer</small>     <i>optional</i> &nbsp;
+<input type="number" name="id_gestionnaire" data-endpoint="PUTapi-indisponibilites--indisponibilite-" data-component="query"  hidden>
+<br>
+Id Pictum du gestionnaire concerné</p>
+</form>
+<h2>Remove the specified resource from storage.</h2>
+<blockquote>
+<p>Example request:</p>
+</blockquote>
+<pre><code class="language-javascript">const url = new URL(
+    "http://127.0.0.1:8000/api/indisponibilites/vero"
+);
+
+let headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+fetch(url, {
+    method: "DELETE",
+    headers,
+}).then(response =&gt; response.json());</code></pre>
+<blockquote>
+<p>Example response (200):</p>
+</blockquote>
+<pre><code class="language-json">
+{
+ "Delete OK"
+}</code></pre>
+<div id="execution-results-DELETEapi-indisponibilites--indisponibilite-" hidden>
+    <blockquote>Received response<span id="execution-response-status-DELETEapi-indisponibilites--indisponibilite-"></span>:</blockquote>
+    <pre class="json"><code id="execution-response-content-DELETEapi-indisponibilites--indisponibilite-"></code></pre>
+</div>
+<div id="execution-error-DELETEapi-indisponibilites--indisponibilite-" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-DELETEapi-indisponibilites--indisponibilite-"></code></pre>
+</div>
+<form id="form-DELETEapi-indisponibilites--indisponibilite-" data-method="DELETE" data-path="api/indisponibilites/{indisponibilite}" data-authed="0" data-hasfiles="0" data-headers='{"Content-Type":"application\/json","Accept":"application\/json"}' onsubmit="event.preventDefault(); executeTryOut('DELETEapi-indisponibilites--indisponibilite-', this);">
+<h3>
+    Request&nbsp;&nbsp;&nbsp;
+        <button type="button" style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;" id="btn-tryout-DELETEapi-indisponibilites--indisponibilite-" onclick="tryItOut('DELETEapi-indisponibilites--indisponibilite-');">Try it out ⚡</button>
+    <button type="button" style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;" id="btn-canceltryout-DELETEapi-indisponibilites--indisponibilite-" onclick="cancelTryOut('DELETEapi-indisponibilites--indisponibilite-');" hidden>Cancel</button>&nbsp;&nbsp;
+    <button type="submit" style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;" id="btn-executetryout-DELETEapi-indisponibilites--indisponibilite-" hidden>Send Request 💥</button>
+    </h3>
+<p>
+<small class="badge badge-red">DELETE</small>
+ <b><code>api/indisponibilites/{indisponibilite}</code></b>
+</p>
+<h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
+<p>
+<b><code>indisponibilite</code></b>&nbsp;&nbsp;<small>string</small>     <i>optional</i> &nbsp;
+<input type="text" name="indisponibilite" data-endpoint="DELETEapi-indisponibilites--indisponibilite-" data-component="url"  hidden>
+<br>
+ID de l'indisponibilité concernée</p>
 </form>
     </div>
     <div class="dark-box">

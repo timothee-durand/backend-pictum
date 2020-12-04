@@ -10,7 +10,7 @@
     ],
     "info": {
         "name": "Laravel",
-        "_postman_id": "c8c6b826-b1e2-4ef7-87b1-f4e6743b5235",
+        "_postman_id": "775f0de2-a2c3-48c2-95f6-39bf4ba33001",
         "description": "Backend du service de gestion de mat\u00e9riel du Campus des Portes du Jura de l`'IUT BM",
         "schema": "https:\/\/schema.getpostman.com\/json\/collection\/v2.1.0\/collection.json"
     },
@@ -58,13 +58,13 @@
                                 {
                                     "id": "blacklist",
                                     "key": "blacklist",
-                                    "value": "ducimus",
+                                    "value": "sunt",
                                     "description": ""
                                 },
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "aut",
+                                    "value": "rerum",
                                     "description": "ID Pictum"
                                 }
                             ]
@@ -95,19 +95,19 @@
                             "query": [
                                 {
                                     "key": "nom",
-                                    "value": "blanditiis",
+                                    "value": "esse",
                                     "description": "string Nom de la personne",
                                     "disabled": false
                                 },
                                 {
                                     "key": "prenom",
-                                    "value": "ratione",
+                                    "value": "ut",
                                     "description": "string Pr\u00e9nom de la personne",
                                     "disabled": false
                                 },
                                 {
                                     "key": "mail",
-                                    "value": "modi",
+                                    "value": "reiciendis",
                                     "description": "string Mail de la personne",
                                     "disabled": false
                                 },
@@ -118,7 +118,7 @@
                                     "disabled": false
                                 }
                             ],
-                            "raw": "http:\/\/{{baseUrl}}\/api\/blacklists?nom=blanditiis&prenom=ratione&mail=modi&id_univ=asperiores"
+                            "raw": "http:\/\/{{baseUrl}}\/api\/blacklists?nom=esse&prenom=ut&mail=reiciendis&id_univ=asperiores"
                         },
                         "method": "POST",
                         "header": [
@@ -146,30 +146,30 @@
                             "query": [
                                 {
                                     "key": "nom",
-                                    "value": "sint",
+                                    "value": "facere",
                                     "description": "Nom de la personne",
                                     "disabled": false
                                 },
                                 {
                                     "key": "prenom",
-                                    "value": "sint",
+                                    "value": "deleniti",
                                     "description": "Pr\u00e9nom de la personne",
                                     "disabled": false
                                 },
                                 {
                                     "key": "mail",
-                                    "value": "et",
+                                    "value": "recusandae",
                                     "description": "Mail de la personne",
                                     "disabled": false
                                 },
                                 {
                                     "key": "id_univ",
-                                    "value": "eos",
+                                    "value": "iure",
                                     "description": "Id universitaire de la personne",
                                     "disabled": false
                                 }
                             ],
-                            "raw": "http:\/\/{{baseUrl}}\/api\/blacklists\/:blacklist?nom=sint&prenom=sint&mail=et&id_univ=eos",
+                            "raw": "http:\/\/{{baseUrl}}\/api\/blacklists\/:blacklist?nom=facere&prenom=deleniti&mail=recusandae&id_univ=iure",
                             "variable": [
                                 {
                                     "id": "blacklist",
@@ -211,7 +211,7 @@
                                 {
                                     "id": "blacklist",
                                     "key": "blacklist",
-                                    "value": "13",
+                                    "value": "19",
                                     "description": "ID Pictum correspondant"
                                 }
                             ]
@@ -290,7 +290,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\n    \"creneaux[]\": \"velit\"\n}"
+                            "raw": "{\n    \"creneaux[]\": \"repudiandae\"\n}"
                         },
                         "description": ""
                     },
@@ -309,7 +309,7 @@
                                 {
                                     "id": "creneaux",
                                     "key": "creneaux",
-                                    "value": "qui",
+                                    "value": "voluptatibus",
                                     "description": ""
                                 }
                             ]
@@ -381,7 +381,7 @@
                                 {
                                     "id": "departement",
                                     "key": "departement",
-                                    "value": "16",
+                                    "value": "19",
                                     "description": "ID du d\u00e9partement concern\u00e9"
                                 }
                             ]
@@ -415,30 +415,30 @@
                             "query": [
                                 {
                                     "key": "lat",
-                                    "value": "2.069",
+                                    "value": "4216.7",
                                     "description": "Latitude du d\u00e9partement",
                                     "disabled": false
                                 },
                                 {
                                     "key": "long",
-                                    "value": "217246593.4",
+                                    "value": "834629.673174",
                                     "description": "Longitude du d\u00e9partement",
                                     "disabled": false
                                 },
                                 {
                                     "key": "nom",
-                                    "value": "sit",
+                                    "value": "non",
                                     "description": "Nom du d\u00e9partement",
                                     "disabled": false
                                 },
                                 {
                                     "key": "gestionnaire_id",
-                                    "value": "19",
+                                    "value": "18",
                                     "description": "ID Pictum du gestionnaire concern\u00e9",
                                     "disabled": false
                                 }
                             ],
-                            "raw": "http:\/\/{{baseUrl}}\/api\/departements?lat=2.069&long=217246593.4&nom=sit&gestionnaire_id=19"
+                            "raw": "http:\/\/{{baseUrl}}\/api\/departements?lat=4216.7&long=834629.673174&nom=non&gestionnaire_id=18"
                         },
                         "method": "POST",
                         "header": [
@@ -466,30 +466,30 @@
                             "query": [
                                 {
                                     "key": "lat",
-                                    "value": "490.79212",
+                                    "value": "208576654.6147",
                                     "description": "Latitude du d\u00e9partement",
                                     "disabled": false
                                 },
                                 {
                                     "key": "long",
-                                    "value": "9014027",
+                                    "value": "33160",
                                     "description": "Longitude du d\u00e9partement",
                                     "disabled": false
                                 },
                                 {
                                     "key": "nom",
-                                    "value": "ipsam",
+                                    "value": "officia",
                                     "description": "Nom du d\u00e9partement",
                                     "disabled": false
                                 },
                                 {
                                     "key": "gestionnaire_id",
-                                    "value": "9",
+                                    "value": "8",
                                     "description": "ID Pictum du gestionnaire concern\u00e9",
                                     "disabled": false
                                 }
                             ],
-                            "raw": "http:\/\/{{baseUrl}}\/api\/departements\/:departement?lat=490.79212&long=9014027&nom=ipsam&gestionnaire_id=9",
+                            "raw": "http:\/\/{{baseUrl}}\/api\/departements\/:departement?lat=208576654.6147&long=33160&nom=officia&gestionnaire_id=8",
                             "variable": [
                                 {
                                     "id": "departement",
@@ -528,7 +528,7 @@
                                 {
                                     "id": "departement",
                                     "key": "departement",
-                                    "value": "10",
+                                    "value": "20",
                                     "description": "ID du d\u00e9partement concern\u00e9"
                                 }
                             ]
@@ -629,7 +629,7 @@
                                 {
                                     "id": "type",
                                     "key": "type",
-                                    "value": "omnis",
+                                    "value": "aliquid",
                                     "description": ""
                                 }
                             ]
@@ -695,7 +695,7 @@
                                 {
                                     "id": "malette",
                                     "key": "malette",
-                                    "value": "fugit",
+                                    "value": "nostrum",
                                     "description": ""
                                 }
                             ]
@@ -761,7 +761,7 @@
                                 {
                                     "id": "reservation",
                                     "key": "reservation",
-                                    "value": "omnis",
+                                    "value": "corrupti",
                                     "description": ""
                                 }
                             ]
@@ -827,73 +827,7 @@
                                 {
                                     "id": "materiel",
                                     "key": "materiel",
-                                    "value": "quis",
-                                    "description": ""
-                                }
-                            ]
-                        },
-                        "method": "GET",
-                        "header": [
-                            {
-                                "key": "Content-Type",
-                                "value": "application\/json"
-                            },
-                            {
-                                "key": "Accept",
-                                "value": "application\/json"
-                            }
-                        ],
-                        "body": null,
-                        "description": "",
-                        "auth": {
-                            "type": "noauth"
-                        }
-                    },
-                    "response": []
-                },
-                {
-                    "name": "Display a listing of the resource.",
-                    "request": {
-                        "url": {
-                            "protocol": "http",
-                            "host": "{{baseUrl}}",
-                            "path": "api\/indisponibilites",
-                            "query": [],
-                            "raw": "http:\/\/{{baseUrl}}\/api\/indisponibilites"
-                        },
-                        "method": "GET",
-                        "header": [
-                            {
-                                "key": "Content-Type",
-                                "value": "application\/json"
-                            },
-                            {
-                                "key": "Accept",
-                                "value": "application\/json"
-                            }
-                        ],
-                        "body": null,
-                        "description": "",
-                        "auth": {
-                            "type": "noauth"
-                        }
-                    },
-                    "response": []
-                },
-                {
-                    "name": "Display the specified resource.",
-                    "request": {
-                        "url": {
-                            "protocol": "http",
-                            "host": "{{baseUrl}}",
-                            "path": "api\/indisponibilites\/:indisponibilite",
-                            "query": [],
-                            "raw": "http:\/\/{{baseUrl}}\/api\/indisponibilites\/:indisponibilite",
-                            "variable": [
-                                {
-                                    "id": "indisponibilite",
-                                    "key": "indisponibilite",
-                                    "value": "quaerat",
+                                    "value": "occaecati",
                                     "description": ""
                                 }
                             ]
@@ -1017,7 +951,7 @@
                                 {
                                     "id": "type",
                                     "key": "type",
-                                    "value": "cum",
+                                    "value": "quod",
                                     "description": ""
                                 }
                             ]
@@ -1054,7 +988,7 @@
                                 {
                                     "id": "type",
                                     "key": "type",
-                                    "value": "omnis",
+                                    "value": "eum",
                                     "description": ""
                                 }
                             ]
@@ -1120,7 +1054,7 @@
                                 {
                                     "id": "malette",
                                     "key": "malette",
-                                    "value": "blanditiis",
+                                    "value": "voluptate",
                                     "description": ""
                                 }
                             ]
@@ -1157,7 +1091,7 @@
                                 {
                                     "id": "malette",
                                     "key": "malette",
-                                    "value": "repudiandae",
+                                    "value": "rerum",
                                     "description": ""
                                 }
                             ]
@@ -1223,7 +1157,7 @@
                                 {
                                     "id": "materiel",
                                     "key": "materiel",
-                                    "value": "sint",
+                                    "value": "sed",
                                     "description": ""
                                 }
                             ]
@@ -1260,110 +1194,7 @@
                                 {
                                     "id": "materiel",
                                     "key": "materiel",
-                                    "value": "dignissimos",
-                                    "description": ""
-                                }
-                            ]
-                        },
-                        "method": "DELETE",
-                        "header": [
-                            {
-                                "key": "Content-Type",
-                                "value": "application\/json"
-                            },
-                            {
-                                "key": "Accept",
-                                "value": "application\/json"
-                            }
-                        ],
-                        "body": null,
-                        "description": "",
-                        "auth": {
-                            "type": "noauth"
-                        }
-                    },
-                    "response": []
-                },
-                {
-                    "name": "Store a newly created resource in storage.",
-                    "request": {
-                        "url": {
-                            "protocol": "http",
-                            "host": "{{baseUrl}}",
-                            "path": "api\/indisponibilites",
-                            "query": [],
-                            "raw": "http:\/\/{{baseUrl}}\/api\/indisponibilites"
-                        },
-                        "method": "POST",
-                        "header": [
-                            {
-                                "key": "Content-Type",
-                                "value": "application\/json"
-                            },
-                            {
-                                "key": "Accept",
-                                "value": "application\/json"
-                            }
-                        ],
-                        "body": null,
-                        "description": "Send a json array of indisponibilites",
-                        "auth": {
-                            "type": "noauth"
-                        }
-                    },
-                    "response": []
-                },
-                {
-                    "name": "Update the specified resource in storage.",
-                    "request": {
-                        "url": {
-                            "protocol": "http",
-                            "host": "{{baseUrl}}",
-                            "path": "api\/indisponibilites\/:indisponibilite",
-                            "query": [],
-                            "raw": "http:\/\/{{baseUrl}}\/api\/indisponibilites\/:indisponibilite",
-                            "variable": [
-                                {
-                                    "id": "indisponibilite",
-                                    "key": "indisponibilite",
-                                    "value": "dolor",
-                                    "description": ""
-                                }
-                            ]
-                        },
-                        "method": "PUT",
-                        "header": [
-                            {
-                                "key": "Content-Type",
-                                "value": "application\/json"
-                            },
-                            {
-                                "key": "Accept",
-                                "value": "application\/json"
-                            }
-                        ],
-                        "body": null,
-                        "description": "",
-                        "auth": {
-                            "type": "noauth"
-                        }
-                    },
-                    "response": []
-                },
-                {
-                    "name": "Remove the specified resource from storage.",
-                    "request": {
-                        "url": {
-                            "protocol": "http",
-                            "host": "{{baseUrl}}",
-                            "path": "api\/indisponibilites\/:indisponibilite",
-                            "query": [],
-                            "raw": "http:\/\/{{baseUrl}}\/api\/indisponibilites\/:indisponibilite",
-                            "variable": [
-                                {
-                                    "id": "indisponibilite",
-                                    "key": "indisponibilite",
-                                    "value": "velit",
+                                    "value": "voluptatem",
                                     "description": ""
                                 }
                             ]
@@ -1490,36 +1321,36 @@
                             "query": [
                                 {
                                     "key": "id_malettes%5B%5D",
-                                    "value": "6",
+                                    "value": "16",
                                     "description": "Tableau d'ID pictum des malettes concern\u00e9es par la r\u00e9servation - Peut \u00eatre vide",
                                     "disabled": false
                                 },
                                 {
                                     "key": "id_materiels%5B%5D",
-                                    "value": "12",
+                                    "value": "18",
                                     "description": "Tableau d'ID pictum des mat\u00e9riels individuels concern\u00e9es par la r\u00e9servation - Peut \u00eatre vide",
                                     "disabled": false
                                 },
                                 {
                                     "key": "reservation_id",
-                                    "value": "9",
+                                    "value": "5",
                                     "description": "ID Pictum de la r\u00e9servation correspondante",
                                     "disabled": false
                                 },
                                 {
                                     "key": "date_debut",
-                                    "value": "labore",
+                                    "value": "officiis",
                                     "description": "DateTime Rendez-vous de prise de mat\u00e9riel",
                                     "disabled": false
                                 },
                                 {
                                     "key": "date_fin",
-                                    "value": "suscipit",
+                                    "value": "quia",
                                     "description": "DateTime Rendez-vous de retour de mat\u00e9riel",
                                     "disabled": false
                                 }
                             ],
-                            "raw": "http:\/\/{{baseUrl}}\/api\/estpretes?id_malettes%5B%5D=6&id_materiels%5B%5D=12&reservation_id=9&date_debut=labore&date_fin=suscipit"
+                            "raw": "http:\/\/{{baseUrl}}\/api\/estpretes?id_malettes%5B%5D=16&id_materiels%5B%5D=18&reservation_id=5&date_debut=officiis&date_fin=quia"
                         },
                         "method": "POST",
                         "header": [
@@ -1547,17 +1378,17 @@
                             "query": [
                                 {
                                     "key": "id_estprete%5B%5D",
-                                    "value": "12",
+                                    "value": "18",
                                     "description": "ID des est-prete \u00e0 marquer comme rendu",
                                     "disabled": false
                                 }
                             ],
-                            "raw": "http:\/\/{{baseUrl}}\/api\/estpretes\/:estprete?id_estprete%5B%5D=12",
+                            "raw": "http:\/\/{{baseUrl}}\/api\/estpretes\/:estprete?id_estprete%5B%5D=18",
                             "variable": [
                                 {
                                     "id": "estprete",
                                     "key": "estprete",
-                                    "value": "perferendis",
+                                    "value": "rem",
                                     "description": ""
                                 }
                             ]
@@ -1629,7 +1460,7 @@
                                 {
                                     "id": "gestionnaire",
                                     "key": "gestionnaire",
-                                    "value": "12",
+                                    "value": "13",
                                     "description": "ID du gestionnaire \u00e0 afficher"
                                 }
                             ]
@@ -1663,17 +1494,17 @@
                             "query": [
                                 {
                                     "key": "start_day",
-                                    "value": "aut",
+                                    "value": "corporis",
                                     "description": "Date Jour \u00e0 partir duquel on veut les rendez-vous",
                                     "disabled": false
                                 }
                             ],
-                            "raw": "http:\/\/{{baseUrl}}\/api\/gestionnaires\/:id\/rdv?start_day=aut",
+                            "raw": "http:\/\/{{baseUrl}}\/api\/gestionnaires\/:id\/rdv?start_day=corporis",
                             "variable": [
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "7",
+                                    "value": "20",
                                     "description": "ID du gestionnaire concern\u00e9"
                                 }
                             ]
@@ -1736,42 +1567,42 @@
                             "query": [
                                 {
                                     "key": "nom",
-                                    "value": "quae",
+                                    "value": "et",
                                     "description": "",
                                     "disabled": false
                                 },
                                 {
                                     "key": "prenom",
-                                    "value": "voluptas",
+                                    "value": "quia",
                                     "description": "",
                                     "disabled": false
                                 },
                                 {
                                     "key": "mail",
-                                    "value": "illum",
+                                    "value": "et",
                                     "description": "",
                                     "disabled": false
                                 },
                                 {
                                     "key": "id_univ",
-                                    "value": "architecto",
+                                    "value": "eius",
                                     "description": "",
                                     "disabled": false
                                 },
                                 {
                                     "key": "admin",
-                                    "value": "",
+                                    "value": "1",
                                     "description": "True si le gestionnaire est un administrateur",
-                                    "disabled": true
+                                    "disabled": false
                                 },
                                 {
                                     "key": "departement_id",
-                                    "value": "14",
+                                    "value": "15",
                                     "description": "ID Pictum du d\u00e9partement correspondant",
                                     "disabled": false
                                 }
                             ],
-                            "raw": "http:\/\/{{baseUrl}}\/api\/gestionnaires\/:gestionnaire?nom=quae&prenom=voluptas&mail=illum&id_univ=architecto&admin=&departement_id=14",
+                            "raw": "http:\/\/{{baseUrl}}\/api\/gestionnaires\/:gestionnaire?nom=et&prenom=quia&mail=et&id_univ=eius&admin=1&departement_id=15",
                             "variable": [
                                 {
                                     "id": "gestionnaire",
@@ -1813,8 +1644,205 @@
                                 {
                                     "id": "gestionnaire",
                                     "key": "gestionnaire",
-                                    "value": "2",
+                                    "value": "15",
                                     "description": "ID du gestionnaire \u00e0 afficher"
+                                }
+                            ]
+                        },
+                        "method": "DELETE",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": []
+                }
+            ]
+        },
+        {
+            "name": "Indisponibilites",
+            "description": "",
+            "item": [
+                {
+                    "name": "Display a listing of the resource.",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "{{baseUrl}}",
+                            "path": "api\/indisponibilites",
+                            "query": [],
+                            "raw": "http:\/\/{{baseUrl}}\/api\/indisponibilites"
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Display the specified Indisponibilite.",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "{{baseUrl}}",
+                            "path": "api\/indisponibilites\/:indisponibilite",
+                            "query": [],
+                            "raw": "http:\/\/{{baseUrl}}\/api\/indisponibilites\/:indisponibilite",
+                            "variable": [
+                                {
+                                    "id": "indisponibilite",
+                                    "key": "indisponibilite",
+                                    "value": "ut",
+                                    "description": ""
+                                }
+                            ]
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Store some new Indisponibilite",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "{{baseUrl}}",
+                            "path": "api\/indisponibilites",
+                            "query": [],
+                            "raw": "http:\/\/{{baseUrl}}\/api\/indisponibilites"
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n    \"array_indispo[]\": \"ut\"\n}"
+                        },
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Update the specified indisponibilite in storage.",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "{{baseUrl}}",
+                            "path": "api\/indisponibilites\/:indisponibilite",
+                            "query": [
+                                {
+                                    "key": "date_debut",
+                                    "value": "qui",
+                                    "description": "DateTime Date de d\u00e9but de l'indisponibilite",
+                                    "disabled": false
+                                },
+                                {
+                                    "key": "date_fin",
+                                    "value": "quo",
+                                    "description": "DateTime Date de fin de l'indisponibilite",
+                                    "disabled": false
+                                },
+                                {
+                                    "key": "id_gestionnaire",
+                                    "value": "10",
+                                    "description": "Id Pictum du gestionnaire concern\u00e9",
+                                    "disabled": false
+                                }
+                            ],
+                            "raw": "http:\/\/{{baseUrl}}\/api\/indisponibilites\/:indisponibilite?date_debut=qui&date_fin=quo&id_gestionnaire=10",
+                            "variable": [
+                                {
+                                    "id": "indisponibilite",
+                                    "key": "indisponibilite",
+                                    "value": "explicabo",
+                                    "description": "ID de l'indisponibilit\u00e9 concern\u00e9e"
+                                }
+                            ]
+                        },
+                        "method": "PUT",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Remove the specified resource from storage.",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "{{baseUrl}}",
+                            "path": "api\/indisponibilites\/:indisponibilite",
+                            "query": [],
+                            "raw": "http:\/\/{{baseUrl}}\/api\/indisponibilites\/:indisponibilite",
+                            "variable": [
+                                {
+                                    "id": "indisponibilite",
+                                    "key": "indisponibilite",
+                                    "value": "vero",
+                                    "description": "ID de l'indisponibilit\u00e9 concern\u00e9e"
                                 }
                             ]
                         },

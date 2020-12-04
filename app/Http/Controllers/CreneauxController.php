@@ -90,7 +90,7 @@ class CreneauxController extends Controller
     /**
      * Display the specified resource.
      * @group Creneaux
-     *@bodyParam creneaux[] required Array of the creneaux of a gestionnaire
+     * @bodyParam creneaux[] required Array of the creneaux of a gestionnaire
      * @bodyParam creneaux[].jour int  Index du jour correspondant (0 => Dimanche)
      * @bodyParam creneaux[].heure_debut_matin Time  Heure de début de la période du matin
      * @bodyParam creneaux[].heure_fin_matin Time  Heure de fin de la période du matin

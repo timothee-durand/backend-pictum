@@ -12,6 +12,26 @@ class IndisponibiliteController extends Controller
     /**
      * Display a listing of the resource.
      *
+     * @group Indisponibilites
+     *
+     * @response [
+    {
+    "id": 1,
+    "created_at": "2020-12-03T17:31:14.000000Z",
+    "updated_at": "2020-12-03T17:31:14.000000Z",
+    "date_debut": "2020-11-10 17:29:14",
+    "date_fin": "2020-11-24 01:01:31",
+    "gestionnaire_id": 5
+    },
+    {
+    "id": 2,
+    "created_at": "2020-12-03T17:31:14.000000Z",
+    "updated_at": "2020-12-03T17:31:14.000000Z",
+    "date_debut": "2020-06-07 16:14:48",
+    "date_fin": "2020-08-20 02:26:19",
+    "gestionnaire_id": 9
+    }]
+     *
      * @return \Illuminate\Http\Response
      */
     public function index()
@@ -20,8 +40,13 @@ class IndisponibiliteController extends Controller
     }
 
     /**
-     * Store a newly created resource in storage.
-     * Send a json array of indisponibilites
+     * Store some new Indisponibilite
+     *
+     * @group Indisponibilites
+     * @bodyParam array_indispo[] required Tableau d'indisponibilités à créer
+     * @bodyParam array_indispo[].date_debut DateTime required Date de début de l'indisponibilite
+     * @bodyParam array_indispo[].date_fin DateTime required Date de fin de l'indisponibilite
+     * @bodyParam array_indispo[].id_gestionnaire int required Id Pictum du gestionnaire concerné
      *
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
@@ -29,7 +54,7 @@ class IndisponibiliteController extends Controller
     public function store(Request $request)
     {
         //on rcupère le tableau envoyé
-        $arrayIndispo = $request->json()->all();
+        $arrayIndispo = json_decode($request->array_indispo);
 
         foreach ($arrayIndispo as $indispo) {
             $nIndipo =new Indisponibilite([
@@ -43,7 +68,9 @@ class IndisponibiliteController extends Controller
     }
 
     /**
-     * Display the specified resource.
+     * Display the specified Indisponibilite.
+     * @group Indisponibilites
+     *
      *
      * @param  \App\Indisponibilite  $indisponibilite
      * @return \Illuminate\Http\Response
@@ -54,7 +81,17 @@ class IndisponibiliteController extends Controller
     }
 
     /**
-     * Update the specified resource in storage.
+     * Update the specified indisponibilite in storage.
+     * @group Indisponibilites
+     *
+     * @queryParam date_debut DateTime  Date de début de l'indisponibilite
+     * @queryParam date_fin DateTime  Date de fin de l'indisponibilite
+     * @queryParam id_gestionnaire int  Id Pictum du gestionnaire concerné
+     *
+     * @urlParam indisponibilite ID de l'indisponibilité concernée
+     * @response {
+     *  "Update OK"
+     * }
      *
      * @param  \Illuminate\Http\Request  $request
      * @param  \App\Indisponibilite  $indisponibilite
@@ -69,6 +106,11 @@ class IndisponibiliteController extends Controller
 
     /**
      * Remove the specified resource from storage.
+     * @group Indisponibilites
+     * @urlParam indisponibilite ID de l'indisponibilité concernée
+     * @response {
+     *  "Delete OK"
+     * }
      *
      * @param  \App\Indisponibilite  $indisponibilite
      * @return \Illuminate\Http\Response

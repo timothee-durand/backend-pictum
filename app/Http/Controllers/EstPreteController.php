@@ -191,7 +191,7 @@ class EstPreteController extends Controller
 
     /**
      * Delete EstPrete
-     *Required to be gestionnaire
+     * Required to be gestionnaire
      * @group EstPrete
      * @urlParam estPrete int ID du prêt concerné
      * @response {

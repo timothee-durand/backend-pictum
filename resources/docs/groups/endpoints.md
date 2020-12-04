@@ -111,7 +111,7 @@ fetch(url, {
 
 ```javascript
 const url = new URL(
-    "http://127.0.0.1:8000/api/types/omnis"
+    "http://127.0.0.1:8000/api/types/aliquid"
 );
 
 let headers = {
@@ -225,7 +225,7 @@ fetch(url, {
 
 ```javascript
 const url = new URL(
-    "http://127.0.0.1:8000/api/malettes/fugit"
+    "http://127.0.0.1:8000/api/malettes/nostrum"
 );
 
 let headers = {
@@ -339,7 +339,7 @@ fetch(url, {
 
 ```javascript
 const url = new URL(
-    "http://127.0.0.1:8000/api/reservations/omnis"
+    "http://127.0.0.1:8000/api/reservations/corrupti"
 );
 
 let headers = {
@@ -453,7 +453,7 @@ fetch(url, {
 
 ```javascript
 const url = new URL(
-    "http://127.0.0.1:8000/api/materiels/quis"
+    "http://127.0.0.1:8000/api/materiels/occaecati"
 );
 
 let headers = {
@@ -499,120 +499,6 @@ fetch(url, {
 <p>
 <b><code>materiel</code></b>&nbsp;&nbsp;<small>string</small>  &nbsp;
 <input type="text" name="materiel" data-endpoint="GETapi-materiels--materiel-" data-component="url" required  hidden>
-<br>
-</p>
-</form>
-
-
-## Display a listing of the resource.
-
-
-
-
-> Example request:
-
-```javascript
-const url = new URL(
-    "http://127.0.0.1:8000/api/indisponibilites"
-);
-
-let headers = {
-    "Content-Type": "application/json",
-    "Accept": "application/json",
-};
-
-
-fetch(url, {
-    method: "GET",
-    headers,
-}).then(response => response.json());
-```
-
-
-> Example response (401):
-
-```json
-{
-    "message": "Unauthenticated."
-}
-```
-<div id="execution-results-GETapi-indisponibilites" hidden>
-    <blockquote>Received response<span id="execution-response-status-GETapi-indisponibilites"></span>:</blockquote>
-    <pre class="json"><code id="execution-response-content-GETapi-indisponibilites"></code></pre>
-</div>
-<div id="execution-error-GETapi-indisponibilites" hidden>
-    <blockquote>Request failed with error:</blockquote>
-    <pre><code id="execution-error-message-GETapi-indisponibilites"></code></pre>
-</div>
-<form id="form-GETapi-indisponibilites" data-method="GET" data-path="api/indisponibilites" data-authed="0" data-hasfiles="0" data-headers='{"Content-Type":"application\/json","Accept":"application\/json"}' onsubmit="event.preventDefault(); executeTryOut('GETapi-indisponibilites', this);">
-<h3>
-    Request&nbsp;&nbsp;&nbsp;
-        <button type="button" style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;" id="btn-tryout-GETapi-indisponibilites" onclick="tryItOut('GETapi-indisponibilites');">Try it out ⚡</button>
-    <button type="button" style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;" id="btn-canceltryout-GETapi-indisponibilites" onclick="cancelTryOut('GETapi-indisponibilites');" hidden>Cancel</button>&nbsp;&nbsp;
-    <button type="submit" style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;" id="btn-executetryout-GETapi-indisponibilites" hidden>Send Request 💥</button>
-    </h3>
-<p>
-<small class="badge badge-green">GET</small>
- <b><code>api/indisponibilites</code></b>
-</p>
-</form>
-
-
-## Display the specified resource.
-
-
-
-
-> Example request:
-
-```javascript
-const url = new URL(
-    "http://127.0.0.1:8000/api/indisponibilites/quaerat"
-);
-
-let headers = {
-    "Content-Type": "application/json",
-    "Accept": "application/json",
-};
-
-
-fetch(url, {
-    method: "GET",
-    headers,
-}).then(response => response.json());
-```
-
-
-> Example response (401):
-
-```json
-{
-    "message": "Unauthenticated."
-}
-```
-<div id="execution-results-GETapi-indisponibilites--indisponibilite-" hidden>
-    <blockquote>Received response<span id="execution-response-status-GETapi-indisponibilites--indisponibilite-"></span>:</blockquote>
-    <pre class="json"><code id="execution-response-content-GETapi-indisponibilites--indisponibilite-"></code></pre>
-</div>
-<div id="execution-error-GETapi-indisponibilites--indisponibilite-" hidden>
-    <blockquote>Request failed with error:</blockquote>
-    <pre><code id="execution-error-message-GETapi-indisponibilites--indisponibilite-"></code></pre>
-</div>
-<form id="form-GETapi-indisponibilites--indisponibilite-" data-method="GET" data-path="api/indisponibilites/{indisponibilite}" data-authed="0" data-hasfiles="0" data-headers='{"Content-Type":"application\/json","Accept":"application\/json"}' onsubmit="event.preventDefault(); executeTryOut('GETapi-indisponibilites--indisponibilite-', this);">
-<h3>
-    Request&nbsp;&nbsp;&nbsp;
-        <button type="button" style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;" id="btn-tryout-GETapi-indisponibilites--indisponibilite-" onclick="tryItOut('GETapi-indisponibilites--indisponibilite-');">Try it out ⚡</button>
-    <button type="button" style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;" id="btn-canceltryout-GETapi-indisponibilites--indisponibilite-" onclick="cancelTryOut('GETapi-indisponibilites--indisponibilite-');" hidden>Cancel</button>&nbsp;&nbsp;
-    <button type="submit" style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;" id="btn-executetryout-GETapi-indisponibilites--indisponibilite-" hidden>Send Request 💥</button>
-    </h3>
-<p>
-<small class="badge badge-green">GET</small>
- <b><code>api/indisponibilites/{indisponibilite}</code></b>
-</p>
-<h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
-<p>
-<b><code>indisponibilite</code></b>&nbsp;&nbsp;<small>string</small>  &nbsp;
-<input type="text" name="indisponibilite" data-endpoint="GETapi-indisponibilites--indisponibilite-" data-component="url" required  hidden>
 <br>
 </p>
 </form>
@@ -768,7 +654,7 @@ fetch(url, {
 
 ```javascript
 const url = new URL(
-    "http://127.0.0.1:8000/api/types/cum"
+    "http://127.0.0.1:8000/api/types/quod"
 );
 
 let headers = {
@@ -825,7 +711,7 @@ fetch(url, {
 
 ```javascript
 const url = new URL(
-    "http://127.0.0.1:8000/api/types/omnis"
+    "http://127.0.0.1:8000/api/types/eum"
 );
 
 let headers = {
@@ -925,7 +811,7 @@ fetch(url, {
 
 ```javascript
 const url = new URL(
-    "http://127.0.0.1:8000/api/malettes/blanditiis"
+    "http://127.0.0.1:8000/api/malettes/voluptate"
 );
 
 let headers = {
@@ -982,7 +868,7 @@ fetch(url, {
 
 ```javascript
 const url = new URL(
-    "http://127.0.0.1:8000/api/malettes/repudiandae"
+    "http://127.0.0.1:8000/api/malettes/rerum"
 );
 
 let headers = {
@@ -1082,7 +968,7 @@ fetch(url, {
 
 ```javascript
 const url = new URL(
-    "http://127.0.0.1:8000/api/materiels/sint"
+    "http://127.0.0.1:8000/api/materiels/sed"
 );
 
 let headers = {
@@ -1139,7 +1025,7 @@ fetch(url, {
 
 ```javascript
 const url = new URL(
-    "http://127.0.0.1:8000/api/materiels/dignissimos"
+    "http://127.0.0.1:8000/api/materiels/voluptatem"
 );
 
 let headers = {
@@ -1178,163 +1064,6 @@ fetch(url, {
 <p>
 <b><code>materiel</code></b>&nbsp;&nbsp;<small>string</small>  &nbsp;
 <input type="text" name="materiel" data-endpoint="DELETEapi-materiels--materiel-" data-component="url" required  hidden>
-<br>
-</p>
-</form>
-
-
-## Store a newly created resource in storage.
-
-
-Send a json array of indisponibilites
-
-> Example request:
-
-```javascript
-const url = new URL(
-    "http://127.0.0.1:8000/api/indisponibilites"
-);
-
-let headers = {
-    "Content-Type": "application/json",
-    "Accept": "application/json",
-};
-
-
-fetch(url, {
-    method: "POST",
-    headers,
-}).then(response => response.json());
-```
-
-
-<div id="execution-results-POSTapi-indisponibilites" hidden>
-    <blockquote>Received response<span id="execution-response-status-POSTapi-indisponibilites"></span>:</blockquote>
-    <pre class="json"><code id="execution-response-content-POSTapi-indisponibilites"></code></pre>
-</div>
-<div id="execution-error-POSTapi-indisponibilites" hidden>
-    <blockquote>Request failed with error:</blockquote>
-    <pre><code id="execution-error-message-POSTapi-indisponibilites"></code></pre>
-</div>
-<form id="form-POSTapi-indisponibilites" data-method="POST" data-path="api/indisponibilites" data-authed="0" data-hasfiles="0" data-headers='{"Content-Type":"application\/json","Accept":"application\/json"}' onsubmit="event.preventDefault(); executeTryOut('POSTapi-indisponibilites', this);">
-<h3>
-    Request&nbsp;&nbsp;&nbsp;
-        <button type="button" style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;" id="btn-tryout-POSTapi-indisponibilites" onclick="tryItOut('POSTapi-indisponibilites');">Try it out ⚡</button>
-    <button type="button" style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;" id="btn-canceltryout-POSTapi-indisponibilites" onclick="cancelTryOut('POSTapi-indisponibilites');" hidden>Cancel</button>&nbsp;&nbsp;
-    <button type="submit" style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;" id="btn-executetryout-POSTapi-indisponibilites" hidden>Send Request 💥</button>
-    </h3>
-<p>
-<small class="badge badge-black">POST</small>
- <b><code>api/indisponibilites</code></b>
-</p>
-</form>
-
-
-## Update the specified resource in storage.
-
-
-
-
-> Example request:
-
-```javascript
-const url = new URL(
-    "http://127.0.0.1:8000/api/indisponibilites/dolor"
-);
-
-let headers = {
-    "Content-Type": "application/json",
-    "Accept": "application/json",
-};
-
-
-fetch(url, {
-    method: "PUT",
-    headers,
-}).then(response => response.json());
-```
-
-
-<div id="execution-results-PUTapi-indisponibilites--indisponibilite-" hidden>
-    <blockquote>Received response<span id="execution-response-status-PUTapi-indisponibilites--indisponibilite-"></span>:</blockquote>
-    <pre class="json"><code id="execution-response-content-PUTapi-indisponibilites--indisponibilite-"></code></pre>
-</div>
-<div id="execution-error-PUTapi-indisponibilites--indisponibilite-" hidden>
-    <blockquote>Request failed with error:</blockquote>
-    <pre><code id="execution-error-message-PUTapi-indisponibilites--indisponibilite-"></code></pre>
-</div>
-<form id="form-PUTapi-indisponibilites--indisponibilite-" data-method="PUT" data-path="api/indisponibilites/{indisponibilite}" data-authed="0" data-hasfiles="0" data-headers='{"Content-Type":"application\/json","Accept":"application\/json"}' onsubmit="event.preventDefault(); executeTryOut('PUTapi-indisponibilites--indisponibilite-', this);">
-<h3>
-    Request&nbsp;&nbsp;&nbsp;
-        <button type="button" style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;" id="btn-tryout-PUTapi-indisponibilites--indisponibilite-" onclick="tryItOut('PUTapi-indisponibilites--indisponibilite-');">Try it out ⚡</button>
-    <button type="button" style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;" id="btn-canceltryout-PUTapi-indisponibilites--indisponibilite-" onclick="cancelTryOut('PUTapi-indisponibilites--indisponibilite-');" hidden>Cancel</button>&nbsp;&nbsp;
-    <button type="submit" style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;" id="btn-executetryout-PUTapi-indisponibilites--indisponibilite-" hidden>Send Request 💥</button>
-    </h3>
-<p>
-<small class="badge badge-darkblue">PUT</small>
- <b><code>api/indisponibilites/{indisponibilite}</code></b>
-</p>
-<p>
-<small class="badge badge-purple">PATCH</small>
- <b><code>api/indisponibilites/{indisponibilite}</code></b>
-</p>
-<h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
-<p>
-<b><code>indisponibilite</code></b>&nbsp;&nbsp;<small>string</small>  &nbsp;
-<input type="text" name="indisponibilite" data-endpoint="PUTapi-indisponibilites--indisponibilite-" data-component="url" required  hidden>
-<br>
-</p>
-</form>
-
-
-## Remove the specified resource from storage.
-
-
-
-
-> Example request:
-
-```javascript
-const url = new URL(
-    "http://127.0.0.1:8000/api/indisponibilites/velit"
-);
-
-let headers = {
-    "Content-Type": "application/json",
-    "Accept": "application/json",
-};
-
-
-fetch(url, {
-    method: "DELETE",
-    headers,
-}).then(response => response.json());
-```
-
-
-<div id="execution-results-DELETEapi-indisponibilites--indisponibilite-" hidden>
-    <blockquote>Received response<span id="execution-response-status-DELETEapi-indisponibilites--indisponibilite-"></span>:</blockquote>
-    <pre class="json"><code id="execution-response-content-DELETEapi-indisponibilites--indisponibilite-"></code></pre>
-</div>
-<div id="execution-error-DELETEapi-indisponibilites--indisponibilite-" hidden>
-    <blockquote>Request failed with error:</blockquote>
-    <pre><code id="execution-error-message-DELETEapi-indisponibilites--indisponibilite-"></code></pre>
-</div>
-<form id="form-DELETEapi-indisponibilites--indisponibilite-" data-method="DELETE" data-path="api/indisponibilites/{indisponibilite}" data-authed="0" data-hasfiles="0" data-headers='{"Content-Type":"application\/json","Accept":"application\/json"}' onsubmit="event.preventDefault(); executeTryOut('DELETEapi-indisponibilites--indisponibilite-', this);">
-<h3>
-    Request&nbsp;&nbsp;&nbsp;
-        <button type="button" style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;" id="btn-tryout-DELETEapi-indisponibilites--indisponibilite-" onclick="tryItOut('DELETEapi-indisponibilites--indisponibilite-');">Try it out ⚡</button>
-    <button type="button" style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;" id="btn-canceltryout-DELETEapi-indisponibilites--indisponibilite-" onclick="cancelTryOut('DELETEapi-indisponibilites--indisponibilite-');" hidden>Cancel</button>&nbsp;&nbsp;
-    <button type="submit" style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;" id="btn-executetryout-DELETEapi-indisponibilites--indisponibilite-" hidden>Send Request 💥</button>
-    </h3>
-<p>
-<small class="badge badge-red">DELETE</small>
- <b><code>api/indisponibilites/{indisponibilite}</code></b>
-</p>
-<h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
-<p>
-<b><code>indisponibilite</code></b>&nbsp;&nbsp;<small>string</small>  &nbsp;
-<input type="text" name="indisponibilite" data-endpoint="DELETEapi-indisponibilites--indisponibilite-" data-component="url" required  hidden>
 <br>
 </p>
 </form>
