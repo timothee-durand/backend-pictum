@@ -29,10 +29,12 @@ Route::middleware(['cors', 'force.json'])->group(function () {
 
         Route::get("gestionnaires/{id}/rdv", "GestionnaireController@getRendezVous");
 
+        Route::post("send-mail-contact-admin", "MailPersoController@contactAdmin");
+
 
         Route::middleware("only.gest")->group(function () {
 
-            Route::post("send-mail", "MailPersoController@makeMailPerso");
+            Route::post("send-mail-gest", "MailPersoController@contactAdmin");
 
             Route::apiResources([
                 'types' => 'TypeController',

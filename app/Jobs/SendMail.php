@@ -9,6 +9,7 @@ use Illuminate\Mail\Mailable;
 use Illuminate\Queue\InteractsWithQueue;
 use Illuminate\Queue\SerializesModels;
 use Illuminate\Support\Facades\Mail;
+use Illuminate\Support\Facades\Redis;
 
 class SendMail implements ShouldQueue
 {
@@ -38,5 +39,6 @@ class SendMail implements ShouldQueue
     public function handle()
     {
         Mail::to($this->mailData["to_address"])->send($this->mailable);
+
     }
 }

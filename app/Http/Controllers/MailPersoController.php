@@ -27,4 +27,19 @@ class MailPersoController extends Controller
 
         //return new \App\Mail\Personnalise($mailData);
     }
+
+    public function contactAdmin(Request $request) {
+        $mailData = [
+            "to_address"=> env("MAIL_ADMIN"),
+            "content"=> $request->content_mail,
+            "subject"=> $request->subject,
+            "from_address"=> $request->from_address,
+            "sender"=> $request->from_name,
+        ];
+
+        echo "tes";
+
+        SendMail::dispatch($mailData, new \App\Mail\Personnalise($mailData));
+        return response("Mail envoyé", 200);
+    }
 }
