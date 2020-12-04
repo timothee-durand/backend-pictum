@@ -10,7 +10,7 @@
     ],
     "info": {
         "name": "Laravel",
-        "_postman_id": "d5a6f136-2916-49ca-83f6-c05c9a248d3f",
+        "_postman_id": "c1cea09e-6fb0-4b75-a3bb-60bccef9422d",
         "description": "Backend du service de gestion de mat\u00e9riel du Campus des Portes du Jura de l`'IUT BM",
         "schema": "https:\/\/schema.getpostman.com\/json\/collection\/v2.1.0\/collection.json"
     },
@@ -58,13 +58,13 @@
                                 {
                                     "id": "blacklist",
                                     "key": "blacklist",
-                                    "value": "non",
+                                    "value": "suscipit",
                                     "description": ""
                                 },
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "saepe",
+                                    "value": "ut",
                                     "description": "ID Pictum"
                                 }
                             ]
@@ -95,30 +95,30 @@
                             "query": [
                                 {
                                     "key": "nom",
-                                    "value": "quos",
+                                    "value": "nulla",
                                     "description": "string Nom de la personne",
                                     "disabled": false
                                 },
                                 {
                                     "key": "prenom",
-                                    "value": "minima",
+                                    "value": "commodi",
                                     "description": "string Pr\u00e9nom de la personne",
                                     "disabled": false
                                 },
                                 {
                                     "key": "mail",
-                                    "value": "qui",
+                                    "value": "impedit",
                                     "description": "string Mail de la personne",
                                     "disabled": false
                                 },
                                 {
                                     "key": "id_univ",
-                                    "value": "iste",
+                                    "value": "qui",
                                     "description": "string Id universitaire de la personne",
                                     "disabled": false
                                 }
                             ],
-                            "raw": "http:\/\/{{baseUrl}}\/api\/blacklists?nom=quos&prenom=minima&mail=qui&id_univ=iste"
+                            "raw": "http:\/\/{{baseUrl}}\/api\/blacklists?nom=nulla&prenom=commodi&mail=impedit&id_univ=qui"
                         },
                         "method": "POST",
                         "header": [
@@ -146,35 +146,35 @@
                             "query": [
                                 {
                                     "key": "nom",
-                                    "value": "qui",
+                                    "value": "libero",
                                     "description": "Nom de la personne",
                                     "disabled": false
                                 },
                                 {
                                     "key": "prenom",
-                                    "value": "non",
+                                    "value": "quam",
                                     "description": "Pr\u00e9nom de la personne",
                                     "disabled": false
                                 },
                                 {
                                     "key": "mail",
-                                    "value": "velit",
+                                    "value": "sit",
                                     "description": "Mail de la personne",
                                     "disabled": false
                                 },
                                 {
                                     "key": "id_univ",
-                                    "value": "soluta",
+                                    "value": "cum",
                                     "description": "Id universitaire de la personne",
                                     "disabled": false
                                 }
                             ],
-                            "raw": "http:\/\/{{baseUrl}}\/api\/blacklists\/:blacklist?nom=qui&prenom=non&mail=velit&id_univ=soluta",
+                            "raw": "http:\/\/{{baseUrl}}\/api\/blacklists\/:blacklist?nom=libero&prenom=quam&mail=sit&id_univ=cum",
                             "variable": [
                                 {
                                     "id": "blacklist",
                                     "key": "blacklist",
-                                    "value": "19",
+                                    "value": "7",
                                     "description": "ID Pictum"
                                 }
                             ]
@@ -211,7 +211,7 @@
                                 {
                                     "id": "blacklist",
                                     "key": "blacklist",
-                                    "value": "19",
+                                    "value": "20",
                                     "description": "ID Pictum correspondant"
                                 }
                             ]
@@ -290,7 +290,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\n    \"creneaux[]\": \"quae\"\n}"
+                            "raw": "{\n    \"creneaux[]\": \"reprehenderit\"\n}"
                         },
                         "description": ""
                     },
@@ -309,12 +309,231 @@
                                 {
                                     "id": "creneaux",
                                     "key": "creneaux",
-                                    "value": "saepe",
+                                    "value": "dolore",
                                     "description": ""
                                 }
                             ]
                         },
                         "method": "PUT",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": []
+                }
+            ]
+        },
+        {
+            "name": "Departement",
+            "description": "",
+            "item": [
+                {
+                    "name": "Display a listing of the departements",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "{{baseUrl}}",
+                            "path": "api\/departements",
+                            "query": [],
+                            "raw": "http:\/\/{{baseUrl}}\/api\/departements"
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Display the specified resource.",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "{{baseUrl}}",
+                            "path": "api\/departements\/:departement",
+                            "query": [],
+                            "raw": "http:\/\/{{baseUrl}}\/api\/departements\/:departement",
+                            "variable": [
+                                {
+                                    "id": "departement",
+                                    "key": "departement",
+                                    "value": "3",
+                                    "description": "ID du d\u00e9partement concern\u00e9"
+                                }
+                            ]
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Store a newly created departement in storage.",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "{{baseUrl}}",
+                            "path": "api\/departements",
+                            "query": [
+                                {
+                                    "key": "lat",
+                                    "value": "46",
+                                    "description": "Latitude du d\u00e9partement",
+                                    "disabled": false
+                                },
+                                {
+                                    "key": "long",
+                                    "value": "8112877.85",
+                                    "description": "Longitude du d\u00e9partement",
+                                    "disabled": false
+                                },
+                                {
+                                    "key": "nom",
+                                    "value": "ut",
+                                    "description": "Nom du d\u00e9partement",
+                                    "disabled": false
+                                },
+                                {
+                                    "key": "gestionnaire_id",
+                                    "value": "14",
+                                    "description": "ID Pictum du gestionnaire concern\u00e9",
+                                    "disabled": false
+                                }
+                            ],
+                            "raw": "http:\/\/{{baseUrl}}\/api\/departements?lat=46&long=8112877.85&nom=ut&gestionnaire_id=14"
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": ""
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Update the specified resource in storage.",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "{{baseUrl}}",
+                            "path": "api\/departements\/:departement",
+                            "query": [
+                                {
+                                    "key": "lat",
+                                    "value": "64713025.052277",
+                                    "description": "Latitude du d\u00e9partement",
+                                    "disabled": false
+                                },
+                                {
+                                    "key": "long",
+                                    "value": "59880",
+                                    "description": "Longitude du d\u00e9partement",
+                                    "disabled": false
+                                },
+                                {
+                                    "key": "nom",
+                                    "value": "enim",
+                                    "description": "Nom du d\u00e9partement",
+                                    "disabled": false
+                                },
+                                {
+                                    "key": "gestionnaire_id",
+                                    "value": "10",
+                                    "description": "ID Pictum du gestionnaire concern\u00e9",
+                                    "disabled": false
+                                }
+                            ],
+                            "raw": "http:\/\/{{baseUrl}}\/api\/departements\/:departement?lat=64713025.052277&long=59880&nom=enim&gestionnaire_id=10",
+                            "variable": [
+                                {
+                                    "id": "departement",
+                                    "key": "departement",
+                                    "value": "3",
+                                    "description": "ID du d\u00e9partement concern\u00e9"
+                                }
+                            ]
+                        },
+                        "method": "PUT",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": ""
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Remove the specified resource from storage.",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "{{baseUrl}}",
+                            "path": "api\/departements\/:departement",
+                            "query": [],
+                            "raw": "http:\/\/{{baseUrl}}\/api\/departements\/:departement",
+                            "variable": [
+                                {
+                                    "id": "departement",
+                                    "key": "departement",
+                                    "value": "11",
+                                    "description": "ID du d\u00e9partement concern\u00e9"
+                                }
+                            ]
+                        },
+                        "method": "DELETE",
                         "header": [
                             {
                                 "key": "Content-Type",
@@ -410,7 +629,7 @@
                                 {
                                     "id": "type",
                                     "key": "type",
-                                    "value": "itaque",
+                                    "value": "provident",
                                     "description": ""
                                 }
                             ]
@@ -476,73 +695,7 @@
                                 {
                                     "id": "malette",
                                     "key": "malette",
-                                    "value": "est",
-                                    "description": ""
-                                }
-                            ]
-                        },
-                        "method": "GET",
-                        "header": [
-                            {
-                                "key": "Content-Type",
-                                "value": "application\/json"
-                            },
-                            {
-                                "key": "Accept",
-                                "value": "application\/json"
-                            }
-                        ],
-                        "body": null,
-                        "description": "",
-                        "auth": {
-                            "type": "noauth"
-                        }
-                    },
-                    "response": []
-                },
-                {
-                    "name": "Display a listing of the resource.",
-                    "request": {
-                        "url": {
-                            "protocol": "http",
-                            "host": "{{baseUrl}}",
-                            "path": "api\/departements",
-                            "query": [],
-                            "raw": "http:\/\/{{baseUrl}}\/api\/departements"
-                        },
-                        "method": "GET",
-                        "header": [
-                            {
-                                "key": "Content-Type",
-                                "value": "application\/json"
-                            },
-                            {
-                                "key": "Accept",
-                                "value": "application\/json"
-                            }
-                        ],
-                        "body": null,
-                        "description": "",
-                        "auth": {
-                            "type": "noauth"
-                        }
-                    },
-                    "response": []
-                },
-                {
-                    "name": "Display the specified resource.",
-                    "request": {
-                        "url": {
-                            "protocol": "http",
-                            "host": "{{baseUrl}}",
-                            "path": "api\/departements\/:departement",
-                            "query": [],
-                            "raw": "http:\/\/{{baseUrl}}\/api\/departements\/:departement",
-                            "variable": [
-                                {
-                                    "id": "departement",
-                                    "key": "departement",
-                                    "value": "fuga",
+                                    "value": "quae",
                                     "description": ""
                                 }
                             ]
@@ -608,7 +761,7 @@
                                 {
                                     "id": "reservation",
                                     "key": "reservation",
-                                    "value": "id",
+                                    "value": "sunt",
                                     "description": ""
                                 }
                             ]
@@ -674,7 +827,7 @@
                                 {
                                     "id": "estprete",
                                     "key": "estprete",
-                                    "value": "voluptatem",
+                                    "value": "praesentium",
                                     "description": ""
                                 }
                             ]
@@ -740,7 +893,7 @@
                                 {
                                     "id": "materiel",
                                     "key": "materiel",
-                                    "value": "aut",
+                                    "value": "ea",
                                     "description": ""
                                 }
                             ]
@@ -806,7 +959,7 @@
                                 {
                                     "id": "gestionnaire",
                                     "key": "gestionnaire",
-                                    "value": "vel",
+                                    "value": "similique",
                                     "description": ""
                                 }
                             ]
@@ -872,7 +1025,7 @@
                                 {
                                     "id": "indisponibilite",
                                     "key": "indisponibilite",
-                                    "value": "reprehenderit",
+                                    "value": "unde",
                                     "description": ""
                                 }
                             ]
@@ -909,7 +1062,7 @@
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "pariatur",
+                                    "value": "occaecati",
                                     "description": ""
                                 }
                             ]
@@ -1033,7 +1186,7 @@
                                 {
                                     "id": "type",
                                     "key": "type",
-                                    "value": "placeat",
+                                    "value": "omnis",
                                     "description": ""
                                 }
                             ]
@@ -1070,7 +1223,7 @@
                                 {
                                     "id": "type",
                                     "key": "type",
-                                    "value": "quo",
+                                    "value": "tempore",
                                     "description": ""
                                 }
                             ]
@@ -1136,7 +1289,7 @@
                                 {
                                     "id": "malette",
                                     "key": "malette",
-                                    "value": "quos",
+                                    "value": "cum",
                                     "description": ""
                                 }
                             ]
@@ -1173,110 +1326,7 @@
                                 {
                                     "id": "malette",
                                     "key": "malette",
-                                    "value": "impedit",
-                                    "description": ""
-                                }
-                            ]
-                        },
-                        "method": "DELETE",
-                        "header": [
-                            {
-                                "key": "Content-Type",
-                                "value": "application\/json"
-                            },
-                            {
-                                "key": "Accept",
-                                "value": "application\/json"
-                            }
-                        ],
-                        "body": null,
-                        "description": "",
-                        "auth": {
-                            "type": "noauth"
-                        }
-                    },
-                    "response": []
-                },
-                {
-                    "name": "Store a newly created resource in storage.",
-                    "request": {
-                        "url": {
-                            "protocol": "http",
-                            "host": "{{baseUrl}}",
-                            "path": "api\/departements",
-                            "query": [],
-                            "raw": "http:\/\/{{baseUrl}}\/api\/departements"
-                        },
-                        "method": "POST",
-                        "header": [
-                            {
-                                "key": "Content-Type",
-                                "value": "application\/json"
-                            },
-                            {
-                                "key": "Accept",
-                                "value": "application\/json"
-                            }
-                        ],
-                        "body": null,
-                        "description": "",
-                        "auth": {
-                            "type": "noauth"
-                        }
-                    },
-                    "response": []
-                },
-                {
-                    "name": "Update the specified resource in storage.",
-                    "request": {
-                        "url": {
-                            "protocol": "http",
-                            "host": "{{baseUrl}}",
-                            "path": "api\/departements\/:departement",
-                            "query": [],
-                            "raw": "http:\/\/{{baseUrl}}\/api\/departements\/:departement",
-                            "variable": [
-                                {
-                                    "id": "departement",
-                                    "key": "departement",
-                                    "value": "qui",
-                                    "description": ""
-                                }
-                            ]
-                        },
-                        "method": "PUT",
-                        "header": [
-                            {
-                                "key": "Content-Type",
-                                "value": "application\/json"
-                            },
-                            {
-                                "key": "Accept",
-                                "value": "application\/json"
-                            }
-                        ],
-                        "body": null,
-                        "description": "",
-                        "auth": {
-                            "type": "noauth"
-                        }
-                    },
-                    "response": []
-                },
-                {
-                    "name": "Remove the specified resource from storage.",
-                    "request": {
-                        "url": {
-                            "protocol": "http",
-                            "host": "{{baseUrl}}",
-                            "path": "api\/departements\/:departement",
-                            "query": [],
-                            "raw": "http:\/\/{{baseUrl}}\/api\/departements\/:departement",
-                            "variable": [
-                                {
-                                    "id": "departement",
-                                    "key": "departement",
-                                    "value": "a",
+                                    "value": "expedita",
                                     "description": ""
                                 }
                             ]
@@ -1342,7 +1392,7 @@
                                 {
                                     "id": "materiel",
                                     "key": "materiel",
-                                    "value": "quis",
+                                    "value": "est",
                                     "description": ""
                                 }
                             ]
@@ -1379,7 +1429,7 @@
                                 {
                                     "id": "materiel",
                                     "key": "materiel",
-                                    "value": "architecto",
+                                    "value": "neque",
                                     "description": ""
                                 }
                             ]
@@ -1445,7 +1495,7 @@
                                 {
                                     "id": "gestionnaire",
                                     "key": "gestionnaire",
-                                    "value": "suscipit",
+                                    "value": "natus",
                                     "description": ""
                                 }
                             ]
@@ -1482,7 +1532,7 @@
                                 {
                                     "id": "gestionnaire",
                                     "key": "gestionnaire",
-                                    "value": "qui",
+                                    "value": "et",
                                     "description": ""
                                 }
                             ]
@@ -1548,7 +1598,7 @@
                                 {
                                     "id": "indisponibilite",
                                     "key": "indisponibilite",
-                                    "value": "eum",
+                                    "value": "illo",
                                     "description": ""
                                 }
                             ]
@@ -1585,7 +1635,7 @@
                                 {
                                     "id": "indisponibilite",
                                     "key": "indisponibilite",
-                                    "value": "porro",
+                                    "value": "ut",
                                     "description": ""
                                 }
                             ]

@@ -97,7 +97,7 @@ let headers = {
 };
 
 let body = {
-    "creneaux[]": "quae"
+    "creneaux[]": "reprehenderit"
 }
 
 fetch(url, {
@@ -188,7 +188,7 @@ ID du gestionnaire correspondant</p>
 
 ```javascript
 const url = new URL(
-    "http://127.0.0.1:8000/api/creneaux/saepe"
+    "http://127.0.0.1:8000/api/creneaux/dolore"
 );
 
 let headers = {

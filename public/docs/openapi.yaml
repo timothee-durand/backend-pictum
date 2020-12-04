@@ -55,42 +55,42 @@ paths:
                     in: query
                     name: nom
                     description: 'string Nom de la personne'
-                    example: quos
+                    example: atque
                     required: true
                     schema:
                         type: string
                         description: 'string Nom de la personne'
-                        example: quos
+                        example: atque
                 -
                     in: query
                     name: prenom
                     description: 'string Prénom de la personne'
-                    example: minima
+                    example: eos
                     required: true
                     schema:
                         type: string
                         description: 'string Prénom de la personne'
-                        example: minima
+                        example: eos
                 -
                     in: query
                     name: mail
                     description: 'string Mail de la personne'
-                    example: qui
+                    example: sint
                     required: true
                     schema:
                         type: string
                         description: 'string Mail de la personne'
-                        example: qui
+                        example: sint
                 -
                     in: query
                     name: id_univ
                     description: 'string Id universitaire de la personne'
-                    example: iste
+                    example: quia
                     required: true
                     schema:
                         type: string
                         description: 'string Id universitaire de la personne'
-                        example: iste
+                        example: quia
                 -
                     in: header
                     name: Authorization
@@ -181,42 +181,42 @@ paths:
                     in: query
                     name: nom
                     description: 'Nom de la personne'
-                    example: qui
+                    example: fugiat
                     required: false
                     schema:
                         type: string
                         description: 'Nom de la personne'
-                        example: qui
+                        example: fugiat
                 -
                     in: query
                     name: prenom
                     description: 'Prénom de la personne'
-                    example: non
+                    example: dolor
                     required: false
                     schema:
                         type: string
                         description: 'Prénom de la personne'
-                        example: non
+                        example: dolor
                 -
                     in: query
                     name: mail
                     description: 'Mail de la personne'
-                    example: velit
+                    example: nulla
                     required: false
                     schema:
                         type: string
                         description: 'Mail de la personne'
-                        example: velit
+                        example: nulla
                 -
                     in: query
                     name: id_univ
                     description: 'Id universitaire de la personne'
-                    example: soluta
+                    example: nulla
                     required: false
                     schema:
                         type: string
                         description: 'Id universitaire de la personne'
-                        example: soluta
+                        example: nulla
                 -
                     in: header
                     name: Content-Type
@@ -275,7 +275,7 @@ paths:
                 in: path
                 name: blacklist
                 description: ''
-                example: non
+                example: aut
                 required: true
                 schema:
                     type: string
@@ -292,7 +292,7 @@ paths:
                         value: ''
                     present:
                         summary: 'When the value is present'
-                        value: saepe
+                        value: nemo
     /api/creneaux:
         get:
             summary: 'Display a listing of the resource.'
@@ -365,12 +365,12 @@ paths:
                                 'creneaux[]':
                                     type: required
                                     description: 'Array of the creneaux of a gestionnaire'
-                                    example: quae
+                                    example: voluptas
                                 creneaux:
                                     type: object
                                     description: ''
-                                    example: { gestionnaire_id: 8 }
-                                    properties: { jour: { type: integer, description: 'Index du jour correspondant (0 => Dimanche)', example: 2 }, heure_debut_matin: { type: Time, description: 'Heure de début de la période du matin', example: minus }, heure_fin_matin: { type: Time, description: 'Heure de fin de la période du matin', example: autem }, heure_debut_am: { type: Time, description: 'Heure de début de la période de l''après-midi', example: et }, heure_fin_am: { type: Time, description: 'Heure de fin de la période de l''après-midi', example: modi }, gestionnaire_id: { type: integer, description: 'ID du gestionnaire correspondant', example: 8 } }
+                                    example: { gestionnaire_id: 17 }
+                                    properties: { jour: { type: integer, description: 'Index du jour correspondant (0 => Dimanche)', example: 20 }, heure_debut_matin: { type: Time, description: 'Heure de début de la période du matin', example: mollitia }, heure_fin_matin: { type: Time, description: 'Heure de fin de la période du matin', example: exercitationem }, heure_debut_am: { type: Time, description: 'Heure de début de la période de l''après-midi', example: tempore }, heure_fin_am: { type: Time, description: 'Heure de fin de la période de l''après-midi', example: nam }, gestionnaire_id: { type: integer, description: 'ID du gestionnaire correspondant', example: 17 } }
     '/api/creneaux/{creneaux}':
         put:
             summary: 'Update the specifieds resources in storage.'
@@ -399,10 +399,271 @@ paths:
                 in: path
                 name: creneaux
                 description: ''
-                example: saepe
+                example: amet
                 required: true
                 schema:
                     type: string
+    /api/departements:
+        get:
+            summary: 'Display a listing of the departements'
+            description: ''
+            parameters:
+                -
+                    in: header
+                    name: Content-Type
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+                -
+                    in: header
+                    name: Accept
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+            responses:
+                200:
+                    description: '200'
+                    content:
+                        application/json:
+                            schema:
+                                type: array
+                                items:
+                                    type: object
+                                example:
+                                    - { lat: -88.3, long: 5.09, nom: 'Port Conorside', gestionnaire: { id: 5, created_at: '2020-12-03T17:30:34.000000Z', updated_at: '2020-12-03T17:30:34.000000Z', nom: Harrison, prenom: Hessel, mail: dovie58@christiansen.com, id_univ: zzulauf, admin: 0 } }
+                                    - { lat: 70.05, long: -142.14, nom: 'North Rachaelburgh', gestionnaire: { id: 3, created_at: '2020-12-03T17:30:34.000000Z', updated_at: '2020-12-03T17:30:34.000000Z', nom: Lyric, prenom: Schmidt, mail: veronica.runte@hotmail.com, id_univ: edgar.schumm, admin: 0 } }
+            tags:
+                - Departement
+            security: []
+        post:
+            summary: 'Store a newly created departement in storage.'
+            description: ''
+            parameters:
+                -
+                    in: query
+                    name: lat
+                    description: 'Latitude du département'
+                    example: 9392.88442
+                    required: true
+                    schema:
+                        type: number
+                        description: 'Latitude du département'
+                        example: 9392.88442
+                -
+                    in: query
+                    name: long
+                    description: 'Longitude du département'
+                    example: !!float 40
+                    required: true
+                    schema:
+                        type: number
+                        description: 'Longitude du département'
+                        example: !!float 40
+                -
+                    in: query
+                    name: nom
+                    description: 'Nom du département'
+                    example: sint
+                    required: true
+                    schema:
+                        type: string
+                        description: 'Nom du département'
+                        example: sint
+                -
+                    in: query
+                    name: gestionnaire_id
+                    description: 'ID Pictum du gestionnaire concerné'
+                    example: 15
+                    required: true
+                    schema:
+                        type: integer
+                        description: 'ID Pictum du gestionnaire concerné'
+                        example: 15
+                -
+                    in: header
+                    name: Authorization
+                    description: ''
+                    example: 'Bearer {YOUR_AUTH_KEY}'
+                    schema:
+                        type: string
+                -
+                    in: header
+                    name: Content-Type
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+                -
+                    in: header
+                    name: Accept
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+            responses:
+                200:
+                    description: '200'
+                    content:
+                        text/plain:
+                            schema:
+                                type: string
+                                example: "{\n \"Create OK\"\n}"
+            tags:
+                - Departement
+    '/api/departements/{departement}':
+        get:
+            summary: 'Display the specified resource.'
+            description: ''
+            parameters:
+                -
+                    in: header
+                    name: Content-Type
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+                -
+                    in: header
+                    name: Accept
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+            responses:
+                200:
+                    description: '200'
+                    content:
+                        application/json:
+                            schema:
+                                type: object
+                                example:
+                                    data: { lat: 70.05, long: -142.14, nom: 'North Rachaelburgh', gestionnaire: { id: 3, created_at: '2020-12-03T17:30:34.000000Z', updated_at: '2020-12-03T17:30:34.000000Z', nom: Lyric, prenom: Schmidt, mail: veronica.runte@hotmail.com, id_univ: edgar.schumm, admin: 0 } }
+                                properties:
+                                    data: { type: object, example: { lat: 70.05, long: -142.14, nom: 'North Rachaelburgh', gestionnaire: { id: 3, created_at: '2020-12-03T17:30:34.000000Z', updated_at: '2020-12-03T17:30:34.000000Z', nom: Lyric, prenom: Schmidt, mail: veronica.runte@hotmail.com, id_univ: edgar.schumm, admin: 0 } } }
+            tags:
+                - Departement
+            security: []
+        put:
+            summary: 'Update the specified resource in storage.'
+            description: ''
+            parameters:
+                -
+                    in: query
+                    name: lat
+                    description: 'Latitude du département'
+                    example: 60421629.253684
+                    required: false
+                    schema:
+                        type: number
+                        description: 'Latitude du département'
+                        example: 60421629.253684
+                -
+                    in: query
+                    name: long
+                    description: 'Longitude du département'
+                    example: 8799.887110345
+                    required: false
+                    schema:
+                        type: number
+                        description: 'Longitude du département'
+                        example: 8799.887110345
+                -
+                    in: query
+                    name: nom
+                    description: 'Nom du département'
+                    example: quasi
+                    required: false
+                    schema:
+                        type: string
+                        description: 'Nom du département'
+                        example: quasi
+                -
+                    in: query
+                    name: gestionnaire_id
+                    description: 'ID Pictum du gestionnaire concerné'
+                    example: 6
+                    required: false
+                    schema:
+                        type: integer
+                        description: 'ID Pictum du gestionnaire concerné'
+                        example: 6
+                -
+                    in: header
+                    name: Authorization
+                    description: ''
+                    example: 'Bearer {YOUR_AUTH_KEY}'
+                    schema:
+                        type: string
+                -
+                    in: header
+                    name: Content-Type
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+                -
+                    in: header
+                    name: Accept
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+            responses:
+                200:
+                    description: '200'
+                    content:
+                        text/plain:
+                            schema:
+                                type: string
+                                example: "{\n \"Update OK\"\n}"
+            tags:
+                - Departement
+        delete:
+            summary: 'Remove the specified resource from storage.'
+            description: ''
+            parameters:
+                -
+                    in: header
+                    name: Content-Type
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+                -
+                    in: header
+                    name: Accept
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+            responses:
+                200:
+                    description: '200'
+                    content:
+                        text/plain:
+                            schema:
+                                type: string
+                                example: "{\n \"Destroy OK\"\n}"
+            tags:
+                - Departement
+            security: []
+        parameters:
+            -
+                in: path
+                name: departement
+                description: 'Optional parameter. ID du département concerné'
+                required: true
+                schema:
+                    type: integer
+                examples:
+                    omitted:
+                        summary: 'When the value is omitted'
+                        value: ''
+                    present:
+                        summary: 'When the value is present'
+                        value: 2
     /sanctum/csrf-cookie:
         get:
             summary: 'Return an empty response simply to trigger the storage of the CSRF cookie in the browser.'
@@ -563,7 +824,7 @@ paths:
                 in: path
                 name: type
                 description: ''
-                example: itaque
+                example: quod
                 required: true
                 schema:
                     type: string
@@ -708,147 +969,6 @@ paths:
                 required: true
                 schema:
                     type: string
-    /api/departements:
-        get:
-            summary: 'Display a listing of the resource.'
-            description: ''
-            parameters:
-                -
-                    in: header
-                    name: Content-Type
-                    description: ''
-                    example: application/json
-                    schema:
-                        type: string
-                -
-                    in: header
-                    name: Accept
-                    description: ''
-                    example: application/json
-                    schema:
-                        type: string
-            responses:
-                401:
-                    description: ''
-                    content:
-                        application/json:
-                            schema:
-                                type: object
-                                example:
-                                    message: Unauthenticated.
-                                properties:
-                                    message: { type: string, example: Unauthenticated. }
-            tags:
-                - Endpoints
-            security: []
-        post:
-            summary: 'Store a newly created resource in storage.'
-            description: ''
-            parameters:
-                -
-                    in: header
-                    name: Content-Type
-                    description: ''
-                    example: application/json
-                    schema:
-                        type: string
-                -
-                    in: header
-                    name: Accept
-                    description: ''
-                    example: application/json
-                    schema:
-                        type: string
-            responses: {  }
-            tags:
-                - Endpoints
-            security: []
-    '/api/departements/{departement}':
-        get:
-            summary: 'Display the specified resource.'
-            description: ''
-            parameters:
-                -
-                    in: header
-                    name: Content-Type
-                    description: ''
-                    example: application/json
-                    schema:
-                        type: string
-                -
-                    in: header
-                    name: Accept
-                    description: ''
-                    example: application/json
-                    schema:
-                        type: string
-            responses:
-                401:
-                    description: ''
-                    content:
-                        application/json:
-                            schema:
-                                type: object
-                                example:
-                                    message: Unauthenticated.
-                                properties:
-                                    message: { type: string, example: Unauthenticated. }
-            tags:
-                - Endpoints
-            security: []
-        put:
-            summary: 'Update the specified resource in storage.'
-            description: ''
-            parameters:
-                -
-                    in: header
-                    name: Content-Type
-                    description: ''
-                    example: application/json
-                    schema:
-                        type: string
-                -
-                    in: header
-                    name: Accept
-                    description: ''
-                    example: application/json
-                    schema:
-                        type: string
-            responses: {  }
-            tags:
-                - Endpoints
-            security: []
-        delete:
-            summary: 'Remove the specified resource from storage.'
-            description: ''
-            parameters:
-                -
-                    in: header
-                    name: Content-Type
-                    description: ''
-                    example: application/json
-                    schema:
-                        type: string
-                -
-                    in: header
-                    name: Accept
-                    description: ''
-                    example: application/json
-                    schema:
-                        type: string
-            responses: {  }
-            tags:
-                - Endpoints
-            security: []
-        parameters:
-            -
-                in: path
-                name: departement
-                description: ''
-                example: fuga
-                required: true
-                schema:
-                    type: string
     /api/reservations:
         get:
             summary: 'Display a listing of the resource.'
@@ -920,7 +1040,7 @@ paths:
                 in: path
                 name: reservation
                 description: ''
-                example: id
+                example: tenetur
                 required: true
                 schema:
                     type: string
@@ -995,7 +1115,7 @@ paths:
                 in: path
                 name: estprete
                 description: ''
-                example: voluptatem
+                example: et
                 required: true
                 schema:
                     type: string
@@ -1136,7 +1256,7 @@ paths:
                 in: path
                 name: materiel
                 description: ''
-                example: aut
+                example: voluptas
                 required: true
                 schema:
                     type: string
@@ -1277,7 +1397,7 @@ paths:
                 in: path
                 name: gestionnaire
                 description: ''
-                example: vel
+                example: rem
                 required: true
                 schema:
                     type: string
@@ -1418,7 +1538,7 @@ paths:
                 in: path
                 name: indisponibilite
                 description: ''
-                example: reprehenderit
+                example: iusto
                 required: true
                 schema:
                     type: string
@@ -1460,7 +1580,7 @@ paths:
                 in: path
                 name: id
                 description: ''
-                example: pariatur
+                example: aliquam
                 required: true
                 schema:
                     type: string

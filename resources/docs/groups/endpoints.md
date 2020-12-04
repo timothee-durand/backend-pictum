@@ -111,7 +111,7 @@ fetch(url, {
 
 ```javascript
 const url = new URL(
-    "http://127.0.0.1:8000/api/types/itaque"
+    "http://127.0.0.1:8000/api/types/provident"
 );
 
 let headers = {
@@ -225,7 +225,7 @@ fetch(url, {
 
 ```javascript
 const url = new URL(
-    "http://127.0.0.1:8000/api/malettes/est"
+    "http://127.0.0.1:8000/api/malettes/quae"
 );
 
 let headers = {
@@ -271,120 +271,6 @@ fetch(url, {
 <p>
 <b><code>malette</code></b>&nbsp;&nbsp;<small>string</small>  &nbsp;
 <input type="text" name="malette" data-endpoint="GETapi-malettes--malette-" data-component="url" required  hidden>
-<br>
-</p>
-</form>
-
-
-## Display a listing of the resource.
-
-
-
-
-> Example request:
-
-```javascript
-const url = new URL(
-    "http://127.0.0.1:8000/api/departements"
-);
-
-let headers = {
-    "Content-Type": "application/json",
-    "Accept": "application/json",
-};
-
-
-fetch(url, {
-    method: "GET",
-    headers,
-}).then(response => response.json());
-```
-
-
-> Example response (401):
-
-```json
-{
-    "message": "Unauthenticated."
-}
-```
-<div id="execution-results-GETapi-departements" hidden>
-    <blockquote>Received response<span id="execution-response-status-GETapi-departements"></span>:</blockquote>
-    <pre class="json"><code id="execution-response-content-GETapi-departements"></code></pre>
-</div>
-<div id="execution-error-GETapi-departements" hidden>
-    <blockquote>Request failed with error:</blockquote>
-    <pre><code id="execution-error-message-GETapi-departements"></code></pre>
-</div>
-<form id="form-GETapi-departements" data-method="GET" data-path="api/departements" data-authed="0" data-hasfiles="0" data-headers='{"Content-Type":"application\/json","Accept":"application\/json"}' onsubmit="event.preventDefault(); executeTryOut('GETapi-departements', this);">
-<h3>
-    Request&nbsp;&nbsp;&nbsp;
-        <button type="button" style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;" id="btn-tryout-GETapi-departements" onclick="tryItOut('GETapi-departements');">Try it out ⚡</button>
-    <button type="button" style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;" id="btn-canceltryout-GETapi-departements" onclick="cancelTryOut('GETapi-departements');" hidden>Cancel</button>&nbsp;&nbsp;
-    <button type="submit" style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;" id="btn-executetryout-GETapi-departements" hidden>Send Request 💥</button>
-    </h3>
-<p>
-<small class="badge badge-green">GET</small>
- <b><code>api/departements</code></b>
-</p>
-</form>
-
-
-## Display the specified resource.
-
-
-
-
-> Example request:
-
-```javascript
-const url = new URL(
-    "http://127.0.0.1:8000/api/departements/fuga"
-);
-
-let headers = {
-    "Content-Type": "application/json",
-    "Accept": "application/json",
-};
-
-
-fetch(url, {
-    method: "GET",
-    headers,
-}).then(response => response.json());
-```
-
-
-> Example response (401):
-
-```json
-{
-    "message": "Unauthenticated."
-}
-```
-<div id="execution-results-GETapi-departements--departement-" hidden>
-    <blockquote>Received response<span id="execution-response-status-GETapi-departements--departement-"></span>:</blockquote>
-    <pre class="json"><code id="execution-response-content-GETapi-departements--departement-"></code></pre>
-</div>
-<div id="execution-error-GETapi-departements--departement-" hidden>
-    <blockquote>Request failed with error:</blockquote>
-    <pre><code id="execution-error-message-GETapi-departements--departement-"></code></pre>
-</div>
-<form id="form-GETapi-departements--departement-" data-method="GET" data-path="api/departements/{departement}" data-authed="0" data-hasfiles="0" data-headers='{"Content-Type":"application\/json","Accept":"application\/json"}' onsubmit="event.preventDefault(); executeTryOut('GETapi-departements--departement-', this);">
-<h3>
-    Request&nbsp;&nbsp;&nbsp;
-        <button type="button" style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;" id="btn-tryout-GETapi-departements--departement-" onclick="tryItOut('GETapi-departements--departement-');">Try it out ⚡</button>
-    <button type="button" style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;" id="btn-canceltryout-GETapi-departements--departement-" onclick="cancelTryOut('GETapi-departements--departement-');" hidden>Cancel</button>&nbsp;&nbsp;
-    <button type="submit" style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;" id="btn-executetryout-GETapi-departements--departement-" hidden>Send Request 💥</button>
-    </h3>
-<p>
-<small class="badge badge-green">GET</small>
- <b><code>api/departements/{departement}</code></b>
-</p>
-<h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
-<p>
-<b><code>departement</code></b>&nbsp;&nbsp;<small>string</small>  &nbsp;
-<input type="text" name="departement" data-endpoint="GETapi-departements--departement-" data-component="url" required  hidden>
 <br>
 </p>
 </form>
@@ -453,7 +339,7 @@ fetch(url, {
 
 ```javascript
 const url = new URL(
-    "http://127.0.0.1:8000/api/reservations/id"
+    "http://127.0.0.1:8000/api/reservations/sunt"
 );
 
 let headers = {
@@ -567,7 +453,7 @@ fetch(url, {
 
 ```javascript
 const url = new URL(
-    "http://127.0.0.1:8000/api/estpretes/voluptatem"
+    "http://127.0.0.1:8000/api/estpretes/praesentium"
 );
 
 let headers = {
@@ -681,7 +567,7 @@ fetch(url, {
 
 ```javascript
 const url = new URL(
-    "http://127.0.0.1:8000/api/materiels/aut"
+    "http://127.0.0.1:8000/api/materiels/ea"
 );
 
 let headers = {
@@ -795,7 +681,7 @@ fetch(url, {
 
 ```javascript
 const url = new URL(
-    "http://127.0.0.1:8000/api/gestionnaires/vel"
+    "http://127.0.0.1:8000/api/gestionnaires/similique"
 );
 
 let headers = {
@@ -909,7 +795,7 @@ fetch(url, {
 
 ```javascript
 const url = new URL(
-    "http://127.0.0.1:8000/api/indisponibilites/reprehenderit"
+    "http://127.0.0.1:8000/api/indisponibilites/unde"
 );
 
 let headers = {
@@ -969,7 +855,7 @@ fetch(url, {
 
 ```javascript
 const url = new URL(
-    "http://127.0.0.1:8000/api/gestionnaires/pariatur/rdv"
+    "http://127.0.0.1:8000/api/gestionnaires/occaecati/rdv"
 );
 
 let headers = {
@@ -1170,7 +1056,7 @@ fetch(url, {
 
 ```javascript
 const url = new URL(
-    "http://127.0.0.1:8000/api/types/placeat"
+    "http://127.0.0.1:8000/api/types/omnis"
 );
 
 let headers = {
@@ -1227,7 +1113,7 @@ fetch(url, {
 
 ```javascript
 const url = new URL(
-    "http://127.0.0.1:8000/api/types/quo"
+    "http://127.0.0.1:8000/api/types/tempore"
 );
 
 let headers = {
@@ -1327,7 +1213,7 @@ fetch(url, {
 
 ```javascript
 const url = new URL(
-    "http://127.0.0.1:8000/api/malettes/quos"
+    "http://127.0.0.1:8000/api/malettes/cum"
 );
 
 let headers = {
@@ -1384,7 +1270,7 @@ fetch(url, {
 
 ```javascript
 const url = new URL(
-    "http://127.0.0.1:8000/api/malettes/impedit"
+    "http://127.0.0.1:8000/api/malettes/expedita"
 );
 
 let headers = {
@@ -1423,163 +1309,6 @@ fetch(url, {
 <p>
 <b><code>malette</code></b>&nbsp;&nbsp;<small>string</small>  &nbsp;
 <input type="text" name="malette" data-endpoint="DELETEapi-malettes--malette-" data-component="url" required  hidden>
-<br>
-</p>
-</form>
-
-
-## Store a newly created resource in storage.
-
-
-
-
-> Example request:
-
-```javascript
-const url = new URL(
-    "http://127.0.0.1:8000/api/departements"
-);
-
-let headers = {
-    "Content-Type": "application/json",
-    "Accept": "application/json",
-};
-
-
-fetch(url, {
-    method: "POST",
-    headers,
-}).then(response => response.json());
-```
-
-
-<div id="execution-results-POSTapi-departements" hidden>
-    <blockquote>Received response<span id="execution-response-status-POSTapi-departements"></span>:</blockquote>
-    <pre class="json"><code id="execution-response-content-POSTapi-departements"></code></pre>
-</div>
-<div id="execution-error-POSTapi-departements" hidden>
-    <blockquote>Request failed with error:</blockquote>
-    <pre><code id="execution-error-message-POSTapi-departements"></code></pre>
-</div>
-<form id="form-POSTapi-departements" data-method="POST" data-path="api/departements" data-authed="0" data-hasfiles="0" data-headers='{"Content-Type":"application\/json","Accept":"application\/json"}' onsubmit="event.preventDefault(); executeTryOut('POSTapi-departements', this);">
-<h3>
-    Request&nbsp;&nbsp;&nbsp;
-        <button type="button" style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;" id="btn-tryout-POSTapi-departements" onclick="tryItOut('POSTapi-departements');">Try it out ⚡</button>
-    <button type="button" style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;" id="btn-canceltryout-POSTapi-departements" onclick="cancelTryOut('POSTapi-departements');" hidden>Cancel</button>&nbsp;&nbsp;
-    <button type="submit" style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;" id="btn-executetryout-POSTapi-departements" hidden>Send Request 💥</button>
-    </h3>
-<p>
-<small class="badge badge-black">POST</small>
- <b><code>api/departements</code></b>
-</p>
-</form>
-
-
-## Update the specified resource in storage.
-
-
-
-
-> Example request:
-
-```javascript
-const url = new URL(
-    "http://127.0.0.1:8000/api/departements/qui"
-);
-
-let headers = {
-    "Content-Type": "application/json",
-    "Accept": "application/json",
-};
-
-
-fetch(url, {
-    method: "PUT",
-    headers,
-}).then(response => response.json());
-```
-
-
-<div id="execution-results-PUTapi-departements--departement-" hidden>
-    <blockquote>Received response<span id="execution-response-status-PUTapi-departements--departement-"></span>:</blockquote>
-    <pre class="json"><code id="execution-response-content-PUTapi-departements--departement-"></code></pre>
-</div>
-<div id="execution-error-PUTapi-departements--departement-" hidden>
-    <blockquote>Request failed with error:</blockquote>
-    <pre><code id="execution-error-message-PUTapi-departements--departement-"></code></pre>
-</div>
-<form id="form-PUTapi-departements--departement-" data-method="PUT" data-path="api/departements/{departement}" data-authed="0" data-hasfiles="0" data-headers='{"Content-Type":"application\/json","Accept":"application\/json"}' onsubmit="event.preventDefault(); executeTryOut('PUTapi-departements--departement-', this);">
-<h3>
-    Request&nbsp;&nbsp;&nbsp;
-        <button type="button" style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;" id="btn-tryout-PUTapi-departements--departement-" onclick="tryItOut('PUTapi-departements--departement-');">Try it out ⚡</button>
-    <button type="button" style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;" id="btn-canceltryout-PUTapi-departements--departement-" onclick="cancelTryOut('PUTapi-departements--departement-');" hidden>Cancel</button>&nbsp;&nbsp;
-    <button type="submit" style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;" id="btn-executetryout-PUTapi-departements--departement-" hidden>Send Request 💥</button>
-    </h3>
-<p>
-<small class="badge badge-darkblue">PUT</small>
- <b><code>api/departements/{departement}</code></b>
-</p>
-<p>
-<small class="badge badge-purple">PATCH</small>
- <b><code>api/departements/{departement}</code></b>
-</p>
-<h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
-<p>
-<b><code>departement</code></b>&nbsp;&nbsp;<small>string</small>  &nbsp;
-<input type="text" name="departement" data-endpoint="PUTapi-departements--departement-" data-component="url" required  hidden>
-<br>
-</p>
-</form>
-
-
-## Remove the specified resource from storage.
-
-
-
-
-> Example request:
-
-```javascript
-const url = new URL(
-    "http://127.0.0.1:8000/api/departements/a"
-);
-
-let headers = {
-    "Content-Type": "application/json",
-    "Accept": "application/json",
-};
-
-
-fetch(url, {
-    method: "DELETE",
-    headers,
-}).then(response => response.json());
-```
-
-
-<div id="execution-results-DELETEapi-departements--departement-" hidden>
-    <blockquote>Received response<span id="execution-response-status-DELETEapi-departements--departement-"></span>:</blockquote>
-    <pre class="json"><code id="execution-response-content-DELETEapi-departements--departement-"></code></pre>
-</div>
-<div id="execution-error-DELETEapi-departements--departement-" hidden>
-    <blockquote>Request failed with error:</blockquote>
-    <pre><code id="execution-error-message-DELETEapi-departements--departement-"></code></pre>
-</div>
-<form id="form-DELETEapi-departements--departement-" data-method="DELETE" data-path="api/departements/{departement}" data-authed="0" data-hasfiles="0" data-headers='{"Content-Type":"application\/json","Accept":"application\/json"}' onsubmit="event.preventDefault(); executeTryOut('DELETEapi-departements--departement-', this);">
-<h3>
-    Request&nbsp;&nbsp;&nbsp;
-        <button type="button" style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;" id="btn-tryout-DELETEapi-departements--departement-" onclick="tryItOut('DELETEapi-departements--departement-');">Try it out ⚡</button>
-    <button type="button" style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;" id="btn-canceltryout-DELETEapi-departements--departement-" onclick="cancelTryOut('DELETEapi-departements--departement-');" hidden>Cancel</button>&nbsp;&nbsp;
-    <button type="submit" style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;" id="btn-executetryout-DELETEapi-departements--departement-" hidden>Send Request 💥</button>
-    </h3>
-<p>
-<small class="badge badge-red">DELETE</small>
- <b><code>api/departements/{departement}</code></b>
-</p>
-<h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
-<p>
-<b><code>departement</code></b>&nbsp;&nbsp;<small>string</small>  &nbsp;
-<input type="text" name="departement" data-endpoint="DELETEapi-departements--departement-" data-component="url" required  hidden>
 <br>
 </p>
 </form>
@@ -1641,7 +1370,7 @@ fetch(url, {
 
 ```javascript
 const url = new URL(
-    "http://127.0.0.1:8000/api/materiels/quis"
+    "http://127.0.0.1:8000/api/materiels/est"
 );
 
 let headers = {
@@ -1698,7 +1427,7 @@ fetch(url, {
 
 ```javascript
 const url = new URL(
-    "http://127.0.0.1:8000/api/materiels/architecto"
+    "http://127.0.0.1:8000/api/materiels/neque"
 );
 
 let headers = {
@@ -1798,7 +1527,7 @@ fetch(url, {
 
 ```javascript
 const url = new URL(
-    "http://127.0.0.1:8000/api/gestionnaires/suscipit"
+    "http://127.0.0.1:8000/api/gestionnaires/natus"
 );
 
 let headers = {
@@ -1855,7 +1584,7 @@ fetch(url, {
 
 ```javascript
 const url = new URL(
-    "http://127.0.0.1:8000/api/gestionnaires/qui"
+    "http://127.0.0.1:8000/api/gestionnaires/et"
 );
 
 let headers = {
@@ -1955,7 +1684,7 @@ fetch(url, {
 
 ```javascript
 const url = new URL(
-    "http://127.0.0.1:8000/api/indisponibilites/eum"
+    "http://127.0.0.1:8000/api/indisponibilites/illo"
 );
 
 let headers = {
@@ -2012,7 +1741,7 @@ fetch(url, {
 
 ```javascript
 const url = new URL(
-    "http://127.0.0.1:8000/api/indisponibilites/porro"
+    "http://127.0.0.1:8000/api/indisponibilites/ut"
 );
 
 let headers = {

@@ -87,7 +87,7 @@ fetch(url, {
 
 ```javascript
 const url = new URL(
-    "http://127.0.0.1:8000/api/blacklists/non"
+    "http://127.0.0.1:8000/api/blacklists/suscipit"
 );
 
 let headers = {
@@ -167,10 +167,10 @@ const url = new URL(
 );
 
 let params = {
-    "nom": "quos",
-    "prenom": "minima",
-    "mail": "qui",
-    "id_univ": "iste",
+    "nom": "nulla",
+    "prenom": "commodi",
+    "mail": "impedit",
+    "id_univ": "qui",
 };
 Object.keys(params)
     .forEach(key => url.searchParams.append(key, params[key]));
@@ -252,14 +252,14 @@ string Id universitaire de la personne</p>
 
 ```javascript
 const url = new URL(
-    "http://127.0.0.1:8000/api/blacklists/19"
+    "http://127.0.0.1:8000/api/blacklists/7"
 );
 
 let params = {
-    "nom": "qui",
-    "prenom": "non",
-    "mail": "velit",
-    "id_univ": "soluta",
+    "nom": "libero",
+    "prenom": "quam",
+    "mail": "sit",
+    "id_univ": "cum",
 };
 Object.keys(params)
     .forEach(key => url.searchParams.append(key, params[key]));
@@ -348,7 +348,7 @@ Id universitaire de la personne</p>
 
 ```javascript
 const url = new URL(
-    "http://127.0.0.1:8000/api/blacklists/19"
+    "http://127.0.0.1:8000/api/blacklists/20"
 );
 
 let headers = {
