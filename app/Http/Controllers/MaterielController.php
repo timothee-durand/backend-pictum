@@ -11,6 +11,7 @@ use function MongoDB\BSON\toJSON;
 
 class MaterielController extends Controller
 {
+
     /**
      * Display a listing of the resource.
      *
@@ -27,8 +28,9 @@ class MaterielController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return false|\Illuminate\Http\Response|string
      */
-    public function store(Materiel $materiel)
+    public function store(Materiel $materiel, Request $request)
     {
+        $materiel->photo = $this->storeImage($request);
         if ($materiel->save()) {
             return json_encode([
                 "method" => "store",
@@ -36,6 +38,13 @@ class MaterielController extends Controller
             ]);
         }
     }
+
+    protected function storeImage(Request $request) {
+        $fileName = $request->get('nom') . '.' . $request->file('photo')->extension();
+        $path = $request->file('photo')->storeAs('public/photo-materiel', $fileName);
+        return substr($path, strlen('storage/'));
+    }
+
 
     /**
      * Display the specified resource.

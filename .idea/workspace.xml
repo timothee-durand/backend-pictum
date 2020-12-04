@@ -28,10 +28,9 @@
     </select>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c2fc254d-4c34-4822-9cbb-ed6000c1b396" name="Default Changelist" comment="ajout prise en compte image pour les types">
+    <list default="true" id="c2fc254d-4c34-4822-9cbb-ed6000c1b396" name="Default Changelist" comment="ajout prise en compte image pour les malettes">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/MaletteController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/MaletteController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/TypeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/TypeController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/MaterielController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/MaterielController.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -233,7 +232,7 @@
       <workItem from="1606554503093" duration="7459000" />
       <workItem from="1606592256081" duration="64000" />
       <workItem from="1606670872640" duration="5956000" />
-      <workItem from="1607075217702" duration="12527000" />
+      <workItem from="1607075217702" duration="13330000" />
     </task>
     <task id="LOCAL-00001" summary="initial commit">
       <created>1604745505978</created>
@@ -382,7 +381,14 @@
       <option name="project" value="LOCAL" />
       <updated>1607093233276</updated>
     </task>
-    <option name="localTasksCounter" value="22" />
+    <task id="LOCAL-00022" summary="ajout prise en compte image pour les malettes">
+      <created>1607093567860</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1607093567860</updated>
+    </task>
+    <option name="localTasksCounter" value="23" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -450,7 +456,8 @@
     <MESSAGE value="mise en place mail de rappel des non rendu" />
     <MESSAGE value="mise en place mail contact admin" />
     <MESSAGE value="ajout prise en compte image pour les types" />
-    <option name="LAST_COMMIT_MESSAGE" value="ajout prise en compte image pour les types" />
+    <MESSAGE value="ajout prise en compte image pour les malettes" />
+    <option name="LAST_COMMIT_MESSAGE" value="ajout prise en compte image pour les malettes" />
   </component>
   <component name="WindowStateProjectService">
     <state x="552" y="178" key="#Deployment" timestamp="1607090229972">
