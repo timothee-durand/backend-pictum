@@ -142,7 +142,13 @@ class MaterielController extends Controller
      * @bodyParam photo file required Photo du matériel
      * @bodyParam usage string required Usage possible du matériel
      * @bodyParam carac string required Caractéristiques techniques du matériel
-     * @bodyParam tutos json required Array comme ca : [
+     * @bodyParam notice file required Notice du matériel (PDF c'est mieux)
+     * @bodyParam indisp bool required Matériel disponible ou indisponible
+     * @bodyParam indisp_raison string Raison de l'indisponibilité
+     * @bodyParam type_id int required ID pictum du type de matériel
+     * @bodyParam malette_id int ID pictum de la malette correspondante (si il existe à une malette, sinon null)
+     * @bodyParam departement_id int required ID pictum du département ou il est stoké
+     * @bodyParam tutos json required Array comme ca :
     {
     "name": "John",
     "skills": ["SQL", "C#", "Azure"]
@@ -152,6 +158,7 @@ class MaterielController extends Controller
     "surname": "Doe"
     }
     ]
+     *
      * @response {
      *  "Store OK"
      *}
@@ -161,6 +168,7 @@ class MaterielController extends Controller
     public function store(Materiel $materiel, Request $request)
     {
         $materiel->photo = $this->storeImage($request);
+        $materiel->notice = $this->storeNotice($request);
         if ($materiel->save()) {
             return \response("Store OK");
         }
@@ -169,6 +177,12 @@ class MaterielController extends Controller
     protected function storeImage(Request $request) {
         $fileName = $request->get('nom') . '.' . $request->file('photo')->extension();
         $path = $request->file('photo')->storeAs('public/photo-materiel', $fileName);
+        return substr($path, strlen('storage/'));
+    }
+
+    protected function storeNotice(Request $request) {
+        $fileName = $request->get('nom') . '.' . $request->file('notice')->extension();
+        $path = $request->file('notice')->storeAs('public/notice-materiel', $fileName);
         return substr($path, strlen('storage/'));
     }
 
@@ -308,6 +322,12 @@ class MaterielController extends Controller
      * @bodyParam photo file  Photo du matériel
      * @bodyParam usage string  Usage possible du matériel
      * @bodyParam carac string  Caractéristiques techniques du matériel
+     * @bodyParam notice file  Notice du matériel (PDF c'est mieux)
+     * @bodyParam indisp bool  Matériel disponible ou indisponible
+     * @bodyParam indisp_raison string Raison de l'indisponibilité
+     * @bodyParam type_id int  ID pictum du type de matériel
+     * @bodyParam malette_id int ID pictum de la malette correspondante (si il existe à une malette, sinon null)
+     * @bodyParam departement_id int  ID pictum du département ou il est stoké
      * @bodyParam tutos json  Array comme ca : [
     {
     "name": "John",
@@ -318,6 +338,8 @@ class MaterielController extends Controller
     "surname": "Doe"
     }
     ]
+     *
+     *
      * @response {
      *  "Update OK"
      *}
@@ -328,6 +350,8 @@ class MaterielController extends Controller
      */
     public function update(Request $request, Materiel $materiel)
     {
+        $materiel->notice = $this->storeNotice($request);
+        $materiel->photo = $this->storeImage($request);
         //envoi modifs
         if ($materiel->update($request->all())) {
             return new Response("Update OK", 200);
@@ -343,8 +367,9 @@ class MaterielController extends Controller
      *      "Delete OK"
      * }
      *
-     * @param  \App\Materiel  $materiel
+     * @param \App\Materiel $materiel
      * @return false|\Illuminate\Http\Response|string
+     * @throws \Exception
      */
     public function destroy(Materiel $materiel)
     {

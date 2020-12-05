@@ -8,7 +8,26 @@ use Illuminate\Http\Request;
 class TypeController extends Controller
 {
     /**
-     * Display a listing of the resource.
+     * Display a listing of the Type.
+     *
+     * @group Type
+     * @authenticated
+     * @response [
+    {
+    "id": 1,
+    "created_at": "2020-12-03T17:30:34.000000Z",
+    "updated_at": "2020-12-03T17:30:34.000000Z",
+    "nom": "Lumiere",
+    "picto": "https://via.placeholder.com/30x30.png/0044cc?text=rerum"
+    },
+    {
+    "id": 2,
+    "created_at": "2020-12-03T17:30:34.000000Z",
+    "updated_at": "2020-12-03T17:30:34.000000Z",
+    "nom": "Prise de vue",
+    "picto": "https://via.placeholder.com/30x30.png/005533?text=nostrum"
+    }
+     * ]
      *
      * @return string
      */
@@ -17,8 +36,18 @@ class TypeController extends Controller
         return Type::all()->toJson(JSON_PRETTY_PRINT);
     }
 
+
     /**
+     *
      * Store a newly created resource in storage.
+     * @group Type
+     * @authenticated
+     * @bodyParam nom string required Nom du Type
+     * @bodyParam picto file required Pictogramme représentant le type
+     *
+     * @response {
+     *  "Store OK"
+     * }
      *
      * @param  \Illuminate\Http\Request  $request
      * @return false|\Illuminate\Http\Response|string
@@ -31,15 +60,9 @@ class TypeController extends Controller
         ]);
 
         if ($type->save()) {
-            return json_encode([
-                "method" => "store",
-                "status" => "200"
-            ]);
+            return response("Store OK");
         } else {
-            return json_encode([
-                "method" => "store",
-                "status" => "400"
-            ]);
+            return response("Store failed", 400);
         }
     }
 
@@ -51,6 +74,17 @@ class TypeController extends Controller
 
     /**
      * Display the specified resource.
+     * @group Type
+     * @authenticated
+     * @urlParam type int ID Pictum du type demandé
+     *
+     * @response {
+    "id": 2,
+    "created_at": "2020-12-03T17:30:34.000000Z",
+    "updated_at": "2020-12-03T17:30:34.000000Z",
+    "nom": "Prise de vue",
+    "picto": "https://via.placeholder.com/30x30.png/005533?text=nostrum"
+    }
      *
      * @param  \App\Type  $type
      * @return false|\Illuminate\Http\Response|string
@@ -64,15 +98,21 @@ class TypeController extends Controller
             return $type->toJSON();
         } else {
             //si pas d'entree correspondante
-            return json_encode([
-                "method" => "show",
-                "status" => "!FIND"
-            ]);
+            return response("Don't find", 404);
         }
     }
 
     /**
      * Update the specified resource in storage.
+     * @group Type
+     * @authenticated
+     * @urlParam type int ID Pictum du type demandé
+     * @bodyParam nom string Nom du Type
+     * @bodyParam picto file Pictogramme représentant le type
+     * @response {
+     *  "Update OK"
+     * }
+     *
      *
      * @param  \Illuminate\Http\Request  $request
      * @param  \App\Type  $type
@@ -80,27 +120,29 @@ class TypeController extends Controller
      */
     public function update(Request $request, Type $type)
     {
-         return Type::find($type->id)->update($request->all());
+         if($type->update($request->all())){
+             return response("Update OK");
+         }
     }
 
     /**
      * Remove the specified resource from storage.
+     * @group Type
+     * @authenticated
+     * @urlParam type int ID Pictum du type demandé
+     * @response {
+     *  "Destroy OK"
+     * }
      *
      * @param  \App\Type  $type
      * @return false|\Illuminate\Http\Response|string
      */
     public function destroy(Type $type)
     {
-        if (Type::find($type->id)->delete()) {
-            return json_encode([
-                "method" => "destroy",
-                "status" => "OK"
-            ]);
+        if ($type->delete()) {
+            return response("Destroy OK");
         } else {
-            return json_encode([
-                "method" => "destroy",
-                "status" => "FAILED"
-            ]);
+            return response("Destroy Failed");
         }
     }
 }

@@ -157,7 +157,6 @@ class ReservationController extends Controller
      *      "Update OK"
      * }
      *
-     *
      * @param  \Illuminate\Http\Request  $request
      * @param  \App\Reservation  $reservation
      * @return false|\Illuminate\Http\Response|string
