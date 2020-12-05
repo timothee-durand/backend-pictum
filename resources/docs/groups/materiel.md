@@ -176,7 +176,7 @@ fetch(url, {
 
 ```javascript
 const url = new URL(
-    "http://127.0.0.1:8000/api/materiels/3"
+    "http://127.0.0.1:8000/api/materiels/18"
 );
 
 let headers = {
@@ -357,11 +357,11 @@ let headers = {
 };
 
 const body = new FormData();
-body.append('ref', 'quo');
-body.append('nom', 'maiores');
-body.append('usage', 'est');
-body.append('carac', 'velit');
-body.append('tutos', 'maiores');
+body.append('ref', 'consectetur');
+body.append('nom', 'sed');
+body.append('usage', 'voluptate');
+body.append('carac', 'optio');
+body.append('tutos', 'enim');
 body.append('photo', document.querySelector('input[name="photo"]').files[0]);
 
 fetch(url, {
@@ -456,7 +456,7 @@ Array comme ca : [
 
 ```javascript
 const url = new URL(
-    "http://127.0.0.1:8000/api/materiels/5"
+    "http://127.0.0.1:8000/api/materiels/7"
 );
 
 let headers = {
@@ -466,11 +466,11 @@ let headers = {
 };
 
 const body = new FormData();
-body.append('ref', 'reprehenderit');
-body.append('nom', 'quae');
-body.append('usage', 'perferendis');
-body.append('carac', 'eaque');
-body.append('tutos', 'qui');
+body.append('ref', 'in');
+body.append('nom', 'sit');
+body.append('usage', 'culpa');
+body.append('carac', 'enim');
+body.append('tutos', 'modi');
 body.append('photo', document.querySelector('input[name="photo"]').files[0]);
 
 fetch(url, {
@@ -575,7 +575,7 @@ Array comme ca : [
 
 ```javascript
 const url = new URL(
-    "http://127.0.0.1:8000/api/materiels/13"
+    "http://127.0.0.1:8000/api/materiels/16"
 );
 
 let headers = {

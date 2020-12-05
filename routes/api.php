@@ -44,7 +44,8 @@ Route::middleware(['cors', 'force.json'])->group(function () {
                 'departements' => 'DepartementController',
                 'materiels' => 'MaterielController',
                 'gestionnaires' => 'GestionnaireController',
-                'indisponibilites' => 'IndisponibiliteController'
+                'indisponibilites' => 'IndisponibiliteController',
+                'reservations' => 'ReservationController'
             ],
             ['only'=>["store", "update", "destroy"]]);
 

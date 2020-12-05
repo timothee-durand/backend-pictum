@@ -79,7 +79,7 @@ fetch(url, {
 
 ```javascript
 const url = new URL(
-    "http://127.0.0.1:8000/api/indisponibilites/quia"
+    "http://127.0.0.1:8000/api/indisponibilites/dignissimos"
 );
 
 let headers = {
@@ -148,7 +148,7 @@ let headers = {
 };
 
 let body = {
-    "array_indispo[]": "aut"
+    "array_indispo[]": "omnis"
 }
 
 fetch(url, {
@@ -221,13 +221,13 @@ Id Pictum du gestionnaire concerné</p>
 
 ```javascript
 const url = new URL(
-    "http://127.0.0.1:8000/api/indisponibilites/dolore"
+    "http://127.0.0.1:8000/api/indisponibilites/qui"
 );
 
 let params = {
-    "date_debut": "harum",
-    "date_fin": "nulla",
-    "id_gestionnaire": "8",
+    "date_debut": "blanditiis",
+    "date_fin": "similique",
+    "id_gestionnaire": "18",
 };
 Object.keys(params)
     .forEach(key => url.searchParams.append(key, params[key]));
@@ -310,7 +310,7 @@ Id Pictum du gestionnaire concerné</p>
 
 ```javascript
 const url = new URL(
-    "http://127.0.0.1:8000/api/indisponibilites/sapiente"
+    "http://127.0.0.1:8000/api/indisponibilites/consectetur"
 );
 
 let headers = {

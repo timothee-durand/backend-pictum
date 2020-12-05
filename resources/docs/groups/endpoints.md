@@ -111,7 +111,7 @@ fetch(url, {
 
 ```javascript
 const url = new URL(
-    "http://127.0.0.1:8000/api/types/iste"
+    "http://127.0.0.1:8000/api/types/id"
 );
 
 let headers = {
@@ -157,120 +157,6 @@ fetch(url, {
 <p>
 <b><code>type</code></b>&nbsp;&nbsp;<small>string</small>  &nbsp;
 <input type="text" name="type" data-endpoint="GETapi-types--type-" data-component="url" required  hidden>
-<br>
-</p>
-</form>
-
-
-## Display a listing of the resource.
-
-
-
-
-> Example request:
-
-```javascript
-const url = new URL(
-    "http://127.0.0.1:8000/api/reservations"
-);
-
-let headers = {
-    "Content-Type": "application/json",
-    "Accept": "application/json",
-};
-
-
-fetch(url, {
-    method: "GET",
-    headers,
-}).then(response => response.json());
-```
-
-
-> Example response (401):
-
-```json
-{
-    "message": "Unauthenticated."
-}
-```
-<div id="execution-results-GETapi-reservations" hidden>
-    <blockquote>Received response<span id="execution-response-status-GETapi-reservations"></span>:</blockquote>
-    <pre class="json"><code id="execution-response-content-GETapi-reservations"></code></pre>
-</div>
-<div id="execution-error-GETapi-reservations" hidden>
-    <blockquote>Request failed with error:</blockquote>
-    <pre><code id="execution-error-message-GETapi-reservations"></code></pre>
-</div>
-<form id="form-GETapi-reservations" data-method="GET" data-path="api/reservations" data-authed="0" data-hasfiles="0" data-headers='{"Content-Type":"application\/json","Accept":"application\/json"}' onsubmit="event.preventDefault(); executeTryOut('GETapi-reservations', this);">
-<h3>
-    Request&nbsp;&nbsp;&nbsp;
-        <button type="button" style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;" id="btn-tryout-GETapi-reservations" onclick="tryItOut('GETapi-reservations');">Try it out ⚡</button>
-    <button type="button" style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;" id="btn-canceltryout-GETapi-reservations" onclick="cancelTryOut('GETapi-reservations');" hidden>Cancel</button>&nbsp;&nbsp;
-    <button type="submit" style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;" id="btn-executetryout-GETapi-reservations" hidden>Send Request 💥</button>
-    </h3>
-<p>
-<small class="badge badge-green">GET</small>
- <b><code>api/reservations</code></b>
-</p>
-</form>
-
-
-## Display the specified resource.
-
-
-
-
-> Example request:
-
-```javascript
-const url = new URL(
-    "http://127.0.0.1:8000/api/reservations/quo"
-);
-
-let headers = {
-    "Content-Type": "application/json",
-    "Accept": "application/json",
-};
-
-
-fetch(url, {
-    method: "GET",
-    headers,
-}).then(response => response.json());
-```
-
-
-> Example response (401):
-
-```json
-{
-    "message": "Unauthenticated."
-}
-```
-<div id="execution-results-GETapi-reservations--reservation-" hidden>
-    <blockquote>Received response<span id="execution-response-status-GETapi-reservations--reservation-"></span>:</blockquote>
-    <pre class="json"><code id="execution-response-content-GETapi-reservations--reservation-"></code></pre>
-</div>
-<div id="execution-error-GETapi-reservations--reservation-" hidden>
-    <blockquote>Request failed with error:</blockquote>
-    <pre><code id="execution-error-message-GETapi-reservations--reservation-"></code></pre>
-</div>
-<form id="form-GETapi-reservations--reservation-" data-method="GET" data-path="api/reservations/{reservation}" data-authed="0" data-hasfiles="0" data-headers='{"Content-Type":"application\/json","Accept":"application\/json"}' onsubmit="event.preventDefault(); executeTryOut('GETapi-reservations--reservation-', this);">
-<h3>
-    Request&nbsp;&nbsp;&nbsp;
-        <button type="button" style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;" id="btn-tryout-GETapi-reservations--reservation-" onclick="tryItOut('GETapi-reservations--reservation-');">Try it out ⚡</button>
-    <button type="button" style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;" id="btn-canceltryout-GETapi-reservations--reservation-" onclick="cancelTryOut('GETapi-reservations--reservation-');" hidden>Cancel</button>&nbsp;&nbsp;
-    <button type="submit" style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;" id="btn-executetryout-GETapi-reservations--reservation-" hidden>Send Request 💥</button>
-    </h3>
-<p>
-<small class="badge badge-green">GET</small>
- <b><code>api/reservations/{reservation}</code></b>
-</p>
-<h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
-<p>
-<b><code>reservation</code></b>&nbsp;&nbsp;<small>string</small>  &nbsp;
-<input type="text" name="reservation" data-endpoint="GETapi-reservations--reservation-" data-component="url" required  hidden>
 <br>
 </p>
 </form>
@@ -332,7 +218,7 @@ fetch(url, {
 
 ```javascript
 const url = new URL(
-    "http://127.0.0.1:8000/api/types/ea"
+    "http://127.0.0.1:8000/api/types/saepe"
 );
 
 let headers = {
@@ -389,7 +275,7 @@ fetch(url, {
 
 ```javascript
 const url = new URL(
-    "http://127.0.0.1:8000/api/types/quo"
+    "http://127.0.0.1:8000/api/types/veniam"
 );
 
 let headers = {
