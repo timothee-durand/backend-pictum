@@ -20,11 +20,11 @@ let headers = {
 };
 
 let body = {
-    "from_address": "necessitatibus",
-    "from_name": "illum",
-    "to_address": "doloremque",
-    "content": "totam",
-    "subject": "veritatis"
+    "from_address": "sunt",
+    "from_name": "facere",
+    "to_address": "repellendus",
+    "content": "incidunt",
+    "subject": "deserunt"
 }
 
 fetch(url, {
@@ -111,10 +111,10 @@ let headers = {
 };
 
 let body = {
-    "id_gestionnaire": 17,
-    "to_address": "modi",
-    "content_mail": "in",
-    "subject": "optio"
+    "id_gestionnaire": 19,
+    "to_address": "quo",
+    "content_mail": "quidem",
+    "subject": "ut"
 }
 
 fetch(url, {

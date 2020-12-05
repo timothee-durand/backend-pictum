@@ -1,14 +1,15 @@
 # GENERATED. YOU SHOULDN'T MODIFY OR DELETE THIS FILE.
 # Scribe uses this file to know when you change something manually in your docs.
-resources/docs/groups/endpoints.md=1607160387
-resources/docs/index.md=1607160387
-resources/docs/authentication.md=1607160387
-resources/docs/groups/blacklist.md=1607160387
-resources/docs/groups/creneaux.md=1607160387
-resources/docs/groups/departement.md=1607160387
-resources/docs/groups/estprete.md=1607160387
-resources/docs/groups/gestionnaire.md=1607160387
-resources/docs/groups/indisponibilites.md=1607160387
-resources/docs/groups/login.md=1607160387
-resources/docs/groups/mail.md=1607160387
-resources/docs/groups/malette.md=1607160387
+resources/docs/groups/endpoints.md=1607161499
+resources/docs/index.md=1607161499
+resources/docs/authentication.md=1607161499
+resources/docs/groups/blacklist.md=1607161499
+resources/docs/groups/creneaux.md=1607161499
+resources/docs/groups/departement.md=1607161499
+resources/docs/groups/estprete.md=1607161499
+resources/docs/groups/gestionnaire.md=1607161499
+resources/docs/groups/indisponibilites.md=1607161499
+resources/docs/groups/login.md=1607161499
+resources/docs/groups/mail.md=1607161499
+resources/docs/groups/malette.md=1607161499
+resources/docs/groups/materiel.md=1607161499

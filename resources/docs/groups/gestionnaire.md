@@ -153,7 +153,7 @@ fetch(url, {
 
 ```javascript
 const url = new URL(
-    "http://127.0.0.1:8000/api/gestionnaires/17"
+    "http://127.0.0.1:8000/api/gestionnaires/5"
 );
 
 let headers = {
@@ -213,11 +213,11 @@ ID du gestionnaire à afficher</p>
 
 ```javascript
 const url = new URL(
-    "http://127.0.0.1:8000/api/gestionnaires/18/rdv"
+    "http://127.0.0.1:8000/api/gestionnaires/20/rdv"
 );
 
 let params = {
-    "start_day": "id",
+    "start_day": "quis",
 };
 Object.keys(params)
     .forEach(key => url.searchParams.append(key, params[key]));
@@ -344,16 +344,16 @@ fetch(url, {
 
 ```javascript
 const url = new URL(
-    "http://127.0.0.1:8000/api/gestionnaires/19"
+    "http://127.0.0.1:8000/api/gestionnaires/10"
 );
 
 let params = {
-    "nom": "veniam",
-    "prenom": "voluptatibus",
-    "mail": "nesciunt",
-    "id_univ": "aspernatur",
+    "nom": "repellat",
+    "prenom": "velit",
+    "mail": "quia",
+    "id_univ": "unde",
     "admin": "",
-    "departement_id": "1",
+    "departement_id": "9",
 };
 Object.keys(params)
     .forEach(key => url.searchParams.append(key, params[key]));
@@ -452,7 +452,7 @@ ID Pictum du département correspondant</p>
 
 ```javascript
 const url = new URL(
-    "http://127.0.0.1:8000/api/gestionnaires/7"
+    "http://127.0.0.1:8000/api/gestionnaires/14"
 );
 
 let headers = {

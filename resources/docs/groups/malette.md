@@ -145,7 +145,7 @@ fetch(url, {
 
 ```javascript
 const url = new URL(
-    "http://127.0.0.1:8000/api/malettes/voluptas"
+    "http://127.0.0.1:8000/api/malettes/quos"
 );
 
 let headers = {
@@ -225,8 +225,8 @@ let headers = {
 };
 
 const body = new FormData();
-body.append('nom', 'excepturi');
-body.append('ref', 'voluptatem');
+body.append('nom', 'aut');
+body.append('ref', 'quo');
 body.append('photo', document.querySelector('input[name="photo"]').files[0]);
 
 fetch(url, {
@@ -289,7 +289,7 @@ Photo de la malette</p>
 
 ```javascript
 const url = new URL(
-    "http://127.0.0.1:8000/api/malettes/debitis"
+    "http://127.0.0.1:8000/api/malettes/ad"
 );
 
 let headers = {
@@ -299,8 +299,8 @@ let headers = {
 };
 
 const body = new FormData();
-body.append('nom', 'aut');
-body.append('ref', 'laudantium');
+body.append('nom', 'molestias');
+body.append('ref', 'perferendis');
 body.append('photo', document.querySelector('input[name="photo"]').files[0]);
 
 fetch(url, {
@@ -373,7 +373,7 @@ Photo de la malette</p>
 
 ```javascript
 const url = new URL(
-    "http://127.0.0.1:8000/api/malettes/omnis"
+    "http://127.0.0.1:8000/api/malettes/eum"
 );
 
 let headers = {

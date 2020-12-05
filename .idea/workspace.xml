@@ -28,9 +28,22 @@
     </select>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c2fc254d-4c34-4822-9cbb-ed6000c1b396" name="Default Changelist" comment="documentation indisponibilite">
+    <list default="true" id="c2fc254d-4c34-4822-9cbb-ed6000c1b396" name="Default Changelist" comment="documentation malette">
+      <change afterPath="$PROJECT_DIR$/resources/docs/groups/materiel.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/MaletteController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/MaletteController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/MaterielController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/MaterielController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/docs/collection.json" beforeDir="false" afterPath="$PROJECT_DIR$/public/docs/collection.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/docs/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/docs/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/docs/.filemtimes" beforeDir="false" afterPath="$PROJECT_DIR$/resources/docs/.filemtimes" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/docs/groups/blacklist.md" beforeDir="false" afterPath="$PROJECT_DIR$/resources/docs/groups/blacklist.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/docs/groups/creneaux.md" beforeDir="false" afterPath="$PROJECT_DIR$/resources/docs/groups/creneaux.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/docs/groups/departement.md" beforeDir="false" afterPath="$PROJECT_DIR$/resources/docs/groups/departement.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/docs/groups/endpoints.md" beforeDir="false" afterPath="$PROJECT_DIR$/resources/docs/groups/endpoints.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/docs/groups/estprete.md" beforeDir="false" afterPath="$PROJECT_DIR$/resources/docs/groups/estprete.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/docs/groups/gestionnaire.md" beforeDir="false" afterPath="$PROJECT_DIR$/resources/docs/groups/gestionnaire.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/docs/groups/indisponibilites.md" beforeDir="false" afterPath="$PROJECT_DIR$/resources/docs/groups/indisponibilites.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/docs/groups/mail.md" beforeDir="false" afterPath="$PROJECT_DIR$/resources/docs/groups/mail.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/docs/groups/malette.md" beforeDir="false" afterPath="$PROJECT_DIR$/resources/docs/groups/malette.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -247,7 +260,7 @@
       <workItem from="1606670872640" duration="5956000" />
       <workItem from="1607075217702" duration="13330000" />
       <workItem from="1607094493525" duration="6325000" />
-      <workItem from="1607159381744" duration="940000" />
+      <workItem from="1607159381744" duration="2115000" />
     </task>
     <task id="LOCAL-00001" summary="initial commit">
       <created>1604745505978</created>
@@ -452,7 +465,14 @@
       <option name="project" value="LOCAL" />
       <updated>1607100445544</updated>
     </task>
-    <option name="localTasksCounter" value="30" />
+    <task id="LOCAL-00030" summary="documentation malette">
+      <created>1607160414835</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1607160414835</updated>
+    </task>
+    <option name="localTasksCounter" value="31" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -499,7 +519,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="modifs pour migrate" />
     <MESSAGE value="ajout table dans model" />
     <MESSAGE value="ajout factory pour tout" />
     <MESSAGE value="ajout controller type, blacklist et malette" />
@@ -524,7 +543,8 @@
     <MESSAGE value="documentation estprete" />
     <MESSAGE value="documentation gestionnaire" />
     <MESSAGE value="documentation indisponibilite" />
-    <option name="LAST_COMMIT_MESSAGE" value="documentation indisponibilite" />
+    <MESSAGE value="documentation malette" />
+    <option name="LAST_COMMIT_MESSAGE" value="documentation malette" />
   </component>
   <component name="WindowStateProjectService">
     <state x="552" y="178" key="#Deployment" timestamp="1607090229972">
