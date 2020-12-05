@@ -13,6 +13,7 @@ class Materiel extends Model
 
     protected $fillable = [
         "ref",
+        "nom",
         "photo",
         "usage",
         "carac",

@@ -1,0 +1,2080 @@
+{
+    "variable": [
+        {
+            "id": "baseUrl",
+            "key": "baseUrl",
+            "type": "string",
+            "name": "string",
+            "value": "127.0.0.1"
+        }
+    ],
+    "info": {
+        "name": "Laravel",
+        "_postman_id": "3d537edc-aba3-4262-a7b1-e9ab2356622a",
+        "description": "Backend du service de gestion de mat\u00e9riel du Campus des Portes du Jura de l`'IUT BM",
+        "schema": "https:\/\/schema.getpostman.com\/json\/collection\/v2.1.0\/collection.json"
+    },
+    "item": [
+        {
+            "name": "Blacklist",
+            "description": "",
+            "item": [
+                {
+                    "name": "Display a listing of the user that are in the Blacklist",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "{{baseUrl}}",
+                            "path": "api\/blacklists",
+                            "query": [],
+                            "raw": "http:\/\/{{baseUrl}}\/api\/blacklists"
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": ""
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Display the specified Blacklisted person.",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "{{baseUrl}}",
+                            "path": "api\/blacklists\/:blacklist",
+                            "query": [],
+                            "raw": "http:\/\/{{baseUrl}}\/api\/blacklists\/:blacklist",
+                            "variable": [
+                                {
+                                    "id": "blacklist",
+                                    "key": "blacklist",
+                                    "value": "officia",
+                                    "description": ""
+                                },
+                                {
+                                    "id": "id",
+                                    "key": "id",
+                                    "value": "sed",
+                                    "description": "ID Pictum"
+                                }
+                            ]
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": ""
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Store a newly created Blacklist in storage.",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "{{baseUrl}}",
+                            "path": "api\/blacklists",
+                            "query": [
+                                {
+                                    "key": "nom",
+                                    "value": "impedit",
+                                    "description": "string Nom de la personne",
+                                    "disabled": false
+                                },
+                                {
+                                    "key": "prenom",
+                                    "value": "nulla",
+                                    "description": "string Pr\u00e9nom de la personne",
+                                    "disabled": false
+                                },
+                                {
+                                    "key": "mail",
+                                    "value": "atque",
+                                    "description": "string Mail de la personne",
+                                    "disabled": false
+                                },
+                                {
+                                    "key": "id_univ",
+                                    "value": "repellendus",
+                                    "description": "string Id universitaire de la personne",
+                                    "disabled": false
+                                }
+                            ],
+                            "raw": "http:\/\/{{baseUrl}}\/api\/blacklists?nom=impedit&prenom=nulla&mail=atque&id_univ=repellendus"
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": ""
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Update the specified blacklisted person in storage.",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "{{baseUrl}}",
+                            "path": "api\/blacklists\/:blacklist",
+                            "query": [
+                                {
+                                    "key": "nom",
+                                    "value": "sit",
+                                    "description": "Nom de la personne",
+                                    "disabled": false
+                                },
+                                {
+                                    "key": "prenom",
+                                    "value": "architecto",
+                                    "description": "Pr\u00e9nom de la personne",
+                                    "disabled": false
+                                },
+                                {
+                                    "key": "mail",
+                                    "value": "officia",
+                                    "description": "Mail de la personne",
+                                    "disabled": false
+                                },
+                                {
+                                    "key": "id_univ",
+                                    "value": "quos",
+                                    "description": "Id universitaire de la personne",
+                                    "disabled": false
+                                }
+                            ],
+                            "raw": "http:\/\/{{baseUrl}}\/api\/blacklists\/:blacklist?nom=sit&prenom=architecto&mail=officia&id_univ=quos",
+                            "variable": [
+                                {
+                                    "id": "blacklist",
+                                    "key": "blacklist",
+                                    "value": "1",
+                                    "description": "ID Pictum"
+                                }
+                            ]
+                        },
+                        "method": "PUT",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Remove the specified resource from storage.",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "{{baseUrl}}",
+                            "path": "api\/blacklists\/:blacklist",
+                            "query": [],
+                            "raw": "http:\/\/{{baseUrl}}\/api\/blacklists\/:blacklist",
+                            "variable": [
+                                {
+                                    "id": "blacklist",
+                                    "key": "blacklist",
+                                    "value": "5",
+                                    "description": "ID Pictum correspondant"
+                                }
+                            ]
+                        },
+                        "method": "DELETE",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": ""
+                    },
+                    "response": []
+                }
+            ]
+        },
+        {
+            "name": "Creneaux",
+            "description": "",
+            "item": [
+                {
+                    "name": "Display a listing of the resource.",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "{{baseUrl}}",
+                            "path": "api\/creneaux",
+                            "query": [],
+                            "raw": "http:\/\/{{baseUrl}}\/api\/creneaux"
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Store Gestionnaire's Creneaux\nSend only creneaux who are used",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "{{baseUrl}}",
+                            "path": "api\/creneaux",
+                            "query": [],
+                            "raw": "http:\/\/{{baseUrl}}\/api\/creneaux"
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n    \"creneaux[]\": \"tempora\"\n}"
+                        },
+                        "description": ""
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Update the specifieds resources in storage.",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "{{baseUrl}}",
+                            "path": "api\/creneaux\/:creneaux",
+                            "query": [],
+                            "raw": "http:\/\/{{baseUrl}}\/api\/creneaux\/:creneaux",
+                            "variable": [
+                                {
+                                    "id": "creneaux",
+                                    "key": "creneaux",
+                                    "value": "dolorem",
+                                    "description": ""
+                                }
+                            ]
+                        },
+                        "method": "PUT",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": []
+                }
+            ]
+        },
+        {
+            "name": "Departement",
+            "description": "",
+            "item": [
+                {
+                    "name": "Display a listing of the departements",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "{{baseUrl}}",
+                            "path": "api\/departements",
+                            "query": [],
+                            "raw": "http:\/\/{{baseUrl}}\/api\/departements"
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Display the specified resource.",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "{{baseUrl}}",
+                            "path": "api\/departements\/:departement",
+                            "query": [],
+                            "raw": "http:\/\/{{baseUrl}}\/api\/departements\/:departement",
+                            "variable": [
+                                {
+                                    "id": "departement",
+                                    "key": "departement",
+                                    "value": "11",
+                                    "description": "ID du d\u00e9partement concern\u00e9"
+                                }
+                            ]
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Store a newly created departement in storage.",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "{{baseUrl}}",
+                            "path": "api\/departements",
+                            "query": [
+                                {
+                                    "key": "lat",
+                                    "value": "185199140.3599",
+                                    "description": "Latitude du d\u00e9partement",
+                                    "disabled": false
+                                },
+                                {
+                                    "key": "long",
+                                    "value": "0.15371134",
+                                    "description": "Longitude du d\u00e9partement",
+                                    "disabled": false
+                                },
+                                {
+                                    "key": "nom",
+                                    "value": "consequatur",
+                                    "description": "Nom du d\u00e9partement",
+                                    "disabled": false
+                                },
+                                {
+                                    "key": "gestionnaire_id",
+                                    "value": "5",
+                                    "description": "ID Pictum du gestionnaire concern\u00e9",
+                                    "disabled": false
+                                }
+                            ],
+                            "raw": "http:\/\/{{baseUrl}}\/api\/departements?lat=185199140.3599&long=0.15371134&nom=consequatur&gestionnaire_id=5"
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": ""
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Update the specified resource in storage.",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "{{baseUrl}}",
+                            "path": "api\/departements\/:departement",
+                            "query": [
+                                {
+                                    "key": "lat",
+                                    "value": "48",
+                                    "description": "Latitude du d\u00e9partement",
+                                    "disabled": false
+                                },
+                                {
+                                    "key": "long",
+                                    "value": "21029.22865104",
+                                    "description": "Longitude du d\u00e9partement",
+                                    "disabled": false
+                                },
+                                {
+                                    "key": "nom",
+                                    "value": "impedit",
+                                    "description": "Nom du d\u00e9partement",
+                                    "disabled": false
+                                },
+                                {
+                                    "key": "gestionnaire_id",
+                                    "value": "20",
+                                    "description": "ID Pictum du gestionnaire concern\u00e9",
+                                    "disabled": false
+                                }
+                            ],
+                            "raw": "http:\/\/{{baseUrl}}\/api\/departements\/:departement?lat=48&long=21029.22865104&nom=impedit&gestionnaire_id=20",
+                            "variable": [
+                                {
+                                    "id": "departement",
+                                    "key": "departement",
+                                    "value": "15",
+                                    "description": "ID du d\u00e9partement concern\u00e9"
+                                }
+                            ]
+                        },
+                        "method": "PUT",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": ""
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Remove the specified resource from storage.",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "{{baseUrl}}",
+                            "path": "api\/departements\/:departement",
+                            "query": [],
+                            "raw": "http:\/\/{{baseUrl}}\/api\/departements\/:departement",
+                            "variable": [
+                                {
+                                    "id": "departement",
+                                    "key": "departement",
+                                    "value": "10",
+                                    "description": "ID du d\u00e9partement concern\u00e9"
+                                }
+                            ]
+                        },
+                        "method": "DELETE",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": []
+                }
+            ]
+        },
+        {
+            "name": "Endpoints",
+            "description": "",
+            "item": [
+                {
+                    "name": "Return an empty response simply to trigger the storage of the CSRF cookie in the browser.",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "{{baseUrl}}",
+                            "path": "sanctum\/csrf-cookie",
+                            "query": [],
+                            "raw": "http:\/\/{{baseUrl}}\/sanctum\/csrf-cookie"
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Display a listing of the resource.",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "{{baseUrl}}",
+                            "path": "api\/types",
+                            "query": [],
+                            "raw": "http:\/\/{{baseUrl}}\/api\/types"
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Display the specified resource.",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "{{baseUrl}}",
+                            "path": "api\/types\/:type",
+                            "query": [],
+                            "raw": "http:\/\/{{baseUrl}}\/api\/types\/:type",
+                            "variable": [
+                                {
+                                    "id": "type",
+                                    "key": "type",
+                                    "value": "id",
+                                    "description": ""
+                                }
+                            ]
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Store a newly created resource in storage.",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "{{baseUrl}}",
+                            "path": "api\/types",
+                            "query": [],
+                            "raw": "http:\/\/{{baseUrl}}\/api\/types"
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Update the specified resource in storage.",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "{{baseUrl}}",
+                            "path": "api\/types\/:type",
+                            "query": [],
+                            "raw": "http:\/\/{{baseUrl}}\/api\/types\/:type",
+                            "variable": [
+                                {
+                                    "id": "type",
+                                    "key": "type",
+                                    "value": "saepe",
+                                    "description": ""
+                                }
+                            ]
+                        },
+                        "method": "PUT",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Remove the specified resource from storage.",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "{{baseUrl}}",
+                            "path": "api\/types\/:type",
+                            "query": [],
+                            "raw": "http:\/\/{{baseUrl}}\/api\/types\/:type",
+                            "variable": [
+                                {
+                                    "id": "type",
+                                    "key": "type",
+                                    "value": "veniam",
+                                    "description": ""
+                                }
+                            ]
+                        },
+                        "method": "DELETE",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "\/",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "{{baseUrl}}",
+                            "path": "\/",
+                            "query": [],
+                            "raw": "http:\/\/{{baseUrl}}\/\/"
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": []
+                }
+            ]
+        },
+        {
+            "name": "EstPrete",
+            "description": "",
+            "item": [
+                {
+                    "name": "Display a listing of the resource.",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "{{baseUrl}}",
+                            "path": "api\/estpretes",
+                            "query": [],
+                            "raw": "http:\/\/{{baseUrl}}\/api\/estpretes"
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Store some new EstPrete in storage.",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "{{baseUrl}}",
+                            "path": "api\/estpretes",
+                            "query": [
+                                {
+                                    "key": "id_malettes%5B%5D",
+                                    "value": "12",
+                                    "description": "Tableau d'ID pictum des malettes concern\u00e9es par la r\u00e9servation - Peut \u00eatre vide",
+                                    "disabled": false
+                                },
+                                {
+                                    "key": "id_materiels%5B%5D",
+                                    "value": "5",
+                                    "description": "Tableau d'ID pictum des mat\u00e9riels individuels concern\u00e9es par la r\u00e9servation - Peut \u00eatre vide",
+                                    "disabled": false
+                                },
+                                {
+                                    "key": "reservation_id",
+                                    "value": "14",
+                                    "description": "ID Pictum de la r\u00e9servation correspondante",
+                                    "disabled": false
+                                },
+                                {
+                                    "key": "date_debut",
+                                    "value": "qui",
+                                    "description": "DateTime Rendez-vous de prise de mat\u00e9riel",
+                                    "disabled": false
+                                },
+                                {
+                                    "key": "date_fin",
+                                    "value": "aut",
+                                    "description": "DateTime Rendez-vous de retour de mat\u00e9riel",
+                                    "disabled": false
+                                }
+                            ],
+                            "raw": "http:\/\/{{baseUrl}}\/api\/estpretes?id_malettes%5B%5D=12&id_materiels%5B%5D=5&reservation_id=14&date_debut=qui&date_fin=aut"
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": ""
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Set the group of EstPrete as rendu\nRequired to be gestionnaire",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "{{baseUrl}}",
+                            "path": "api\/estpretes\/:estprete",
+                            "query": [
+                                {
+                                    "key": "id_estprete%5B%5D",
+                                    "value": "9",
+                                    "description": "ID des est-prete \u00e0 marquer comme rendu",
+                                    "disabled": false
+                                }
+                            ],
+                            "raw": "http:\/\/{{baseUrl}}\/api\/estpretes\/:estprete?id_estprete%5B%5D=9",
+                            "variable": [
+                                {
+                                    "id": "estprete",
+                                    "key": "estprete",
+                                    "value": "esse",
+                                    "description": ""
+                                }
+                            ]
+                        },
+                        "method": "PUT",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": []
+                }
+            ]
+        },
+        {
+            "name": "Gestionnaire",
+            "description": "",
+            "item": [
+                {
+                    "name": "Display a listing of the resource.",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "{{baseUrl}}",
+                            "path": "api\/gestionnaires",
+                            "query": [],
+                            "raw": "http:\/\/{{baseUrl}}\/api\/gestionnaires"
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Display the specified Gestionnaire",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "{{baseUrl}}",
+                            "path": "api\/gestionnaires\/:gestionnaire",
+                            "query": [],
+                            "raw": "http:\/\/{{baseUrl}}\/api\/gestionnaires\/:gestionnaire",
+                            "variable": [
+                                {
+                                    "id": "gestionnaire",
+                                    "key": "gestionnaire",
+                                    "value": "6",
+                                    "description": "ID du gestionnaire \u00e0 afficher"
+                                }
+                            ]
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Display a listing of the rendez-vous of this Gestionnaire",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "{{baseUrl}}",
+                            "path": "api\/gestionnaires\/:id\/rdv",
+                            "query": [
+                                {
+                                    "key": "start_day",
+                                    "value": "neque",
+                                    "description": "Date Jour \u00e0 partir duquel on veut les rendez-vous",
+                                    "disabled": false
+                                }
+                            ],
+                            "raw": "http:\/\/{{baseUrl}}\/api\/gestionnaires\/:id\/rdv?start_day=neque",
+                            "variable": [
+                                {
+                                    "id": "id",
+                                    "key": "id",
+                                    "value": "2",
+                                    "description": "ID du gestionnaire concern\u00e9"
+                                }
+                            ]
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Store a newly Gestionnaire resource in storage.",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "{{baseUrl}}",
+                            "path": "api\/gestionnaires",
+                            "query": [],
+                            "raw": "http:\/\/{{baseUrl}}\/api\/gestionnaires"
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Update the specified resource in storage.",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "{{baseUrl}}",
+                            "path": "api\/gestionnaires\/:gestionnaire",
+                            "query": [
+                                {
+                                    "key": "nom",
+                                    "value": "autem",
+                                    "description": "",
+                                    "disabled": false
+                                },
+                                {
+                                    "key": "prenom",
+                                    "value": "sint",
+                                    "description": "",
+                                    "disabled": false
+                                },
+                                {
+                                    "key": "mail",
+                                    "value": "eligendi",
+                                    "description": "",
+                                    "disabled": false
+                                },
+                                {
+                                    "key": "id_univ",
+                                    "value": "quia",
+                                    "description": "",
+                                    "disabled": false
+                                },
+                                {
+                                    "key": "admin",
+                                    "value": "1",
+                                    "description": "True si le gestionnaire est un administrateur",
+                                    "disabled": false
+                                },
+                                {
+                                    "key": "departement_id",
+                                    "value": "13",
+                                    "description": "ID Pictum du d\u00e9partement correspondant",
+                                    "disabled": false
+                                }
+                            ],
+                            "raw": "http:\/\/{{baseUrl}}\/api\/gestionnaires\/:gestionnaire?nom=autem&prenom=sint&mail=eligendi&id_univ=quia&admin=1&departement_id=13",
+                            "variable": [
+                                {
+                                    "id": "gestionnaire",
+                                    "key": "gestionnaire",
+                                    "value": "20",
+                                    "description": "ID du gestionnaire \u00e0 afficher"
+                                }
+                            ]
+                        },
+                        "method": "PUT",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Remove the specified resource from storage.",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "{{baseUrl}}",
+                            "path": "api\/gestionnaires\/:gestionnaire",
+                            "query": [],
+                            "raw": "http:\/\/{{baseUrl}}\/api\/gestionnaires\/:gestionnaire",
+                            "variable": [
+                                {
+                                    "id": "gestionnaire",
+                                    "key": "gestionnaire",
+                                    "value": "5",
+                                    "description": "ID du gestionnaire \u00e0 afficher"
+                                }
+                            ]
+                        },
+                        "method": "DELETE",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": []
+                }
+            ]
+        },
+        {
+            "name": "Indisponibilites",
+            "description": "",
+            "item": [
+                {
+                    "name": "Display a listing of the resource.",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "{{baseUrl}}",
+                            "path": "api\/indisponibilites",
+                            "query": [],
+                            "raw": "http:\/\/{{baseUrl}}\/api\/indisponibilites"
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Display the specified Indisponibilite.",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "{{baseUrl}}",
+                            "path": "api\/indisponibilites\/:indisponibilite",
+                            "query": [],
+                            "raw": "http:\/\/{{baseUrl}}\/api\/indisponibilites\/:indisponibilite",
+                            "variable": [
+                                {
+                                    "id": "indisponibilite",
+                                    "key": "indisponibilite",
+                                    "value": "dignissimos",
+                                    "description": ""
+                                }
+                            ]
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Store some new Indisponibilite",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "{{baseUrl}}",
+                            "path": "api\/indisponibilites",
+                            "query": [],
+                            "raw": "http:\/\/{{baseUrl}}\/api\/indisponibilites"
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n    \"array_indispo[]\": \"omnis\"\n}"
+                        },
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Update the specified indisponibilite in storage.",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "{{baseUrl}}",
+                            "path": "api\/indisponibilites\/:indisponibilite",
+                            "query": [
+                                {
+                                    "key": "date_debut",
+                                    "value": "blanditiis",
+                                    "description": "DateTime Date de d\u00e9but de l'indisponibilite",
+                                    "disabled": false
+                                },
+                                {
+                                    "key": "date_fin",
+                                    "value": "similique",
+                                    "description": "DateTime Date de fin de l'indisponibilite",
+                                    "disabled": false
+                                },
+                                {
+                                    "key": "id_gestionnaire",
+                                    "value": "18",
+                                    "description": "Id Pictum du gestionnaire concern\u00e9",
+                                    "disabled": false
+                                }
+                            ],
+                            "raw": "http:\/\/{{baseUrl}}\/api\/indisponibilites\/:indisponibilite?date_debut=blanditiis&date_fin=similique&id_gestionnaire=18",
+                            "variable": [
+                                {
+                                    "id": "indisponibilite",
+                                    "key": "indisponibilite",
+                                    "value": "qui",
+                                    "description": "ID de l'indisponibilit\u00e9 concern\u00e9e"
+                                }
+                            ]
+                        },
+                        "method": "PUT",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Remove the specified resource from storage.",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "{{baseUrl}}",
+                            "path": "api\/indisponibilites\/:indisponibilite",
+                            "query": [],
+                            "raw": "http:\/\/{{baseUrl}}\/api\/indisponibilites\/:indisponibilite",
+                            "variable": [
+                                {
+                                    "id": "indisponibilite",
+                                    "key": "indisponibilite",
+                                    "value": "consectetur",
+                                    "description": "ID de l'indisponibilit\u00e9 concern\u00e9e"
+                                }
+                            ]
+                        },
+                        "method": "DELETE",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": []
+                }
+            ]
+        },
+        {
+            "name": "Login",
+            "description": "",
+            "item": [
+                {
+                    "name": "Connexion \u00e0 Pictum\nPas final",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "{{baseUrl}}",
+                            "path": "api\/login",
+                            "query": [],
+                            "raw": "http:\/\/{{baseUrl}}\/api\/login"
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": []
+                }
+            ]
+        },
+        {
+            "name": "Mail",
+            "description": "",
+            "item": [
+                {
+                    "name": "Send a mail to the administration contact mail\n(Param\u00e9trable dans le fichier .env)",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "{{baseUrl}}",
+                            "path": "api\/send-mail-contact-admin",
+                            "query": [],
+                            "raw": "http:\/\/{{baseUrl}}\/api\/send-mail-contact-admin"
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n    \"from_address\": \"aut\",\n    \"from_name\": \"quos\",\n    \"to_address\": \"eos\",\n    \"content\": \"in\",\n    \"subject\": \"tempora\"\n}"
+                        },
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Send a Personnalized Mail\nRequired to be a Gestionnaire",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "{{baseUrl}}",
+                            "path": "api\/send-mail-gest",
+                            "query": [],
+                            "raw": "http:\/\/{{baseUrl}}\/api\/send-mail-gest"
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n    \"id_gestionnaire\": 10,\n    \"to_address\": \"et\",\n    \"content_mail\": \"aut\",\n    \"subject\": \"ducimus\"\n}"
+                        },
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": []
+                }
+            ]
+        },
+        {
+            "name": "Malette",
+            "description": "",
+            "item": [
+                {
+                    "name": "Display a listing of the Malettes.",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "{{baseUrl}}",
+                            "path": "api\/malettes",
+                            "query": [],
+                            "raw": "http:\/\/{{baseUrl}}\/api\/malettes"
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": ""
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Display the specified Malette",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "{{baseUrl}}",
+                            "path": "api\/malettes\/:malette",
+                            "query": [],
+                            "raw": "http:\/\/{{baseUrl}}\/api\/malettes\/:malette",
+                            "variable": [
+                                {
+                                    "id": "malette",
+                                    "key": "malette",
+                                    "value": "est",
+                                    "description": "ID Pictum de la malette"
+                                }
+                            ]
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": ""
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Store a newly created resource in storage.",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "{{baseUrl}}",
+                            "path": "api\/malettes",
+                            "query": [],
+                            "raw": "http:\/\/{{baseUrl}}\/api\/malettes"
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "multipart\/form-data"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "formdata",
+                            "formdata": [
+                                {
+                                    "key": "nom",
+                                    "value": "excepturi",
+                                    "type": "text"
+                                },
+                                {
+                                    "key": "ref",
+                                    "value": "deleniti",
+                                    "type": "text"
+                                },
+                                {
+                                    "key": "photo",
+                                    "src": [],
+                                    "type": "file"
+                                }
+                            ]
+                        },
+                        "description": ""
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Update the specified Malette in storage.",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "{{baseUrl}}",
+                            "path": "api\/malettes\/:malette",
+                            "query": [],
+                            "raw": "http:\/\/{{baseUrl}}\/api\/malettes\/:malette",
+                            "variable": [
+                                {
+                                    "id": "malette",
+                                    "key": "malette",
+                                    "value": "exercitationem",
+                                    "description": "ID Pictum de la malette"
+                                }
+                            ]
+                        },
+                        "method": "PUT",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "multipart\/form-data"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "formdata",
+                            "formdata": [
+                                {
+                                    "key": "nom",
+                                    "value": "corrupti",
+                                    "type": "text"
+                                },
+                                {
+                                    "key": "ref",
+                                    "value": "unde",
+                                    "type": "text"
+                                },
+                                {
+                                    "key": "photo",
+                                    "src": [],
+                                    "type": "file"
+                                }
+                            ]
+                        },
+                        "description": ""
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Remove the specified resource from storage.",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "{{baseUrl}}",
+                            "path": "api\/malettes\/:malette",
+                            "query": [],
+                            "raw": "http:\/\/{{baseUrl}}\/api\/malettes\/:malette",
+                            "variable": [
+                                {
+                                    "id": "malette",
+                                    "key": "malette",
+                                    "value": "modi",
+                                    "description": "ID Pictum de la malette"
+                                }
+                            ]
+                        },
+                        "method": "DELETE",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": ""
+                    },
+                    "response": []
+                }
+            ]
+        },
+        {
+            "name": "Materiel",
+            "description": "",
+            "item": [
+                {
+                    "name": "Display a listing of the Materiel.",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "{{baseUrl}}",
+                            "path": "api\/materiels",
+                            "query": [],
+                            "raw": "http:\/\/{{baseUrl}}\/api\/materiels"
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": ""
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Display the specified resource.",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "{{baseUrl}}",
+                            "path": "api\/materiels\/:materiel",
+                            "query": [],
+                            "raw": "http:\/\/{{baseUrl}}\/api\/materiels\/:materiel",
+                            "variable": [
+                                {
+                                    "id": "materiel",
+                                    "key": "materiel",
+                                    "value": "18",
+                                    "description": "ID pictum du mat\u00e9riel"
+                                }
+                            ]
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": ""
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Store a newly created resource in storage.",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "{{baseUrl}}",
+                            "path": "api\/materiels",
+                            "query": [],
+                            "raw": "http:\/\/{{baseUrl}}\/api\/materiels"
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "multipart\/form-data"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "formdata",
+                            "formdata": [
+                                {
+                                    "key": "ref",
+                                    "value": "consectetur",
+                                    "type": "text"
+                                },
+                                {
+                                    "key": "nom",
+                                    "value": "sed",
+                                    "type": "text"
+                                },
+                                {
+                                    "key": "usage",
+                                    "value": "voluptate",
+                                    "type": "text"
+                                },
+                                {
+                                    "key": "carac",
+                                    "value": "optio",
+                                    "type": "text"
+                                },
+                                {
+                                    "key": "tutos",
+                                    "value": "enim",
+                                    "type": "text"
+                                },
+                                {
+                                    "key": "photo",
+                                    "src": [],
+                                    "type": "file"
+                                }
+                            ]
+                        },
+                        "description": ""
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Update the specified Materiel in storage.",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "{{baseUrl}}",
+                            "path": "api\/materiels\/:materiel",
+                            "query": [],
+                            "raw": "http:\/\/{{baseUrl}}\/api\/materiels\/:materiel",
+                            "variable": [
+                                {
+                                    "id": "materiel",
+                                    "key": "materiel",
+                                    "value": "7",
+                                    "description": "ID pictum du mat\u00e9riel"
+                                }
+                            ]
+                        },
+                        "method": "PUT",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "multipart\/form-data"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "formdata",
+                            "formdata": [
+                                {
+                                    "key": "ref",
+                                    "value": "in",
+                                    "type": "text"
+                                },
+                                {
+                                    "key": "nom",
+                                    "value": "sit",
+                                    "type": "text"
+                                },
+                                {
+                                    "key": "usage",
+                                    "value": "culpa",
+                                    "type": "text"
+                                },
+                                {
+                                    "key": "carac",
+                                    "value": "enim",
+                                    "type": "text"
+                                },
+                                {
+                                    "key": "tutos",
+                                    "value": "modi",
+                                    "type": "text"
+                                },
+                                {
+                                    "key": "photo",
+                                    "src": [],
+                                    "type": "file"
+                                }
+                            ]
+                        },
+                        "description": ""
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Remove the specified resource from storage.",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "{{baseUrl}}",
+                            "path": "api\/materiels\/:materiel",
+                            "query": [],
+                            "raw": "http:\/\/{{baseUrl}}\/api\/materiels\/:materiel",
+                            "variable": [
+                                {
+                                    "id": "materiel",
+                                    "key": "materiel",
+                                    "value": "16",
+                                    "description": "ID pictum du mat\u00e9riel"
+                                }
+                            ]
+                        },
+                        "method": "DELETE",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": ""
+                    },
+                    "response": []
+                }
+            ]
+        },
+        {
+            "name": "Reservation",
+            "description": "",
+            "item": [
+                {
+                    "name": "Display a listing of the Reservations.",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "{{baseUrl}}",
+                            "path": "api\/reservations",
+                            "query": [],
+                            "raw": "http:\/\/{{baseUrl}}\/api\/reservations"
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": ""
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Display the specified resource.",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "{{baseUrl}}",
+                            "path": "api\/reservations\/:reservation",
+                            "query": [],
+                            "raw": "http:\/\/{{baseUrl}}\/api\/reservations\/:reservation",
+                            "variable": [
+                                {
+                                    "id": "reservation",
+                                    "key": "reservation",
+                                    "value": "17",
+                                    "description": "ID de la r\u00e9servation concern\u00e9e"
+                                }
+                            ]
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": ""
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Store a newly created resource in storage",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "{{baseUrl}}",
+                            "path": "api\/reservations",
+                            "query": [],
+                            "raw": "http:\/\/{{baseUrl}}\/api\/reservations"
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n    \"nom\": \"aut\",\n    \"prenom\": \"repellat\",\n    \"mail\": \"eos\",\n    \"id_univ\": \"quia\",\n    \"raison_pro\": \"aut\",\n    \"prof\": true,\n    \"valide\": true\n}"
+                        },
+                        "description": ""
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Update the specified Reservation in storage.",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "{{baseUrl}}",
+                            "path": "api\/reservations\/:reservation",
+                            "query": [],
+                            "raw": "http:\/\/{{baseUrl}}\/api\/reservations\/:reservation",
+                            "variable": [
+                                {
+                                    "id": "reservation",
+                                    "key": "reservation",
+                                    "value": "20",
+                                    "description": "ID de la r\u00e9servation concern\u00e9e"
+                                }
+                            ]
+                        },
+                        "method": "PUT",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n    \"nom\": \"et\",\n    \"prenom\": \"dolor\",\n    \"mail\": \"sapiente\",\n    \"id_univ\": \"ipsa\",\n    \"raison_pro\": \"sed\",\n    \"prof\": false,\n    \"valide\": false\n}"
+                        },
+                        "description": ""
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Remove the specified resource from storage.",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "{{baseUrl}}",
+                            "path": "api\/reservations\/:reservation",
+                            "query": [],
+                            "raw": "http:\/\/{{baseUrl}}\/api\/reservations\/:reservation",
+                            "variable": [
+                                {
+                                    "id": "reservation",
+                                    "key": "reservation",
+                                    "value": "18",
+                                    "description": "ID de la r\u00e9servation concern\u00e9e"
+                                }
+                            ]
+                        },
+                        "method": "DELETE",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": ""
+                    },
+                    "response": []
+                }
+            ]
+        }
+    ],
+    "auth": {
+        "type": "bearer"
+    }
+}

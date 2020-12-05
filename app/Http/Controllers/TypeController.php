@@ -27,7 +27,7 @@ class TypeController extends Controller
     {
         $type= new Type([
             "nom"=>$request->input("nom"),
-            "picto"=>$request->input("picto")
+            "picto"=>$this->storeImage($request),
         ]);
 
         if ($type->save()) {
@@ -41,6 +41,12 @@ class TypeController extends Controller
                 "status" => "400"
             ]);
         }
+    }
+
+    protected function storeImage(Request $request) {
+        $fileName = $request->get('nom') . '.' . $request->file('picto')->extension();
+        $path = $request->file('picto')->storeAs('public/picto-type', $fileName);
+        return substr($path, strlen('storage/'));
     }
 
     /**
@@ -75,37 +81,6 @@ class TypeController extends Controller
     public function update(Request $request, Type $type)
     {
          return Type::find($type->id)->update($request->all());
-
-//        if($type!=null) {
-//            if($request->input("nom") != null) {
-//                $type->nom = $request->input("nom");
-//            }
-//
-//            if ($request->input("picto") != null) {
-//                $type->picto = $request->input("picto");
-//            }
-//
-//            if ($type->save()) {
-//                return json_encode([
-//                    "method" => "update",
-//                    "status" => "OK"
-//                ]);
-//            } else {
-//                return json_encode([
-//                    "method" => "update",
-//                    "status" => "FAILED"
-//                ]);
-//            }
-//        } else {
-//            //si pas d'entree correspondante
-//            return json_encode([
-//                "method" => "show",
-//                "status" => "!FIND"
-//            ]);
-//        }
-
-
-
     }
 
     /**

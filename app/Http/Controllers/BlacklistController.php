@@ -8,7 +8,33 @@ use Illuminate\Http\Request;
 class BlacklistController extends Controller
 {
     /**
-     * Display a listing of the resource.
+     * Display a listing of the user that are in the Blacklist
+     *
+     * @group Blacklist
+     * @authenticated
+     *
+     * @response [
+    {
+    "id": 1,
+    "created_at": "2020-12-03T17:30:34.000000Z",
+    "updated_at": "2020-12-03T17:30:34.000000Z",
+    "nom": "Mckenna",
+    "prenom": "Kuhic",
+    "mail": "matilda77@yahoo.com",
+    "id_univ": "kasandra.kling"
+    },
+    {
+    "id": 2,
+    "created_at": "2020-12-03T17:30:34.000000Z",
+    "updated_at": "2020-12-03T17:30:34.000000Z",
+    "nom": "Coby",
+    "prenom": "Murray",
+    "mail": "windler.godfrey@hotmail.com",
+    "id_univ": "clemmie29"
+    }
+     * ]
+     *
+     *
      *
      * @return string
      */
@@ -18,7 +44,23 @@ class BlacklistController extends Controller
     }
 
     /**
-     * Store a newly created resource in storage.
+     *
+     * Store a newly created Blacklist in storage.
+     *
+     * @group Blacklist
+     * @authenticated
+     * @queryParam nom required string Nom de la personne
+     * @queryParam prenom required string Prénom de la personne
+     * @queryParam mail required string Mail de la personne
+     * @queryParam id_univ required string Id universitaire de la personne
+     *
+     * @response {
+     *  "Blacklist Created"
+     * }
+     *
+     *
+     *
+     *
      *
      * @param  \Illuminate\Http\Request  $request
      * @return false|\Illuminate\Http\Response|string
@@ -33,20 +75,29 @@ class BlacklistController extends Controller
         ]);
 
         if ($blacklist->save()) {
-            return json_encode([
-                "method" => "store",
-                "status" => "OK"
-            ]);
-        } else {
-            return json_encode([
-                "method" => "store",
-                "status" => "FAILED"
-            ]);
+            return response("Blacklist Created");
         }
     }
 
     /**
-     * Display the specified resource.
+     *
+     *
+     * Display the specified Blacklisted person.
+     *
+     * @group Blacklist
+     * @authenticated
+     * @urlParam id ID Pictum
+     *
+     * @response {
+    "id": 1,
+    "created_at": "2020-12-03T17:30:34.000000Z",
+    "updated_at": "2020-12-03T17:30:34.000000Z",
+    "nom": "Mckenna",
+    "prenom": "Kuhic",
+    "mail": "matilda77@yahoo.com",
+    "id_univ": "kasandra.kling"
+    }
+     *
      *
      * @param  \App\Blacklist  $blacklist
      * @return false|\Illuminate\Http\Response|string
@@ -68,7 +119,18 @@ class BlacklistController extends Controller
     }
 
     /**
-     * Update the specified resource in storage.
+     * Update the specified blacklisted person in storage.
+     * @group Blacklist
+     * @urlParam blacklist int ID Pictum
+     *
+     * @queryParam nom string Nom de la personne
+     * @queryParam prenom string Prénom de la personne
+     * @queryParam mail string Mail de la personne
+     * @queryParam id_univ string Id universitaire de la personne
+     *
+     * @response {
+    "Not Find"
+     * }
      *
      * @param  \Illuminate\Http\Request  $request
      * @param  \App\Blacklist  $blacklist
@@ -98,31 +160,29 @@ class BlacklistController extends Controller
 
             //envoi modifs
             if ($blacklistr->save()) {
-                return json_encode([
-                    "method" => "store",
-                    "status" => "OK"
-                ]);
+                return response("Blacklist updated");
             } else {
-                return json_encode([
-                    "method" => "store",
-                    "status" => "FAILED"
-                ]);
+                return response("Blacklist update failed", 418);
             }
         }
 
         else {
             //si pas d'entree correspondante
-            return json_encode([
-                "method" => "update",
-                "status" => "!FIND"
-            ]);
+            return response("Not Find", 404);
         }
 
 
     }
 
     /**
+     *
      * Remove the specified resource from storage.
+     *
+     * @group Blacklist
+     * @authenticated
+     * @urlParam blacklist int ID Pictum correspondant
+     *
+     *
      *
      * @param  \App\Blacklist  $blacklist
      * @return false|\Illuminate\Http\Response|string
@@ -130,15 +190,9 @@ class BlacklistController extends Controller
     public function destroy(Blacklist $blacklist)
     {
         if (Blacklist::find($blacklist->id)->delete()) {
-            return json_encode([
-                "method" =>  "destroy",
-                "status" => "OK"
-            ]);
+            return response("Blacklist destroyed");
         } else {
-            return json_encode([
-                "method" => "destroy",
-                "status" => "FAILED"
-            ]);
+            return response("Blacklist not destroyed", 418);
         }
     }
 }

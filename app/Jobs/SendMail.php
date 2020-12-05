@@ -9,12 +9,13 @@ use Illuminate\Mail\Mailable;
 use Illuminate\Queue\InteractsWithQueue;
 use Illuminate\Queue\SerializesModels;
 use Illuminate\Support\Facades\Mail;
+use Illuminate\Support\Facades\Redis;
 
 class SendMail implements ShouldQueue
 {
     use Dispatchable, InteractsWithQueue, Queueable, SerializesModels;
 
-    protected $user;
+    protected $mailData;
 
     protected $mailable;
 
@@ -24,9 +25,9 @@ class SendMail implements ShouldQueue
      * @param $user
      * @param Mailable $mailable
      */
-    public function __construct($user, Mailable $mailable)
+    public function __construct($mailData, Mailable $mailable)
     {
-        $this->user = $user;
+        $this->mailData = $mailData;
         $this->mailable = $mailable;
     }
 
@@ -37,6 +38,7 @@ class SendMail implements ShouldQueue
      */
     public function handle()
     {
-        Mail::to($this->user->mail_emprunteur)->send($this->mailable);
+        Mail::to($this->mailData["to_address"])->send($this->mailable);
+
     }
 }

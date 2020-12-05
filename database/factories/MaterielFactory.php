@@ -11,6 +11,7 @@ $factory->define(Materiel::class, function (Faker $faker) {
         "photo" => $faker->imageUrl(200, 200),
         "usage" => $faker->realText(200),
         "carac" => $faker->realText(200),
+        "nom"   => $faker->name,
         "tutos" => '[
   {
     "name": "John",

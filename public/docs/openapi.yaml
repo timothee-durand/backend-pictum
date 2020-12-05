@@ -1,0 +1,1694 @@
+openapi: 3.0.3
+info:
+    title: Laravel
+    description: 'Backend du service de gestion de matériel du Campus des Portes du Jura de l`''IUT BM'
+    version: 1.0.0
+servers:
+    -
+        url: 'http://127.0.0.1:8000'
+paths:
+    /api/blacklists:
+        get:
+            summary: 'Display a listing of the user that are in the Blacklist'
+            description: ''
+            parameters:
+                -
+                    in: header
+                    name: Authorization
+                    description: ''
+                    example: 'Bearer {YOUR_AUTH_KEY}'
+                    schema:
+                        type: string
+                -
+                    in: header
+                    name: Content-Type
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+                -
+                    in: header
+                    name: Accept
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+            responses:
+                200:
+                    description: '200'
+                    content:
+                        application/json:
+                            schema:
+                                type: array
+                                items:
+                                    type: object
+                                example:
+                                    - { id: 1, created_at: '2020-12-03T17:30:34.000000Z', updated_at: '2020-12-03T17:30:34.000000Z', nom: Mckenna, prenom: Kuhic, mail: matilda77@yahoo.com, id_univ: kasandra.kling }
+                                    - { id: 2, created_at: '2020-12-03T17:30:34.000000Z', updated_at: '2020-12-03T17:30:34.000000Z', nom: Coby, prenom: Murray, mail: windler.godfrey@hotmail.com, id_univ: clemmie29 }
+            tags:
+                - Blacklist
+        post:
+            summary: 'Store a newly created Blacklist in storage.'
+            description: ''
+            parameters:
+                -
+                    in: query
+                    name: nom
+                    description: 'string Nom de la personne'
+                    example: atque
+                    required: true
+                    schema:
+                        type: string
+                        description: 'string Nom de la personne'
+                        example: atque
+                -
+                    in: query
+                    name: prenom
+                    description: 'string Prénom de la personne'
+                    example: eos
+                    required: true
+                    schema:
+                        type: string
+                        description: 'string Prénom de la personne'
+                        example: eos
+                -
+                    in: query
+                    name: mail
+                    description: 'string Mail de la personne'
+                    example: sint
+                    required: true
+                    schema:
+                        type: string
+                        description: 'string Mail de la personne'
+                        example: sint
+                -
+                    in: query
+                    name: id_univ
+                    description: 'string Id universitaire de la personne'
+                    example: quia
+                    required: true
+                    schema:
+                        type: string
+                        description: 'string Id universitaire de la personne'
+                        example: quia
+                -
+                    in: header
+                    name: Authorization
+                    description: ''
+                    example: 'Bearer {YOUR_AUTH_KEY}'
+                    schema:
+                        type: string
+                -
+                    in: header
+                    name: Content-Type
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+                -
+                    in: header
+                    name: Accept
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+            responses:
+                200:
+                    description: '200'
+                    content:
+                        text/plain:
+                            schema:
+                                type: string
+                                example: "{\n \"Blacklist Created\"\n}"
+            tags:
+                - Blacklist
+    '/api/blacklists/{blacklist}':
+        get:
+            summary: 'Display the specified Blacklisted person.'
+            description: ''
+            parameters:
+                -
+                    in: header
+                    name: Authorization
+                    description: ''
+                    example: 'Bearer {YOUR_AUTH_KEY}'
+                    schema:
+                        type: string
+                -
+                    in: header
+                    name: Content-Type
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+                -
+                    in: header
+                    name: Accept
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+            responses:
+                200:
+                    description: '200'
+                    content:
+                        application/json:
+                            schema:
+                                type: object
+                                example:
+                                    id: 1
+                                    created_at: '2020-12-03T17:30:34.000000Z'
+                                    updated_at: '2020-12-03T17:30:34.000000Z'
+                                    nom: Mckenna
+                                    prenom: Kuhic
+                                    mail: matilda77@yahoo.com
+                                    id_univ: kasandra.kling
+                                properties:
+                                    id: { type: integer, example: 1 }
+                                    created_at: { type: string, example: '2020-12-03T17:30:34.000000Z' }
+                                    updated_at: { type: string, example: '2020-12-03T17:30:34.000000Z' }
+                                    nom: { type: string, example: Mckenna }
+                                    prenom: { type: string, example: Kuhic }
+                                    mail: { type: string, example: matilda77@yahoo.com }
+                                    id_univ: { type: string, example: kasandra.kling }
+            tags:
+                - Blacklist
+        put:
+            summary: 'Update the specified blacklisted person in storage.'
+            description: ''
+            parameters:
+                -
+                    in: query
+                    name: nom
+                    description: 'Nom de la personne'
+                    example: fugiat
+                    required: false
+                    schema:
+                        type: string
+                        description: 'Nom de la personne'
+                        example: fugiat
+                -
+                    in: query
+                    name: prenom
+                    description: 'Prénom de la personne'
+                    example: dolor
+                    required: false
+                    schema:
+                        type: string
+                        description: 'Prénom de la personne'
+                        example: dolor
+                -
+                    in: query
+                    name: mail
+                    description: 'Mail de la personne'
+                    example: nulla
+                    required: false
+                    schema:
+                        type: string
+                        description: 'Mail de la personne'
+                        example: nulla
+                -
+                    in: query
+                    name: id_univ
+                    description: 'Id universitaire de la personne'
+                    example: nulla
+                    required: false
+                    schema:
+                        type: string
+                        description: 'Id universitaire de la personne'
+                        example: nulla
+                -
+                    in: header
+                    name: Content-Type
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+                -
+                    in: header
+                    name: Accept
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+            responses:
+                200:
+                    description: '200'
+                    content:
+                        text/plain:
+                            schema:
+                                type: string
+                                example: "{\n\"Not Find\"\n}"
+            tags:
+                - Blacklist
+            security: []
+        delete:
+            summary: 'Remove the specified resource from storage.'
+            description: ''
+            parameters:
+                -
+                    in: header
+                    name: Authorization
+                    description: ''
+                    example: 'Bearer {YOUR_AUTH_KEY}'
+                    schema:
+                        type: string
+                -
+                    in: header
+                    name: Content-Type
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+                -
+                    in: header
+                    name: Accept
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+            responses: {  }
+            tags:
+                - Blacklist
+        parameters:
+            -
+                in: path
+                name: blacklist
+                description: ''
+                example: aut
+                required: true
+                schema:
+                    type: string
+            -
+                in: path
+                name: id
+                description: 'Optional parameter. ID Pictum'
+                required: true
+                schema:
+                    type: string
+                examples:
+                    omitted:
+                        summary: 'When the value is omitted'
+                        value: ''
+                    present:
+                        summary: 'When the value is present'
+                        value: nemo
+    /api/creneaux:
+        get:
+            summary: 'Display a listing of the resource.'
+            description: ''
+            parameters:
+                -
+                    in: header
+                    name: Content-Type
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+                -
+                    in: header
+                    name: Accept
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+            responses:
+                200:
+                    description: '200'
+                    content:
+                        application/json:
+                            schema:
+                                type: array
+                                items:
+                                    type: object
+                                example:
+                                    - { id: 1, created_at: '2020-12-03T17:31:14.000000Z', updated_at: '2020-12-03T17:31:14.000000Z', jour: 1, heure_debut_matin: '07:20:32', heure_fin_matin: '11:49:03', heure_debut_am: '13:34:21', heure_fin_am: '17:53:21', gestionnaire_id: 7 }
+                                    - { id: 2, created_at: '2020-12-03T17:31:14.000000Z', updated_at: '2020-12-03T17:31:14.000000Z', jour: 1, heure_debut_matin: '07:00:32', heure_fin_matin: '11:41:31', heure_debut_am: '13:48:33', heure_fin_am: '16:57:37', gestionnaire_id: 9 }
+            tags:
+                - Creneaux
+            security: []
+        post:
+            summary: "Store Gestionnaire's Creneaux\nSend only creneaux who are used"
+            description: ''
+            parameters:
+                -
+                    in: header
+                    name: Authorization
+                    description: ''
+                    example: 'Bearer {YOUR_AUTH_KEY}'
+                    schema:
+                        type: string
+                -
+                    in: header
+                    name: Content-Type
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+                -
+                    in: header
+                    name: Accept
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+            responses: {  }
+            tags:
+                - Creneaux
+            requestBody:
+                required: false
+                content:
+                    application/json:
+                        schema:
+                            type: object
+                            properties:
+                                'creneaux[]':
+                                    type: required
+                                    description: 'Array of the creneaux of a gestionnaire'
+                                    example: voluptas
+                                creneaux:
+                                    type: object
+                                    description: ''
+                                    example: { gestionnaire_id: 17 }
+                                    properties: { jour: { type: integer, description: 'Index du jour correspondant (0 => Dimanche)', example: 20 }, heure_debut_matin: { type: Time, description: 'Heure de début de la période du matin', example: mollitia }, heure_fin_matin: { type: Time, description: 'Heure de fin de la période du matin', example: exercitationem }, heure_debut_am: { type: Time, description: 'Heure de début de la période de l''après-midi', example: tempore }, heure_fin_am: { type: Time, description: 'Heure de fin de la période de l''après-midi', example: nam }, gestionnaire_id: { type: integer, description: 'ID du gestionnaire correspondant', example: 17 } }
+    '/api/creneaux/{creneaux}':
+        put:
+            summary: 'Update the specifieds resources in storage.'
+            description: ''
+            parameters:
+                -
+                    in: header
+                    name: Content-Type
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+                -
+                    in: header
+                    name: Accept
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+            responses: {  }
+            tags:
+                - Creneaux
+            security: []
+        parameters:
+            -
+                in: path
+                name: creneaux
+                description: ''
+                example: amet
+                required: true
+                schema:
+                    type: string
+    /api/departements:
+        get:
+            summary: 'Display a listing of the departements'
+            description: ''
+            parameters:
+                -
+                    in: header
+                    name: Content-Type
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+                -
+                    in: header
+                    name: Accept
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+            responses:
+                200:
+                    description: '200'
+                    content:
+                        application/json:
+                            schema:
+                                type: array
+                                items:
+                                    type: object
+                                example:
+                                    - { lat: -88.3, long: 5.09, nom: 'Port Conorside', gestionnaire: { id: 5, created_at: '2020-12-03T17:30:34.000000Z', updated_at: '2020-12-03T17:30:34.000000Z', nom: Harrison, prenom: Hessel, mail: dovie58@christiansen.com, id_univ: zzulauf, admin: 0 } }
+                                    - { lat: 70.05, long: -142.14, nom: 'North Rachaelburgh', gestionnaire: { id: 3, created_at: '2020-12-03T17:30:34.000000Z', updated_at: '2020-12-03T17:30:34.000000Z', nom: Lyric, prenom: Schmidt, mail: veronica.runte@hotmail.com, id_univ: edgar.schumm, admin: 0 } }
+            tags:
+                - Departement
+            security: []
+        post:
+            summary: 'Store a newly created departement in storage.'
+            description: ''
+            parameters:
+                -
+                    in: query
+                    name: lat
+                    description: 'Latitude du département'
+                    example: 9392.88442
+                    required: true
+                    schema:
+                        type: number
+                        description: 'Latitude du département'
+                        example: 9392.88442
+                -
+                    in: query
+                    name: long
+                    description: 'Longitude du département'
+                    example: !!float 40
+                    required: true
+                    schema:
+                        type: number
+                        description: 'Longitude du département'
+                        example: !!float 40
+                -
+                    in: query
+                    name: nom
+                    description: 'Nom du département'
+                    example: sint
+                    required: true
+                    schema:
+                        type: string
+                        description: 'Nom du département'
+                        example: sint
+                -
+                    in: query
+                    name: gestionnaire_id
+                    description: 'ID Pictum du gestionnaire concerné'
+                    example: 15
+                    required: true
+                    schema:
+                        type: integer
+                        description: 'ID Pictum du gestionnaire concerné'
+                        example: 15
+                -
+                    in: header
+                    name: Authorization
+                    description: ''
+                    example: 'Bearer {YOUR_AUTH_KEY}'
+                    schema:
+                        type: string
+                -
+                    in: header
+                    name: Content-Type
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+                -
+                    in: header
+                    name: Accept
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+            responses:
+                200:
+                    description: '200'
+                    content:
+                        text/plain:
+                            schema:
+                                type: string
+                                example: "{\n \"Create OK\"\n}"
+            tags:
+                - Departement
+    '/api/departements/{departement}':
+        get:
+            summary: 'Display the specified resource.'
+            description: ''
+            parameters:
+                -
+                    in: header
+                    name: Content-Type
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+                -
+                    in: header
+                    name: Accept
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+            responses:
+                200:
+                    description: '200'
+                    content:
+                        application/json:
+                            schema:
+                                type: object
+                                example:
+                                    data: { lat: 70.05, long: -142.14, nom: 'North Rachaelburgh', gestionnaire: { id: 3, created_at: '2020-12-03T17:30:34.000000Z', updated_at: '2020-12-03T17:30:34.000000Z', nom: Lyric, prenom: Schmidt, mail: veronica.runte@hotmail.com, id_univ: edgar.schumm, admin: 0 } }
+                                properties:
+                                    data: { type: object, example: { lat: 70.05, long: -142.14, nom: 'North Rachaelburgh', gestionnaire: { id: 3, created_at: '2020-12-03T17:30:34.000000Z', updated_at: '2020-12-03T17:30:34.000000Z', nom: Lyric, prenom: Schmidt, mail: veronica.runte@hotmail.com, id_univ: edgar.schumm, admin: 0 } } }
+            tags:
+                - Departement
+            security: []
+        put:
+            summary: 'Update the specified resource in storage.'
+            description: ''
+            parameters:
+                -
+                    in: query
+                    name: lat
+                    description: 'Latitude du département'
+                    example: 60421629.253684
+                    required: false
+                    schema:
+                        type: number
+                        description: 'Latitude du département'
+                        example: 60421629.253684
+                -
+                    in: query
+                    name: long
+                    description: 'Longitude du département'
+                    example: 8799.887110345
+                    required: false
+                    schema:
+                        type: number
+                        description: 'Longitude du département'
+                        example: 8799.887110345
+                -
+                    in: query
+                    name: nom
+                    description: 'Nom du département'
+                    example: quasi
+                    required: false
+                    schema:
+                        type: string
+                        description: 'Nom du département'
+                        example: quasi
+                -
+                    in: query
+                    name: gestionnaire_id
+                    description: 'ID Pictum du gestionnaire concerné'
+                    example: 6
+                    required: false
+                    schema:
+                        type: integer
+                        description: 'ID Pictum du gestionnaire concerné'
+                        example: 6
+                -
+                    in: header
+                    name: Authorization
+                    description: ''
+                    example: 'Bearer {YOUR_AUTH_KEY}'
+                    schema:
+                        type: string
+                -
+                    in: header
+                    name: Content-Type
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+                -
+                    in: header
+                    name: Accept
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+            responses:
+                200:
+                    description: '200'
+                    content:
+                        text/plain:
+                            schema:
+                                type: string
+                                example: "{\n \"Update OK\"\n}"
+            tags:
+                - Departement
+        delete:
+            summary: 'Remove the specified resource from storage.'
+            description: ''
+            parameters:
+                -
+                    in: header
+                    name: Content-Type
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+                -
+                    in: header
+                    name: Accept
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+            responses:
+                200:
+                    description: '200'
+                    content:
+                        text/plain:
+                            schema:
+                                type: string
+                                example: "{\n \"Destroy OK\"\n}"
+            tags:
+                - Departement
+            security: []
+        parameters:
+            -
+                in: path
+                name: departement
+                description: 'Optional parameter. ID du département concerné'
+                required: true
+                schema:
+                    type: integer
+                examples:
+                    omitted:
+                        summary: 'When the value is omitted'
+                        value: ''
+                    present:
+                        summary: 'When the value is present'
+                        value: 2
+    /sanctum/csrf-cookie:
+        get:
+            summary: 'Return an empty response simply to trigger the storage of the CSRF cookie in the browser.'
+            description: ''
+            parameters:
+                -
+                    in: header
+                    name: Content-Type
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+                -
+                    in: header
+                    name: Accept
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+            responses: {  }
+            tags:
+                - Endpoints
+            security: []
+    /api/types:
+        get:
+            summary: 'Display a listing of the resource.'
+            description: ''
+            parameters:
+                -
+                    in: header
+                    name: Content-Type
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+                -
+                    in: header
+                    name: Accept
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+            responses:
+                401:
+                    description: ''
+                    content:
+                        application/json:
+                            schema:
+                                type: object
+                                example:
+                                    message: Unauthenticated.
+                                properties:
+                                    message: { type: string, example: Unauthenticated. }
+            tags:
+                - Endpoints
+            security: []
+        post:
+            summary: 'Store a newly created resource in storage.'
+            description: ''
+            parameters:
+                -
+                    in: header
+                    name: Content-Type
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+                -
+                    in: header
+                    name: Accept
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+            responses: {  }
+            tags:
+                - Endpoints
+            security: []
+    '/api/types/{type}':
+        get:
+            summary: 'Display the specified resource.'
+            description: ''
+            parameters:
+                -
+                    in: header
+                    name: Content-Type
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+                -
+                    in: header
+                    name: Accept
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+            responses:
+                401:
+                    description: ''
+                    content:
+                        application/json:
+                            schema:
+                                type: object
+                                example:
+                                    message: Unauthenticated.
+                                properties:
+                                    message: { type: string, example: Unauthenticated. }
+            tags:
+                - Endpoints
+            security: []
+        put:
+            summary: 'Update the specified resource in storage.'
+            description: ''
+            parameters:
+                -
+                    in: header
+                    name: Content-Type
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+                -
+                    in: header
+                    name: Accept
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+            responses: {  }
+            tags:
+                - Endpoints
+            security: []
+        delete:
+            summary: 'Remove the specified resource from storage.'
+            description: ''
+            parameters:
+                -
+                    in: header
+                    name: Content-Type
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+                -
+                    in: header
+                    name: Accept
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+            responses: {  }
+            tags:
+                - Endpoints
+            security: []
+        parameters:
+            -
+                in: path
+                name: type
+                description: ''
+                example: quod
+                required: true
+                schema:
+                    type: string
+    /api/malettes:
+        get:
+            summary: 'Display a listing of the resource.'
+            description: ''
+            parameters:
+                -
+                    in: header
+                    name: Content-Type
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+                -
+                    in: header
+                    name: Accept
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+            responses:
+                401:
+                    description: ''
+                    content:
+                        application/json:
+                            schema:
+                                type: object
+                                example:
+                                    message: Unauthenticated.
+                                properties:
+                                    message: { type: string, example: Unauthenticated. }
+            tags:
+                - Endpoints
+            security: []
+        post:
+            summary: 'Store a newly created resource in storage.'
+            description: ''
+            parameters:
+                -
+                    in: header
+                    name: Content-Type
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+                -
+                    in: header
+                    name: Accept
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+            responses: {  }
+            tags:
+                - Endpoints
+            security: []
+    '/api/malettes/{malette}':
+        get:
+            summary: 'Display the specified resource.'
+            description: ''
+            parameters:
+                -
+                    in: header
+                    name: Content-Type
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+                -
+                    in: header
+                    name: Accept
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+            responses:
+                401:
+                    description: ''
+                    content:
+                        application/json:
+                            schema:
+                                type: object
+                                example:
+                                    message: Unauthenticated.
+                                properties:
+                                    message: { type: string, example: Unauthenticated. }
+            tags:
+                - Endpoints
+            security: []
+        put:
+            summary: 'Update the specified resource in storage.'
+            description: ''
+            parameters:
+                -
+                    in: header
+                    name: Content-Type
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+                -
+                    in: header
+                    name: Accept
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+            responses: {  }
+            tags:
+                - Endpoints
+            security: []
+        delete:
+            summary: 'Remove the specified resource from storage.'
+            description: ''
+            parameters:
+                -
+                    in: header
+                    name: Content-Type
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+                -
+                    in: header
+                    name: Accept
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+            responses: {  }
+            tags:
+                - Endpoints
+            security: []
+        parameters:
+            -
+                in: path
+                name: malette
+                description: ''
+                example: est
+                required: true
+                schema:
+                    type: string
+    /api/reservations:
+        get:
+            summary: 'Display a listing of the resource.'
+            description: ''
+            parameters:
+                -
+                    in: header
+                    name: Content-Type
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+                -
+                    in: header
+                    name: Accept
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+            responses:
+                401:
+                    description: ''
+                    content:
+                        application/json:
+                            schema:
+                                type: object
+                                example:
+                                    message: Unauthenticated.
+                                properties:
+                                    message: { type: string, example: Unauthenticated. }
+            tags:
+                - Endpoints
+            security: []
+    '/api/reservations/{reservation}':
+        get:
+            summary: 'Display the specified resource.'
+            description: ''
+            parameters:
+                -
+                    in: header
+                    name: Content-Type
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+                -
+                    in: header
+                    name: Accept
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+            responses:
+                401:
+                    description: ''
+                    content:
+                        application/json:
+                            schema:
+                                type: object
+                                example:
+                                    message: Unauthenticated.
+                                properties:
+                                    message: { type: string, example: Unauthenticated. }
+            tags:
+                - Endpoints
+            security: []
+        parameters:
+            -
+                in: path
+                name: reservation
+                description: ''
+                example: tenetur
+                required: true
+                schema:
+                    type: string
+    /api/estpretes:
+        get:
+            summary: 'Display a listing of the resource.'
+            description: ''
+            parameters:
+                -
+                    in: header
+                    name: Content-Type
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+                -
+                    in: header
+                    name: Accept
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+            responses:
+                401:
+                    description: ''
+                    content:
+                        application/json:
+                            schema:
+                                type: object
+                                example:
+                                    message: Unauthenticated.
+                                properties:
+                                    message: { type: string, example: Unauthenticated. }
+            tags:
+                - Endpoints
+            security: []
+    '/api/estpretes/{estprete}':
+        get:
+            summary: 'Display the specified resource.'
+            description: ''
+            parameters:
+                -
+                    in: header
+                    name: Content-Type
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+                -
+                    in: header
+                    name: Accept
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+            responses:
+                401:
+                    description: ''
+                    content:
+                        application/json:
+                            schema:
+                                type: object
+                                example:
+                                    message: Unauthenticated.
+                                properties:
+                                    message: { type: string, example: Unauthenticated. }
+            tags:
+                - Endpoints
+            security: []
+        parameters:
+            -
+                in: path
+                name: estprete
+                description: ''
+                example: et
+                required: true
+                schema:
+                    type: string
+    /api/materiels:
+        get:
+            summary: 'Display a listing of the resource.'
+            description: ''
+            parameters:
+                -
+                    in: header
+                    name: Content-Type
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+                -
+                    in: header
+                    name: Accept
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+            responses:
+                401:
+                    description: ''
+                    content:
+                        application/json:
+                            schema:
+                                type: object
+                                example:
+                                    message: Unauthenticated.
+                                properties:
+                                    message: { type: string, example: Unauthenticated. }
+            tags:
+                - Endpoints
+            security: []
+        post:
+            summary: 'Store a newly created resource in storage.'
+            description: ''
+            parameters:
+                -
+                    in: header
+                    name: Content-Type
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+                -
+                    in: header
+                    name: Accept
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+            responses: {  }
+            tags:
+                - Endpoints
+            security: []
+    '/api/materiels/{materiel}':
+        get:
+            summary: 'Display the specified resource.'
+            description: ''
+            parameters:
+                -
+                    in: header
+                    name: Content-Type
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+                -
+                    in: header
+                    name: Accept
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+            responses:
+                401:
+                    description: ''
+                    content:
+                        application/json:
+                            schema:
+                                type: object
+                                example:
+                                    message: Unauthenticated.
+                                properties:
+                                    message: { type: string, example: Unauthenticated. }
+            tags:
+                - Endpoints
+            security: []
+        put:
+            summary: 'Update the specified resource in storage.'
+            description: ''
+            parameters:
+                -
+                    in: header
+                    name: Content-Type
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+                -
+                    in: header
+                    name: Accept
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+            responses: {  }
+            tags:
+                - Endpoints
+            security: []
+        delete:
+            summary: 'Remove the specified resource from storage.'
+            description: ''
+            parameters:
+                -
+                    in: header
+                    name: Content-Type
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+                -
+                    in: header
+                    name: Accept
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+            responses: {  }
+            tags:
+                - Endpoints
+            security: []
+        parameters:
+            -
+                in: path
+                name: materiel
+                description: ''
+                example: voluptas
+                required: true
+                schema:
+                    type: string
+    /api/gestionnaires:
+        get:
+            summary: 'Display a listing of the resource.'
+            description: ''
+            parameters:
+                -
+                    in: header
+                    name: Content-Type
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+                -
+                    in: header
+                    name: Accept
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+            responses:
+                401:
+                    description: ''
+                    content:
+                        application/json:
+                            schema:
+                                type: object
+                                example:
+                                    message: Unauthenticated.
+                                properties:
+                                    message: { type: string, example: Unauthenticated. }
+            tags:
+                - Endpoints
+            security: []
+        post:
+            summary: 'Store a newly created resource in storage.'
+            description: ''
+            parameters:
+                -
+                    in: header
+                    name: Content-Type
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+                -
+                    in: header
+                    name: Accept
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+            responses: {  }
+            tags:
+                - Endpoints
+            security: []
+    '/api/gestionnaires/{gestionnaire}':
+        get:
+            summary: 'Display the specified resource.'
+            description: ''
+            parameters:
+                -
+                    in: header
+                    name: Content-Type
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+                -
+                    in: header
+                    name: Accept
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+            responses:
+                401:
+                    description: ''
+                    content:
+                        application/json:
+                            schema:
+                                type: object
+                                example:
+                                    message: Unauthenticated.
+                                properties:
+                                    message: { type: string, example: Unauthenticated. }
+            tags:
+                - Endpoints
+            security: []
+        put:
+            summary: 'Update the specified resource in storage.'
+            description: ''
+            parameters:
+                -
+                    in: header
+                    name: Content-Type
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+                -
+                    in: header
+                    name: Accept
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+            responses: {  }
+            tags:
+                - Endpoints
+            security: []
+        delete:
+            summary: 'Remove the specified resource from storage.'
+            description: ''
+            parameters:
+                -
+                    in: header
+                    name: Content-Type
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+                -
+                    in: header
+                    name: Accept
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+            responses: {  }
+            tags:
+                - Endpoints
+            security: []
+        parameters:
+            -
+                in: path
+                name: gestionnaire
+                description: ''
+                example: rem
+                required: true
+                schema:
+                    type: string
+    /api/indisponibilites:
+        get:
+            summary: 'Display a listing of the resource.'
+            description: ''
+            parameters:
+                -
+                    in: header
+                    name: Content-Type
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+                -
+                    in: header
+                    name: Accept
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+            responses:
+                401:
+                    description: ''
+                    content:
+                        application/json:
+                            schema:
+                                type: object
+                                example:
+                                    message: Unauthenticated.
+                                properties:
+                                    message: { type: string, example: Unauthenticated. }
+            tags:
+                - Endpoints
+            security: []
+        post:
+            summary: 'Store a newly created resource in storage.'
+            description: 'Send a json array of indisponibilites'
+            parameters:
+                -
+                    in: header
+                    name: Content-Type
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+                -
+                    in: header
+                    name: Accept
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+            responses: {  }
+            tags:
+                - Endpoints
+            security: []
+    '/api/indisponibilites/{indisponibilite}':
+        get:
+            summary: 'Display the specified resource.'
+            description: ''
+            parameters:
+                -
+                    in: header
+                    name: Content-Type
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+                -
+                    in: header
+                    name: Accept
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+            responses:
+                401:
+                    description: ''
+                    content:
+                        application/json:
+                            schema:
+                                type: object
+                                example:
+                                    message: Unauthenticated.
+                                properties:
+                                    message: { type: string, example: Unauthenticated. }
+            tags:
+                - Endpoints
+            security: []
+        put:
+            summary: 'Update the specified resource in storage.'
+            description: ''
+            parameters:
+                -
+                    in: header
+                    name: Content-Type
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+                -
+                    in: header
+                    name: Accept
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+            responses: {  }
+            tags:
+                - Endpoints
+            security: []
+        delete:
+            summary: 'Remove the specified resource from storage.'
+            description: ''
+            parameters:
+                -
+                    in: header
+                    name: Content-Type
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+                -
+                    in: header
+                    name: Accept
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+            responses: {  }
+            tags:
+                - Endpoints
+            security: []
+        parameters:
+            -
+                in: path
+                name: indisponibilite
+                description: ''
+                example: iusto
+                required: true
+                schema:
+                    type: string
+    '/api/gestionnaires/{id}/rdv':
+        get:
+            summary: 'Display a listing of the rendez-vous of this Gestionnaire'
+            description: ''
+            parameters:
+                -
+                    in: header
+                    name: Content-Type
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+                -
+                    in: header
+                    name: Accept
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+            responses:
+                401:
+                    description: ''
+                    content:
+                        application/json:
+                            schema:
+                                type: object
+                                example:
+                                    message: Unauthenticated.
+                                properties:
+                                    message: { type: string, example: Unauthenticated. }
+            tags:
+                - Endpoints
+            security: []
+        parameters:
+            -
+                in: path
+                name: id
+                description: ''
+                example: aliquam
+                required: true
+                schema:
+                    type: string
+    /api/send-mail-contact-admin:
+        post:
+            summary: ''
+            description: ''
+            parameters:
+                -
+                    in: header
+                    name: Content-Type
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+                -
+                    in: header
+                    name: Accept
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+            responses: {  }
+            tags:
+                - Endpoints
+            security: []
+    /api/send-mail-gest:
+        post:
+            summary: ''
+            description: ''
+            parameters:
+                -
+                    in: header
+                    name: Content-Type
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+                -
+                    in: header
+                    name: Accept
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+            responses: {  }
+            tags:
+                - Endpoints
+            security: []
+    /api/login:
+        post:
+            summary: Connexion
+            description: ''
+            parameters:
+                -
+                    in: header
+                    name: Content-Type
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+                -
+                    in: header
+                    name: Accept
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+            responses: {  }
+            tags:
+                - Endpoints
+            security: []
+    /:
+        get:
+            summary: ''
+            description: ''
+            parameters:
+                -
+                    in: header
+                    name: Content-Type
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+                -
+                    in: header
+                    name: Accept
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+            responses:
+                200:
+                    description: ''
+                    content:
+                        text/plain:
+                            schema:
+                                type: string
+                                example: /public/
+            tags:
+                - Endpoints
+            security: []
+components:
+    securitySchemes:
+        default:
+            type: http
+            scheme: bearer
+            description: ''
+security:
+    -
+        default: []

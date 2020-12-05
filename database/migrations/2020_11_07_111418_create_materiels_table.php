@@ -17,10 +17,12 @@ class CreateMaterielsTable extends Migration
             $table->id();
             $table->timestamps();
             $table->string("ref", 32);
+            $table->string("nom", 32);
             $table->string("photo", 255);
             $table->string("usage", 300);
             $table->string("carac", 300);
             $table->json("tutos");
+
             $table->string("notice", 255);
             $table->boolean("indisp")->default(false);
             $table->string("indisp_raison");

@@ -31,6 +31,7 @@ class ReservationCreation
      */
     public function handle(ReservationCreationEvent $event)
     {
-        SendMail::dispatch($event->reservation, new \App\Mail\ReservationCreation($event->reservation));
+        $mailData = ["to_address"=> $event->reservation->mail];
+        SendMail::dispatch($mailData, new \App\Mail\ReservationCreation($event->reservation));
     }
 }

@@ -10,7 +10,40 @@ use Illuminate\Http\Response;
 class DepartementController extends Controller
 {
     /**
-     * Display a listing of the resource.
+     *
+     * Display a listing of the departements
+     * @group Departement
+     * @response [
+    {
+    "lat": -88.3,
+    "long": 5.09,
+    "nom": "Port Conorside",
+    "gestionnaire": {
+    "id": 5,
+    "created_at": "2020-12-03T17:30:34.000000Z",
+    "updated_at": "2020-12-03T17:30:34.000000Z",
+    "nom": "Harrison",
+    "prenom": "Hessel",
+    "mail": "dovie58@christiansen.com",
+    "id_univ": "zzulauf",
+    "admin": 0
+    }
+    },
+    {
+    "lat": 70.05,
+    "long": -142.14,
+    "nom": "North Rachaelburgh",
+    "gestionnaire": {
+    "id": 3,
+    "created_at": "2020-12-03T17:30:34.000000Z",
+    "updated_at": "2020-12-03T17:30:34.000000Z",
+    "nom": "Lyric",
+    "prenom": "Schmidt",
+    "mail": "veronica.runte@hotmail.com",
+    "id_univ": "edgar.schumm",
+    "admin": 0
+    }
+    }]
      *
      * @return string
      */
@@ -20,7 +53,18 @@ class DepartementController extends Controller
     }
 
     /**
-     * Store a newly created resource in storage.
+     * Store a newly created departement in storage.
+     * @group Departement
+     * @queryParam lat float required Latitude du département
+     * @queryParam long float required Longitude du département
+     * @queryParam nom string required Nom du département
+     * @queryParam gestionnaire_id int required ID Pictum du gestionnaire concerné
+     *
+     * @response {
+     *  "Create OK"
+     * }
+     * @authenticated
+     *
      *
      * @param  \Illuminate\Http\Request  $request
      * @return false|\Illuminate\Http\Response|string
@@ -34,6 +78,25 @@ class DepartementController extends Controller
 
     /**
      * Display the specified resource.
+     * @group Departement
+     * @urlParam departement int ID du département concerné
+     * @response {
+    "data": {
+    "lat": 70.05,
+    "long": -142.14,
+    "nom": "North Rachaelburgh",
+    "gestionnaire": {
+    "id": 3,
+    "created_at": "2020-12-03T17:30:34.000000Z",
+    "updated_at": "2020-12-03T17:30:34.000000Z",
+    "nom": "Lyric",
+    "prenom": "Schmidt",
+    "mail": "veronica.runte@hotmail.com",
+    "id_univ": "edgar.schumm",
+    "admin": 0
+    }
+    }
+    }
      *
      * @param  \App\Departement  $departement
      * @return \Illuminate\Http\Response
@@ -45,6 +108,19 @@ class DepartementController extends Controller
 
     /**
      * Update the specified resource in storage.
+     * @group Departement
+     *
+     * @queryParam lat float Latitude du département
+     * @queryParam long float Longitude du département
+     * @queryParam nom string Nom du département
+     * @queryParam gestionnaire_id int ID Pictum du gestionnaire concerné
+     * @urlParam departement int ID du département concerné
+     *
+     * @response {
+     *  "Update OK"
+     * }
+     * @authenticated
+     *
      *
      * @param  \Illuminate\Http\Request  $request
      * @param  \App\Departement  $departement
@@ -63,6 +139,12 @@ class DepartementController extends Controller
 
     /**
      * Remove the specified resource from storage.
+     * @group Departement
+     * @urlParam departement int ID du département concerné
+     *
+     *@response {
+     *  "Destroy OK"
+     * }
      *
      * @param  \App\Departement  $departement
      * @return false|\Illuminate\Http\Response|string
