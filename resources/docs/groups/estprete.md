@@ -156,11 +156,11 @@ const url = new URL(
 );
 
 let params = {
-    "id_malettes[]": "17",
-    "id_materiels[]": "20",
-    "reservation_id": "5",
-    "date_debut": "reprehenderit",
-    "date_fin": "eveniet",
+    "id_malettes[]": "1",
+    "id_materiels[]": "8",
+    "reservation_id": "20",
+    "date_debut": "necessitatibus",
+    "date_fin": "nemo",
 };
 Object.keys(params)
     .forEach(key => url.searchParams.append(key, params[key]));
@@ -240,11 +240,11 @@ Required to be gestionnaire
 
 ```javascript
 const url = new URL(
-    "http://127.0.0.1:8000/api/estpretes/consequatur"
+    "http://127.0.0.1:8000/api/estpretes/nobis"
 );
 
 let params = {
-    "id_estprete[]": "2",
+    "id_estprete[]": "5",
 };
 Object.keys(params)
     .forEach(key => url.searchParams.append(key, params[key]));

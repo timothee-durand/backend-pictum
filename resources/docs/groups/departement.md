@@ -93,7 +93,7 @@ fetch(url, {
 
 ```javascript
 const url = new URL(
-    "http://127.0.0.1:8000/api/departements/20"
+    "http://127.0.0.1:8000/api/departements/9"
 );
 
 let headers = {
@@ -172,10 +172,10 @@ const url = new URL(
 );
 
 let params = {
-    "lat": "240571086.4288",
-    "long": "0",
-    "nom": "et",
-    "gestionnaire_id": "3",
+    "lat": "9",
+    "long": "39.963",
+    "nom": "molestiae",
+    "gestionnaire_id": "13",
 };
 Object.keys(params)
     .forEach(key => url.searchParams.append(key, params[key]));
@@ -258,14 +258,14 @@ ID Pictum du gestionnaire concerné</p>
 
 ```javascript
 const url = new URL(
-    "http://127.0.0.1:8000/api/departements/15"
+    "http://127.0.0.1:8000/api/departements/20"
 );
 
 let params = {
-    "lat": "0.74541",
-    "long": "409436367.463",
-    "nom": "voluptatem",
-    "gestionnaire_id": "16",
+    "lat": "232408.84216",
+    "long": "263797.233416",
+    "nom": "explicabo",
+    "gestionnaire_id": "4",
 };
 Object.keys(params)
     .forEach(key => url.searchParams.append(key, params[key]));
@@ -357,7 +357,7 @@ ID Pictum du gestionnaire concerné</p>
 
 ```javascript
 const url = new URL(
-    "http://127.0.0.1:8000/api/departements/12"
+    "http://127.0.0.1:8000/api/departements/1"
 );
 
 let headers = {

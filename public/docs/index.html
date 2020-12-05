@@ -42,7 +42,7 @@
                             <li><a href='http://github.com/knuckleswtf/scribe'>Documentation powered by Scribe ✍</a></li>
                     </ul>
             <ul class="toc-footer" id="last-updated">
-            <li>Last updated: December 4 2020</li>
+            <li>Last updated: December 5 2020</li>
         </ul>
 </div>
 <div class="page-wrapper">
@@ -62,7 +62,7 @@ You can switch the language used with the tabs at the top right (or from the nav
 <p>Base URL</p>
 </blockquote>
 <pre><code class="language-yaml">http://127.0.0.1:8000</code></pre><h1>Authenticating requests</h1>
-<p>Authenticate requests to this API's endpoints by sending an <strong><code>Authorization</code></strong> header with the value <strong><code>"Bearer {YOUR_AUTH_KEY}"</code></strong>.</p>
+<p>To authenticate requests, include an <strong><code>Authorization</code></strong> header with the value <strong><code>"Bearer {YOUR_AUTH_KEY}"</code></strong>.</p>
 <p>All authenticated endpoints are marked with a <code>requires authentication</code> badge in the documentation below.</p>
 <p>A token is generate any time you login correctly. Their lifetime is 1 hour.</p><h1>Blacklist</h1>
 <h2>Display a listing of the user that are in the Blacklist</h2>
@@ -136,7 +136,7 @@ fetch(url, {
 <p>Example request:</p>
 </blockquote>
 <pre><code class="language-javascript">const url = new URL(
-    "http://127.0.0.1:8000/api/blacklists/esse"
+    "http://127.0.0.1:8000/api/blacklists/veritatis"
 );
 
 let headers = {
@@ -205,10 +205,10 @@ ID Pictum</p>
 );
 
 let params = {
-    "nom": "rerum",
-    "prenom": "est",
-    "mail": "non",
-    "id_univ": "ex",
+    "nom": "sed",
+    "prenom": "laboriosam",
+    "mail": "vel",
+    "id_univ": "earum",
 };
 Object.keys(params)
     .forEach(key =&gt; url.searchParams.append(key, params[key]));
@@ -279,14 +279,14 @@ string Id universitaire de la personne</p>
 <p>Example request:</p>
 </blockquote>
 <pre><code class="language-javascript">const url = new URL(
-    "http://127.0.0.1:8000/api/blacklists/9"
+    "http://127.0.0.1:8000/api/blacklists/2"
 );
 
 let params = {
-    "nom": "ut",
-    "prenom": "accusantium",
-    "mail": "possimus",
-    "id_univ": "dolore",
+    "nom": "aut",
+    "prenom": "impedit",
+    "mail": "est",
+    "id_univ": "velit",
 };
 Object.keys(params)
     .forEach(key =&gt; url.searchParams.append(key, params[key]));
@@ -364,7 +364,7 @@ Id universitaire de la personne</p>
 <p>Example request:</p>
 </blockquote>
 <pre><code class="language-javascript">const url = new URL(
-    "http://127.0.0.1:8000/api/blacklists/17"
+    "http://127.0.0.1:8000/api/blacklists/16"
 );
 
 let headers = {
@@ -487,7 +487,7 @@ let headers = {
 };
 
 let body = {
-    "creneaux[]": "dolor"
+    "creneaux[]": "natus"
 }
 
 fetch(url, {
@@ -569,7 +569,7 @@ ID du gestionnaire correspondant</p>
 <p>Example request:</p>
 </blockquote>
 <pre><code class="language-javascript">const url = new URL(
-    "http://127.0.0.1:8000/api/creneaux/dolor"
+    "http://127.0.0.1:8000/api/creneaux/repellendus"
 );
 
 let headers = {
@@ -688,7 +688,7 @@ fetch(url, {
 <p>Example request:</p>
 </blockquote>
 <pre><code class="language-javascript">const url = new URL(
-    "http://127.0.0.1:8000/api/departements/20"
+    "http://127.0.0.1:8000/api/departements/9"
 );
 
 let headers = {
@@ -756,10 +756,10 @@ ID du département concerné</p>
 );
 
 let params = {
-    "lat": "240571086.4288",
-    "long": "0",
-    "nom": "et",
-    "gestionnaire_id": "3",
+    "lat": "9",
+    "long": "39.963",
+    "nom": "molestiae",
+    "gestionnaire_id": "13",
 };
 Object.keys(params)
     .forEach(key =&gt; url.searchParams.append(key, params[key]));
@@ -831,14 +831,14 @@ ID Pictum du gestionnaire concerné</p>
 <p>Example request:</p>
 </blockquote>
 <pre><code class="language-javascript">const url = new URL(
-    "http://127.0.0.1:8000/api/departements/15"
+    "http://127.0.0.1:8000/api/departements/20"
 );
 
 let params = {
-    "lat": "0.74541",
-    "long": "409436367.463",
-    "nom": "voluptatem",
-    "gestionnaire_id": "16",
+    "lat": "232408.84216",
+    "long": "263797.233416",
+    "nom": "explicabo",
+    "gestionnaire_id": "4",
 };
 Object.keys(params)
     .forEach(key =&gt; url.searchParams.append(key, params[key]));
@@ -919,7 +919,7 @@ ID Pictum du gestionnaire concerné</p>
 <p>Example request:</p>
 </blockquote>
 <pre><code class="language-javascript">const url = new URL(
-    "http://127.0.0.1:8000/api/departements/12"
+    "http://127.0.0.1:8000/api/departements/1"
 );
 
 let headers = {
@@ -1049,7 +1049,7 @@ fetch(url, {
 <p>Example request:</p>
 </blockquote>
 <pre><code class="language-javascript">const url = new URL(
-    "http://127.0.0.1:8000/api/types/nisi"
+    "http://127.0.0.1:8000/api/types/occaecati"
 );
 
 let headers = {
@@ -1090,98 +1090,6 @@ fetch(url, {
 <p>
 <b><code>type</code></b>&nbsp;&nbsp;<small>string</small>  &nbsp;
 <input type="text" name="type" data-endpoint="GETapi-types--type-" data-component="url" required  hidden>
-<br>
-</p>
-</form>
-<h2>Display a listing of the resource.</h2>
-<blockquote>
-<p>Example request:</p>
-</blockquote>
-<pre><code class="language-javascript">const url = new URL(
-    "http://127.0.0.1:8000/api/malettes"
-);
-
-let headers = {
-    "Content-Type": "application/json",
-    "Accept": "application/json",
-};
-
-fetch(url, {
-    method: "GET",
-    headers,
-}).then(response =&gt; response.json());</code></pre>
-<blockquote>
-<p>Example response (401):</p>
-</blockquote>
-<pre><code class="language-json">{
-    "message": "Unauthenticated."
-}</code></pre>
-<div id="execution-results-GETapi-malettes" hidden>
-    <blockquote>Received response<span id="execution-response-status-GETapi-malettes"></span>:</blockquote>
-    <pre class="json"><code id="execution-response-content-GETapi-malettes"></code></pre>
-</div>
-<div id="execution-error-GETapi-malettes" hidden>
-    <blockquote>Request failed with error:</blockquote>
-    <pre><code id="execution-error-message-GETapi-malettes"></code></pre>
-</div>
-<form id="form-GETapi-malettes" data-method="GET" data-path="api/malettes" data-authed="0" data-hasfiles="0" data-headers='{"Content-Type":"application\/json","Accept":"application\/json"}' onsubmit="event.preventDefault(); executeTryOut('GETapi-malettes', this);">
-<h3>
-    Request&nbsp;&nbsp;&nbsp;
-        <button type="button" style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;" id="btn-tryout-GETapi-malettes" onclick="tryItOut('GETapi-malettes');">Try it out ⚡</button>
-    <button type="button" style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;" id="btn-canceltryout-GETapi-malettes" onclick="cancelTryOut('GETapi-malettes');" hidden>Cancel</button>&nbsp;&nbsp;
-    <button type="submit" style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;" id="btn-executetryout-GETapi-malettes" hidden>Send Request 💥</button>
-    </h3>
-<p>
-<small class="badge badge-green">GET</small>
- <b><code>api/malettes</code></b>
-</p>
-</form>
-<h2>Display the specified resource.</h2>
-<blockquote>
-<p>Example request:</p>
-</blockquote>
-<pre><code class="language-javascript">const url = new URL(
-    "http://127.0.0.1:8000/api/malettes/eum"
-);
-
-let headers = {
-    "Content-Type": "application/json",
-    "Accept": "application/json",
-};
-
-fetch(url, {
-    method: "GET",
-    headers,
-}).then(response =&gt; response.json());</code></pre>
-<blockquote>
-<p>Example response (401):</p>
-</blockquote>
-<pre><code class="language-json">{
-    "message": "Unauthenticated."
-}</code></pre>
-<div id="execution-results-GETapi-malettes--malette-" hidden>
-    <blockquote>Received response<span id="execution-response-status-GETapi-malettes--malette-"></span>:</blockquote>
-    <pre class="json"><code id="execution-response-content-GETapi-malettes--malette-"></code></pre>
-</div>
-<div id="execution-error-GETapi-malettes--malette-" hidden>
-    <blockquote>Request failed with error:</blockquote>
-    <pre><code id="execution-error-message-GETapi-malettes--malette-"></code></pre>
-</div>
-<form id="form-GETapi-malettes--malette-" data-method="GET" data-path="api/malettes/{malette}" data-authed="0" data-hasfiles="0" data-headers='{"Content-Type":"application\/json","Accept":"application\/json"}' onsubmit="event.preventDefault(); executeTryOut('GETapi-malettes--malette-', this);">
-<h3>
-    Request&nbsp;&nbsp;&nbsp;
-        <button type="button" style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;" id="btn-tryout-GETapi-malettes--malette-" onclick="tryItOut('GETapi-malettes--malette-');">Try it out ⚡</button>
-    <button type="button" style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;" id="btn-canceltryout-GETapi-malettes--malette-" onclick="cancelTryOut('GETapi-malettes--malette-');" hidden>Cancel</button>&nbsp;&nbsp;
-    <button type="submit" style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;" id="btn-executetryout-GETapi-malettes--malette-" hidden>Send Request 💥</button>
-    </h3>
-<p>
-<small class="badge badge-green">GET</small>
- <b><code>api/malettes/{malette}</code></b>
-</p>
-<h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
-<p>
-<b><code>malette</code></b>&nbsp;&nbsp;<small>string</small>  &nbsp;
-<input type="text" name="malette" data-endpoint="GETapi-malettes--malette-" data-component="url" required  hidden>
 <br>
 </p>
 </form>
@@ -1233,7 +1141,7 @@ fetch(url, {
 <p>Example request:</p>
 </blockquote>
 <pre><code class="language-javascript">const url = new URL(
-    "http://127.0.0.1:8000/api/reservations/quisquam"
+    "http://127.0.0.1:8000/api/reservations/inventore"
 );
 
 let headers = {
@@ -1325,7 +1233,7 @@ fetch(url, {
 <p>Example request:</p>
 </blockquote>
 <pre><code class="language-javascript">const url = new URL(
-    "http://127.0.0.1:8000/api/materiels/labore"
+    "http://127.0.0.1:8000/api/materiels/reiciendis"
 );
 
 let headers = {
@@ -1411,7 +1319,7 @@ fetch(url, {
 <p>Example request:</p>
 </blockquote>
 <pre><code class="language-javascript">const url = new URL(
-    "http://127.0.0.1:8000/api/types/necessitatibus"
+    "http://127.0.0.1:8000/api/types/impedit"
 );
 
 let headers = {
@@ -1458,7 +1366,7 @@ fetch(url, {
 <p>Example request:</p>
 </blockquote>
 <pre><code class="language-javascript">const url = new URL(
-    "http://127.0.0.1:8000/api/types/et"
+    "http://127.0.0.1:8000/api/types/porro"
 );
 
 let headers = {
@@ -1493,133 +1401,6 @@ fetch(url, {
 <p>
 <b><code>type</code></b>&nbsp;&nbsp;<small>string</small>  &nbsp;
 <input type="text" name="type" data-endpoint="DELETEapi-types--type-" data-component="url" required  hidden>
-<br>
-</p>
-</form>
-<h2>Store a newly created resource in storage.</h2>
-<blockquote>
-<p>Example request:</p>
-</blockquote>
-<pre><code class="language-javascript">const url = new URL(
-    "http://127.0.0.1:8000/api/malettes"
-);
-
-let headers = {
-    "Content-Type": "application/json",
-    "Accept": "application/json",
-};
-
-fetch(url, {
-    method: "POST",
-    headers,
-}).then(response =&gt; response.json());</code></pre>
-<div id="execution-results-POSTapi-malettes" hidden>
-    <blockquote>Received response<span id="execution-response-status-POSTapi-malettes"></span>:</blockquote>
-    <pre class="json"><code id="execution-response-content-POSTapi-malettes"></code></pre>
-</div>
-<div id="execution-error-POSTapi-malettes" hidden>
-    <blockquote>Request failed with error:</blockquote>
-    <pre><code id="execution-error-message-POSTapi-malettes"></code></pre>
-</div>
-<form id="form-POSTapi-malettes" data-method="POST" data-path="api/malettes" data-authed="0" data-hasfiles="0" data-headers='{"Content-Type":"application\/json","Accept":"application\/json"}' onsubmit="event.preventDefault(); executeTryOut('POSTapi-malettes', this);">
-<h3>
-    Request&nbsp;&nbsp;&nbsp;
-        <button type="button" style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;" id="btn-tryout-POSTapi-malettes" onclick="tryItOut('POSTapi-malettes');">Try it out ⚡</button>
-    <button type="button" style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;" id="btn-canceltryout-POSTapi-malettes" onclick="cancelTryOut('POSTapi-malettes');" hidden>Cancel</button>&nbsp;&nbsp;
-    <button type="submit" style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;" id="btn-executetryout-POSTapi-malettes" hidden>Send Request 💥</button>
-    </h3>
-<p>
-<small class="badge badge-black">POST</small>
- <b><code>api/malettes</code></b>
-</p>
-</form>
-<h2>Update the specified resource in storage.</h2>
-<blockquote>
-<p>Example request:</p>
-</blockquote>
-<pre><code class="language-javascript">const url = new URL(
-    "http://127.0.0.1:8000/api/malettes/sunt"
-);
-
-let headers = {
-    "Content-Type": "application/json",
-    "Accept": "application/json",
-};
-
-fetch(url, {
-    method: "PUT",
-    headers,
-}).then(response =&gt; response.json());</code></pre>
-<div id="execution-results-PUTapi-malettes--malette-" hidden>
-    <blockquote>Received response<span id="execution-response-status-PUTapi-malettes--malette-"></span>:</blockquote>
-    <pre class="json"><code id="execution-response-content-PUTapi-malettes--malette-"></code></pre>
-</div>
-<div id="execution-error-PUTapi-malettes--malette-" hidden>
-    <blockquote>Request failed with error:</blockquote>
-    <pre><code id="execution-error-message-PUTapi-malettes--malette-"></code></pre>
-</div>
-<form id="form-PUTapi-malettes--malette-" data-method="PUT" data-path="api/malettes/{malette}" data-authed="0" data-hasfiles="0" data-headers='{"Content-Type":"application\/json","Accept":"application\/json"}' onsubmit="event.preventDefault(); executeTryOut('PUTapi-malettes--malette-', this);">
-<h3>
-    Request&nbsp;&nbsp;&nbsp;
-        <button type="button" style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;" id="btn-tryout-PUTapi-malettes--malette-" onclick="tryItOut('PUTapi-malettes--malette-');">Try it out ⚡</button>
-    <button type="button" style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;" id="btn-canceltryout-PUTapi-malettes--malette-" onclick="cancelTryOut('PUTapi-malettes--malette-');" hidden>Cancel</button>&nbsp;&nbsp;
-    <button type="submit" style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;" id="btn-executetryout-PUTapi-malettes--malette-" hidden>Send Request 💥</button>
-    </h3>
-<p>
-<small class="badge badge-darkblue">PUT</small>
- <b><code>api/malettes/{malette}</code></b>
-</p>
-<p>
-<small class="badge badge-purple">PATCH</small>
- <b><code>api/malettes/{malette}</code></b>
-</p>
-<h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
-<p>
-<b><code>malette</code></b>&nbsp;&nbsp;<small>string</small>  &nbsp;
-<input type="text" name="malette" data-endpoint="PUTapi-malettes--malette-" data-component="url" required  hidden>
-<br>
-</p>
-</form>
-<h2>Remove the specified resource from storage.</h2>
-<blockquote>
-<p>Example request:</p>
-</blockquote>
-<pre><code class="language-javascript">const url = new URL(
-    "http://127.0.0.1:8000/api/malettes/magni"
-);
-
-let headers = {
-    "Content-Type": "application/json",
-    "Accept": "application/json",
-};
-
-fetch(url, {
-    method: "DELETE",
-    headers,
-}).then(response =&gt; response.json());</code></pre>
-<div id="execution-results-DELETEapi-malettes--malette-" hidden>
-    <blockquote>Received response<span id="execution-response-status-DELETEapi-malettes--malette-"></span>:</blockquote>
-    <pre class="json"><code id="execution-response-content-DELETEapi-malettes--malette-"></code></pre>
-</div>
-<div id="execution-error-DELETEapi-malettes--malette-" hidden>
-    <blockquote>Request failed with error:</blockquote>
-    <pre><code id="execution-error-message-DELETEapi-malettes--malette-"></code></pre>
-</div>
-<form id="form-DELETEapi-malettes--malette-" data-method="DELETE" data-path="api/malettes/{malette}" data-authed="0" data-hasfiles="0" data-headers='{"Content-Type":"application\/json","Accept":"application\/json"}' onsubmit="event.preventDefault(); executeTryOut('DELETEapi-malettes--malette-', this);">
-<h3>
-    Request&nbsp;&nbsp;&nbsp;
-        <button type="button" style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;" id="btn-tryout-DELETEapi-malettes--malette-" onclick="tryItOut('DELETEapi-malettes--malette-');">Try it out ⚡</button>
-    <button type="button" style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;" id="btn-canceltryout-DELETEapi-malettes--malette-" onclick="cancelTryOut('DELETEapi-malettes--malette-');" hidden>Cancel</button>&nbsp;&nbsp;
-    <button type="submit" style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;" id="btn-executetryout-DELETEapi-malettes--malette-" hidden>Send Request 💥</button>
-    </h3>
-<p>
-<small class="badge badge-red">DELETE</small>
- <b><code>api/malettes/{malette}</code></b>
-</p>
-<h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
-<p>
-<b><code>malette</code></b>&nbsp;&nbsp;<small>string</small>  &nbsp;
-<input type="text" name="malette" data-endpoint="DELETEapi-malettes--malette-" data-component="url" required  hidden>
 <br>
 </p>
 </form>
@@ -1665,7 +1446,7 @@ fetch(url, {
 <p>Example request:</p>
 </blockquote>
 <pre><code class="language-javascript">const url = new URL(
-    "http://127.0.0.1:8000/api/materiels/laudantium"
+    "http://127.0.0.1:8000/api/materiels/deleniti"
 );
 
 let headers = {
@@ -1712,7 +1493,7 @@ fetch(url, {
 <p>Example request:</p>
 </blockquote>
 <pre><code class="language-javascript">const url = new URL(
-    "http://127.0.0.1:8000/api/materiels/a"
+    "http://127.0.0.1:8000/api/materiels/sit"
 );
 
 let headers = {
@@ -1932,11 +1713,11 @@ fetch(url, {
 );
 
 let params = {
-    "id_malettes[]": "17",
-    "id_materiels[]": "20",
-    "reservation_id": "5",
-    "date_debut": "reprehenderit",
-    "date_fin": "eveniet",
+    "id_malettes[]": "1",
+    "id_materiels[]": "8",
+    "reservation_id": "20",
+    "date_debut": "necessitatibus",
+    "date_fin": "nemo",
 };
 Object.keys(params)
     .forEach(key =&gt; url.searchParams.append(key, params[key]));
@@ -2006,11 +1787,11 @@ DateTime Rendez-vous de retour de matériel</p>
 <p>Example request:</p>
 </blockquote>
 <pre><code class="language-javascript">const url = new URL(
-    "http://127.0.0.1:8000/api/estpretes/consequatur"
+    "http://127.0.0.1:8000/api/estpretes/nobis"
 );
 
 let params = {
-    "id_estprete[]": "2",
+    "id_estprete[]": "5",
 };
 Object.keys(params)
     .forEach(key =&gt; url.searchParams.append(key, params[key]));
@@ -2246,11 +2027,11 @@ ID du gestionnaire à afficher</p>
 <p>Example request:</p>
 </blockquote>
 <pre><code class="language-javascript">const url = new URL(
-    "http://127.0.0.1:8000/api/gestionnaires/4/rdv"
+    "http://127.0.0.1:8000/api/gestionnaires/18/rdv"
 );
 
 let params = {
-    "start_day": "vitae",
+    "start_day": "id",
 };
 Object.keys(params)
     .forEach(key =&gt; url.searchParams.append(key, params[key]));
@@ -2356,16 +2137,16 @@ fetch(url, {
 <p>Example request:</p>
 </blockquote>
 <pre><code class="language-javascript">const url = new URL(
-    "http://127.0.0.1:8000/api/gestionnaires/16"
+    "http://127.0.0.1:8000/api/gestionnaires/19"
 );
 
 let params = {
-    "nom": "neque",
-    "prenom": "rerum",
-    "mail": "molestiae",
-    "id_univ": "quia",
+    "nom": "veniam",
+    "prenom": "voluptatibus",
+    "mail": "nesciunt",
+    "id_univ": "aspernatur",
     "admin": "",
-    "departement_id": "19",
+    "departement_id": "1",
 };
 Object.keys(params)
     .forEach(key =&gt; url.searchParams.append(key, params[key]));
@@ -2453,7 +2234,7 @@ ID Pictum du département correspondant</p>
 <p>Example request:</p>
 </blockquote>
 <pre><code class="language-javascript">const url = new URL(
-    "http://127.0.0.1:8000/api/gestionnaires/20"
+    "http://127.0.0.1:8000/api/gestionnaires/7"
 );
 
 let headers = {
@@ -2561,7 +2342,7 @@ fetch(url, {
 <p>Example request:</p>
 </blockquote>
 <pre><code class="language-javascript">const url = new URL(
-    "http://127.0.0.1:8000/api/indisponibilites/esse"
+    "http://127.0.0.1:8000/api/indisponibilites/unde"
 );
 
 let headers = {
@@ -2619,7 +2400,7 @@ let headers = {
 };
 
 let body = {
-    "array_indispo[]": "non"
+    "array_indispo[]": "et"
 }
 
 fetch(url, {
@@ -2683,13 +2464,13 @@ Id Pictum du gestionnaire concerné</p>
 <p>Example request:</p>
 </blockquote>
 <pre><code class="language-javascript">const url = new URL(
-    "http://127.0.0.1:8000/api/indisponibilites/velit"
+    "http://127.0.0.1:8000/api/indisponibilites/dolorum"
 );
 
 let params = {
-    "date_debut": "delectus",
-    "date_fin": "ad",
-    "id_gestionnaire": "7",
+    "date_debut": "voluptate",
+    "date_fin": "ut",
+    "id_gestionnaire": "3",
 };
 Object.keys(params)
     .forEach(key =&gt; url.searchParams.append(key, params[key]));
@@ -2761,7 +2542,7 @@ Id Pictum du gestionnaire concerné</p>
 <p>Example request:</p>
 </blockquote>
 <pre><code class="language-javascript">const url = new URL(
-    "http://127.0.0.1:8000/api/indisponibilites/et"
+    "http://127.0.0.1:8000/api/indisponibilites/rem"
 );
 
 let headers = {
@@ -2859,11 +2640,11 @@ let headers = {
 };
 
 let body = {
-    "from_address": "doloribus",
-    "from_name": "amet",
-    "to_address": "et",
-    "content": "ullam",
-    "subject": "harum"
+    "from_address": "necessitatibus",
+    "from_name": "illum",
+    "to_address": "doloremque",
+    "content": "totam",
+    "subject": "veritatis"
 }
 
 fetch(url, {
@@ -2940,10 +2721,10 @@ let headers = {
 };
 
 let body = {
-    "id_gestionnaire": 5,
-    "to_address": "esse",
-    "content_mail": "enim",
-    "subject": "ad"
+    "id_gestionnaire": 17,
+    "to_address": "modi",
+    "content_mail": "in",
+    "subject": "optio"
 }
 
 fetch(url, {
@@ -2999,6 +2780,383 @@ Contenu du mail</p>
 <br>
 Objet du mail</p>
 
+</form><h1>Malette</h1>
+<h2>Display a listing of the Malettes.</h2>
+<p><small class="badge badge-darkred">requires authentication</small></p>
+<blockquote>
+<p>Example request:</p>
+</blockquote>
+<pre><code class="language-javascript">const url = new URL(
+    "http://127.0.0.1:8000/api/malettes"
+);
+
+let headers = {
+    "Authorization": "Bearer {YOUR_AUTH_KEY}",
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+fetch(url, {
+    method: "GET",
+    headers,
+}).then(response =&gt; response.json());</code></pre>
+<blockquote>
+<p>Example response (200):</p>
+</blockquote>
+<pre><code class="language-json">[
+    {
+        "id": 1,
+        "nom": "Etha Weber",
+        "ref": "L1_MAL_PHOTO_03",
+        "photo": "https:\/\/via.placeholder.com\/200x200.png\/006688?text=laborum",
+        "materiels": [
+            {
+                "id": 1,
+                "created_at": "2020-12-03T17:31:12.000000Z",
+                "updated_at": "2020-12-03T17:31:12.000000Z",
+                "ref": "L2_PER_RHO_01",
+                "nom": "Brionna Funk",
+                "photo": "https:\/\/via.placeholder.com\/200x200.png\/00bb33?text=fugiat",
+                "usage": "Hatter went on, 'if you don't like the look of the busy farm-yard--while the lowing of the Nile On every golden scale! 'How cheerfully he seems to be found: all she could do, lying down on one of.",
+                "carac": "Queen added to one of the goldfish kept running in her face, and was in the face. 'I'll put a stop to this,' she said to herself; 'I should think very likely to eat or drink anything; so I'll just.",
+                "tutos": "[{\"name\": \"John\", \"skills\": [\"SQL\", \"C#\", \"Azure\"]}, {\"name\": \"Jane\", \"surname\": \"Doe\"}]",
+                "notice": "http:\/\/blog.foto24.com\/manuel-utilisation-panasonic-lumix-dmc-fz300.pdf",
+                "indisp": 0,
+                "indisp_raison": "Mabel, for I know who I WAS when I was going to.",
+                "type_id": 19,
+                "malette_id": 1,
+                "departement_id": 7
+            },
+            {
+                "id": 7,
+                "created_at": "2020-12-03T17:31:12.000000Z",
+                "updated_at": "2020-12-03T17:31:12.000000Z",
+                "ref": "L2_PER_RHO_01",
+                "nom": "Terrell Murray",
+                "photo": "https:\/\/via.placeholder.com\/200x200.png\/004466?text=placeat",
+                "usage": "I can creep under the table: she opened it, and they sat down, and nobody spoke for some way, and then keep tight hold of its right ear and left foot, so as to bring tears into her eyes; and once.",
+                "carac": "YOU sing,' said the Hatter. 'He won't stand beating. Now, if you want to stay in here any longer!' She waited for some time after the others. 'We must burn the house of the goldfish kept running in.",
+                "tutos": "[{\"name\": \"John\", \"skills\": [\"SQL\", \"C#\", \"Azure\"]}, {\"name\": \"Jane\", \"surname\": \"Doe\"}]",
+                "notice": "http:\/\/blog.foto24.com\/manuel-utilisation-panasonic-lumix-dmc-fz300.pdf",
+                "indisp": 0,
+                "indisp_raison": "Alice whispered, 'that it's done by everybody.",
+                "type_id": 18,
+                "malette_id": 1,
+                "departement_id": 2
+            },
+            {
+                "id": 8,
+                "created_at": "2020-12-03T17:31:12.000000Z",
+                "updated_at": "2020-12-03T17:31:12.000000Z",
+                "ref": "L2_ENR_ZOOM_01",
+                "nom": "Tristin Erdman",
+                "photo": "https:\/\/via.placeholder.com\/200x200.png\/007777?text=vero",
+                "usage": "I've had such a long hookah, and taking not the smallest notice of them can explain it,' said the Mock Turtle yawned and shut his eyes.--'Tell her about the same words as before, 'It's all her.",
+                "carac": "Alice. 'Exactly so,' said the Gryphon. 'We can do without lobsters, you know. So you see, as she could, and waited till the eyes appeared, and then nodded. 'It's no use in knocking,' said the.",
+                "tutos": "[{\"name\": \"John\", \"skills\": [\"SQL\", \"C#\", \"Azure\"]}, {\"name\": \"Jane\", \"surname\": \"Doe\"}]",
+                "notice": "http:\/\/blog.foto24.com\/manuel-utilisation-panasonic-lumix-dmc-fz300.pdf",
+                "indisp": 1,
+                "indisp_raison": "ONE.' 'One, indeed!' said the Footman. 'That's.",
+                "type_id": 17,
+                "malette_id": 1,
+                "departement_id": 6
+            },
+            {
+                "id": 46,
+                "created_at": "2020-12-03T17:31:13.000000Z",
+                "updated_at": "2020-12-03T17:31:13.000000Z",
+                "ref": "L2_ENR_ZOOM_01",
+                "nom": "Dr. Jesus Mitchell",
+                "photo": "https:\/\/via.placeholder.com\/200x200.png\/00ff33?text=voluptatem",
+                "usage": "I know!' exclaimed Alice, who had spoken first. 'That's none of them hit her in such confusion that she was now the right words,' said poor Alice, 'when one wasn't always growing larger and smaller.",
+                "carac": "Alice, jumping up in her life; it was quite surprised to see some meaning in it,' but none of my life.' 'You are old,' said the Dormouse; 'VERY ill.' Alice tried to curtsey as she had made her so.",
+                "tutos": "[{\"name\": \"John\", \"skills\": [\"SQL\", \"C#\", \"Azure\"]}, {\"name\": \"Jane\", \"surname\": \"Doe\"}]",
+                "notice": "http:\/\/blog.foto24.com\/manuel-utilisation-panasonic-lumix-dmc-fz300.pdf",
+                "indisp": 0,
+                "indisp_raison": "I then? Tell me that first, and then added them.",
+                "type_id": 16,
+                "malette_id": 1,
+                "departement_id": 2
+            }
+        ]
+    }
+]</code></pre>
+<div id="execution-results-GETapi-malettes" hidden>
+    <blockquote>Received response<span id="execution-response-status-GETapi-malettes"></span>:</blockquote>
+    <pre class="json"><code id="execution-response-content-GETapi-malettes"></code></pre>
+</div>
+<div id="execution-error-GETapi-malettes" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-GETapi-malettes"></code></pre>
+</div>
+<form id="form-GETapi-malettes" data-method="GET" data-path="api/malettes" data-authed="1" data-hasfiles="0" data-headers='{"Authorization":"Bearer {YOUR_AUTH_KEY}","Content-Type":"application\/json","Accept":"application\/json"}' onsubmit="event.preventDefault(); executeTryOut('GETapi-malettes', this);">
+<h3>
+    Request&nbsp;&nbsp;&nbsp;
+        <button type="button" style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;" id="btn-tryout-GETapi-malettes" onclick="tryItOut('GETapi-malettes');">Try it out ⚡</button>
+    <button type="button" style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;" id="btn-canceltryout-GETapi-malettes" onclick="cancelTryOut('GETapi-malettes');" hidden>Cancel</button>&nbsp;&nbsp;
+    <button type="submit" style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;" id="btn-executetryout-GETapi-malettes" hidden>Send Request 💥</button>
+    </h3>
+<p>
+<small class="badge badge-green">GET</small>
+ <b><code>api/malettes</code></b>
+</p>
+<p>
+<label id="auth-GETapi-malettes" hidden>Authorization header: <b><code>Bearer </code></b><input type="text" name="Authorization" data-prefix="Bearer " data-endpoint="GETapi-malettes" data-component="header"></label>
+</p>
+</form>
+<h2>Display the specified Malette</h2>
+<p><small class="badge badge-darkred">requires authentication</small></p>
+<blockquote>
+<p>Example request:</p>
+</blockquote>
+<pre><code class="language-javascript">const url = new URL(
+    "http://127.0.0.1:8000/api/malettes/voluptas"
+);
+
+let headers = {
+    "Authorization": "Bearer {YOUR_AUTH_KEY}",
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+fetch(url, {
+    method: "GET",
+    headers,
+}).then(response =&gt; response.json());</code></pre>
+<blockquote>
+<p>Example response (200):</p>
+</blockquote>
+<pre><code class="language-json">{
+    "id": 2,
+    "created_at": "2020-12-03T17:30:34.000000Z",
+    "updated_at": "2020-12-03T17:30:34.000000Z",
+    "nom": "Iliana Graham",
+    "ref": "L1_MAL_PHOTO_03",
+    "photo": "https:\/\/via.placeholder.com\/200x200.png\/00ee22?text=doloremque"
+}</code></pre>
+<div id="execution-results-GETapi-malettes--malette-" hidden>
+    <blockquote>Received response<span id="execution-response-status-GETapi-malettes--malette-"></span>:</blockquote>
+    <pre class="json"><code id="execution-response-content-GETapi-malettes--malette-"></code></pre>
+</div>
+<div id="execution-error-GETapi-malettes--malette-" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-GETapi-malettes--malette-"></code></pre>
+</div>
+<form id="form-GETapi-malettes--malette-" data-method="GET" data-path="api/malettes/{malette}" data-authed="1" data-hasfiles="0" data-headers='{"Authorization":"Bearer {YOUR_AUTH_KEY}","Content-Type":"application\/json","Accept":"application\/json"}' onsubmit="event.preventDefault(); executeTryOut('GETapi-malettes--malette-', this);">
+<h3>
+    Request&nbsp;&nbsp;&nbsp;
+        <button type="button" style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;" id="btn-tryout-GETapi-malettes--malette-" onclick="tryItOut('GETapi-malettes--malette-');">Try it out ⚡</button>
+    <button type="button" style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;" id="btn-canceltryout-GETapi-malettes--malette-" onclick="cancelTryOut('GETapi-malettes--malette-');" hidden>Cancel</button>&nbsp;&nbsp;
+    <button type="submit" style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;" id="btn-executetryout-GETapi-malettes--malette-" hidden>Send Request 💥</button>
+    </h3>
+<p>
+<small class="badge badge-green">GET</small>
+ <b><code>api/malettes/{malette}</code></b>
+</p>
+<p>
+<label id="auth-GETapi-malettes--malette-" hidden>Authorization header: <b><code>Bearer </code></b><input type="text" name="Authorization" data-prefix="Bearer " data-endpoint="GETapi-malettes--malette-" data-component="header"></label>
+</p>
+<h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
+<p>
+<b><code>malette</code></b>&nbsp;&nbsp;<small>string</small>     <i>optional</i> &nbsp;
+<input type="text" name="malette" data-endpoint="GETapi-malettes--malette-" data-component="url"  hidden>
+<br>
+ID Pictum de la malette</p>
+</form>
+<h2>Store a newly created resource in storage.</h2>
+<p><small class="badge badge-darkred">requires authentication</small></p>
+<blockquote>
+<p>Example request:</p>
+</blockquote>
+<pre><code class="language-javascript">const url = new URL(
+    "http://127.0.0.1:8000/api/malettes"
+);
+
+let headers = {
+    "Authorization": "Bearer {YOUR_AUTH_KEY}",
+    "Content-Type": "multipart/form-data",
+    "Accept": "application/json",
+};
+
+const body = new FormData();
+body.append('nom', 'excepturi');
+body.append('ref', 'voluptatem');
+body.append('photo', document.querySelector('input[name="photo"]').files[0]);
+
+fetch(url, {
+    method: "POST",
+    headers,
+    body,
+}).then(response =&gt; response.json());</code></pre>
+<div id="execution-results-POSTapi-malettes" hidden>
+    <blockquote>Received response<span id="execution-response-status-POSTapi-malettes"></span>:</blockquote>
+    <pre class="json"><code id="execution-response-content-POSTapi-malettes"></code></pre>
+</div>
+<div id="execution-error-POSTapi-malettes" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-POSTapi-malettes"></code></pre>
+</div>
+<form id="form-POSTapi-malettes" data-method="POST" data-path="api/malettes" data-authed="1" data-hasfiles="1" data-headers='{"Authorization":"Bearer {YOUR_AUTH_KEY}","Content-Type":"multipart\/form-data","Accept":"application\/json"}' onsubmit="event.preventDefault(); executeTryOut('POSTapi-malettes', this);">
+<h3>
+    Request&nbsp;&nbsp;&nbsp;
+        <button type="button" style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;" id="btn-tryout-POSTapi-malettes" onclick="tryItOut('POSTapi-malettes');">Try it out ⚡</button>
+    <button type="button" style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;" id="btn-canceltryout-POSTapi-malettes" onclick="cancelTryOut('POSTapi-malettes');" hidden>Cancel</button>&nbsp;&nbsp;
+    <button type="submit" style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;" id="btn-executetryout-POSTapi-malettes" hidden>Send Request 💥</button>
+    </h3>
+<p>
+<small class="badge badge-black">POST</small>
+ <b><code>api/malettes</code></b>
+</p>
+<p>
+<label id="auth-POSTapi-malettes" hidden>Authorization header: <b><code>Bearer </code></b><input type="text" name="Authorization" data-prefix="Bearer " data-endpoint="POSTapi-malettes" data-component="header"></label>
+</p>
+<h4 class="fancy-heading-panel"><b>Body Parameters</b></h4>
+<p>
+<b><code>nom</code></b>&nbsp;&nbsp;<small>string</small>  &nbsp;
+<input type="text" name="nom" data-endpoint="POSTapi-malettes" data-component="body" required  hidden>
+<br>
+Nom affiché de la malette</p>
+<p>
+<b><code>ref</code></b>&nbsp;&nbsp;<small>string</small>  &nbsp;
+<input type="text" name="ref" data-endpoint="POSTapi-malettes" data-component="body" required  hidden>
+<br>
+Reférence de la malette en particulier</p>
+<p>
+<b><code>photo</code></b>&nbsp;&nbsp;<small>file</small>  &nbsp;
+<input type="file" name="photo" data-endpoint="POSTapi-malettes" data-component="body" required  hidden>
+<br>
+Photo de la malette</p>
+
+</form>
+<h2>Update the specified Malette in storage.</h2>
+<p><small class="badge badge-darkred">requires authentication</small></p>
+<blockquote>
+<p>Example request:</p>
+</blockquote>
+<pre><code class="language-javascript">const url = new URL(
+    "http://127.0.0.1:8000/api/malettes/debitis"
+);
+
+let headers = {
+    "Authorization": "Bearer {YOUR_AUTH_KEY}",
+    "Content-Type": "multipart/form-data",
+    "Accept": "application/json",
+};
+
+const body = new FormData();
+body.append('nom', 'aut');
+body.append('ref', 'laudantium');
+body.append('photo', document.querySelector('input[name="photo"]').files[0]);
+
+fetch(url, {
+    method: "PUT",
+    headers,
+    body,
+}).then(response =&gt; response.json());</code></pre>
+<div id="execution-results-PUTapi-malettes--malette-" hidden>
+    <blockquote>Received response<span id="execution-response-status-PUTapi-malettes--malette-"></span>:</blockquote>
+    <pre class="json"><code id="execution-response-content-PUTapi-malettes--malette-"></code></pre>
+</div>
+<div id="execution-error-PUTapi-malettes--malette-" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-PUTapi-malettes--malette-"></code></pre>
+</div>
+<form id="form-PUTapi-malettes--malette-" data-method="PUT" data-path="api/malettes/{malette}" data-authed="1" data-hasfiles="1" data-headers='{"Authorization":"Bearer {YOUR_AUTH_KEY}","Content-Type":"multipart\/form-data","Accept":"application\/json"}' onsubmit="event.preventDefault(); executeTryOut('PUTapi-malettes--malette-', this);">
+<h3>
+    Request&nbsp;&nbsp;&nbsp;
+        <button type="button" style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;" id="btn-tryout-PUTapi-malettes--malette-" onclick="tryItOut('PUTapi-malettes--malette-');">Try it out ⚡</button>
+    <button type="button" style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;" id="btn-canceltryout-PUTapi-malettes--malette-" onclick="cancelTryOut('PUTapi-malettes--malette-');" hidden>Cancel</button>&nbsp;&nbsp;
+    <button type="submit" style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;" id="btn-executetryout-PUTapi-malettes--malette-" hidden>Send Request 💥</button>
+    </h3>
+<p>
+<small class="badge badge-darkblue">PUT</small>
+ <b><code>api/malettes/{malette}</code></b>
+</p>
+<p>
+<small class="badge badge-purple">PATCH</small>
+ <b><code>api/malettes/{malette}</code></b>
+</p>
+<p>
+<label id="auth-PUTapi-malettes--malette-" hidden>Authorization header: <b><code>Bearer </code></b><input type="text" name="Authorization" data-prefix="Bearer " data-endpoint="PUTapi-malettes--malette-" data-component="header"></label>
+</p>
+<h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
+<p>
+<b><code>malette</code></b>&nbsp;&nbsp;<small>string</small>     <i>optional</i> &nbsp;
+<input type="text" name="malette" data-endpoint="PUTapi-malettes--malette-" data-component="url"  hidden>
+<br>
+ID Pictum de la malette</p>
+<h4 class="fancy-heading-panel"><b>Body Parameters</b></h4>
+<p>
+<b><code>nom</code></b>&nbsp;&nbsp;<small>string</small>  &nbsp;
+<input type="text" name="nom" data-endpoint="PUTapi-malettes--malette-" data-component="body" required  hidden>
+<br>
+Nom affiché de la malette</p>
+<p>
+<b><code>ref</code></b>&nbsp;&nbsp;<small>string</small>  &nbsp;
+<input type="text" name="ref" data-endpoint="PUTapi-malettes--malette-" data-component="body" required  hidden>
+<br>
+Reférence de la malette en particulier</p>
+<p>
+<b><code>photo</code></b>&nbsp;&nbsp;<small>file</small>  &nbsp;
+<input type="file" name="photo" data-endpoint="PUTapi-malettes--malette-" data-component="body" required  hidden>
+<br>
+Photo de la malette</p>
+
+</form>
+<h2>Remove the specified resource from storage.</h2>
+<p><small class="badge badge-darkred">requires authentication</small></p>
+<blockquote>
+<p>Example request:</p>
+</blockquote>
+<pre><code class="language-javascript">const url = new URL(
+    "http://127.0.0.1:8000/api/malettes/omnis"
+);
+
+let headers = {
+    "Authorization": "Bearer {YOUR_AUTH_KEY}",
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+fetch(url, {
+    method: "DELETE",
+    headers,
+}).then(response =&gt; response.json());</code></pre>
+<blockquote>
+<p>Example response (200):</p>
+</blockquote>
+<pre><code class="language-json">
+{
+     "Delete OK"
+}</code></pre>
+<div id="execution-results-DELETEapi-malettes--malette-" hidden>
+    <blockquote>Received response<span id="execution-response-status-DELETEapi-malettes--malette-"></span>:</blockquote>
+    <pre class="json"><code id="execution-response-content-DELETEapi-malettes--malette-"></code></pre>
+</div>
+<div id="execution-error-DELETEapi-malettes--malette-" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-DELETEapi-malettes--malette-"></code></pre>
+</div>
+<form id="form-DELETEapi-malettes--malette-" data-method="DELETE" data-path="api/malettes/{malette}" data-authed="1" data-hasfiles="0" data-headers='{"Authorization":"Bearer {YOUR_AUTH_KEY}","Content-Type":"application\/json","Accept":"application\/json"}' onsubmit="event.preventDefault(); executeTryOut('DELETEapi-malettes--malette-', this);">
+<h3>
+    Request&nbsp;&nbsp;&nbsp;
+        <button type="button" style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;" id="btn-tryout-DELETEapi-malettes--malette-" onclick="tryItOut('DELETEapi-malettes--malette-');">Try it out ⚡</button>
+    <button type="button" style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;" id="btn-canceltryout-DELETEapi-malettes--malette-" onclick="cancelTryOut('DELETEapi-malettes--malette-');" hidden>Cancel</button>&nbsp;&nbsp;
+    <button type="submit" style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;" id="btn-executetryout-DELETEapi-malettes--malette-" hidden>Send Request 💥</button>
+    </h3>
+<p>
+<small class="badge badge-red">DELETE</small>
+ <b><code>api/malettes/{malette}</code></b>
+</p>
+<p>
+<label id="auth-DELETEapi-malettes--malette-" hidden>Authorization header: <b><code>Bearer </code></b><input type="text" name="Authorization" data-prefix="Bearer " data-endpoint="DELETEapi-malettes--malette-" data-component="header"></label>
+</p>
+<h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
+<p>
+<b><code>malette</code></b>&nbsp;&nbsp;<small>string</small>     <i>optional</i> &nbsp;
+<input type="text" name="malette" data-endpoint="DELETEapi-malettes--malette-" data-component="url"  hidden>
+<br>
+ID Pictum de la malette</p>
 </form>
     </div>
     <div class="dark-box">
