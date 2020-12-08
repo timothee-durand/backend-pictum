@@ -26,7 +26,7 @@ class cribm_ldap_api {
          *
          * @var string the config file set to default
          */
-        private $configFile='./config/default.json';
+        private $configFile= __DIR__.'/config/default.json';
 
         /**
          *
@@ -81,8 +81,10 @@ class cribm_ldap_api {
                     if(!$configFile){
                         $configFile=$this->configFile;
                     }
+                    //echo "test".json_encode(file_exists($configFile))."path".$configFile;
                     if(is_file($configFile)){
                         $this->config= json_decode(file_get_contents($configFile),TRUE);
+
                     }
                 }
                 return($this->config);

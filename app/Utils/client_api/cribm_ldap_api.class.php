@@ -1,5 +1,5 @@
 <?php
-
+namespace App\Http\Controllers\;
 /**
  * Description of cribm_ldap_api
  *
@@ -13,7 +13,6 @@
  */
 class cribm_ldap_api {
 
-
     // ---------- variables ---------- //
 
         /**
@@ -26,7 +25,7 @@ class cribm_ldap_api {
          *
          * @var string the config file set to default
          */
-        private $configFile='./config/default.json';
+        private $configFile= './config/default.json';
 
         /**
          *
@@ -81,6 +80,7 @@ class cribm_ldap_api {
                     if(!$configFile){
                         $configFile=$this->configFile;
                     }
+                    echo "file". file_exists($configFile);
                     if(is_file($configFile)){
                         $this->config= json_decode(file_get_contents($configFile),TRUE);
                     }

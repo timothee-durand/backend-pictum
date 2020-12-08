@@ -4,7 +4,11 @@ namespace App\Http\Controllers;
 
 use App\Blacklist;
 use App\Gestionnaire;
-use App\Reservation;
+use App\Http\Resources\ReservationResource;
+use App\Reservation;;
+
+
+
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Log;
@@ -15,39 +19,71 @@ class LoginController extends Controller
     private $blackliste = "BL";
     private $gestionnaire = "GEST";
     private $reservation = "RES";
+    private $erreur = "ERR";
+
 
     /**
      * Connexion à Pictum
-     * Pas final
+     * Momentané
+     * Si connexion vers MMI-Projet, faire la requete comme ca :
+     *
+     * let headers = {
+    "Authorization": "Bearer {YOUR_AUTH_KEY}",
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+    };
+     *
+     *axios({
+    method: 'get',
+    url: url,
+     * headers:headers,
+    auth: {
+    username: username,
+    password: password
+    }
+    })
+     *
      * @group Login
+     * @bodyParam username string Nom d'utilisateur universitaire
+     *
      *
      *
      * @param Request $request
      * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\Routing\ResponseFactory|\Illuminate\Http\Response|void
      */
+
     public function login(Request $request)
     {
-        $username = $this->searchUserName($request->username);
+        $user = null;
+        if(env("USE_LDAP")) {
+             $user =  $this->loginLDAP($request->username);
 
-        Log::debug(json_encode($username));
+        } else {
+            $user = $this->searchUserName($request->username);
+        }
 
-        if($username === $this->notFind || $username === $this->blackliste) {
+       // echo "user".json_encode($user);
+
+        if($user === $this->notFind || $user === $this->blackliste || $user === $this->erreur) {
             //si pas trouvé ou blacklisté
-            return response($username, 403);
+            return response($user, 403);
 
         } else {
             //sinon je l'authentifie
 
+            Log::debug(json_encode($user));
+
             //on regarde si c'est un gestionnaire ou une réservation
-            if(array_key_exists("admin", $username->toArray())) {
+            if(array_key_exists("admin", $user->toArray())) {
 
-//                //c'est un gestionnaire
+                //c'est un gestionnaire
+                echo "gestionnaire";
 
-                $token = $username->createToken("user-token")->plainTextToken;
+                $token = $user->createToken("user-token")->plainTextToken;
 
                 $response = [
                     "userType" => $this->gestionnaire,
-                    "user" => $username,
+                    "user" => $user,
                     "token" => $token
                 ];
 
@@ -55,11 +91,12 @@ class LoginController extends Controller
 
             } else {
 
-                $token = $username->createToken("user-token")->plainTextToken;
+
+                $token = $user->createToken("user-token")->plainTextToken;
 
                 $response = [
                     "userType" => $this->reservation,
-                    "user" => $username,
+                    "user" => $user,
                     "token" => $token
                 ];
 
@@ -92,17 +129,65 @@ class LoginController extends Controller
         return $result;
     }
 
-    /**
-     * @hideFromAPIDocumentation
-     *
-     * @return false|\Illuminate\Contracts\Auth\Authenticatable|string|null
-     */
-    public function getLoggedUsers() {
-        if (! Auth::guard('res')->check()) {
-            return 'You are unauthenticated';
+    private function loginLDAP($userName)
+    {
+
+        include(app_path("/Http/Controllers/client_api/UtilsLDAP.php"));
+
+        //recherche si l'username LDAP est bon
+        $ldap  = getInfoLDAP($userName);
+        //echo "test".json_encode($ldap)."\n";
+
+        //si il fait partie de l'iut
+        if($ldap!= false) {
+
+            $pictum = $this->searchUserName($userName);
+
+            //si il n'a pas été trouvé chez nous
+            if($pictum === $this->notFind) {
+                //on l'enregistre
+                $reservation = new Reservation([
+                    "nom"=> $ldap["nom"][0],
+                    "prenom"=>$ldap["prenom"][0],
+                    "mail"=>$ldap["courriel"][0],
+                    "id_univ"=> $userName,
+                    "prof"=> $this->isProf($ldap["inGroup"])
+                ]);
+
+                //si l'enregistrement se passe bien
+                if($reservation->save()) {
+                    return new ReservationResource($reservation);
+                }
+                //sinon
+                else {
+                    return $this->erreur;
+                }
+
+                //echo "res".json_encode($reservation);
+            }
+            //si il est déjà dans la base de donnée on lui retourne ce qu'il faut pour l'identification
+            else {
+                //echo "pictum trouvé cool";
+
+                return $pictum;
+            }
+
+            //echo "pictum".json_encode($pictum);
         } else {
-            return "alles ist richtig";
+            return $this->notFind;
         }
+
+    }
+
+
+    private function isProf(array $groups)
+    {
+        foreach ($groups as $group) {
+            if($group==="enseignant") {
+                return 1;
+            }
+        }
+        return 0;
     }
 
 

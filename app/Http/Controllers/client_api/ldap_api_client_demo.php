@@ -21,7 +21,7 @@ $ldap_api=new cribm_ldap_api();
 
 
 
-$demo1=$ldap_api->getCRIBM_LDAP_InfoUID('tdura');
+$demo1=$ldap_api->getCRIBM_LDAP_InfoUID('tdurand5');
 echo '<hr><h1>Demo1</h1><pre> ' . print_r($demo1, true) . '</pre>';
 
 
