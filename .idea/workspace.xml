@@ -28,26 +28,27 @@
     </select>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c2fc254d-4c34-4822-9cbb-ed6000c1b396" name="Default Changelist" comment="documentation réservation">
+    <list default="true" id="c2fc254d-4c34-4822-9cbb-ed6000c1b396" name="Default Changelist" comment="documentation materiel udpate">
+      <change afterPath="$PROJECT_DIR$/public/client_api/config/.htaccess" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/client_api/config/LISEZMOI.TXT" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/client_api/config/default.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/client_api/config/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/client_api/cribm_ldap_api.class.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/client_api/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/client_api/ldap_api_client_demo.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public_html/client_api/config/.htaccess" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public_html/client_api/config/LISEZMOI.TXT" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public_html/client_api/config/default.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public_html/client_api/config/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public_html/client_api/cribm_ldap_api.class.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public_html/client_api/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public_html/client_api/ldap_api_client_demo.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public_html/storage/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public_html/storage/photo-malette/ts.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public_html/test.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.env-infomaniak" beforeDir="false" afterPath="$PROJECT_DIR$/.env-mmi-projet" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/MaterielController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/MaterielController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/ReservationController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/ReservationController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/TypeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/TypeController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2020_11_07_111418_create_materiels_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_11_07_111418_create_materiels_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/docs/collection.json" beforeDir="false" afterPath="$PROJECT_DIR$/public/docs/collection.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/docs/css/highlight-atelier-cave-light.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/docs/css/highlight-atelier-cave-light.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/docs/css/highlight-darcula.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/docs/css/highlight-darcula.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/docs/css/highlight-monokai-sublime.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/docs/css/highlight-monokai-sublime.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/docs/css/highlight-monokai.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/docs/css/highlight-monokai.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/docs/css/highlight-vs2015.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/docs/css/highlight-vs2015.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/docs/css/print.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/docs/css/print.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/docs/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/docs/css/style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/docs/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/docs/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/docs/js/all.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/docs/js/all.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/docs/js/highlight.pack.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/docs/js/highlight.pack.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/docs/js/tryitout-2.4.2.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/docs/js/tryitout-2.4.2.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/docs/.filemtimes" beforeDir="false" afterPath="$PROJECT_DIR$/resources/docs/.filemtimes" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/docs/groups/type.md" beforeDir="false" afterPath="$PROJECT_DIR$/resources/docs/groups/type.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/api.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/api.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -68,6 +69,9 @@
   </component>
   <component name="GithubDefaultAccount">
     <option name="defaultAccountId" value="7aca0e31-822e-49a2-a27c-03b7194c17e7" />
+  </component>
+  <component name="PackageJsonUpdateNotifier">
+    <dismissed value="$PROJECT_DIR$/package.json" />
   </component>
   <component name="PhpWorkspaceProjectConfiguration">
     <include_path>
@@ -210,23 +214,23 @@
     <property name="WebServerToolWindowPanel.toolwindow.show.date" value="false" />
     <property name="WebServerToolWindowPanel.toolwindow.show.permissions" value="false" />
     <property name="WebServerToolWindowPanel.toolwindow.show.size" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/public/docs" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/public" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="web.server" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\laragon\www\backend-pictum\public" />
+      <recent name="C:\laragon\www\backend-pictum\public\docs" />
+      <recent name="C:\laragon\www\backend-pictum" />
+      <recent name="C:\laragon\www\backend-pictum\resources\views\emails" />
+      <recent name="C:\laragon\www\backend-pictum\app\Mail" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\laragon\www\backend-pictum\public_html" />
       <recent name="C:\laragon\www\backend-pictum\public" />
       <recent name="C:\laragon\www\backend-pictum\resources\views\emails" />
-    </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\laragon\www\backend-pictum\public\docs" />
-      <recent name="C:\laragon\www\backend-pictum\public" />
-      <recent name="C:\laragon\www\backend-pictum" />
-      <recent name="C:\laragon\www\backend-pictum\resources\views\emails" />
-      <recent name="C:\laragon\www\backend-pictum\app\Mail" />
     </key>
   </component>
   <component name="RunManager">
@@ -265,7 +269,11 @@
       <workItem from="1607075217702" duration="13330000" />
       <workItem from="1607094493525" duration="6325000" />
       <workItem from="1607159381744" duration="2898000" />
-      <workItem from="1607162876701" duration="1369000" />
+      <workItem from="1607162876701" duration="2384000" />
+      <workItem from="1607357750353" duration="1030000" />
+      <workItem from="1607358834578" duration="19000" />
+      <workItem from="1607359566743" duration="1882000" />
+      <workItem from="1607421696583" duration="1119000" />
     </task>
     <task id="LOCAL-00001" summary="initial commit">
       <created>1604745505978</created>
@@ -491,7 +499,14 @@
       <option name="project" value="LOCAL" />
       <updated>1607162177738</updated>
     </task>
-    <option name="localTasksCounter" value="33" />
+    <task id="LOCAL-00033" summary="documentation materiel udpate">
+      <created>1607164347722</created>
+      <option name="number" value="00033" />
+      <option name="presentableId" value="LOCAL-00033" />
+      <option name="project" value="LOCAL" />
+      <updated>1607164347722</updated>
+    </task>
+    <option name="localTasksCounter" value="34" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -538,7 +553,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="ajout controller type, blacklist et malette" />
     <MESSAGE value="ajout controller département, estprete, reservation et modification README.md&#10;+ modfification migration materiel" />
     <MESSAGE value="ajout champ rendu dans est prete" />
     <MESSAGE value="ajout controller pour gestionnaire, modif migration aussi et gestion d'envoi avec des ressources pour gestionnaire" />
@@ -563,7 +577,8 @@
     <MESSAGE value="documentation malette" />
     <MESSAGE value="documentation materiel" />
     <MESSAGE value="documentation réservation" />
-    <option name="LAST_COMMIT_MESSAGE" value="documentation réservation" />
+    <MESSAGE value="documentation materiel udpate" />
+    <option name="LAST_COMMIT_MESSAGE" value="documentation materiel udpate" />
   </component>
   <component name="WindowStateProjectService">
     <state x="552" y="178" key="#Deployment" timestamp="1607090229972">
@@ -578,10 +593,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="536" y="165" key="#SSH_Configurations/0.0.1920.1040/-1280.0.1280.984@0.0.1920.1040" timestamp="1607081121584" />
-    <state x="710" y="322" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1607089662838">
+    <state x="710" y="322" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1607164439539">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="710" y="322" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1920.1040/-1280.0.1280.984@0.0.1920.1040" timestamp="1607089662838" />
+    <state x="710" y="322" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1920.1040/-1280.0.1280.984@0.0.1920.1040" timestamp="1607164439539" />
     <state x="710" y="322" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1606671118227" />
     <state x="765" y="202" key="#com.intellij.ide.util.MemberChooser" timestamp="1607014747434">
       <screen x="0" y="0" width="1920" height="1040" />
@@ -606,10 +621,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="585" y="88" key="CommitChangelistDialog2/0.0.1920.1040/-1280.0.1280.984@0.0.1920.1040" timestamp="1605647383844" />
-    <state x="92" y="92" width="1736" height="856" key="DiffContextDialog" timestamp="1605630802028">
+    <state x="92" y="92" width="1736" height="856" key="DiffContextDialog" timestamp="1607358382292">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="92" y="92" width="1736" height="856" key="DiffContextDialog/0.0.1920.1040/-1280.0.1280.984@0.0.1920.1040" timestamp="1605630802028" />
+    <state x="92" y="92" width="1736" height="856" key="DiffContextDialog/0.0.1920.1040/-1280.0.1280.984@0.0.1920.1040" timestamp="1607358382292" />
     <state x="740" y="262" key="FileChooserDialogImpl" timestamp="1607081173499">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -643,10 +658,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="520" height="446" key="SwitcherDM/0.0.1920.1040/-1280.0.1280.984@0.0.1920.1040" timestamp="1605948598993" />
-    <state x="552" y="253" key="Vcs.Push.Dialog.v2" timestamp="1607161525506">
+    <state x="552" y="253" key="Vcs.Push.Dialog.v2" timestamp="1607164349912">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040/-1280.0.1280.984@0.0.1920.1040" timestamp="1607161525506" />
+    <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040/-1280.0.1280.984@0.0.1920.1040" timestamp="1607164349912" />
     <state x="561" y="130" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1605372313142">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
