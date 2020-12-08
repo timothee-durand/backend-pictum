@@ -227,23 +227,33 @@ class GestionnaireController extends Controller
     public function store(Request $request)
     {
 
-        /*TODO : faire en sorte que le remplissage nom/prenom/mail se fasse automatiquement avec LDAP */
 
-        $gestionnaire = new Gestionnaire([
-            "nom" => $request->input("nom"),
-            "prenom" => $request->input("prenom"),
-            "mail" => $request->input("mail"),
-            "id_univ" => $request->input("id_univ"),
-            "admin" => $request->input("admin"),
-            "departement_id" => $request->input("departement_id")
-        ]);
+        include(app_path("/Http/Controllers/client_api/UtilsLDAP.php"));
 
-        if ($gestionnaire->save()) {
-            return json_encode([
-                "method" => "store",
-                "status" => "OK"
+        //recherche si l'username LDAP est bon
+        $ldap  = getInfoLDAP($request->id_univ);
+
+        if ($ldap != false) {
+            $gestionnaire = new Gestionnaire([
+                "nom" =>  $ldap["nom"][0],
+                "prenom" => $ldap["prenom"][0],
+                "mail" => $ldap["courriel"][0],
+                "id_univ" => $request->input("id_univ"),
+                "admin" => $request->input("admin"),
             ]);
+
+            if ($gestionnaire->save()) {
+                return json_encode([
+                    "method" => "store",
+                    "status" => "OK"
+                ]);
+            }
+        } else {
+            return response("NOT FIND", 404);
         }
+
+
+
     }
 
     /**
