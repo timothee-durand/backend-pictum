@@ -13,7 +13,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::middleware(['cors', 'force.json'])->group(function () {
+Route::middleware(['cors', 'force.json', 'cas.auth'])->group(function () {
 
     Route::middleware(['auth:sanctum'])->group(function () {
         //routes api
@@ -56,7 +56,8 @@ Route::middleware(['cors', 'force.json'])->group(function () {
         });
     });
 
-    Route::post('login', "LoginController@login");
+    Route::get('login', "LoginController@login");
+   // Route::get('logout', "LoginController@logout");
 
 
 

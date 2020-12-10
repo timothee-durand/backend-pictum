@@ -28,8 +28,29 @@
     </select>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c2fc254d-4c34-4822-9cbb-ed6000c1b396" name="Default Changelist" comment="prise en compte LDAP - V1">
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/GestionnaireController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/GestionnaireController.php" afterDir="false" />
+    <list default="true" id="c2fc254d-4c34-4822-9cbb-ed6000c1b396" name="Default Changelist" comment="prise en compte LDAP créatioon gestionnaire">
+      <change afterPath="$PROJECT_DIR$/app/Console/Commands/ComposerUpdate.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Http/Middleware/CasAuth.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Library/phpCAS" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Utils/UtilsCAS.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/config/cas.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor.zip" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/backend-pictum.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/backend-pictum.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/LoginController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/LoginController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Kernel.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Kernel.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Utils/client_api/config/.htaccess" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Utils/client_api/config/LISEZMOI.TXT" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Utils/client_api/config/default.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Utils/client_api/config/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Utils/client_api/cribm_ldap_api.class.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Utils/client_api/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Utils/client_api/ldap_api_client_demo.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/app.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/app.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/api.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/api.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -176,6 +197,8 @@
       <path value="$PROJECT_DIR$/vendor/windwalker/renderer" />
       <path value="$PROJECT_DIR$/vendor/windwalker/structure" />
       <path value="$PROJECT_DIR$/vendor/mnapoli/silly" />
+      <path value="$PROJECT_DIR$/vendor/apereo/phpcas" />
+      <path value="$PROJECT_DIR$/vendor/subfission/cas" />
     </include_path>
   </component>
   <component name="ProjectId" id="1jxUt08eyzngbbNGzvPfTHPTvtv" />
@@ -196,25 +219,25 @@
     <property name="WebServerToolWindowPanel.toolwindow.show.date" value="false" />
     <property name="WebServerToolWindowPanel.toolwindow.show.permissions" value="false" />
     <property name="WebServerToolWindowPanel.toolwindow.show.size" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/public" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/app/Http/Middleware" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="settings.editor.selected.configurable" value="web.server" />
+    <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\laragon\www\backend-pictum\public" />
-      <recent name="C:\laragon\www\backend-pictum\app\Http\Controllers" />
-      <recent name="C:\laragon\www\backend-pictum\public\docs" />
-      <recent name="C:\laragon\www\backend-pictum" />
-      <recent name="C:\laragon\www\backend-pictum\resources\views\emails" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\laragon\www\backend-pictum\app\Http\Middleware" />
       <recent name="C:\laragon\www\backend-pictum\app\Http\Controllers\client_api\config" />
       <recent name="C:\laragon\www\backend-pictum\app\Http\Controllers\client_api" />
       <recent name="C:\laragon\www\backend-pictum\app\Utils" />
       <recent name="C:\laragon\www\backend-pictum\app\Utils\config" />
-      <recent name="C:\laragon\www\backend-pictum\public_html" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\laragon\www\backend-pictum\app\Http\Middleware" />
+      <recent name="C:\laragon\www\backend-pictum\public" />
+      <recent name="C:\laragon\www\backend-pictum\app\Http\Controllers" />
+      <recent name="C:\laragon\www\backend-pictum\public\docs" />
+      <recent name="C:\laragon\www\backend-pictum" />
     </key>
   </component>
   <component name="RunManager">
@@ -257,7 +280,9 @@
       <workItem from="1607357750353" duration="1030000" />
       <workItem from="1607358834578" duration="19000" />
       <workItem from="1607359566743" duration="1882000" />
-      <workItem from="1607421696583" duration="10945000" />
+      <workItem from="1607421696583" duration="11230000" />
+      <workItem from="1607524451450" duration="8787000" />
+      <workItem from="1607585458886" duration="7085000" />
     </task>
     <task id="LOCAL-00001" summary="initial commit">
       <created>1604745505978</created>
@@ -504,7 +529,14 @@
       <option name="project" value="LOCAL" />
       <updated>1607438878178</updated>
     </task>
-    <option name="localTasksCounter" value="36" />
+    <task id="LOCAL-00036" summary="prise en compte LDAP créatioon gestionnaire">
+      <created>1607439459026</created>
+      <option name="number" value="00036" />
+      <option name="presentableId" value="LOCAL-00036" />
+      <option name="project" value="LOCAL" />
+      <updated>1607439459026</updated>
+    </task>
+    <option name="localTasksCounter" value="37" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -551,7 +583,9 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="ajout controller pour gestionnaire, modif migration aussi et gestion d'envoi avec des ressources pour gestionnaire" />
+    <ignored-roots>
+      <path value="$PROJECT_DIR$/app/Http/Middleware/phpCAS" />
+    </ignored-roots>
     <MESSAGE value="commencement modif CreneauxController.php" />
     <MESSAGE value="ajout de rendez-vous, modif base de donnée pour ajout gestionnaire attitré a département et réservation" />
     <MESSAGE value="beacuoup de modifs" />
@@ -576,13 +610,14 @@
     <MESSAGE value="documentation materiel udpate" />
     <MESSAGE value="mise en ligne mmi_projet" />
     <MESSAGE value="prise en compte LDAP - V1" />
-    <option name="LAST_COMMIT_MESSAGE" value="prise en compte LDAP - V1" />
+    <MESSAGE value="prise en compte LDAP créatioon gestionnaire" />
+    <option name="LAST_COMMIT_MESSAGE" value="prise en compte LDAP créatioon gestionnaire" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="552" y="178" key="#Deployment" timestamp="1607090229972">
+    <state x="552" y="178" key="#Deployment" timestamp="1607525550948">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="552" y="178" key="#Deployment/0.0.1920.1040/-1280.0.1280.984@0.0.1920.1040" timestamp="1607090229972" />
+    <state x="552" y="178" key="#Deployment/0.0.1920.1040/-1280.0.1280.984@0.0.1920.1040" timestamp="1607525550948" />
     <state x="666" y="291" key="#Log_Highlighting_(ideolog)" timestamp="1607437032458">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -619,14 +654,18 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="585" y="88" key="CommitChangelistDialog2/0.0.1920.1040/-1280.0.1280.984@0.0.1920.1040" timestamp="1605647383844" />
-    <state x="736" y="432" key="ComposerInitDialogKey" timestamp="1607423411100">
+    <state x="736" y="432" key="ComposerInitDialogKey" timestamp="1607524792455">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="736" y="432" key="ComposerInitDialogKey/0.0.1920.1040/-1280.0.1280.984@0.0.1920.1040" timestamp="1607423411100" />
+    <state x="736" y="432" key="ComposerInitDialogKey/0.0.1920.1040/-1280.0.1280.984@0.0.1920.1040" timestamp="1607524792455" />
     <state x="92" y="92" width="1736" height="856" key="DiffContextDialog" timestamp="1607358382292">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="92" y="92" width="1736" height="856" key="DiffContextDialog/0.0.1920.1040/-1280.0.1280.984@0.0.1920.1040" timestamp="1607358382292" />
+    <state x="92" y="92" width="1736" height="856" key="DirDiffDialog" timestamp="1607588683434">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="92" y="92" width="1736" height="856" key="DirDiffDialog/0.0.1920.1040/-1280.0.1280.984@0.0.1920.1040" timestamp="1607588683434" />
     <state x="740" y="262" key="FileChooserDialogImpl" timestamp="1607081173499">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -644,26 +683,26 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="598" y="281" key="MultipleFileMergeDialog/0.0.1920.1040/-1280.0.1280.984@0.0.1920.1040" timestamp="1606992345180" />
-    <state x="754" y="243" key="NewPhpClassDialog" timestamp="1605981146513">
+    <state x="754" y="243" key="NewPhpClassDialog" timestamp="1607531167529">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="754" y="243" key="NewPhpClassDialog/0.0.1920.1040/-1280.0.1280.984@0.0.1920.1040" timestamp="1605981146513" />
+    <state x="754" y="243" key="NewPhpClassDialog/0.0.1920.1040/-1280.0.1280.984@0.0.1920.1040" timestamp="1607531167529" />
     <state x="794" y="443" key="NewPhpFileDialog" timestamp="1607424527598">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="794" y="443" key="NewPhpFileDialog/0.0.1920.1040/-1280.0.1280.984@0.0.1920.1040" timestamp="1607424527598" />
-    <state x="461" y="165" key="SettingsEditor" timestamp="1607080409105">
+    <state x="461" y="165" key="SettingsEditor" timestamp="1607585572665">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="461" y="165" key="SettingsEditor/0.0.1920.1040/-1280.0.1280.984@0.0.1920.1040" timestamp="1607080409105" />
+    <state x="461" y="165" key="SettingsEditor/0.0.1920.1040/-1280.0.1280.984@0.0.1920.1040" timestamp="1607585572665" />
     <state width="520" height="446" key="SwitcherDM" timestamp="1605948598993">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="520" height="446" key="SwitcherDM/0.0.1920.1040/-1280.0.1280.984@0.0.1920.1040" timestamp="1605948598993" />
-    <state x="552" y="253" key="Vcs.Push.Dialog.v2" timestamp="1607438885559">
+    <state x="552" y="253" key="Vcs.Push.Dialog.v2" timestamp="1607439462547">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040/-1280.0.1280.984@0.0.1920.1040" timestamp="1607438885559" />
+    <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040/-1280.0.1280.984@0.0.1920.1040" timestamp="1607439462547" />
     <state x="561" y="130" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1605372313142">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -685,5 +724,16 @@
     </state>
     <state x="-865" y="213" width="672" height="642" key="search.everywhere.popup/0.0.1920.1040/-1280.0.1280.984@-1280.0.1280.984" timestamp="1605780350280" />
     <state x="623" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040/-1280.0.1280.984@0.0.1920.1040" timestamp="1607163948407" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="php">
+          <url>file://$PROJECT_DIR$/vendor/subfission/cas/src/Subfission/Cas/CasManager.php</url>
+          <line>319</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

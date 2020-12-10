@@ -70,6 +70,8 @@ class Kernel extends HttpKernel
         'verified' => \Illuminate\Auth\Middleware\EnsureEmailIsVerified::class,
         'cors'=> \App\Http\Middleware\Cors::class,
         "force.json"=> \App\Http\Middleware\ForceJsonResponse::class,
-        'only.gest' => \App\Http\Middleware\VerifyGest::class
+        'only.gest' => \App\Http\Middleware\VerifyGest::class,
+        'cas.auth'  => \App\Http\Middleware\CasAuth::class,
+        'cas.guest' => 'Subfission\Cas\Middleware\RedirectCASAuthenticated',
     ];
 }

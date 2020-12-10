@@ -77,7 +77,7 @@ class LoginController extends Controller
             if(array_key_exists("admin", $user->toArray())) {
 
                 //c'est un gestionnaire
-                echo "gestionnaire";
+               // echo "gestionnaire";
 
                 $token = $user->createToken("user-token")->plainTextToken;
 
@@ -106,6 +106,10 @@ class LoginController extends Controller
 
     }
 
+//    public function logout() {
+//        return cas()->logout();
+//    }
+
     private function searchUserName($username)
     {
 
@@ -131,7 +135,6 @@ class LoginController extends Controller
 
     private function loginLDAP($userName)
     {
-
         include(app_path("/Http/Controllers/client_api/UtilsLDAP.php"));
 
         //recherche si l'username LDAP est bon

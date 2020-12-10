@@ -121,6 +121,8 @@
       <path value="$PROJECT_DIR$/vendor/windwalker/renderer" />
       <path value="$PROJECT_DIR$/vendor/windwalker/structure" />
       <path value="$PROJECT_DIR$/vendor/mnapoli/silly" />
+      <path value="$PROJECT_DIR$/vendor/apereo/phpcas" />
+      <path value="$PROJECT_DIR$/vendor/subfission/cas" />
     </include_path>
   </component>
   <component name="PhpProjectSharedConfiguration" php_language_level="7.2" />

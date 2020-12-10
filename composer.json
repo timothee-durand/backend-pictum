@@ -11,6 +11,8 @@
         "php": "^7.2.5|^8.0",
         "ext-json": "*",
         "ext-mongodb": "*",
+        "ext-openssl": "*",
+        "subfission/cas":"^3.1.0",
         "fideloper/proxy": "^4.4",
         "fruitcake/laravel-cors": "^2.0",
         "guzzlehttp/guzzle": "^6.3.1|^7.0.1",
@@ -18,8 +20,7 @@
         "laravel/sanctum": "^2.8",
         "laravel/telescope": "^3.5",
         "laravel/tinker": "^2.5",
-        "predis/predis": "^1.1",
-      "ext-openssl": "*"
+        "predis/predis": "^1.1"
     },
     "require-dev": {
         "facade/ignition": "^2.0",
@@ -47,6 +48,7 @@
             "database/seeds",
             "database/factories"
         ]
+
     },
     "autoload-dev": {
         "psr-4": {

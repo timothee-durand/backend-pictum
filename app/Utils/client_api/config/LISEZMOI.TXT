@@ -1,5 +1,0 @@
-Déplacer le fichier de configuration sur un endroit plus sur du serveur 
-ou laisser un .htacces avec le contenu suivant 
-
-deny from all
-
