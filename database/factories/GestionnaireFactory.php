@@ -12,5 +12,6 @@ $factory->define(Gestionnaire::class, function (Faker $faker) {
         "mail"=>$faker->email,
         "id_univ"=>$faker->userName,
         "admin"=>$faker->boolean(10),
+        "password"=>$faker->password,
     ];
 });

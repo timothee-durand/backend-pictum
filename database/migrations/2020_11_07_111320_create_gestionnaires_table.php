@@ -18,7 +18,7 @@ class CreateGestionnairesTable extends Migration
             $table->timestamps();
             $table->string("nom", 50);
             $table->string("prenom", 50);
-            $table->string("mail", 100);
+            $table->string("mail", 100)->unique();
             $table->string("id_univ")->unique();
             $table->boolean("admin")->default(false);
 

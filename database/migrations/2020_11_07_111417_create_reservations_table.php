@@ -20,7 +20,7 @@ class CreateReservationsTable extends Migration
             $table->boolean("prof")->default(false);
             $table->string("nom", 32);
             $table->string("prenom", 32);
-            $table->string("mail", 100);
+            $table->string("mail", 100)->unique();
             $table->string("raison_pro", 300)->nullable();
             $table->string("id_univ");
         });

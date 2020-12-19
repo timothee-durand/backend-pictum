@@ -1,5 +1,6 @@
 <?php
 
+use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,7 +14,16 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+Route::middleware(['cors', 'force.json'])->group(function () {
+    Route::get("login/cas/check", "CASController@checkAuthentification");
+    Route::get("login/cas/authenticate", "CASController@authenticate");
+});
+
+
+
 Route::middleware(['cors', 'force.json', 'cas.auth'])->group(function () {
+
+    Route::post('login', "LoginController@login");
 
     Route::middleware(['auth:sanctum'])->group(function () {
         //routes api
@@ -56,7 +66,7 @@ Route::middleware(['cors', 'force.json', 'cas.auth'])->group(function () {
         });
     });
 
-    Route::get('login', "LoginController@login");
+
    // Route::get('logout', "LoginController@logout");
 
 

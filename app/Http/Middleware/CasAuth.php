@@ -18,7 +18,7 @@ class CasAuth
     {
         if( ! cas()->checkAuthentication() )
         {
-            cas()->authenticate();
+           return response("CAS Authentification Failed", 401);
         }
 
         $request->username = cas()->user();

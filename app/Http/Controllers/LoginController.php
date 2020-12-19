@@ -12,6 +12,7 @@ use App\Reservation;;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Log;
+use Illuminate\View\View;
 
 class LoginController extends Controller
 {
@@ -24,7 +25,8 @@ class LoginController extends Controller
 
     /**
      * Connexion à Pictum
-     * Momentané
+     * Si on est pas connecté au CAS de l'université, redirige vers la page de connexion puis renvoie la réponse,
+     * sinon, rnevoie juste la réponse
      * Si connexion vers MMI-Projet, faire la requete comme ca :
      *
      * let headers = {
@@ -44,8 +46,20 @@ class LoginController extends Controller
     })
      *
      * @group Login
-     * @bodyParam username string Nom d'utilisateur universitaire
-     *
+     * @response {
+    "userType": "GEST",
+    "user": {
+    "id": 6,
+    "created_at": null,
+    "updated_at": null,
+    "nom": "MARTIN",
+    "prenom": "Dilan",
+    "mail": "dilan.martin@univ-fcomte.fr",
+    "id_univ": "dmartin",
+    "admin": 0
+    },
+    "token": "23|vQPQxXdy7e6LRgLXExslsuyR78yabPij3QkcMZWQ"
+    }
      *
      *
      * @param Request $request
@@ -54,6 +68,8 @@ class LoginController extends Controller
 
     public function login(Request $request)
     {
+        Log::debug("Here");
+
         $user = null;
         if(env("USE_LDAP")) {
              $user =  $this->loginLDAP($request->username);
