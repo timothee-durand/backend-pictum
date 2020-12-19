@@ -24,6 +24,12 @@ class Reservation extends Authenticatable
         "raison_pro"
     ];
 
+    protected $hidden = [
+        "password",
+        "remember_token",
+        "email_verified_at"
+    ];
+
     protected $dispatchesEvents = [
         "created"=>ReservationCreationEvent::class
     ];

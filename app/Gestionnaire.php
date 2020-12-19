@@ -20,6 +20,12 @@ class Gestionnaire extends Authenticatable
         "departement_id"
     ];
 
+    protected $hidden = [
+        "password",
+        "remember_token",
+        "email_verified_at"
+    ];
+
     public function departement () {
         return $this->belongsTo("App\Departement");
     }
