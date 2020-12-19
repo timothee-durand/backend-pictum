@@ -68,17 +68,8 @@ class LoginController extends Controller
 
     public function login(Request $request)
     {
-        Log::debug("Here");
 
-        $user = null;
-        if(env("USE_LDAP")) {
-             $user =  $this->loginLDAP($request->username);
-
-        } else {
-            $user = $this->searchUserName($request->username);
-        }
-
-       // echo "user".json_encode($user);
+        $user = $this->searchByMail($request->mail);
 
         if($user === $this->notFind || $user === $this->blackliste || $user === $this->erreur) {
             //si pas trouvé ou blacklisté
@@ -90,35 +81,30 @@ class LoginController extends Controller
             Log::debug(json_encode($user));
 
             //on regarde si c'est un gestionnaire ou une réservation
-            if(array_key_exists("admin", $user->toArray())) {
-
-                //c'est un gestionnaire
-               // echo "gestionnaire";
-
-                $token = $user->createToken("user-token")->plainTextToken;
-
-                $response = [
-                    "userType" => $this->gestionnaire,
-                    "user" => $user,
-                    "token" => $token
-                ];
-
-                return response($response, 201);
-
-            } else {
 
 
-                $token = $user->createToken("user-token")->plainTextToken;
 
-                $response = [
-                    "userType" => $this->reservation,
-                    "user" => $user,
-                    "token" => $token
-                ];
+                if($this->isCredentialsCorrects($user, $request->password)) {
+                    $token = $user->createToken("user-token")->plainTextToken;
 
-                return response($response, 201);
+                    $response = [
+                        "user" => $user,
+                        "token" => $token
+                    ];
+
+                    if(array_key_exists("admin", $user->toArray())) {
+                        //c'est un gestionnaire
+                        $response["user_type"] = $this->gestionnaire;
+                    } else {
+                        $response["user_type"] = $this->reservation;
+                    }
+
+                    return response($response, 201);
+
+                } else {
+                    return response("Password Not Match", 401);
+                }
             }
-        }
 
     }
 
@@ -141,6 +127,29 @@ class LoginController extends Controller
         } elseif (Reservation::where('id_univ', $username)->first()){
 
             $result = Reservation::where('id_univ', $username)->first();
+
+        } else {
+
+            $result = $this->notFind;
+        }
+        return $result;
+    }
+
+    private function searchByMail($mail)
+    {
+
+        //regarde déjà si il est blacklisté
+        if(Blacklist::where('mail', $mail)->first()) {
+
+            return $this->blackliste;
+
+        } elseif (Gestionnaire::where('mail', $mail)->first()){
+
+            $result = Gestionnaire::where('mail', $mail)->first();
+
+        } elseif (Reservation::where('mail', $mail)->first()){
+
+            $result = Reservation::where('mail', $mail)->first();
 
         } else {
 
@@ -208,6 +217,14 @@ class LoginController extends Controller
         }
         return 0;
     }
+
+    private function isCredentialsCorrects($user, $password) {
+    if($user["password"] === $password) {
+        return true;
+    } else {
+        return false;
+    }
+}
 
 
 }

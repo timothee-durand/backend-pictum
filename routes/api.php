@@ -21,7 +21,7 @@ Route::middleware(['cors', 'force.json'])->group(function () {
 
 
 
-Route::middleware(['cors', 'force.json', 'cas.auth'])->group(function () {
+Route::middleware(['cors', 'force.json'])->group(function () {
 
     Route::post('login', "LoginController@login");
 
