@@ -32,7 +32,7 @@ class RappelRDV extends Mailable
         $this->raison_rdv = $raison_rdv;
         $this->date_rdv = $date_rdv;
         $this->heure_rdv = $heure_rdv;
-        $this->mail_gestionnaire = $mail_gestionnaire;
+        $this->email = $mail_gestionnaire;
         $this->mailData = $mailData;
     }
 

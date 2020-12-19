@@ -237,7 +237,7 @@ class GestionnaireController extends Controller
             $gestionnaire = new Gestionnaire([
                 "nom" =>  $ldap["nom"][0],
                 "prenom" => $ldap["prenom"][0],
-                "mail" => $ldap["courriel"][0],
+                "email" => $ldap["courriel"][0],
                 "id_univ" => $request->input("id_univ"),
                 "admin" => $request->input("admin"),
             ]);
@@ -302,8 +302,8 @@ class GestionnaireController extends Controller
             $gestionnaire->prenom = $request->input("prenom");
         }
 
-        if ($request->input("mail") != null) {
-            $gestionnaire->mail = $request->input("mail");
+        if ($request->input("email") != null) {
+            $gestionnaire->email = $request->input("email");
         }
         if ($request->input("id_univ") != null) {
             $gestionnaire->id_univ = $request->input("id_univ");
@@ -724,6 +724,7 @@ class GestionnaireController extends Controller
             }
         }, $array);
     }
+
 
 
 }

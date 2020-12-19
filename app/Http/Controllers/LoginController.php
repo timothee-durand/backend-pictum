@@ -143,17 +143,17 @@ class LoginController extends Controller
     {
 
         //regarde déjà si il est blacklisté
-        if (Blacklist::where('mail', $mail)->first()) {
+        if (Blacklist::where('email', $mail)->first()) {
 
             return $this->blackliste;
 
-        } elseif (Gestionnaire::where('mail', $mail)->first()) {
+        } elseif (Gestionnaire::where('email', $mail)->first()) {
 
-            $result = Gestionnaire::where('mail', $mail)->first();
+            $result = Gestionnaire::where('email', $mail)->first();
 
-        } elseif (Reservation::where('mail', $mail)->first()) {
+        } elseif (Reservation::where('email', $mail)->first()) {
 
-            $result = Reservation::where('mail', $mail)->first();
+            $result = Reservation::where('email', $mail)->first();
 
         } else {
 
@@ -162,63 +162,7 @@ class LoginController extends Controller
         return $result;
     }
 
-    private function loginLDAP($userName)
-    {
-        include(app_path("/Http/Controllers/client_api/UtilsLDAP.php"));
 
-        //recherche si l'username LDAP est bon
-        $ldap = getInfoLDAP($userName);
-        //echo "test".json_encode($ldap)."\n";
-
-        //si il fait partie de l'iut
-        if ($ldap != false) {
-
-            $pictum = $this->searchUserName($userName);
-
-            //si il n'a pas été trouvé chez nous
-            if ($pictum === $this->notFind) {
-                //on l'enregistre
-                $reservation = new Reservation([
-                    "nom" => $ldap["nom"][0],
-                    "prenom" => $ldap["prenom"][0],
-                    "mail" => $ldap["courriel"][0],
-                    "id_univ" => $userName,
-                    "prof" => $this->isProf($ldap["inGroup"])
-                ]);
-
-                //si l'enregistrement se passe bien
-                if ($reservation->save()) {
-                    return new ReservationResource($reservation);
-                } //sinon
-                else {
-                    return $this->erreur;
-                }
-
-                //echo "res".json_encode($reservation);
-            } //si il est déjà dans la base de donnée on lui retourne ce qu'il faut pour l'identification
-            else {
-                //echo "pictum trouvé cool";
-
-                return $pictum;
-            }
-
-            //echo "pictum".json_encode($pictum);
-        } else {
-            return $this->notFind;
-        }
-
-    }
-
-
-    private function isProf(array $groups)
-    {
-        foreach ($groups as $group) {
-            if ($group === "enseignant") {
-                return 1;
-            }
-        }
-        return 0;
-    }
 
     private function isCredentialsCorrects($user, $password)
     {

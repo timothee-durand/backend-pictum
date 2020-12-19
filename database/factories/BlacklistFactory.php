@@ -9,7 +9,7 @@ $factory->define(Blacklist::class, function (Faker $faker) {
     return [
         "nom" => $faker->firstName(),
         "prenom" => $faker->lastName,
-        "mail" => $faker->email,
+        "email" => $faker->email,
         "id_univ"=> $faker->userName
     ];
 });

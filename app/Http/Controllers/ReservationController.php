@@ -7,6 +7,7 @@ use App\Materiel;
 use App\Reservation;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
+use Illuminate\Support\Facades\Hash;
 
 class ReservationController extends Controller
 {
@@ -86,12 +87,8 @@ class ReservationController extends Controller
      *
      * @group Reservation
      * @authenticated
-     * @bodyParam nom string required
-     * @bodyParam prenom string required
-     * @bodyParam mail string required
      * @bodyParam id_univ string required Id Universitaire
      * @bodyParam raison_pro string Si demande de matériel professionnel, raison produite par le demandeur
-     * @bodyParam prof bool required True si la personne est un prof
      * @bodyParam valide bool required Si raison pro, est true si la reservation est validée, true par défault
      *
      * @response {
@@ -105,11 +102,44 @@ class ReservationController extends Controller
      */
     public function store(Request $request, Reservation $reservation)
     {
-        if ($reservation->save()) {
-            return \response("Store OK");
+        $ldap = $this->getInfoLDAP($request->id_univ);
+
+        //echo "mdp".json_encode(Hash::make($reservation->password));
+
+        if($ldap != false) {
+            //si on trouve qqc sur le serveur LDAP
+            $new_reservation = new Reservation([
+                "nom" => $ldap["nom"][0],
+                "prenom" => $ldap["prenom"][0],
+                "email" => $ldap["courriel"][0],
+                "id_univ" => $request->id_univ,
+                "prof" => $this->isProf($ldap["inGroup"]),
+                "password"=> Hash::make($reservation->password),
+                "raison_pro"=>$request->raison_pro,
+                "valide"=>$request->valide
+            ]);
+
+            if ($new_reservation->save()) {
+                $new_reservation->sendEmailVerificationNotification();
+                return \response("Store OK");
+            } else {
+                return \response("Error on saving", 500);
+            }
+
+        } else {
+            return \response("ID_UNIV NOT FIND", 401);
         }
 
+    }
 
+    private function isProf(array $groups)
+    {
+        foreach ($groups as $group) {
+            if ($group === "enseignant") {
+                return 1;
+            }
+        }
+        return 0;
     }
 
     /**
@@ -163,6 +193,7 @@ class ReservationController extends Controller
      */
     public function update(Request $request, Reservation $reservation)
     {
+        $request->password = Hash::make($request->password);
         if($reservation->update($request->all())){
             return new Response("Update OK", 200);
         }
@@ -186,5 +217,13 @@ class ReservationController extends Controller
             ]);
 
         }
+    }
+
+    private function getInfoLDAP($id_univ)
+    {
+        include(app_path("/Http/Controllers/client_api/UtilsLDAP.php"));
+
+        //recherche si l'username LDAP est bon
+        return getInfoLDAP($id_univ);
     }
 }

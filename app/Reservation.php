@@ -3,14 +3,18 @@
 namespace App;
 
 use App\Events\ReservationCreationEvent;
+use App\Jobs\SendMail;
 use App\Listeners\ReservationCreation;
+use App\Mail\VerificationMail;
+use App\Notifications\MailVerification;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Foundation\Auth\User as Authenticatable;
+use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
 
 class Reservation extends Authenticatable
 {
-    use HasApiTokens;
+    use HasApiTokens, Notifiable;
     protected $guard = 'res';
     protected $table = "reservation";
 
@@ -19,9 +23,10 @@ class Reservation extends Authenticatable
         "prof",
         "nom",
         "prenom",
-        "mail",
+        "email",
         "id_univ",
-        "raison_pro"
+        "raison_pro",
+        "password"
     ];
 
     protected $hidden = [
@@ -68,5 +73,13 @@ class Reservation extends Authenticatable
         }
 
         return ["estprete"=>$estpretes,"malette"=> $malettes];
+    }
+
+    public function sendEmailVerificationNotification()
+    {
+//        echo "mail".$this->mail;
+//        $mailData = ["to_address"=> $this->mail];
+//        SendMail::dispatch($mailData, new VerificationMail($this));
+        $this->notify( new MailVerification());
     }
 }

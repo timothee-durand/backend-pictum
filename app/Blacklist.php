@@ -10,7 +10,7 @@ class Blacklist extends Model
     protected $fillable = [
         "nom",
         "prenom",
-        "mail",
+        "email",
         "id_univ"
     ];
 }

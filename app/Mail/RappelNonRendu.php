@@ -29,7 +29,7 @@ class RappelNonRendu extends Mailable
     {
         $this->nom = $nom;
         $this->materiels = $materiels;
-        $this->mail_gestionnaire = $mail_gestionnaire;
+        $this->email = $mail_gestionnaire;
         $this->mailData = $mailData;
     }
 

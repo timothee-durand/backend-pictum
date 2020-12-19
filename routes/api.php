@@ -15,8 +15,14 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::middleware(['cors', 'force.json'])->group(function () {
-    Route::get("login/cas/check", "CASController@checkAuthentification");
-    Route::get("login/cas/authenticate", "CASController@authenticate");
+//    Route::get("login/cas/check", "CASController@checkAuthentification");
+//    Route::get("login/cas/authenticate", "CASController@authenticate");
+
+    Route::apiResource('reservations', 'ReservationController', ["only"=>["index", "show", "store"]]);
+
+    Route::get("/testmail", function (){
+        return new \App\Mail\VerificationMail(\App\Reservation::find(1));
+    });
 });
 
 
@@ -25,13 +31,16 @@ Route::middleware(['cors', 'force.json'])->group(function () {
 
     Route::post('login', "LoginController@login");
 
+    Route::get('email/verify/{mail}', 'VerificationController@verify')->name('verification.verify'); // Make sure to keep this as your route name
+    Route::get('email/resend/{mail}', 'VerificationController@resend')->name('verification.resend');
+
     Route::middleware(['auth:sanctum'])->group(function () {
         //routes api
         Route::apiResource('types', 'TypeController', ["only"=>["index", "show"]]);
         Route::apiResource('blacklists', 'BlacklistController', ["only"=>["index", "show"]]);
         Route::apiResource('malettes', 'MaletteController', ["only"=>["index", "show"]]);
         Route::apiResource('departements', 'DepartementController', ["only"=>["index", "show"]]);
-        Route::apiResource('reservations', 'ReservationController', ["only"=>["index", "show"]]);
+        //Route::apiResource('reservations', 'ReservationController', ["only"=>["index", "show", "store"]]);
         Route::apiResource('estpretes', 'EstPreteController', ["only"=>["index", "store"]]);
         Route::apiResource('materiels', 'MaterielController', ["only"=>["index", "show"]]);
         Route::apiResource('gestionnaires', 'GestionnaireController', ["only"=>["index", "show"]]);
@@ -55,7 +64,6 @@ Route::middleware(['cors', 'force.json'])->group(function () {
                 'materiels' => 'MaterielController',
                 'gestionnaires' => 'GestionnaireController',
                 'indisponibilites' => 'IndisponibiliteController',
-                'reservations' => 'ReservationController'
             ],
             ['only'=>["store", "update", "destroy"]]);
 

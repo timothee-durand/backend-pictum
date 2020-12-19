@@ -12,7 +12,7 @@ $factory->define(Reservation::class, function (Faker $faker) {
         "prof"=> $faker->boolean(30),
         "nom"=> $faker->firstName,
         "prenom"=>$faker->lastName,
-        "mail"=>$faker->email,
+        "email"=>$faker->email,
         "raison_pro"=>$faker->realText(250),
         "id_univ"=>$faker->userName,
         "password"=>$faker->password

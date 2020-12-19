@@ -7,3 +7,4 @@ function getInfoLDAP($username) {
     return $ldap_api->getCRIBM_LDAP_InfoUID($username);
 
 }
+

@@ -2,22 +2,25 @@
 
 namespace App;
 
+use App\Notifications\MailVerification;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Foundation\Auth\User as Authenticatable;
+use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
 
 class Gestionnaire extends Authenticatable
 {
-    use HasApiTokens;
+    use HasApiTokens, Notifiable;
     protected $guard = "gest";
     protected $table = "gestionnaire";
     protected $fillable = [
         "nom",
         "prenom",
-        "mail",
+        "email",
         "id_univ",
         "admin",
-        "departement_id"
+        "departement_id",
+        "password"
     ];
 
     protected $hidden = [
@@ -40,5 +43,10 @@ class Gestionnaire extends Authenticatable
 
     public function rendezVous(){
         return $this->hasMany(EstPrete::class, "gestionnaire_id");
+    }
+
+    public function sendEmailVerificationNotification()
+    {
+        $this->notify(new MailVerification());
     }
 }
