@@ -32,6 +32,8 @@ Route::middleware(['cors', 'force.json'])->group(function () {
     Route::get('email/resend/{mail}', 'VerificationController@resend')->name('verification.resend');
     Route::get('email/send/new-password/{id_univ}', 'PasswordResetController@reset');
 
+    Route::post("ldap/verify", "LoginController@verifyLDAP");
+
     Route::middleware(['auth:sanctum'])->group(function () {
         //routes api
         Route::apiResource('types', 'TypeController', ["only"=>["index", "show"]]);

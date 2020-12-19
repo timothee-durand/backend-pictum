@@ -113,6 +113,53 @@ class LoginController extends Controller
 
     }
 
+    public function verifyLDAP(Request $request){
+        if($request->id_univ !== null) {
+            $ldap = $this->getInfoLDAPByUsername($request->id_univ);
+            if ($ldap !== false) {
+                return response($this->getJSONFromLDAP($ldap));
+            } else {
+                return response("NOT FIND LDAP", 404);
+            }
+        } else if ($request->mail !== null) {
+            $ldap = $this->getInfoLDAPByMail($request->mail);
+            if ($ldap !== false) {
+                return response($this->getJSONFromLDAP($ldap));
+            } else {
+                return response("NOT FIND LDAP", 404);
+            }
+        } else {
+            return response("BAD ARGUMENT (must be at least id_univ or mail)", 404);
+        }
+    }
+
+    private function getInfoLDAPByUsername($id_univ)
+    {
+        include(app_path("/Http/Controllers/client_api/UtilsLDAP.php"));
+
+        //recherche si l'username LDAP est bon
+        return getInfoLDAP($id_univ);
+    }
+
+    private function getJSONFromLDAP($ldap){
+        return json_encode([
+            "nom" => $ldap["nom"][0],
+            "prenom" => $ldap["prenom"][0],
+            "email" => $ldap["courriel"][0],
+            "groups" => $ldap["inGroup"]
+        ]);
+    }
+
+    private function getInfoLDAPByMail($mail)
+    {
+        include(app_path("/Http/Controllers/client_api/UtilsLDAP.php"));
+
+        //recherche si l'username LDAP est bon
+        return getInfoLDAPByMail($mail)[0];
+    }
+
+
+
 
     public function searchUserName($username)
     {
