@@ -7,6 +7,7 @@ use App\Jobs\SendMail;
 use App\Listeners\ReservationCreation;
 use App\Mail\VerificationMail;
 use App\Notifications\MailVerification;
+use App\Notifications\NewPassword;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
@@ -77,9 +78,10 @@ class Reservation extends Authenticatable
 
     public function sendEmailVerificationNotification()
     {
-//        echo "mail".$this->mail;
-//        $mailData = ["to_address"=> $this->mail];
-//        SendMail::dispatch($mailData, new VerificationMail($this));
         $this->notify( new MailVerification());
+    }
+
+    public function sendNewPassword($password){
+        $this->notify(new NewPassword($password));
     }
 }

@@ -3,6 +3,7 @@
 namespace App;
 
 use App\Notifications\MailVerification;
+use App\Notifications\NewPassword;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
@@ -48,5 +49,9 @@ class Gestionnaire extends Authenticatable
     public function sendEmailVerificationNotification()
     {
         $this->notify(new MailVerification());
+    }
+
+    public function sendNewPassword($password){
+        $this->notify(new NewPassword($password));
     }
 }

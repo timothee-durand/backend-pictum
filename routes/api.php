@@ -20,9 +20,6 @@ Route::middleware(['cors', 'force.json'])->group(function () {
 
     Route::apiResource('reservations', 'ReservationController', ["only"=>["index", "show", "store"]]);
 
-    Route::get("/testmail", function (){
-        return new \App\Mail\VerificationMail(\App\Reservation::find(1));
-    });
 });
 
 
@@ -33,6 +30,7 @@ Route::middleware(['cors', 'force.json'])->group(function () {
 
     Route::get('email/verify/{mail}', 'VerificationController@verify')->name('verification.verify'); // Make sure to keep this as your route name
     Route::get('email/resend/{mail}', 'VerificationController@resend')->name('verification.resend');
+    Route::get('email/send/new-password/{id_univ}', 'PasswordResetController@reset');
 
     Route::middleware(['auth:sanctum'])->group(function () {
         //routes api

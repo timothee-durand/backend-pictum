@@ -7,6 +7,7 @@ use App\Gestionnaire;
 use App\Http\Resources\ReservationResource;
 use App\Reservation;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Log;
 
 ;
@@ -112,11 +113,8 @@ class LoginController extends Controller
 
     }
 
-//    public function logout() {
-//        return cas()->logout();
-//    }
 
-    private function searchUserName($username)
+    public function searchUserName($username)
     {
 
         //regarde déjà si il est blacklisté
@@ -166,7 +164,7 @@ class LoginController extends Controller
 
     private function isCredentialsCorrects($user, $password)
     {
-        if ($user["password"] === $password) {
+        if (Hash::check($password, $user["password"])) {
             return true;
         } else {
             return false;
