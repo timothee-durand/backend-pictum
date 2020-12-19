@@ -4,6 +4,7 @@
 
 use App\Reservation;
 use Faker\Generator as Faker;
+use Illuminate\Support\Facades\Hash;
 
 $factory->define(Reservation::class, function (Faker $faker) {
     return [
@@ -14,6 +15,6 @@ $factory->define(Reservation::class, function (Faker $faker) {
         "mail"=>$faker->email,
         "raison_pro"=>$faker->realText(250),
         "id_univ"=>$faker->userName,
-        "password"=>$faker->password,
+        "password"=>$faker->password
     ];
 });

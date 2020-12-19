@@ -28,10 +28,11 @@
     </select>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c2fc254d-4c34-4822-9cbb-ed6000c1b396" name="Default Changelist" comment="ajout mot de passe et champs nécessaire pour authentification perso">
+    <list default="true" id="c2fc254d-4c34-4822-9cbb-ed6000c1b396" name="Default Changelist" comment="update login to log wwith a password">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/LoginController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/LoginController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/api.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/api.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/factories/GestionnaireFactory.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/factories/GestionnaireFactory.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/factories/ReservationFactory.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/factories/ReservationFactory.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -271,7 +272,7 @@
       <workItem from="1608061184602" duration="2030000" />
       <workItem from="1608137470920" duration="4471000" />
       <workItem from="1608321656596" duration="1474000" />
-      <workItem from="1608382226679" duration="2976000" />
+      <workItem from="1608382226679" duration="3589000" />
     </task>
     <task id="LOCAL-00001" summary="initial commit">
       <created>1604745505978</created>
@@ -539,7 +540,14 @@
       <option name="project" value="LOCAL" />
       <updated>1608383701312</updated>
     </task>
-    <option name="localTasksCounter" value="39" />
+    <task id="LOCAL-00039" summary="update login to log wwith a password">
+      <created>1608385509793</created>
+      <option name="number" value="00039" />
+      <option name="presentableId" value="LOCAL-00039" />
+      <option name="project" value="LOCAL" />
+      <updated>1608385509793</updated>
+    </task>
+    <option name="localTasksCounter" value="40" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -589,7 +597,6 @@
     <ignored-roots>
       <path value="$PROJECT_DIR$/app/Http/Middleware/phpCAS" />
     </ignored-roots>
-    <MESSAGE value="beacuoup de modifs" />
     <MESSAGE value="principalement pour la gestion de la genération des rdv" />
     <MESSAGE value="finalisation de la route de demande de rendez-vous" />
     <MESSAGE value="mise à jour materiel controller" />
@@ -614,7 +621,8 @@
     <MESSAGE value="prise en compte LDAP créatioon gestionnaire" />
     <MESSAGE value="prise en compte CAS pour authentification" />
     <MESSAGE value="ajout mot de passe et champs nécessaire pour authentification perso" />
-    <option name="LAST_COMMIT_MESSAGE" value="ajout mot de passe et champs nécessaire pour authentification perso" />
+    <MESSAGE value="update login to log wwith a password" />
+    <option name="LAST_COMMIT_MESSAGE" value="update login to log wwith a password" />
   </component>
   <component name="WindowStateProjectService">
     <state x="552" y="178" key="#Deployment" timestamp="1608061188013">

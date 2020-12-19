@@ -4,6 +4,7 @@
 
 use App\Gestionnaire;
 use Faker\Generator as Faker;
+use Illuminate\Support\Facades\Hash;
 
 $factory->define(Gestionnaire::class, function (Faker $faker) {
     return [
@@ -12,6 +13,6 @@ $factory->define(Gestionnaire::class, function (Faker $faker) {
         "mail"=>$faker->email,
         "id_univ"=>$faker->userName,
         "admin"=>$faker->boolean(10),
-        "password"=>$faker->password,
+        "password"=>$faker->password
     ];
 });
