@@ -12,3 +12,12 @@ function getInfoLDAPByMail($mail) {
     return $ldap_api->getCRIBM_LDAP_SearchLDap("(mail=".$mail.")");
 }
 
+function getAllUsers($groups) {
+    $ldap_api=new cribm_ldap_api();
+    $users=[];
+    foreach ($groups as $group) {
+        $users[] = $ldap_api->getCRIBM_LDAP_InfoGroup($group);
+    }
+    return $users;
+}
+

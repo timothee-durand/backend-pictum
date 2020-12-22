@@ -13,6 +13,15 @@ class PasswordResetController extends Controller
 {
     private $notFind = "NOT FIND";
 
+    /**
+     * Envoie un nouveau mot de passe sécurisé par mail
+     * @group Login
+     * @urlParam ID_UNIV required id universitaire de la personne à qui renvoyer le mot de passe
+     *
+     *
+     * @param $id_univ
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\Routing\ResponseFactory|\Illuminate\Http\Response
+     */
     public function reset($id_univ){
         $user = $this->searchUserName($id_univ);
 

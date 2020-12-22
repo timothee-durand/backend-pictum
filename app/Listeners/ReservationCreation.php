@@ -7,6 +7,7 @@ use App\Jobs\SendMail;
 use App\Mail\Contact;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Queue\InteractsWithQueue;
+use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Mail;
 
 class ReservationCreation
@@ -31,7 +32,9 @@ class ReservationCreation
      */
     public function handle(ReservationCreationEvent $event)
     {
-        $mailData = ["to_address"=> $event->reservation->mail];
+        $mailData = ["to_address"=> $event->reservation->email];
+        Log::debug("maildata".json_encode($mailData));
         SendMail::dispatch($mailData, new \App\Mail\ReservationCreation($event->reservation));
     }
 }
+

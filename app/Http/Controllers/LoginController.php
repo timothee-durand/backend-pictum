@@ -4,13 +4,11 @@ namespace App\Http\Controllers;
 
 use App\Blacklist;
 use App\Gestionnaire;
-use App\Http\Resources\ReservationResource;
 use App\Reservation;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Log;
 
-;
 
 
 class LoginController extends Controller
@@ -24,42 +22,10 @@ class LoginController extends Controller
 
     /**
      * Connexion à Pictum
-     * Si on est pas connecté au CAS de l'université, redirige vers la page de connexion puis renvoie la réponse,
-     * sinon, rnevoie juste la réponse
-     * Si connexion vers MMI-Projet, faire la requete comme ca :
-     *
-     * let headers = {
-     * "Authorization": "Bearer {YOUR_AUTH_KEY}",
-     * "Content-Type": "application/json",
-     * "Accept": "application/json",
-     * };
-     *
-     *axios({
-     * method: 'get',
-     * url: url,
-     * headers:headers,
-     * auth: {
-     * username: username,
-     * password: password
-     * }
-     * })
      *
      * @group Login
-     * @response {
-     * "userType": "GEST",
-     * "user": {
-     * "id": 6,
-     * "created_at": null,
-     * "updated_at": null,
-     * "nom": "MARTIN",
-     * "prenom": "Dilan",
-     * "mail": "dilan.martin@univ-fcomte.fr",
-     * "id_univ": "dmartin",
-     * "admin": 0
-     * },
-     * "token": "23|vQPQxXdy7e6LRgLXExslsuyR78yabPij3QkcMZWQ"
-     * }
-     *
+     * @bodyParam username string required id universitaire de la personne
+     * @bodyParam password string required mot de passe de la personne
      *
      * @param Request $request
      * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\Routing\ResponseFactory|\Illuminate\Http\Response|void
@@ -68,7 +34,7 @@ class LoginController extends Controller
     public function login(Request $request)
     {
 
-        $user = $this->searchByMail($request->mail);
+        $user = $this->searchUserName($request->username);
 
         if ($user === $this->notFind || $user === $this->blackliste || $user === $this->erreur) {
             //si pas trouvé ou blacklisté
@@ -85,7 +51,7 @@ class LoginController extends Controller
             if ($this->isCredentialsCorrects($user, $request->password)) {
                 //si le mdp est correct
 
-                if(!$this->isEmailVerified($user)){
+                if (!$this->isEmailVerified($user)) {
                     //si l'email n'est pas vérifié
                     return response("Email not verified", 401);
                 }
@@ -113,16 +79,30 @@ class LoginController extends Controller
 
     }
 
-    public function verifyLDAP(Request $request){
-        if($request->id_univ !== null) {
+    /**
+     * Vérifie que la personne fait partie de la base de donnée LDAP
+     * (Penser à garder l'id universitaire, l'api LDAP ne le fournit pas encore)
+     * @group Login
+     * @bodyParam id_univ string required
+     *
+     * @response 200 {
+    "nom": "BLOCH",
+    "prenom": "CHRISTELLE",
+    "email": "christelle.bloch@univ-fcomte.fr",
+    "groups": [
+    "iutbm",
+    "enseignant"
+    ]
+    }
+     *
+     *
+     * @param Request $request
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\Routing\ResponseFactory|\Illuminate\Http\Response
+     */
+    public function verifyLDAP(Request $request)
+    {
+        if ($request->id_univ !== null) {
             $ldap = $this->getInfoLDAPByUsername($request->id_univ);
-            if ($ldap !== false) {
-                return response($this->getJSONFromLDAP($ldap));
-            } else {
-                return response("NOT FIND LDAP", 404);
-            }
-        } else if ($request->mail !== null) {
-            $ldap = $this->getInfoLDAPByMail($request->mail);
             if ($ldap !== false) {
                 return response($this->getJSONFromLDAP($ldap));
             } else {
@@ -133,6 +113,27 @@ class LoginController extends Controller
         }
     }
 
+    /**
+     * Retourne tous les utilisateurs LDAP de l'IUTBM
+     * @group Login
+     *
+     *
+     * @return array
+     */
+    public function getLDAPUsers()
+    {
+        include(app_path("/Http/Controllers/client_api/UtilsLDAP.php"));
+        $users = getAllUsers(["iutbm"]);
+        $response = [];
+        foreach ($users as $group) {
+            foreach ($group as $user) {
+                $response[] = $this->simplifyLDAPResponse($user);
+            }
+        }
+
+        return $response;
+    }
+
     private function getInfoLDAPByUsername($id_univ)
     {
         include(app_path("/Http/Controllers/client_api/UtilsLDAP.php"));
@@ -141,13 +142,19 @@ class LoginController extends Controller
         return getInfoLDAP($id_univ);
     }
 
-    private function getJSONFromLDAP($ldap){
-        return json_encode([
+    private function getJSONFromLDAP($ldap)
+    {
+        return json_encode($this->simplifyLDAPResponse($ldap));
+    }
+
+    private function simplifyLDAPResponse($ldap)
+    {
+        return [
             "nom" => $ldap["nom"][0],
             "prenom" => $ldap["prenom"][0],
             "email" => $ldap["courriel"][0],
             "groups" => $ldap["inGroup"]
-        ]);
+        ];
     }
 
     private function getInfoLDAPByMail($mail)
@@ -157,8 +164,6 @@ class LoginController extends Controller
         //recherche si l'username LDAP est bon
         return getInfoLDAPByMail($mail)[0];
     }
-
-
 
 
     public function searchUserName($username)
@@ -208,7 +213,6 @@ class LoginController extends Controller
     }
 
 
-
     private function isCredentialsCorrects($user, $password)
     {
         if (Hash::check($password, $user["password"])) {
@@ -226,6 +230,4 @@ class LoginController extends Controller
             return false;
         }
     }
-
-
 }

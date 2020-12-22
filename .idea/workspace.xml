@@ -28,10 +28,22 @@
     </select>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c2fc254d-4c34-4822-9cbb-ed6000c1b396" name="Default Changelist" comment="add password reset functionnality">
+    <list default="true" id="c2fc254d-4c34-4822-9cbb-ed6000c1b396" name="Default Changelist" comment="add function to verify if a personn is in LDAP">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/GestionnaireController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/GestionnaireController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/LoginController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/LoginController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/PasswordResetController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/PasswordResetController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/ReservationController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/ReservationController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/VerificationController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/VerificationController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/client_api/UtilsLDAP.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/client_api/UtilsLDAP.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Resources/DepartementResource.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Resources/DepartementResource.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Resources/MaterielResource.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Resources/MaterielResource.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Listeners/ReservationCreation.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Listeners/ReservationCreation.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/scribe.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/scribe.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/docs/collection.json" beforeDir="false" afterPath="$PROJECT_DIR$/public/docs/collection.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/docs/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/docs/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/docs/.filemtimes" beforeDir="false" afterPath="$PROJECT_DIR$/resources/docs/.filemtimes" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/docs/groups/type.md" beforeDir="false" afterPath="$PROJECT_DIR$/resources/docs/groups/type.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/api.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/api.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -273,7 +285,10 @@
       <workItem from="1608061184602" duration="2030000" />
       <workItem from="1608137470920" duration="4471000" />
       <workItem from="1608321656596" duration="1474000" />
-      <workItem from="1608382226679" duration="16795000" />
+      <workItem from="1608382226679" duration="19743000" />
+      <workItem from="1608475121740" duration="3925000" />
+      <workItem from="1608580606245" duration="10000" />
+      <workItem from="1608655016632" duration="3257000" />
     </task>
     <task id="LOCAL-00001" summary="initial commit">
       <created>1604745505978</created>
@@ -576,7 +591,14 @@
       <option name="project" value="LOCAL" />
       <updated>1608398431575</updated>
     </task>
-    <option name="localTasksCounter" value="44" />
+    <task id="LOCAL-00044" summary="add function to verify if a personn is in LDAP">
+      <created>1608399270910</created>
+      <option name="number" value="00044" />
+      <option name="presentableId" value="LOCAL-00044" />
+      <option name="project" value="LOCAL" />
+      <updated>1608399270910</updated>
+    </task>
+    <option name="localTasksCounter" value="45" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -626,7 +648,6 @@
     <ignored-roots>
       <path value="$PROJECT_DIR$/app/Http/Middleware/phpCAS" />
     </ignored-roots>
-    <MESSAGE value="mise en place mail de rappel des non rendu" />
     <MESSAGE value="mise en place mail contact admin" />
     <MESSAGE value="ajout prise en compte image pour les types" />
     <MESSAGE value="ajout prise en compte image pour les malettes" />
@@ -651,7 +672,8 @@
     <MESSAGE value="hide sensible/useless information on gestionnaire/reservation (mdp...)" />
     <MESSAGE value="ajout de la fonction de vérification de mail" />
     <MESSAGE value="add password reset functionnality" />
-    <option name="LAST_COMMIT_MESSAGE" value="add password reset functionnality" />
+    <MESSAGE value="add function to verify if a personn is in LDAP" />
+    <option name="LAST_COMMIT_MESSAGE" value="add function to verify if a personn is in LDAP" />
   </component>
   <component name="WindowStateProjectService">
     <state x="552" y="178" key="#Deployment" timestamp="1608061188013">
@@ -739,10 +761,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="520" height="446" key="SwitcherDM/0.0.1920.1040/-1280.0.1280.984@0.0.1920.1040" timestamp="1608398785265" />
-    <state x="552" y="253" key="Vcs.Push.Dialog.v2" timestamp="1608398437900">
+    <state x="552" y="253" key="Vcs.Push.Dialog.v2" timestamp="1608399275284">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040/-1280.0.1280.984@0.0.1920.1040" timestamp="1608398437900" />
+    <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040/-1280.0.1280.984@0.0.1920.1040" timestamp="1608399275284" />
     <state x="561" y="130" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1605372313142">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -759,10 +781,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="616" y="240" key="run.anything.popup/0.0.1920.1040/-1280.0.1280.984@0.0.1920.1040" timestamp="1605882193591" />
-    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1608397213191">
+    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1608655182671">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="-865" y="213" width="672" height="642" key="search.everywhere.popup/0.0.1920.1040/-1280.0.1280.984@-1280.0.1280.984" timestamp="1605780350280" />
-    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040/-1280.0.1280.984@0.0.1920.1040" timestamp="1608397213191" />
+    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040/-1280.0.1280.984@0.0.1920.1040" timestamp="1608655182671" />
   </component>
 </project>

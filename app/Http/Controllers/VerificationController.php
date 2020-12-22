@@ -9,6 +9,15 @@ use Illuminate\Http\Request;
 
 class VerificationController extends Controller
 {
+    /**
+     * Route de vérification de l'email
+     * Générée à la création de compte
+     * @group Login
+     *
+     * @param $user_mail
+     * @param Request $request
+     * @return \Illuminate\Http\JsonResponse|\Illuminate\Http\RedirectResponse
+     */
     public function verify($user_mail, Request $request) {
         if (!$request->hasValidSignature()) {
             return response()->json(["msg" => "Invalid/Expired url provided."], 401);
@@ -23,6 +32,14 @@ class VerificationController extends Controller
         return redirect()->to('/');
     }
 
+
+    /**
+     * Route pour renvoyer l'email de confirmation
+     * @group Login
+     *
+     * @param $user_mail
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\Routing\ResponseFactory|\Illuminate\Http\JsonResponse|\Illuminate\Http\Response
+     */
     public function resend($user_mail) {
         $user = $this->searchByMail($user_mail);
         if ($user->hasVerifiedEmail()) {
@@ -31,7 +48,7 @@ class VerificationController extends Controller
 
         $user->sendEmailVerificationNotification();
 
-        return response()->json(["msg" => "Email verification link sent on your email id"]);
+        return response("Mail send");
     }
 
     private function searchByMail($mail)

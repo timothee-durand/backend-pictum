@@ -33,6 +33,7 @@ Route::middleware(['cors', 'force.json'])->group(function () {
     Route::get('email/send/new-password/{id_univ}', 'PasswordResetController@reset');
 
     Route::post("ldap/verify", "LoginController@verifyLDAP");
+    Route::get("ldap/all", "LoginController@getLDAPUsers");
 
     Route::middleware(['auth:sanctum'])->group(function () {
         //routes api
@@ -52,7 +53,7 @@ Route::middleware(['cors', 'force.json'])->group(function () {
         Route::post("send-mail-contact-admin", "MailPersoController@contactAdmin");
 
 
-        Route::middleware("only.gest")->group(function () {
+        //Route::middleware("only.gest")->group(function () {
 
             Route::post("send-mail-gest", "MailPersoController@makeMailPerso");
 
@@ -71,7 +72,7 @@ Route::middleware(['cors', 'force.json'])->group(function () {
             Route::apiResource('estpretes', 'EstPreteController', ["only"=>["delete", "update"]]);
 
 
-        });
+        //});
     });
 
 

@@ -218,7 +218,9 @@ class GestionnaireController extends Controller
     /**
      * Store a newly Gestionnaire resource in storage.
      * @group Gestionnaire
-     *
+     * @bodyParam id_univ required
+     * @bodyParam admin bool required
+     * @bodyParam password required
      *
      *
      * @param \Illuminate\Http\Request $request
@@ -240,6 +242,7 @@ class GestionnaireController extends Controller
                 "email" => $ldap["courriel"][0],
                 "id_univ" => $request->input("id_univ"),
                 "admin" => $request->input("admin"),
+                "password" => $request->input("password"),
             ]);
 
             if ($gestionnaire->save()) {

@@ -10,7 +10,7 @@
     ],
     "info": {
         "name": "Laravel",
-        "_postman_id": "eca159d8-b4d9-43d5-bdbb-945e86aeb582",
+        "_postman_id": "26c0881d-b0ec-4544-90a1-a614247eebb4",
         "description": "Backend du service de gestion de mat\u00e9riel du Campus des Portes du Jura de l`'IUT BM",
         "schema": "https:\/\/schema.getpostman.com\/json\/collection\/v2.1.0\/collection.json"
     },
@@ -58,13 +58,13 @@
                                 {
                                     "id": "blacklist",
                                     "key": "blacklist",
-                                    "value": "ad",
+                                    "value": "ut",
                                     "description": ""
                                 },
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "reiciendis",
+                                    "value": "minus",
                                     "description": "ID Pictum"
                                 }
                             ]
@@ -95,30 +95,30 @@
                             "query": [
                                 {
                                     "key": "nom",
-                                    "value": "aliquid",
+                                    "value": "dolorem",
                                     "description": "string Nom de la personne",
                                     "disabled": false
                                 },
                                 {
                                     "key": "prenom",
-                                    "value": "praesentium",
+                                    "value": "amet",
                                     "description": "string Pr\u00e9nom de la personne",
                                     "disabled": false
                                 },
                                 {
                                     "key": "mail",
-                                    "value": "hic",
+                                    "value": "architecto",
                                     "description": "string Mail de la personne",
                                     "disabled": false
                                 },
                                 {
                                     "key": "id_univ",
-                                    "value": "exercitationem",
+                                    "value": "vel",
                                     "description": "string Id universitaire de la personne",
                                     "disabled": false
                                 }
                             ],
-                            "raw": "http:\/\/{{baseUrl}}\/api\/blacklists?nom=aliquid&prenom=praesentium&mail=hic&id_univ=exercitationem"
+                            "raw": "http:\/\/{{baseUrl}}\/api\/blacklists?nom=dolorem&prenom=amet&mail=architecto&id_univ=vel"
                         },
                         "method": "POST",
                         "header": [
@@ -146,35 +146,35 @@
                             "query": [
                                 {
                                     "key": "nom",
-                                    "value": "consequuntur",
+                                    "value": "molestiae",
                                     "description": "Nom de la personne",
                                     "disabled": false
                                 },
                                 {
                                     "key": "prenom",
-                                    "value": "ex",
+                                    "value": "quibusdam",
                                     "description": "Pr\u00e9nom de la personne",
                                     "disabled": false
                                 },
                                 {
                                     "key": "mail",
-                                    "value": "voluptatem",
+                                    "value": "rerum",
                                     "description": "Mail de la personne",
                                     "disabled": false
                                 },
                                 {
                                     "key": "id_univ",
-                                    "value": "quo",
+                                    "value": "commodi",
                                     "description": "Id universitaire de la personne",
                                     "disabled": false
                                 }
                             ],
-                            "raw": "http:\/\/{{baseUrl}}\/api\/blacklists\/:blacklist?nom=consequuntur&prenom=ex&mail=voluptatem&id_univ=quo",
+                            "raw": "http:\/\/{{baseUrl}}\/api\/blacklists\/:blacklist?nom=molestiae&prenom=quibusdam&mail=rerum&id_univ=commodi",
                             "variable": [
                                 {
                                     "id": "blacklist",
                                     "key": "blacklist",
-                                    "value": "19",
+                                    "value": "2",
                                     "description": "ID Pictum"
                                 }
                             ]
@@ -211,7 +211,7 @@
                                 {
                                     "id": "blacklist",
                                     "key": "blacklist",
-                                    "value": "10",
+                                    "value": "3",
                                     "description": "ID Pictum correspondant"
                                 }
                             ]
@@ -290,7 +290,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\n    \"creneaux[]\": \"doloremque\"\n}"
+                            "raw": "{\n    \"creneaux[]\": \"dolor\"\n}"
                         },
                         "description": ""
                     },
@@ -309,7 +309,7 @@
                                 {
                                     "id": "creneaux",
                                     "key": "creneaux",
-                                    "value": "odit",
+                                    "value": "ratione",
                                     "description": ""
                                 }
                             ]
@@ -381,7 +381,7 @@
                                 {
                                     "id": "departement",
                                     "key": "departement",
-                                    "value": "5",
+                                    "value": "16",
                                     "description": "ID du d\u00e9partement concern\u00e9"
                                 }
                             ]
@@ -415,30 +415,30 @@
                             "query": [
                                 {
                                     "key": "lat",
-                                    "value": "1010.306497895",
+                                    "value": "275618771.9",
                                     "description": "Latitude du d\u00e9partement",
                                     "disabled": false
                                 },
                                 {
                                     "key": "long",
-                                    "value": "225418.441",
+                                    "value": "4212732.7296775",
                                     "description": "Longitude du d\u00e9partement",
                                     "disabled": false
                                 },
                                 {
                                     "key": "nom",
-                                    "value": "ad",
+                                    "value": "illum",
                                     "description": "Nom du d\u00e9partement",
                                     "disabled": false
                                 },
                                 {
                                     "key": "gestionnaire_id",
-                                    "value": "9",
+                                    "value": "5",
                                     "description": "ID Pictum du gestionnaire concern\u00e9",
                                     "disabled": false
                                 }
                             ],
-                            "raw": "http:\/\/{{baseUrl}}\/api\/departements?lat=1010.306497895&long=225418.441&nom=ad&gestionnaire_id=9"
+                            "raw": "http:\/\/{{baseUrl}}\/api\/departements?lat=275618771.9&long=4212732.7296775&nom=illum&gestionnaire_id=5"
                         },
                         "method": "POST",
                         "header": [
@@ -466,35 +466,35 @@
                             "query": [
                                 {
                                     "key": "lat",
-                                    "value": "168.7689281",
+                                    "value": "0",
                                     "description": "Latitude du d\u00e9partement",
-                                    "disabled": false
+                                    "disabled": true
                                 },
                                 {
                                     "key": "long",
-                                    "value": "55820857.467082",
+                                    "value": "106303144.60545",
                                     "description": "Longitude du d\u00e9partement",
                                     "disabled": false
                                 },
                                 {
                                     "key": "nom",
-                                    "value": "porro",
+                                    "value": "libero",
                                     "description": "Nom du d\u00e9partement",
                                     "disabled": false
                                 },
                                 {
                                     "key": "gestionnaire_id",
-                                    "value": "4",
+                                    "value": "16",
                                     "description": "ID Pictum du gestionnaire concern\u00e9",
                                     "disabled": false
                                 }
                             ],
-                            "raw": "http:\/\/{{baseUrl}}\/api\/departements\/:departement?lat=168.7689281&long=55820857.467082&nom=porro&gestionnaire_id=4",
+                            "raw": "http:\/\/{{baseUrl}}\/api\/departements\/:departement?lat=0&long=106303144.60545&nom=libero&gestionnaire_id=16",
                             "variable": [
                                 {
                                     "id": "departement",
                                     "key": "departement",
-                                    "value": "5",
+                                    "value": "2",
                                     "description": "ID du d\u00e9partement concern\u00e9"
                                 }
                             ]
@@ -528,7 +528,7 @@
                                 {
                                     "id": "departement",
                                     "key": "departement",
-                                    "value": "17",
+                                    "value": "20",
                                     "description": "ID du d\u00e9partement concern\u00e9"
                                 }
                             ]
@@ -567,6 +567,35 @@
                             "path": "sanctum\/csrf-cookie",
                             "query": [],
                             "raw": "http:\/\/{{baseUrl}}\/sanctum\/csrf-cookie"
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Retourne tous les utilisateurs LDAP de l'IUTBM",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "{{baseUrl}}",
+                            "path": "api\/ldap\/all",
+                            "query": [],
+                            "raw": "http:\/\/{{baseUrl}}\/api\/ldap\/all"
                         },
                         "method": "GET",
                         "header": [
@@ -661,36 +690,36 @@
                             "query": [
                                 {
                                     "key": "id_malettes%5B%5D",
-                                    "value": "16",
+                                    "value": "12",
                                     "description": "Tableau d'ID pictum des malettes concern\u00e9es par la r\u00e9servation - Peut \u00eatre vide",
                                     "disabled": false
                                 },
                                 {
                                     "key": "id_materiels%5B%5D",
-                                    "value": "17",
+                                    "value": "12",
                                     "description": "Tableau d'ID pictum des mat\u00e9riels individuels concern\u00e9es par la r\u00e9servation - Peut \u00eatre vide",
                                     "disabled": false
                                 },
                                 {
                                     "key": "reservation_id",
-                                    "value": "9",
+                                    "value": "5",
                                     "description": "ID Pictum de la r\u00e9servation correspondante",
                                     "disabled": false
                                 },
                                 {
                                     "key": "date_debut",
-                                    "value": "rerum",
+                                    "value": "facilis",
                                     "description": "DateTime Rendez-vous de prise de mat\u00e9riel",
                                     "disabled": false
                                 },
                                 {
                                     "key": "date_fin",
-                                    "value": "deleniti",
+                                    "value": "nulla",
                                     "description": "DateTime Rendez-vous de retour de mat\u00e9riel",
                                     "disabled": false
                                 }
                             ],
-                            "raw": "http:\/\/{{baseUrl}}\/api\/estpretes?id_malettes%5B%5D=16&id_materiels%5B%5D=17&reservation_id=9&date_debut=rerum&date_fin=deleniti"
+                            "raw": "http:\/\/{{baseUrl}}\/api\/estpretes?id_malettes%5B%5D=12&id_materiels%5B%5D=12&reservation_id=5&date_debut=facilis&date_fin=nulla"
                         },
                         "method": "POST",
                         "header": [
@@ -718,17 +747,17 @@
                             "query": [
                                 {
                                     "key": "id_estprete%5B%5D",
-                                    "value": "10",
+                                    "value": "12",
                                     "description": "ID des est-prete \u00e0 marquer comme rendu",
                                     "disabled": false
                                 }
                             ],
-                            "raw": "http:\/\/{{baseUrl}}\/api\/estpretes\/:estprete?id_estprete%5B%5D=10",
+                            "raw": "http:\/\/{{baseUrl}}\/api\/estpretes\/:estprete?id_estprete%5B%5D=12",
                             "variable": [
                                 {
                                     "id": "estprete",
                                     "key": "estprete",
-                                    "value": "eum",
+                                    "value": "esse",
                                     "description": ""
                                 }
                             ]
@@ -834,17 +863,17 @@
                             "query": [
                                 {
                                     "key": "start_day",
-                                    "value": "id",
+                                    "value": "ipsum",
                                     "description": "Date Jour \u00e0 partir duquel on veut les rendez-vous",
                                     "disabled": false
                                 }
                             ],
-                            "raw": "http:\/\/{{baseUrl}}\/api\/gestionnaires\/:id\/rdv?start_day=id",
+                            "raw": "http:\/\/{{baseUrl}}\/api\/gestionnaires\/:id\/rdv?start_day=ipsum",
                             "variable": [
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "8",
+                                    "value": "14",
                                     "description": "ID du gestionnaire concern\u00e9"
                                 }
                             ]
@@ -889,7 +918,10 @@
                                 "value": "application\/json"
                             }
                         ],
-                        "body": null,
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n    \"id_univ\": \"exercitationem\",\n    \"admin\": false,\n    \"password\": \"id\"\n}"
+                        },
                         "description": "",
                         "auth": {
                             "type": "noauth"
@@ -907,25 +939,25 @@
                             "query": [
                                 {
                                     "key": "nom",
-                                    "value": "ducimus",
+                                    "value": "inventore",
                                     "description": "",
                                     "disabled": false
                                 },
                                 {
                                     "key": "prenom",
-                                    "value": "dolor",
+                                    "value": "qui",
                                     "description": "",
                                     "disabled": false
                                 },
                                 {
                                     "key": "mail",
-                                    "value": "hic",
+                                    "value": "vel",
                                     "description": "",
                                     "disabled": false
                                 },
                                 {
                                     "key": "id_univ",
-                                    "value": "doloribus",
+                                    "value": "a",
                                     "description": "",
                                     "disabled": false
                                 },
@@ -937,17 +969,17 @@
                                 },
                                 {
                                     "key": "departement_id",
-                                    "value": "19",
+                                    "value": "14",
                                     "description": "ID Pictum du d\u00e9partement correspondant",
                                     "disabled": false
                                 }
                             ],
-                            "raw": "http:\/\/{{baseUrl}}\/api\/gestionnaires\/:gestionnaire?nom=ducimus&prenom=dolor&mail=hic&id_univ=doloribus&admin=1&departement_id=19",
+                            "raw": "http:\/\/{{baseUrl}}\/api\/gestionnaires\/:gestionnaire?nom=inventore&prenom=qui&mail=vel&id_univ=a&admin=1&departement_id=14",
                             "variable": [
                                 {
                                     "id": "gestionnaire",
                                     "key": "gestionnaire",
-                                    "value": "3",
+                                    "value": "16",
                                     "description": "ID du gestionnaire \u00e0 afficher"
                                 }
                             ]
@@ -984,7 +1016,7 @@
                                 {
                                     "id": "gestionnaire",
                                     "key": "gestionnaire",
-                                    "value": "9",
+                                    "value": "2",
                                     "description": "ID du gestionnaire \u00e0 afficher"
                                 }
                             ]
@@ -1056,7 +1088,7 @@
                                 {
                                     "id": "indisponibilite",
                                     "key": "indisponibilite",
-                                    "value": "est",
+                                    "value": "sed",
                                     "description": ""
                                 }
                             ]
@@ -1103,7 +1135,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\n    \"array_indispo[]\": \"perspiciatis\"\n}"
+                            "raw": "{\n    \"array_indispo[]\": \"placeat\"\n}"
                         },
                         "description": "",
                         "auth": {
@@ -1122,29 +1154,29 @@
                             "query": [
                                 {
                                     "key": "date_debut",
-                                    "value": "cumque",
+                                    "value": "doloremque",
                                     "description": "DateTime Date de d\u00e9but de l'indisponibilite",
                                     "disabled": false
                                 },
                                 {
                                     "key": "date_fin",
-                                    "value": "dolores",
+                                    "value": "id",
                                     "description": "DateTime Date de fin de l'indisponibilite",
                                     "disabled": false
                                 },
                                 {
                                     "key": "id_gestionnaire",
-                                    "value": "8",
+                                    "value": "10",
                                     "description": "Id Pictum du gestionnaire concern\u00e9",
                                     "disabled": false
                                 }
                             ],
-                            "raw": "http:\/\/{{baseUrl}}\/api\/indisponibilites\/:indisponibilite?date_debut=cumque&date_fin=dolores&id_gestionnaire=8",
+                            "raw": "http:\/\/{{baseUrl}}\/api\/indisponibilites\/:indisponibilite?date_debut=doloremque&date_fin=id&id_gestionnaire=10",
                             "variable": [
                                 {
                                     "id": "indisponibilite",
                                     "key": "indisponibilite",
-                                    "value": "ut",
+                                    "value": "quae",
                                     "description": "ID de l'indisponibilit\u00e9 concern\u00e9e"
                                 }
                             ]
@@ -1181,7 +1213,7 @@
                                 {
                                     "id": "indisponibilite",
                                     "key": "indisponibilite",
-                                    "value": "qui",
+                                    "value": "rerum",
                                     "description": "ID de l'indisponibilit\u00e9 concern\u00e9e"
                                 }
                             ]
@@ -1212,7 +1244,7 @@
             "description": "",
             "item": [
                 {
-                    "name": "Connexion \u00e0 Pictum\nPas final",
+                    "name": "Connexion \u00e0 Pictum",
                     "request": {
                         "url": {
                             "protocol": "http",
@@ -1232,7 +1264,159 @@
                                 "value": "application\/json"
                             }
                         ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n    \"username\": \"quidem\",\n    \"password\": \"tempore\"\n}"
+                        },
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Route de v\u00e9rification de l'email\nG\u00e9n\u00e9r\u00e9e \u00e0 la cr\u00e9ation de compte",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "{{baseUrl}}",
+                            "path": "api\/email\/verify\/:mail",
+                            "query": [],
+                            "raw": "http:\/\/{{baseUrl}}\/api\/email\/verify\/:mail",
+                            "variable": [
+                                {
+                                    "id": "mail",
+                                    "key": "mail",
+                                    "value": "quia",
+                                    "description": ""
+                                }
+                            ]
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
                         "body": null,
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Route pour renvoyer l'email de confirmation",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "{{baseUrl}}",
+                            "path": "api\/email\/resend\/:mail",
+                            "query": [],
+                            "raw": "http:\/\/{{baseUrl}}\/api\/email\/resend\/:mail",
+                            "variable": [
+                                {
+                                    "id": "mail",
+                                    "key": "mail",
+                                    "value": "dolores",
+                                    "description": ""
+                                }
+                            ]
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Envoie un nouveau mot de passe s\u00e9curis\u00e9 par mail",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "{{baseUrl}}",
+                            "path": "api\/email\/send\/new-password\/:id_univ",
+                            "query": [],
+                            "raw": "http:\/\/{{baseUrl}}\/api\/email\/send\/new-password\/:id_univ",
+                            "variable": [
+                                {
+                                    "id": "id_univ",
+                                    "key": "id_univ",
+                                    "value": "labore",
+                                    "description": ""
+                                },
+                                {
+                                    "id": "ID_UNIV",
+                                    "key": "ID_UNIV",
+                                    "value": "minima",
+                                    "description": "id universitaire de la personne \u00e0 qui renvoyer le mot de passe"
+                                }
+                            ]
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "V\u00e9rifie que la personne fait partie de la base de donn\u00e9e LDAP\n(Penser \u00e0 garder l'id universitaire, l'api LDAP ne le fournit pas encore)",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "{{baseUrl}}",
+                            "path": "api\/ldap\/verify",
+                            "query": [],
+                            "raw": "http:\/\/{{baseUrl}}\/api\/ldap\/verify"
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n    \"id_univ\": \"cum\"\n}"
+                        },
                         "description": "",
                         "auth": {
                             "type": "noauth"
@@ -1269,7 +1453,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\n    \"from_address\": \"reprehenderit\",\n    \"from_name\": \"et\",\n    \"to_address\": \"facilis\",\n    \"content\": \"inventore\",\n    \"subject\": \"aut\"\n}"
+                            "raw": "{\n    \"from_address\": \"delectus\",\n    \"from_name\": \"suscipit\",\n    \"to_address\": \"rerum\",\n    \"content\": \"veniam\",\n    \"subject\": \"perferendis\"\n}"
                         },
                         "description": "",
                         "auth": {
@@ -1301,7 +1485,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\n    \"id_gestionnaire\": 12,\n    \"to_address\": \"ipsum\",\n    \"content_mail\": \"voluptate\",\n    \"subject\": \"ut\"\n}"
+                            "raw": "{\n    \"id_gestionnaire\": 17,\n    \"to_address\": \"sint\",\n    \"content_mail\": \"hic\",\n    \"subject\": \"quas\"\n}"
                         },
                         "description": "",
                         "auth": {
@@ -1355,7 +1539,7 @@
                                 {
                                     "id": "malette",
                                     "key": "malette",
-                                    "value": "voluptatibus",
+                                    "value": "qui",
                                     "description": "ID Pictum de la malette"
                                 }
                             ]
@@ -1402,12 +1586,12 @@
                             "formdata": [
                                 {
                                     "key": "nom",
-                                    "value": "totam",
+                                    "value": "magnam",
                                     "type": "text"
                                 },
                                 {
                                     "key": "ref",
-                                    "value": "est",
+                                    "value": "unde",
                                     "type": "text"
                                 },
                                 {
@@ -1434,7 +1618,7 @@
                                 {
                                     "id": "malette",
                                     "key": "malette",
-                                    "value": "qui",
+                                    "value": "quos",
                                     "description": "ID Pictum de la malette"
                                 }
                             ]
@@ -1455,12 +1639,12 @@
                             "formdata": [
                                 {
                                     "key": "nom",
-                                    "value": "nulla",
+                                    "value": "quasi",
                                     "type": "text"
                                 },
                                 {
                                     "key": "ref",
-                                    "value": "sunt",
+                                    "value": "fugit",
                                     "type": "text"
                                 },
                                 {
@@ -1487,7 +1671,7 @@
                                 {
                                     "id": "malette",
                                     "key": "malette",
-                                    "value": "non",
+                                    "value": "optio",
                                     "description": "ID Pictum de la malette"
                                 }
                             ]
@@ -1553,7 +1737,7 @@
                                 {
                                     "id": "materiel",
                                     "key": "materiel",
-                                    "value": "3",
+                                    "value": "10",
                                     "description": "ID pictum du mat\u00e9riel"
                                 }
                             ]
@@ -1600,22 +1784,22 @@
                             "formdata": [
                                 {
                                     "key": "ref",
-                                    "value": "nihil",
+                                    "value": "odit",
                                     "type": "text"
                                 },
                                 {
                                     "key": "nom",
-                                    "value": "delectus",
+                                    "value": "magnam",
                                     "type": "text"
                                 },
                                 {
                                     "key": "usage",
-                                    "value": "pariatur",
+                                    "value": "sed",
                                     "type": "text"
                                 },
                                 {
                                     "key": "carac",
-                                    "value": "sint",
+                                    "value": "voluptatum",
                                     "type": "text"
                                 },
                                 {
@@ -1625,27 +1809,27 @@
                                 },
                                 {
                                     "key": "indisp_raison",
-                                    "value": "fugit",
+                                    "value": "consequatur",
                                     "type": "text"
                                 },
                                 {
                                     "key": "type_id",
-                                    "value": 3,
+                                    "value": 19,
                                     "type": "text"
                                 },
                                 {
                                     "key": "malette_id",
-                                    "value": 11,
-                                    "type": "text"
-                                },
-                                {
-                                    "key": "departement_id",
                                     "value": 15,
                                     "type": "text"
                                 },
                                 {
+                                    "key": "departement_id",
+                                    "value": 11,
+                                    "type": "text"
+                                },
+                                {
                                     "key": "tutos",
-                                    "value": "quia",
+                                    "value": "est",
                                     "type": "text"
                                 },
                                 {
@@ -1677,7 +1861,7 @@
                                 {
                                     "id": "materiel",
                                     "key": "materiel",
-                                    "value": "15",
+                                    "value": "14",
                                     "description": "ID pictum du mat\u00e9riel"
                                 }
                             ]
@@ -1698,22 +1882,22 @@
                             "formdata": [
                                 {
                                     "key": "ref",
-                                    "value": "beatae",
+                                    "value": "ut",
                                     "type": "text"
                                 },
                                 {
                                     "key": "nom",
-                                    "value": "voluptas",
+                                    "value": "nulla",
                                     "type": "text"
                                 },
                                 {
                                     "key": "usage",
-                                    "value": "ipsa",
+                                    "value": "beatae",
                                     "type": "text"
                                 },
                                 {
                                     "key": "carac",
-                                    "value": "ratione",
+                                    "value": "itaque",
                                     "type": "text"
                                 },
                                 {
@@ -1723,27 +1907,27 @@
                                 },
                                 {
                                     "key": "indisp_raison",
-                                    "value": "vel",
+                                    "value": "molestias",
                                     "type": "text"
                                 },
                                 {
                                     "key": "type_id",
-                                    "value": 5,
+                                    "value": 18,
                                     "type": "text"
                                 },
                                 {
                                     "key": "malette_id",
-                                    "value": 2,
+                                    "value": 16,
                                     "type": "text"
                                 },
                                 {
                                     "key": "departement_id",
-                                    "value": 17,
+                                    "value": 15,
                                     "type": "text"
                                 },
                                 {
                                     "key": "tutos",
-                                    "value": "dolore",
+                                    "value": "qui",
                                     "type": "text"
                                 },
                                 {
@@ -1775,7 +1959,7 @@
                                 {
                                     "id": "materiel",
                                     "key": "materiel",
-                                    "value": "7",
+                                    "value": "10",
                                     "description": "ID pictum du mat\u00e9riel"
                                 }
                             ]
@@ -1829,40 +2013,6 @@
                     "response": []
                 },
                 {
-                    "name": "Display the specified resource.",
-                    "request": {
-                        "url": {
-                            "protocol": "http",
-                            "host": "{{baseUrl}}",
-                            "path": "api\/reservations\/:reservation",
-                            "query": [],
-                            "raw": "http:\/\/{{baseUrl}}\/api\/reservations\/:reservation",
-                            "variable": [
-                                {
-                                    "id": "reservation",
-                                    "key": "reservation",
-                                    "value": "9",
-                                    "description": "ID de la r\u00e9servation concern\u00e9e"
-                                }
-                            ]
-                        },
-                        "method": "GET",
-                        "header": [
-                            {
-                                "key": "Content-Type",
-                                "value": "application\/json"
-                            },
-                            {
-                                "key": "Accept",
-                                "value": "application\/json"
-                            }
-                        ],
-                        "body": null,
-                        "description": ""
-                    },
-                    "response": []
-                },
-                {
                     "name": "Store a newly created resource in storage",
                     "request": {
                         "url": {
@@ -1885,14 +2035,14 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\n    \"nom\": \"placeat\",\n    \"prenom\": \"eligendi\",\n    \"mail\": \"itaque\",\n    \"id_univ\": \"modi\",\n    \"raison_pro\": \"iure\",\n    \"prof\": true,\n    \"valide\": true\n}"
+                            "raw": "{\n    \"id_univ\": \"ut\",\n    \"raison_pro\": \"qui\",\n    \"valide\": false\n}"
                         },
                         "description": ""
                     },
                     "response": []
                 },
                 {
-                    "name": "Update the specified Reservation in storage.",
+                    "name": "Display the specified resource.",
                     "request": {
                         "url": {
                             "protocol": "http",
@@ -1904,49 +2054,12 @@
                                 {
                                     "id": "reservation",
                                     "key": "reservation",
-                                    "value": "9",
+                                    "value": "20",
                                     "description": "ID de la r\u00e9servation concern\u00e9e"
                                 }
                             ]
                         },
-                        "method": "PUT",
-                        "header": [
-                            {
-                                "key": "Content-Type",
-                                "value": "application\/json"
-                            },
-                            {
-                                "key": "Accept",
-                                "value": "application\/json"
-                            }
-                        ],
-                        "body": {
-                            "mode": "raw",
-                            "raw": "{\n    \"nom\": \"quos\",\n    \"prenom\": \"esse\",\n    \"mail\": \"maiores\",\n    \"id_univ\": \"beatae\",\n    \"raison_pro\": \"et\",\n    \"prof\": false,\n    \"valide\": false\n}"
-                        },
-                        "description": ""
-                    },
-                    "response": []
-                },
-                {
-                    "name": "Remove the specified resource from storage.",
-                    "request": {
-                        "url": {
-                            "protocol": "http",
-                            "host": "{{baseUrl}}",
-                            "path": "api\/reservations\/:reservation",
-                            "query": [],
-                            "raw": "http:\/\/{{baseUrl}}\/api\/reservations\/:reservation",
-                            "variable": [
-                                {
-                                    "id": "reservation",
-                                    "key": "reservation",
-                                    "value": "15",
-                                    "description": "ID de la r\u00e9servation concern\u00e9e"
-                                }
-                            ]
-                        },
-                        "method": "DELETE",
+                        "method": "GET",
                         "header": [
                             {
                                 "key": "Content-Type",
@@ -2007,7 +2120,7 @@
                                 {
                                     "id": "type",
                                     "key": "type",
-                                    "value": "4",
+                                    "value": "3",
                                     "description": "ID Pictum du type demand\u00e9"
                                 }
                             ]
@@ -2054,7 +2167,7 @@
                             "formdata": [
                                 {
                                     "key": "nom",
-                                    "value": "voluptas",
+                                    "value": "rerum",
                                     "type": "text"
                                 },
                                 {
@@ -2081,7 +2194,7 @@
                                 {
                                     "id": "type",
                                     "key": "type",
-                                    "value": "20",
+                                    "value": "1",
                                     "description": "ID Pictum du type demand\u00e9"
                                 }
                             ]
@@ -2102,7 +2215,7 @@
                             "formdata": [
                                 {
                                     "key": "nom",
-                                    "value": "aliquam",
+                                    "value": "sed",
                                     "type": "text"
                                 },
                                 {
@@ -2129,7 +2242,7 @@
                                 {
                                     "id": "type",
                                     "key": "type",
-                                    "value": "18",
+                                    "value": "9",
                                     "description": "ID Pictum du type demand\u00e9"
                                 }
                             ]

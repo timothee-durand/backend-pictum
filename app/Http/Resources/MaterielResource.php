@@ -15,6 +15,8 @@ class MaterielResource extends JsonResource
     public function toArray($request)
     {
         return[
+            "id" =>$this->id,
+            "nom"=>$this->nom,
             "ref" => $this->ref,
             "photo" => $this->photo,
             "usage" => $this->usage,

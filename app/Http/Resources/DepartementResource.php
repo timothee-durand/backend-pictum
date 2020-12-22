@@ -15,6 +15,7 @@ class DepartementResource extends JsonResource
     public function toArray($request)
     {
         return [
+            "id"=>$this->id,
             "lat" => $this->lat,
             "long" =>$this->long,
             "nom" =>$this->nom,

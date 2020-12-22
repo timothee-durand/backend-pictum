@@ -114,7 +114,7 @@ class ReservationController extends Controller
                 "email" => $ldap["courriel"][0],
                 "id_univ" => $request->id_univ,
                 "prof" => $this->isProf($ldap["inGroup"]),
-                "password"=> Hash::make($reservation->password),
+                "password"=> Hash::make($request->password),
                 "raison_pro"=>$request->raison_pro,
                 "valide"=>$request->valide
             ]);

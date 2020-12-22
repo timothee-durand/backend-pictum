@@ -83,7 +83,7 @@ fetch(url, {
 
 ```javascript
 const url = new URL(
-    "http://127.0.0.1:8000/api/types/4"
+    "http://127.0.0.1:8000/api/types/3"
 );
 
 let headers = {
@@ -162,7 +162,7 @@ let headers = {
 };
 
 const body = new FormData();
-body.append('nom', 'voluptas');
+body.append('nom', 'rerum');
 body.append('picto', document.querySelector('input[name="picto"]').files[0]);
 
 fetch(url, {
@@ -228,7 +228,7 @@ Pictogramme représentant le type</p>
 
 ```javascript
 const url = new URL(
-    "http://127.0.0.1:8000/api/types/20"
+    "http://127.0.0.1:8000/api/types/1"
 );
 
 let headers = {
@@ -238,7 +238,7 @@ let headers = {
 };
 
 const body = new FormData();
-body.append('nom', 'aliquam');
+body.append('nom', 'sed');
 body.append('picto', document.querySelector('input[name="picto"]').files[0]);
 
 fetch(url, {
@@ -314,7 +314,7 @@ Pictogramme représentant le type</p>
 
 ```javascript
 const url = new URL(
-    "http://127.0.0.1:8000/api/types/18"
+    "http://127.0.0.1:8000/api/types/9"
 );
 
 let headers = {
