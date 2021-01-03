@@ -29,70 +29,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c2fc254d-4c34-4822-9cbb-ed6000c1b396" name="Default Changelist" comment="add documentation">
-      <change afterPath="$PROJECT_DIR$/Mail (1).zip" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Mail.zip" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Mail/.idea/Mail.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Mail/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Mail/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Mail/images/fond.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Mail/images/logo.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Mail/images/symbole1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Mail/index.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Events/EstPreteModificationEvent.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Events/ReservationModificationEvent.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/words-mdp.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Http/Resources/TypeResource.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Listeners/EstPreteModificationListener.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Listeners/ReservationModification.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Notifications/EstPreteModificationNotification.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Notifications/MdpGestNotification.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Notifications/ReservationChange.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/config/queue-monitor.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/database/migrations/2018_02_05_000000_create_queue_monitor_table.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/database/migrations/2021_01_01_161640_add_column_est_prete.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/database/migrations/2021_01_02_103544_modify_unique_position_gest_res.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/database/migrations/2021_01_02_1764642_modify_no_limit_text_materiels.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/backend-pictum.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/backend-pictum.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Departement.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Departement.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/EstPrete.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/EstPrete.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Gestionnaire.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Gestionnaire.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/BlacklistController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/BlacklistController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/CreneauxController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/CreneauxController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/DepartementController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/DepartementController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/EstPreteController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/EstPreteController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/GestionnaireController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/GestionnaireController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/IndisponibiliteController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/IndisponibiliteController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/LoginController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/LoginController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/MailPersoController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/MailPersoController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/MaletteController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/MaletteController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/MaterielController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/MaterielController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/PasswordResetController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/PasswordResetController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/ReservationController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/ReservationController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/TypeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/TypeController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/VerificationController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/VerificationController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Resources/DepartementResource.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Resources/DepartementResource.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Resources/EstPreteResource.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Resources/EstPreteResource.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Resources/GestionnaireCollection.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Resources/GestionnaireCollection.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Resources/GestionnaireResource.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Resources/GestionnaireResource.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Resources/MaletteResource.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Resources/MaletteResource.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Resources/MaterielResource.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Resources/MaterielResource.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Resources/ReservationResource.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Resources/ReservationResource.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Jobs/SendMail.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Jobs/SendMail.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Malette.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Malette.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Materiel.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Materiel.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Providers/EventServiceProvider.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Providers/EventServiceProvider.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Reservation.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Reservation.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Type.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Type.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Utils/Utils.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Utils/Utils.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/scribe.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/scribe.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2020_11_07_111320_create_gestionnaires_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_11_07_111320_create_gestionnaires_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2020_11_07_111418_create_materiels_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_11_07_111418_create_materiels_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/api.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/api.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -248,6 +187,13 @@
       <path value="$PROJECT_DIR$/vendor/romanzipp/laravel-queue-monitor" />
     </include_path>
   </component>
+  <component name="ProblemsViewState">
+    <hideBySeverity>
+      <option value="15" />
+      <option value="100" />
+      <option value="200" />
+    </hideBySeverity>
+  </component>
   <component name="ProjectId" id="1jxUt08eyzngbbNGzvPfTHPTvtv" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="Add" />
@@ -349,7 +295,7 @@
       <workItem from="1609428638905" duration="2830000" />
       <workItem from="1609504122204" duration="12700000" />
       <workItem from="1609579455093" duration="32515000" />
-      <workItem from="1609687836375" duration="1326000" />
+      <workItem from="1609687836375" duration="3061000" />
     </task>
     <task id="LOCAL-00001" summary="initial commit">
       <created>1604745505978</created>
@@ -770,11 +716,11 @@
     </state>
     <state x="-943" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1920.1040/-1280.0.1280.984@-1280.0.1280.984" timestamp="1605367394352" />
     <state x="506" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1920.1040/-1280.0.1280.984@0.0.1920.1040" timestamp="1607005620287" />
-    <state x="690" y="275" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1609627144380">
+    <state x="690" y="275" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1609708968461">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="-820" y="260" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1920.1040/-1280.0.1280.984@-1280.0.1280.984" timestamp="1605780451057" />
-    <state x="690" y="275" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1920.1040/-1280.0.1280.984@0.0.1920.1040" timestamp="1609627144380" />
+    <state x="690" y="275" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1920.1040/-1280.0.1280.984@0.0.1920.1040" timestamp="1609708968461" />
     <state x="760" y="144" key="#com.jetbrains.php.refactoring.extractMethod.PhpExtractMethodDialog#method1" timestamp="1606335514262">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
