@@ -3,6 +3,7 @@
 namespace App;
 
 use App\Events\ReservationCreationEvent;
+use App\Events\ReservationModificationEvent;
 use App\Jobs\SendMail;
 use App\Listeners\ReservationCreation;
 use App\Mail\VerificationMail;
@@ -37,7 +38,7 @@ class Reservation extends Authenticatable
     ];
 
     protected $dispatchesEvents = [
-        "created"=>ReservationCreationEvent::class
+        "updated"=>ReservationModificationEvent::class
     ];
 
     /**

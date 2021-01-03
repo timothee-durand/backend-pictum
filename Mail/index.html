@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap');
+
+        header{
+            background: #2F2F2F;
+            width: 100vw;
+        }
+        .logo{
+            padding: 20px 0 20px 0;
+        }
+        .fond{
+            width: 100vw;
+        }
+        button {
+            padding:6px 0 6px 0;
+            font:Bold 13px Arial;
+            background:#2F2F2F;
+            color:#fff;
+            width:150px;
+            border-radius:10px;
+            border:none;
+        }
+        body{
+            width:100vw;
+        }
+        footer *{
+            box-sizing: border-box
+        }
+
+        ul {
+            list-style: none
+        }
+        a {
+            text-decoration: none
+        }
+        .flex-rw {
+            display: flex;
+            flex-flow: row wrap;
+        }
+
+        footer {
+            background: rgb(55,55,55);
+            margin-top: 50px;
+            width: 100%;
+        }
+        .footer-list-top {
+            width: 33.333%
+        }
+        .footer-list-top > li {
+            text-align: center;
+            padding-bottom: 10px
+        }
+        .footer-list-header {
+            padding: 10px 0 5px 0;
+            color: #8AC9F9;
+            font: 1.5em "Raleway", sans-serif
+        }
+        .footer-list-anchor {
+            font: 0.9em "Raleway", sans-serif;
+            color: white;
+        }
+
+        .footer-social-overlap > a {
+            font-size: 3em
+        }
+        .footer-social-overlap > a:not(:first-child) {
+            margin-left: 0.38em
+        }
+        .footer-bottom-section > div:first-child {
+            margin-right: auto
+        }
+        h1{
+            font-family: 'Raleway', sans-serif;
+            margin-top: 50px;
+        }
+        h3, p, button{
+            font-family: 'Raleway', sans-serif;
+        }
+
+    </style>
+</head>
+
+<body>
+<header>
+    <center><img class="logo" src="images/logo.png" height="91" width="224"/></center>
+</header>
+
+<img class="fond" src="images/fond.png" height="330" width="1523"/>
+
+
+<center>
+<h1>Titre du mail</h1>
+
+<img src="images/symbole1.png" height="auto" width="100"/>
+
+<h3>Corps du mail</h3>
+<p>.............................................</p>
+
+<button>Accéder au site</button>
+</center>
+</body>
+
+<footer class="flex-rw">
+
+    <ul class="footer-list-top">
+        <li>
+            <h4 class="footer-list-header">Contact</h4></li>
+        <li><a href='' class="generic-anchor footer-list-anchor" itemprop="significantLink">Nous contacter</a></li>
+        <li><a href='' class="generic-anchor footer-list-anchor" itemprop="significantLink">Nos réseaux sociaux</a></li>
+    </ul>
+
+    <ul class="footer-list-top">
+        <li>
+            <h4 class="footer-list-header">À propos</h4></li>
+
+
+        <li><a href='' class="generic-anchor footer-list-anchor">Pertes ou vols</a></li>
+        <li><a href='' class="generic-anchor footer-list-anchor">Mentions légales</a></li>
+        <li><a href='' class="generic-anchor footer-list-anchor">Nous contacter</a></li>
+    </ul>
+
+    <ul class="footer-list-top">
+        <li id='help'>
+            <h4 class="footer-list-header">Conditions</h4></li>
+        <li><a href='' class="generic-anchor footer-list-anchor" itemprop="significantLink">Conditions d'utilisation</a></li>
+        <li><a href='' class="generic-anchor footer-list-anchor" itemprop="significantLink">Conditions générales</a></li>
+    </ul>
+
+</footer>
+</html>

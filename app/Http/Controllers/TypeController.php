@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Resources\TypeResource;
 use App\Type;
 use Illuminate\Http\Request;
 
@@ -33,7 +34,7 @@ class TypeController extends Controller
      */
     public function index()
     {
-        return Type::all()->toJson(JSON_PRETTY_PRINT);
+        return TypeResource::collection(Type::all())->toJson();
     }
 
 
@@ -54,6 +55,11 @@ class TypeController extends Controller
      */
     public function store(Request $request)
     {
+        $request->validate([
+            "nom"=>"required|string|min:4",
+            "picto"=>"required|image"
+        ]);
+
         $type= new Type([
             "nom"=>$request->input("nom"),
             "picto"=>$this->storeImage($request),
@@ -69,7 +75,7 @@ class TypeController extends Controller
     protected function storeImage(Request $request) {
         $fileName = $request->get('nom') . '.' . $request->file('picto')->extension();
         $path = $request->file('picto')->storeAs('public/picto-type', $fileName);
-        return substr($path, strlen('storage/'));
+        return $path;
     }
 
     /**
@@ -91,11 +97,11 @@ class TypeController extends Controller
      */
     public function show(Type $type)
     {
-        $type = Type::find($type->id);
+        $_type = new TypeResource($type);
 
 
-        if ($type != null) {
-            return $type->toJSON();
+        if ($_type != null) {
+            return $_type->toJSON();
         } else {
             //si pas d'entree correspondante
             return response("Don't find", 404);
@@ -120,6 +126,10 @@ class TypeController extends Controller
      */
     public function update(Request $request, Type $type)
     {
+        echo json_encode($request->picto);
+        if($request->picto != null) {
+            $type->picto = $this->storeImage($request->picto);
+        }
          if($type->update($request->all())){
              return response("Update OK");
          }
@@ -142,7 +152,7 @@ class TypeController extends Controller
         if ($type->delete()) {
             return response("Destroy OK");
         } else {
-            return response("Destroy Failed");
+            return response("Destroy Failed", 500);
         }
     }
 }

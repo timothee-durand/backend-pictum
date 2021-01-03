@@ -10,6 +10,7 @@ use Illuminate\Queue\InteractsWithQueue;
 use Illuminate\Queue\SerializesModels;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Redis;
+use romanzipp\QueueMonitor\Traits\IsMonitored;
 
 class SendMail implements ShouldQueue
 {
@@ -18,6 +19,8 @@ class SendMail implements ShouldQueue
     protected $mailData;
 
     protected $mailable;
+
+    //H4rtu7re
 
     /**
      * Create a new job instance.

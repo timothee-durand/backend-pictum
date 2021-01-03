@@ -6,6 +6,7 @@ use App\Http\Resources\MaletteResource;
 use App\Malette;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
+use Illuminate\Support\Facades\Storage;
 
 class MaletteController extends Controller
 {
@@ -114,6 +115,12 @@ class MaletteController extends Controller
      */
     public function store(Request $request)
     {
+        $request->validate([
+            "nom"=>"required|string|min:4",
+            "ref"=>"required|string|min:4",
+            "photo"=>"required|image"
+        ]);
+
         $malette = new Malette([
             'nom'=>$request->nom,
             "ref"=>$request->ref,
@@ -133,10 +140,15 @@ class MaletteController extends Controller
      * @param Request $request
      * @return false|string
      */
+
     protected function storeImage(Request $request) {
+
         $fileName = $request->get('nom') . '.' . $request->file('photo')->extension();
-        $path = $request->file('photo')->storeAs('public/photo-malette', $fileName);
-        return substr($path, strlen('storage/'));
+
+        $path = Storage::putFileAs(
+            'public/photo-malette', $request->file('photo'), $fileName
+        );
+        return $path;
     }
 
     /**
@@ -184,12 +196,13 @@ class MaletteController extends Controller
      */
     public function update(Request $request, Malette $malette)
     {
-        $maletteArr = $request->all();
-        if($request["photo"] != null) {
-            $malette["photo"] = $this->storeImage($request["photo"]);
+        $inputs = $request->input();
+        if($request->has("photo")){
+            // echo "\nphoto rtututfyuuifyuifyuiyuiytuiyuiyuiyuiyuiyuiyu\n";
+            $inputs["photo"] = $this->storeImage($request);
         }
 
-        if($malette->update($maletteArr)){
+        if($malette->update($inputs)){
             return response("Update OK", 200);
         }
 

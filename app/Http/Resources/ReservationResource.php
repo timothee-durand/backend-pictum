@@ -17,12 +17,13 @@ class ReservationResource extends JsonResource
         $repContenu = $this->estPretes();
 
         return [
+            "id"=>$this->id,
             "valide" => $this->valide,
             "prof" =>$this->prof,
-            "nom_emprunteur"=>$this->nom_emprunteur,
-            "prenom_emprunteur"=>$this->prenom_emprunteur,
-            "mail_emprunteur" =>$this->mail_emprunteur,
-            "id_univ_emprunteur" =>$this->id_univ_emprunteur,
+            "nom"=>$this->nom,
+            "prenom"=>$this->prenom,
+            "email" =>$this->email,
+            "id_univ" =>$this->id_univ,
             "raison_pro"=>$this->raison_pro,
             "est_pretes"=>$repContenu["estprete"],
             "malettes" =>$repContenu["malette"]

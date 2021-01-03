@@ -11,4 +11,8 @@ class Type extends Model
         "nom",
         "picto"
     ];
+
+    public function materiels(){
+        return $this->hasMany("App\Materiel");
+    }
 }

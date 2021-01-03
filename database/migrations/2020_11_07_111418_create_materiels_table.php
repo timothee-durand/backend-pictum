@@ -25,6 +25,7 @@ class CreateMaterielsTable extends Migration
 
             $table->string("notice", 255);
             $table->boolean("indisp")->default(false);
+            $table->boolean("pro")->default(false);
             $table->string("indisp_raison")->nullable();
             $table->foreignId('type_id')->constrained("type");
             $table->foreignId('malette_id')->nullable()->constrained("malette");

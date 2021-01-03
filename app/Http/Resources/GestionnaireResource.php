@@ -15,15 +15,17 @@ class GestionnaireResource extends JsonResource
     public function toArray($request)
     {
         return [
+            "id"=> $this->id,
             "nom" => $this->nom,
             "prenom" => $this->prenom,
-            "mail" => $this->mail,
+            "email" => $this->email,
             "id_univ" => $this->id_univ,
             "admin" => $this->admin,
-            "departement" => $this->departement,
-            "rdv"=>$this->rendezVous,
+            "rdv"=>$this->rendezVous(),
             "creneaux"=>$this->creneaux,
-            "indisponibilites"=>$this->indisponibilites
+            "indisponibilites"=>$this->indisponibilites,
+            "departement"=>$this->departement,
+            "materiels"=>$this->materiels()
         ];
     }
 }

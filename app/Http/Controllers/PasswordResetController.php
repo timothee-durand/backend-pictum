@@ -5,13 +5,15 @@ namespace App\Http\Controllers;
 use App\Blacklist;
 use App\Gestionnaire;
 use App\Reservation;
+use Hackzilla\PasswordGenerator\Generator\HumanPasswordGenerator;
+use Hackzilla\PasswordGenerator\Generator\HybridPasswordGenerator;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use Faker\Generator;
 
 class PasswordResetController extends Controller
 {
-    private $notFind = "NOT FIND";
+    private $notFind = "Utilisateur non enregistré";
 
     /**
      * Envoie un nouveau mot de passe sécurisé par mail
@@ -26,10 +28,21 @@ class PasswordResetController extends Controller
         $user = $this->searchUserName($id_univ);
 
         if($user === $this->notFind) {
-            return response($user, 404);
+            return response("Identifiant non connu", 404);
         }
 
-        $password = file_get_contents("https://www.passwordrandom.com/query?command=password");
+        $generator = new HybridPasswordGenerator();
+
+        $generator
+            ->setLowercase()
+            ->setNumbers()
+            ->setSymbols(false)
+            ->setSegmentLength(3)
+            ->setSegmentCount(4)
+            ->setSegmentSeparator('-');
+
+        $password = $generator->generatePassword();
+
 
         //echo "pasA".$user->password."\n";
         $user->password = Hash::make($password);
@@ -38,12 +51,31 @@ class PasswordResetController extends Controller
             $user->sendNewPassword($password);
             return response("Password Reset", 200);
         } else {
-            return response("A problem occur", 500);
+            return response("Problème interne, contactez l'administrateur", 500);
         }
 
 
 
 
+    }
+
+    public function setPassword(Request $request){
+        $request->validate([
+            "id_univ"=>"required|string",
+            "password"=>"required|string|min:6"
+        ]);
+        $user = $this->searchUserName($request->id_univ);
+        if($user === $this->notFind){
+            return ($this->notFind);
+        }
+
+        $user->password = Hash::make($request->password);
+
+        if($user->save()) {
+            return \response("MDP à jour");
+        } else {
+            return response("Problème à l'enregistrement, contactez administrateur", 500);
+        }
     }
 
     public function searchUserName($username)

@@ -8,7 +8,9 @@ use App\Http\Resources\GestionnaireResource;
 use App\Reservation;
 use Carbon\Carbon;
 use Carbon\CarbonImmutable;
+use Hackzilla\PasswordGenerator\Generator\HybridPasswordGenerator;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Hash;
 
 class GestionnaireController extends Controller
 {
@@ -236,20 +238,35 @@ class GestionnaireController extends Controller
         $ldap  = getInfoLDAP($request->id_univ);
 
         if ($ldap != false) {
+            //récuprération d'un mot de passe fort
+            $generator = new HybridPasswordGenerator();
+
+            $generator
+                ->setLowercase()
+                ->setNumbers()
+                ->setSymbols(false)
+                ->setSegmentLength(3)
+                ->setSegmentCount(4)
+                ->setSegmentSeparator('-');
+
+            $password = $generator->generatePassword();
+
+
             $gestionnaire = new Gestionnaire([
                 "nom" =>  $ldap["nom"][0],
-                "prenom" => $ldap["prenom"][0],
+                "prenom" => ucfirst ($ldap["prenom"][0]),
                 "email" => $ldap["courriel"][0],
-                "id_univ" => $request->input("id_univ"),
+                "id_univ" =>$ldap["uid"],
                 "admin" => $request->input("admin"),
-                "password" => $request->input("password"),
+                "password" =>Hash::make($password),
             ]);
 
+
             if ($gestionnaire->save()) {
-                return json_encode([
-                    "method" => "store",
-                    "status" => "OK"
-                ]);
+                $gestionnaire->sendEmailVerificationNotification();
+                $gestionnaire->informGest($password);
+
+                return response("Store OK");
             }
         } else {
             return response("NOT FIND", 404);
@@ -336,7 +353,7 @@ class GestionnaireController extends Controller
      */
     public function destroy(Gestionnaire $gestionnaire)
     {
-        if (Reservation::find($gestionnaire->id)->delete()) {
+        if ($gestionnaire->delete()) {
             return response("Delete OK");
 
         }

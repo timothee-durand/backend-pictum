@@ -16,12 +16,14 @@
         "fideloper/proxy": "^4.4",
         "fruitcake/laravel-cors": "^2.0",
         "guzzlehttp/guzzle": "^6.3.1|^7.0.1",
+        "hackzilla/password-generator": "^1.5",
         "laravel/framework": "^7.29",
         "laravel/helpers": "^1.4",
         "laravel/sanctum": "^2.8",
         "laravel/telescope": "^3.5",
         "laravel/tinker": "^2.5",
         "predis/predis": "^1.1",
+        "romanzipp/laravel-queue-monitor": "^2.0",
         "subfission/cas": "^3.1.0"
     },
     "require-dev": {
@@ -49,6 +51,9 @@
         "classmap": [
             "database/seeds",
             "database/factories"
+        ],
+        "files": [
+            "app/Utils/Utils.php"
         ]
 
     },

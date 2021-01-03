@@ -43,28 +43,28 @@ class IndisponibiliteController extends Controller
      * Store some new Indisponibilite
      *
      * @group Indisponibilites
-     * @bodyParam array_indispo[] required Tableau d'indisponibilités à créer
-     * @bodyParam array_indispo[].date_debut DateTime required Date de début de l'indisponibilite
-     * @bodyParam array_indispo[].date_fin DateTime required Date de fin de l'indisponibilite
-     * @bodyParam array_indispo[].id_gestionnaire int required Id Pictum du gestionnaire concerné
+     * @bodyParam date_debut DateTime required Date de début de l'indisponibilite
+     * @bodyParam date_fin DateTime required Date de fin de l'indisponibilite
+     * @bodyParam gestionnaire_id int required Id Pictum du gestionnaire concerné
      *
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
     {
-        //on rcupère le tableau envoyé
-        $arrayIndispo = json_decode($request->array_indispo);
+        $request->validate([
+            'date_debut'=>"required|date",
+            'date_fin'=>'required|date',
+            "gestionnaire_id"=>'exists:gestionnaire,id'
+        ]);
 
-        foreach ($arrayIndispo as $indispo) {
-            $nIndipo =new Indisponibilite([
-                "date_debut"=>$indispo["date_debut"],
-                "date_fin"=>$indispo["date_fin"],
-                "gestionnaire_id"=>$indispo["gestionnaire_id"],
-            ]);
+       if(Indisponibilite::create($request->all())){
+           return \response("Indisponibilité ajoutée");
+       } else {
+           return \response("Problème enregistrement", 500);
+       }
 
-            $nIndipo->save();
-        }
+
     }
 
     /**

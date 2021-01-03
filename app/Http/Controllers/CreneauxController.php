@@ -69,22 +69,49 @@ class CreneauxController extends Controller
      */
     public function store(Request $request)
     {
-        $arrayCreneaux = $request->json()->all();
-
+        $arrayCreneaux = json_decode($request->creneaux);
 
         //crée chaque créneaux et les ajoute dans la base de donnée
-        foreach ($arrayCreneaux as $_creneau) {
-            $creneau = new Creneaux([
-                "jour" => $_creneau["jour"],
-                "heure_debut_matin" => $_creneau["heure_debut_matin"],
-                "heure_fin_matin" => $_creneau['heure_fin_matin'],
-                "heure_debut_am" => $_creneau["heure_debut_am"],
-                "heure_fin_am" => $_creneau["heure_fin_am"],
-                "gestionnaire_id" => $_creneau["gestionnaire_id"]
-            ]);
+            //mise a jour de chaque element du tableau
+            foreach ($arrayCreneaux as $_creneau) {
+                //conversion en objet
+                $_creneau = (object)$_creneau;
 
-            $creneau->save();
-        }
+                $creneauToUpdate = new Creneaux();
+                //recupération de l'élément d'origine
+                if(property_exists($_creneau, "id")) {
+                    $creneauToUpdate = Creneaux::find($_creneau->id);
+
+                    //si il ne troue rien on crée puis on enregistre
+                    if ($creneauToUpdate === null) {
+                        $creneauToUpdate = new Creneaux([
+                            "jour" => $_creneau->jour,
+                            "heure_debut_matin" => $_creneau->heure_debut_matin,
+                            "heure_fin_matin" => $_creneau->heure_fin_matin,
+                            "heure_debut_am" => $_creneau->heure_debut_am,
+                            "heure_fin_am" => $_creneau->heure_fin_am,
+                            "gestionnaire_id" => $_creneau->gestionnaire_id
+                        ]);
+                        $creneauToUpdate->save();
+                    } else {
+                        //sinon on met a jour
+                        $creneauToUpdate->update((array)$_creneau);
+                    }
+
+                } else {
+                    //si c'est une création (pas d'id)...
+                    $creneauToUpdate = new Creneaux([
+                        "jour" => $_creneau->jour,
+                        "heure_debut_matin" => $_creneau->heure_debut_matin,
+                        "heure_fin_matin" => $_creneau->heure_fin_matin,
+                        "heure_debut_am" => $_creneau->heure_debut_am,
+                        "heure_fin_am" => $_creneau->heure_fin_am,
+                        "gestionnaire_id" => $_creneau->gestionnaire_id
+                    ]);
+                    $creneauToUpdate->save();
+                }
+            }
+
     }
 
     /**
@@ -117,8 +144,9 @@ class CreneauxController extends Controller
      */
     public function update(Request $request)
     {
-        $arrayCreneaux = $request->json()->all();
+        $arrayCreneaux = json_decode($request->creneaux);
 
+        echo json_encode($arrayCreneaux);
         //mise a jour de chaque element du tableau
         foreach ($arrayCreneaux as $_creneau) {
             //conversion en objet
@@ -126,27 +154,39 @@ class CreneauxController extends Controller
             //recupération de l'élément d'origine
             $creneauToUpdate = Creneaux::find($_creneau->id);
 
-            //verif modif et mise à jour
-            if ($_creneau->jour != null) {
-                $creneauToUpdate->jour = $_creneau->jour;
+            if($creneauToUpdate === null) {
+                $creneauToUpdate = new Creneaux([
+                    "jour" => $_creneau->jour,
+                    "heure_debut_matin" => $_creneau->heure_debut_matin,
+                    "heure_fin_matin" => $_creneau->heure_fin_matin,
+                    "heure_debut_am" => $_creneau->heure_debut_am,
+                    "heure_fin_am" => $_creneau->heure_fin_am,
+                    "gestionnaire_id" => $_creneau->gestionnaire_id
+                ]);
             }
 
-            if ($_creneau->heure_debut_matin != null) {
-                $creneauToUpdate->heure_debut_matin = $_creneau->heure_debut_matin;
-            }
-
-            if ($_creneau->heure_fin_matin != null) {
-                $creneauToUpdate->heure_fin_matin = $_creneau->heure_fin_matin;
-            }
-            if ($_creneau->heure_debut_am != null) {
-                $creneauToUpdate->heure_debut_am = $_creneau->heure_debut_am;
-            }
-            if ($_creneau->heure_fin_am != null) {
-                $creneauToUpdate->heure_fin_am = $_creneau->heure_fin_am;
-            }
-            if ($_creneau->gestionnaire_id != null) {
-                $creneauToUpdate->gestionnaire_id = $_creneau->gestionnaire_id;
-            }
+//
+//            //verif modif et mise à jour
+//            if ($_creneau->jour != null) {
+//                $creneauToUpdate->jour = $_creneau->jour;
+//            }
+//
+//            if ($_creneau->heure_debut_matin != null) {
+//                $creneauToUpdate->heure_debut_matin = $_creneau->heure_debut_matin;
+//            }
+//
+//            if ($_creneau->heure_fin_matin != null) {
+//                $creneauToUpdate->heure_fin_matin = $_creneau->heure_fin_matin;
+//            }
+//            if ($_creneau->heure_debut_am != null) {
+//                $creneauToUpdate->heure_debut_am = $_creneau->heure_debut_am;
+//            }
+//            if ($_creneau->heure_fin_am != null) {
+//                $creneauToUpdate->heure_fin_am = $_creneau->heure_fin_am;
+//            }
+//            if ($_creneau->gestionnaire_id != null) {
+//                $creneauToUpdate->gestionnaire_id = $_creneau->gestionnaire_id;
+//            }
             //envoi dans la base de donnée
             $creneauToUpdate->save();
         }

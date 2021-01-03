@@ -14,7 +14,6 @@ class GestionnaireCollection extends ResourceCollection
      */
     public function toArray($request)
     {
-        echo "yo \n";
         return parent::toArray($request);
     }
 }

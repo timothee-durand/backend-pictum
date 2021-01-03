@@ -2,19 +2,26 @@
 
 namespace App;
 
+use App\Events\EstPreteModificationEvent;
 use Illuminate\Database\Eloquent\Model;
 
 class EstPrete extends Model
 {
     protected $table = "est_pretes";
     protected $fillable = [
-        "id_materiel",
-        "id_reservation",
+        "reservation_id",
         "date_debut",
         "date_fin",
         "rendu",
-        "gestionnaire_id"
+        "depart",
+        "gestionnaire_id",
+        "materiel_id",
     ];
+
+    protected $dispatchesEvents = [
+        "updated"=>EstPreteModificationEvent::class
+    ];
+
 
     public function materiel () {
         return $this->belongsTo("App\Materiel");

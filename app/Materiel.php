@@ -2,6 +2,8 @@
 
 namespace App;
 
+use App\Events\EstPreteModificationEvent;
+use App\Events\ReservationModificationEvent;
 use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Model;
 use PhpParser\Node\Expr\Cast\Object_;
@@ -24,7 +26,13 @@ class Materiel extends Model
         "type_id",
         "malette_id",
         "departement_id",
+        "pro"
     ];
+
+    protected $dispatchesEvents = [
+        "updated"=>EstPreteModificationEvent::class
+    ];
+
 
     public function departement() {
         return $this->belongsTo("App\Departement");
@@ -47,7 +55,6 @@ class Materiel extends Model
     }
 
     public function dayDispo () {
-
 
         $indispo_gestionnaire = $this->gestionnaire()->indisponibilites->toArray();
 

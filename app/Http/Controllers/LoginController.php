@@ -10,11 +10,10 @@ use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Log;
 
 
-
 class LoginController extends Controller
 {
-    private $notFind = "NOT FIND";
-    private $blackliste = "BL";
+    private $notFind = "Non trouvé";
+    private $blackliste = "vous êtes blacklisté, contactez l'administrateur pour régulariser votre situation";
     private $gestionnaire = "GEST";
     private $reservation = "RES";
     private $erreur = "ERR";
@@ -36,6 +35,7 @@ class LoginController extends Controller
 
         $user = $this->searchUserName($request->username);
 
+
         if ($user === $this->notFind || $user === $this->blackliste || $user === $this->erreur) {
             //si pas trouvé ou blacklisté
             return response($user, 403);
@@ -53,7 +53,7 @@ class LoginController extends Controller
 
                 if (!$this->isEmailVerified($user)) {
                     //si l'email n'est pas vérifié
-                    return response("Email not verified", 401);
+                    return response("Email not verified", 418);
                 }
 
                 $token = $user->createToken("user-token")->plainTextToken;
@@ -79,21 +79,21 @@ class LoginController extends Controller
 
     }
 
+
     /**
      * Vérifie que la personne fait partie de la base de donnée LDAP
-     * (Penser à garder l'id universitaire, l'api LDAP ne le fournit pas encore)
      * @group Login
      * @bodyParam id_univ string required
      *
      * @response 200 {
-    "nom": "BLOCH",
-    "prenom": "CHRISTELLE",
-    "email": "christelle.bloch@univ-fcomte.fr",
-    "groups": [
-    "iutbm",
-    "enseignant"
-    ]
-    }
+     * "nom": "BLOCH",
+     * "prenom": "CHRISTELLE",
+     * "email": "christelle.bloch@univ-fcomte.fr",
+     * "groups": [
+     * "iutbm",
+     * "enseignant"
+     * ]
+     * }
      *
      *
      * @param Request $request
@@ -101,16 +101,21 @@ class LoginController extends Controller
      */
     public function verifyLDAP(Request $request)
     {
-        if ($request->id_univ !== null) {
-            $ldap = $this->getInfoLDAPByUsername($request->id_univ);
-            if ($ldap !== false) {
-                return response($this->getJSONFromLDAP($ldap));
-            } else {
-                return response("NOT FIND LDAP", 404);
-            }
-        } else {
-            return response("BAD ARGUMENT (must be at least id_univ or mail)", 404);
+        $request->validate([
+            "id_univ" => "string|required"
+        ]);
+
+        if($this->searchUserName($request->id_univ) !== $this->notFind) {
+            return response("Vous êtes déjà enregistré !", 418);
         }
+
+        $ldap = $this->getInfoLDAPByUsername($request->id_univ);
+        if ($ldap !== false) {
+            return response($this->getJSONFromLDAP($ldap));
+        } else {
+            return response("NOT FIND LDAP", 404);
+        }
+
     }
 
     /**
@@ -149,11 +154,13 @@ class LoginController extends Controller
 
     private function simplifyLDAPResponse($ldap)
     {
+
         return [
             "nom" => $ldap["nom"][0],
             "prenom" => $ldap["prenom"][0],
             "email" => $ldap["courriel"][0],
-            "groups" => $ldap["inGroup"]
+            "groups" => $ldap["inGroup"],
+            "id_univ" => $ldap["uid"]
         ];
     }
 

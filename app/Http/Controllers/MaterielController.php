@@ -5,8 +5,10 @@ namespace App\Http\Controllers;
 use App\Http\Resources\MaterielResource;
 use App\Materiel;
 use Carbon\Carbon;
+use Illuminate\Contracts\Validation\Validator;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
+use Illuminate\Support\Facades\Storage;
 use function MongoDB\BSON\toJSON;
 
 class MaterielController extends Controller
@@ -139,11 +141,12 @@ class MaterielController extends Controller
      * @authenticated
      * @bodyParam  ref string required Reference du materiel
      * @bodyParam nom string required Nom
-     * @bodyParam photo file required Photo du matériel
+     * @bodyParam photo pdf required Photo du matériel
      * @bodyParam usage string required Usage possible du matériel
      * @bodyParam carac string required Caractéristiques techniques du matériel
      * @bodyParam notice file required Notice du matériel (PDF c'est mieux)
      * @bodyParam indisp bool required Matériel disponible ou indisponible
+     * @bodyParam pro bool Matériel "pro" (défaut:false)
      * @bodyParam indisp_raison string Raison de l'indisponibilité
      * @bodyParam type_id int required ID pictum du type de matériel
      * @bodyParam malette_id int ID pictum de la malette correspondante (si il existe à une malette, sinon null)
@@ -165,25 +168,37 @@ class MaterielController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return false|\Illuminate\Http\Response|string
      */
-    public function store(Materiel $materiel, Request $request)
+    public function store(Request $request, Materiel $materiel )
     {
-        $materiel->photo = $this->storeImage($request);
-        $materiel->notice = $this->storeNotice($request);
-        if ($materiel->save()) {
+       $request->validate([
+            'ref' => 'required|string|min:6',
+            'nom' => 'required|string|min:4',
+            'photo' => 'required|image',
+            'usage' => 'required|string',
+            'notice' => 'required|string',
+            'indisp' => 'boolean',
+            'pro' => 'numeric',
+            'indisp_raison' => 'string',
+            'type_id' => 'required|exists:type,id',
+            'malette_id' => 'exists:malette,id',
+            'departement_id' => 'exists:departement,id',
+            'tutos' => 'required|json',
+        ]);
+        $_materiel = new Materiel($request->all());
+        $_materiel->photo = $this->storeImage($request);
+        if ($_materiel->save()) {
             return \response("Store OK");
         }
     }
 
     protected function storeImage(Request $request) {
-        $fileName = $request->get('nom') . '.' . $request->file('photo')->extension();
-        $path = $request->file('photo')->storeAs('public/photo-materiel', $fileName);
-        return substr($path, strlen('storage/'));
-    }
 
-    protected function storeNotice(Request $request) {
-        $fileName = $request->get('nom') . '.' . $request->file('notice')->extension();
-        $path = $request->file('notice')->storeAs('public/notice-materiel', $fileName);
-        return substr($path, strlen('storage/'));
+        $fileName = $request->get('nom') . '.' . $request->file('photo')->extension();
+
+        $path = Storage::putFileAs(
+            'public/photo-materiel', $request->file('photo'), $fileName
+        );
+        return $path;
     }
 
 
@@ -350,10 +365,15 @@ class MaterielController extends Controller
      */
     public function update(Request $request, Materiel $materiel)
     {
-        $materiel->notice = $this->storeNotice($request);
-        $materiel->photo = $this->storeImage($request);
+        $inputs = $request->input();
+        //echo json_encode($inputs)."\n";
+
+        if($request->has("photo")){
+           // echo "\nphoto rtututfyuuifyuifyuiyuiytuiyuiyuiyuiyuiyuiyu\n";
+            $inputs["photo"] = $this->storeImage($request);
+        }
         //envoi modifs
-        if ($materiel->update($request->all())) {
+        if ($materiel->update($inputs)) {
             return new Response("Update OK", 200);
         }
     }

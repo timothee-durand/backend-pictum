@@ -15,7 +15,13 @@ class Departement extends Model
         "gestionnaire_id"
     ];
 
-    public function gestionnaire(){
+    public function gestionnaire()
+    {
         return $this->belongsTo("App\Gestionnaire");
+    }
+
+    public function materiels()
+    {
+        return $this->hasMany("App\Materiel");
     }
 }

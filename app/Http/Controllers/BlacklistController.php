@@ -14,24 +14,24 @@ class BlacklistController extends Controller
      * @authenticated
      *
      * @response [
-    {
-    "id": 1,
-    "created_at": "2020-12-03T17:30:34.000000Z",
-    "updated_at": "2020-12-03T17:30:34.000000Z",
-    "nom": "Mckenna",
-    "prenom": "Kuhic",
-    "mail": "matilda77@yahoo.com",
-    "id_univ": "kasandra.kling"
-    },
-    {
-    "id": 2,
-    "created_at": "2020-12-03T17:30:34.000000Z",
-    "updated_at": "2020-12-03T17:30:34.000000Z",
-    "nom": "Coby",
-    "prenom": "Murray",
-    "mail": "windler.godfrey@hotmail.com",
-    "id_univ": "clemmie29"
-    }
+     * {
+     * "id": 1,
+     * "created_at": "2020-12-03T17:30:34.000000Z",
+     * "updated_at": "2020-12-03T17:30:34.000000Z",
+     * "nom": "Mckenna",
+     * "prenom": "Kuhic",
+     * "mail": "matilda77@yahoo.com",
+     * "id_univ": "kasandra.kling"
+     * },
+     * {
+     * "id": 2,
+     * "created_at": "2020-12-03T17:30:34.000000Z",
+     * "updated_at": "2020-12-03T17:30:34.000000Z",
+     * "nom": "Coby",
+     * "prenom": "Murray",
+     * "mail": "windler.godfrey@hotmail.com",
+     * "id_univ": "clemmie29"
+     * }
      * ]
      *
      *
@@ -49,10 +49,10 @@ class BlacklistController extends Controller
      *
      * @group Blacklist
      * @authenticated
-     * @queryParam nom required string Nom de la personne
-     * @queryParam prenom required string Prénom de la personne
-     * @queryParam mail required string Mail de la personne
-     * @queryParam id_univ required string Id universitaire de la personne
+     * @bodyParam  nom required string Nom de la personne
+     * @bodyParam prenom required string Prénom de la personne
+     * @bodyParam email required string Mail de la personne
+     * @bodyParam id_univ required string Id universitaire de la personne
      *
      * @response {
      *  "Blacklist Created"
@@ -62,16 +62,23 @@ class BlacklistController extends Controller
      *
      *
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param \Illuminate\Http\Request $request
      * @return false|\Illuminate\Http\Response|string
      */
     public function store(Request $request)
     {
+        $request->validate([
+            "nom" => "required|string",
+            "prenom" => "required|string",
+            "email" => "required|string",
+            "id_univ" => "required|string"
+        ]);
+
         $blacklist = new Blacklist([
-            "nom"=>$request->input("nom"),
-            "prenom"=>$request->input("prenom"),
-            "mail"=>$request->input("mail"),
-            "id_univ"=>$request->input("id_univ"),
+            "nom" => $request->input("nom"),
+            "prenom" => $request->input("prenom"),
+            "email" => $request->input("email"),
+            "id_univ" => $request->input("id_univ"),
         ]);
 
         if ($blacklist->save()) {
@@ -89,17 +96,17 @@ class BlacklistController extends Controller
      * @urlParam id ID Pictum
      *
      * @response {
-    "id": 1,
-    "created_at": "2020-12-03T17:30:34.000000Z",
-    "updated_at": "2020-12-03T17:30:34.000000Z",
-    "nom": "Mckenna",
-    "prenom": "Kuhic",
-    "mail": "matilda77@yahoo.com",
-    "id_univ": "kasandra.kling"
-    }
+     * "id": 1,
+     * "created_at": "2020-12-03T17:30:34.000000Z",
+     * "updated_at": "2020-12-03T17:30:34.000000Z",
+     * "nom": "Mckenna",
+     * "prenom": "Kuhic",
+     * "mail": "matilda77@yahoo.com",
+     * "id_univ": "kasandra.kling"
+     * }
      *
      *
-     * @param  \App\Blacklist  $blacklist
+     * @param \App\Blacklist $blacklist
      * @return false|\Illuminate\Http\Response|string
      */
     public function show(Blacklist $blacklist)
@@ -129,32 +136,32 @@ class BlacklistController extends Controller
      * @queryParam id_univ string Id universitaire de la personne
      *
      * @response {
-    "Not Find"
+     * "Not Find"
      * }
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Blacklist  $blacklist
+     * @param \Illuminate\Http\Request $request
+     * @param \App\Blacklist $blacklist
      * @return false|\Illuminate\Http\Response|string
      */
     public function update(Request $request, Blacklist $blacklist)
     {
         $blacklistr = Blacklist::find($blacklist->id);
 
-        if($blacklistr != null) {
+        if ($blacklistr != null) {
 
-            if($request->input("nom")!=null) {
+            if ($request->input("nom") != null) {
                 $blacklistr->nom = $request->input("nom");
             }
 
-            if($request->input("prenom")!=null) {
+            if ($request->input("prenom") != null) {
                 $blacklistr->prenom = $request->input("prenom");
             }
 
-            if($request->input("mail")!=null) {
+            if ($request->input("mail") != null) {
                 $blacklistr->mail = $request->input("mail");
             }
 
-            if($request->input("id_univ")!=null) {
+            if ($request->input("id_univ") != null) {
                 $blacklistr->id_univ = $request->input("id_univ");
             }
 
@@ -164,9 +171,7 @@ class BlacklistController extends Controller
             } else {
                 return response("Blacklist update failed", 418);
             }
-        }
-
-        else {
+        } else {
             //si pas d'entree correspondante
             return response("Not Find", 404);
         }
@@ -184,7 +189,7 @@ class BlacklistController extends Controller
      *
      *
      *
-     * @param  \App\Blacklist  $blacklist
+     * @param \App\Blacklist $blacklist
      * @return false|\Illuminate\Http\Response|string
      */
     public function destroy(Blacklist $blacklist)

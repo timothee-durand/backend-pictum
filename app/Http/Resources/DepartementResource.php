@@ -19,7 +19,9 @@ class DepartementResource extends JsonResource
             "lat" => $this->lat,
             "long" =>$this->long,
             "nom" =>$this->nom,
-            "gestionnaire" =>$this->gestionnaire
+            "gestionnaire" =>$this->gestionnaire,
+            "materiels"=>$this->materiels,
+            "gestionnaire_id"=>$this->gestionnaire_id
         ];
     }
 }

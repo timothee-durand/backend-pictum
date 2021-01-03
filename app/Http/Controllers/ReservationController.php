@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Events\ReservationModificationEvent;
 use App\Http\Resources\ReservationResource;
+use App\Listeners\ReservationModification;
 use App\Materiel;
 use App\Reservation;
 use Illuminate\Http\Request;
@@ -102,9 +104,20 @@ class ReservationController extends Controller
      */
     public function store(Request $request, Reservation $reservation)
     {
+        $request->validate([
+            "id_univ"=>"required|string",
+            "raison_pro"=>"boolean",
+            "valide"=>"boolean"
+        ]);
+
+
+        if(empty((array)Reservation::where("id_univ", $request->id_univ))) {
+            return \response("Already registered", 500);
+        }
+
         $ldap = $this->getInfoLDAP($request->id_univ);
 
-        //echo "mdp".json_encode(Hash::make($reservation->password));
+
 
         if($ldap != false) {
             //si on trouve qqc sur le serveur LDAP
@@ -115,7 +128,7 @@ class ReservationController extends Controller
                 "id_univ" => $request->id_univ,
                 "prof" => $this->isProf($ldap["inGroup"]),
                 "password"=> Hash::make($request->password),
-                "raison_pro"=>$request->raison_pro,
+                "raison_pro"=> $request->raison_pro,
                 "valide"=>$request->valide
             ]);
 
@@ -193,8 +206,23 @@ class ReservationController extends Controller
      */
     public function update(Request $request, Reservation $reservation)
     {
-        $request->password = Hash::make($request->password);
-        if($reservation->update($request->all())){
+        $request->validate([
+            "password"=>"string",
+            "raison_pro"=>"string",
+            "valide"=>"boolean",
+        ]);
+
+        //$_reservation = $reservation;
+        event(new ReservationModificationEvent($reservation));
+
+        //echo "av".json_encode($request->input());
+
+        if($request->password != null) {
+            $request->password = Hash::make($request->password);
+        }
+        //echo "ap".json_encode($reservation);
+
+        if($reservation->update($request->input())){
             return new Response("Update OK", 200);
         }
     }

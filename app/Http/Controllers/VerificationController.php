@@ -9,6 +9,7 @@ use Illuminate\Http\Request;
 
 class VerificationController extends Controller
 {
+    private $notFind = "NOT FIND";
     /**
      * Route de vérification de l'email
      * Générée à la création de compte
@@ -40,10 +41,14 @@ class VerificationController extends Controller
      * @param $user_mail
      * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\Routing\ResponseFactory|\Illuminate\Http\JsonResponse|\Illuminate\Http\Response
      */
-    public function resend($user_mail) {
-        $user = $this->searchByMail($user_mail);
+    public function resend($id_univ) {
+        $user = $this->searchUserName($id_univ);
+        if($user === $this->notFind) {
+            return response($user, 404);
+        }
+
         if ($user->hasVerifiedEmail()) {
-            return response()->json(["msg" => "Email already verified."], 400);
+            return response("Votre email a déjà été verifié", 400);
         }
 
         $user->sendEmailVerificationNotification();
@@ -56,14 +61,35 @@ class VerificationController extends Controller
 
         //regarde déjà si il est blacklisté
         if (Blacklist::where('email', $mail)->first()) {
-
             return $this->blackliste;
-
         } elseif (Gestionnaire::where('email', $mail)->first()) {
             $result = Gestionnaire::where('email', $mail)->first();
 
         } elseif (Reservation::where('email', $mail)->first()) {
             $result = Reservation::where('email', $mail)->first();
+
+        } else {
+
+            $result = $this->notFind;
+        }
+        return $result;
+    }
+
+    public function searchUserName($username)
+    {
+
+        //regarde déjà si il est blacklisté
+        if (Blacklist::where('id_univ', $username)->first()) {
+
+            return $this->blackliste;
+
+        } elseif (Gestionnaire::where('id_univ', $username)->first()) {
+
+            $result = Gestionnaire::where('id_univ', $username)->first();
+
+        } elseif (Reservation::where('id_univ', $username)->first()) {
+
+            $result = Reservation::where('id_univ', $username)->first();
 
         } else {
 

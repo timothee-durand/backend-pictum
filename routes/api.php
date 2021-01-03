@@ -14,34 +14,34 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::middleware(['cors', 'force.json'])->group(function () {
-//    Route::get("login/cas/check", "CASController@checkAuthentification");
-//    Route::get("login/cas/authenticate", "CASController@authenticate");
-
-    Route::apiResource('reservations', 'ReservationController', ["only"=>["index", "show", "store"]]);
-
-});
-
+//Route::prefix('queue-monitor')->group(function () {
+//    Route::queueMonitor();
+//});
 
 
 Route::middleware(['cors', 'force.json'])->group(function () {
 
     Route::post('login', "LoginController@login");
+    Route::apiResource('reservations', 'ReservationController', ["only"=>["store"]]);
 
     Route::get('email/verify/{mail}', 'VerificationController@verify')->name('verification.verify'); // Make sure to keep this as your route name
-    Route::get('email/resend/{mail}', 'VerificationController@resend')->name('verification.resend');
+    Route::get('email/resend/{id_univ}', 'VerificationController@resend')->name('verification.resend');
     Route::get('email/send/new-password/{id_univ}', 'PasswordResetController@reset');
+
 
     Route::post("ldap/verify", "LoginController@verifyLDAP");
     Route::get("ldap/all", "LoginController@getLDAPUsers");
 
+    Route::apiResource('gestionnaires', 'GestionnaireController', ["only"=>["index", "show", "store"]]);
+
     Route::middleware(['auth:sanctum'])->group(function () {
+        Route::post('password/change', 'PasswordResetController@setPassword');
         //routes api
         Route::apiResource('types', 'TypeController', ["only"=>["index", "show"]]);
         Route::apiResource('blacklists', 'BlacklistController', ["only"=>["index", "show"]]);
         Route::apiResource('malettes', 'MaletteController', ["only"=>["index", "show"]]);
         Route::apiResource('departements', 'DepartementController', ["only"=>["index", "show"]]);
-        //Route::apiResource('reservations', 'ReservationController', ["only"=>["index", "show", "store"]]);
+        Route::apiResource('reservations', 'ReservationController', ["only"=>["index", "show", "update"]]);
         Route::apiResource('estpretes', 'EstPreteController', ["only"=>["index", "store"]]);
         Route::apiResource('materiels', 'MaterielController', ["only"=>["index", "show"]]);
         Route::apiResource('gestionnaires', 'GestionnaireController', ["only"=>["index", "show"]]);
@@ -51,6 +51,8 @@ Route::middleware(['cors', 'force.json'])->group(function () {
         Route::get("gestionnaires/{id}/rdv", "GestionnaireController@getRendezVous");
 
         Route::post("send-mail-contact-admin", "MailPersoController@contactAdmin");
+
+
 
 
         //Route::middleware("only.gest")->group(function () {
@@ -63,13 +65,24 @@ Route::middleware(['cors', 'force.json'])->group(function () {
                 'malettes' => 'MaletteController',
                 'departements' => 'DepartementController',
                 'materiels' => 'MaterielController',
-                'gestionnaires' => 'GestionnaireController',
                 'indisponibilites' => 'IndisponibiliteController',
             ],
-            ['only'=>["store", "update", "destroy"]]);
+            ['only'=>["store", "destroy", "update"]]);
 
-            Route::apiResource('creneaux', 'CreneauxController', ["only"=>["store", "update"]]);
-            Route::apiResource('estpretes', 'EstPreteController', ["only"=>["delete", "update"]]);
+            Route::apiResource('creneaux', 'CreneauxController', ["only"=>["store"]]);
+            Route::apiResource('estpretes', 'EstPreteController', ["only"=>["destroy", "update"]]);
+        Route::apiResource('reservations', 'ReservationController', ["only"=>["destroy"]]);
+        Route::apiResource('gestionnaires', 'GestionnaireController', ["only"=>["destroy", "update"]]);
+
+//            Route::post("departements/update/{id}", 'DepartementController@update');
+//            Route::post("types/{id}", 'TypeController@update');
+//            Route::post("blacklists/{id}", 'BlacklistController@update');
+//            Route::post("malettes/{id}", 'MaletteController@update');
+//            Route::post("estpretes/{id}", 'EstPreteController@update');
+//            Route::post("reservations/{id}", 'ReservationController@update');
+//            Route::post("gestionnaires/{id}", 'GestionnaireController@update');
+//            Route::post("indisponibilites/{id}", 'IndisponibiliteController@update');
+//            Route::post("creneaux/{id}", 'CreneauxController@update');
 
 
         //});

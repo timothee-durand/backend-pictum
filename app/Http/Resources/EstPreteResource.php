@@ -21,6 +21,7 @@ class EstPreteResource extends JsonResource
             "date_debut"=>$this->date_debut,
             "date_fin"=>$this->date_fin,
             "rendu"=>$this->rendu,
+            "depart"=>$this->depart
         ];
     }
 }
