@@ -28,7 +28,7 @@ Route::middleware(['cors', 'force.json'])->group(function () {
     Route::get('email/resend/{id_univ}', 'VerificationController@resend')->name('verification.resend');
     Route::get('email/send/new-password/{id_univ}', 'PasswordResetController@reset');
 
-
+    Route::post("verify/res", "LoginController@verifyRes");
     Route::post("ldap/verify", "LoginController@verifyLDAP");
     Route::get("ldap/all", "LoginController@getLDAPUsers");
 

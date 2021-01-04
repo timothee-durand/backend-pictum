@@ -23,7 +23,7 @@ class MaletteResource extends JsonResource
             "photo" => Storage::url($this->photo),
             "materiels" => $this->materiels,
             "est_pretes"=> $this->estPretee(),
-            "day_dispo" => $this->dayDispo()
+            "jour_dispo" => $this->dayDispo()
         ];
     }
 }

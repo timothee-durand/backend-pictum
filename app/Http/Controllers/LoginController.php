@@ -4,10 +4,12 @@ namespace App\Http\Controllers;
 
 use App\Blacklist;
 use App\Gestionnaire;
+use App\Http\Resources\ReservationResource;
 use App\Reservation;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Log;
+use Anam\Captcha\Captcha;
 
 
 class LoginController extends Controller
@@ -115,6 +117,49 @@ class LoginController extends Controller
         } else {
             return response("NOT FIND LDAP", 404);
         }
+    }
+
+    /**
+     * Vérifie qu'une réservation existe par rapport à un gestionnaire
+     * @group Login
+     * @bodyParam username required string ID Universitaire du gestionnaire concerné
+     * @response Renvoie la réservation concernée ou 404 si le gestionnaire n'existe pas
+     *
+     * @param Request $request
+     * @return ReservationResource|Reservation|\Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\Routing\ResponseFactory|\Illuminate\Http\Response
+     */
+    public function verifyRes(Request $request) {
+        $request->validate([
+            "username"=>"required|string"
+        ]);
+        if(Reservation::where('id_univ', $request->username)->first()) {
+            return new ReservationResource(Reservation::where('id_univ', $request->username)->first());
+
+        } else {
+            if(Gestionnaire::where('id_univ', $request->username)->first()) {
+                $gest = Gestionnaire::where('id_univ', $request->username)->first();
+                //echo "res".json_encode($gest);
+                $res = new Reservation([
+                    "id_univ"=>$gest->id_univ,
+                    "nom" => $gest->nom,
+                    "prenom" => $gest->prenom,
+                    "email" =>$gest->email,
+                    "prof" => 1,
+                    "password"=> $gest->password,
+                    "raison_pro"=> "",
+                    "valide"=> 1
+                ]);
+                if($res->save()){
+                    return $res;
+                } else {
+                    return \response("Erreur à l'enregistrement", 500);
+                }
+            } else {
+                return \response("Gestionnaire non trouvé, veuillez-vous recréer un compte", 404);
+            }
+        }
+    }
+
 
     }
 

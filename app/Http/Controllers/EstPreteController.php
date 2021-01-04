@@ -147,6 +147,9 @@ class EstPreteController extends Controller
             $idMateriels = json_decode($request->input("id_materiels"));
             $idMalettes = json_decode($request->input("id_malettes"));
 
+           // echo json_encode($idMateriels);
+            //echo json_encode($idMalettes);
+
             if (is_array($idMateriels)) {
                 //si la requete est du bon type et n'est pas vide
                 foreach ($idMateriels as $idMateriel) {
@@ -171,7 +174,7 @@ class EstPreteController extends Controller
         if ($request->action === "few") {
 
             $idMateriels = json_decode($request->input("materiels"));
-            echo json_encode($idMateriels);
+            //echo json_encode($idMateriels);
             $idMalettes = json_decode($request->input("malettes"));
             if (is_array($idMateriels)) {
 
