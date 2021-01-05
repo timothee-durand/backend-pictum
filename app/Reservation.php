@@ -4,6 +4,8 @@ namespace App;
 
 use App\Events\ReservationCreationEvent;
 use App\Events\ReservationModificationEvent;
+use App\Http\Resources\GestionnaireResource;
+use App\Http\Resources\MaterielResource;
 use App\Jobs\SendMail;
 use App\Listeners\ReservationCreation;
 use App\Mail\VerificationMail;
@@ -55,8 +57,8 @@ class Reservation extends Authenticatable
         $idMalettes=[];
         foreach($estpretes as $pret) {
             //on ajoute les instances correspondantes
-            $pret->materiel = Materiel::find($pret->materiel_id);
-            $pret->gestionnaire = Gestionnaire::find($pret->gestionnaire_id);
+            $pret->materiel = new MaterielResource(Materiel::find($pret->materiel_id));
+            $pret->gestionnaire =   new GestionnaireResource(Gestionnaire::find($pret->gestionnaire_id));
 
             //on ajoute l'id de la malette dans le tableau si il n'est pas nul
             $idMalettes[] = $pret->materiel->malette_id;

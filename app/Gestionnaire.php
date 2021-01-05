@@ -7,6 +7,7 @@ use App\Notifications\MdpGestNotification;
 use App\Notifications\NewPassword;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
+use Illuminate\Support\Facades\Storage;
 use Laravel\Sanctum\HasApiTokens;
 
 class Gestionnaire extends Authenticatable
@@ -112,6 +113,8 @@ class Gestionnaire extends Authenticatable
 
             foreach ($materiels as $item) {
                 $item["departement"] = $departement;
+
+                $item["photo"] = Storage::url( $item["photo"]);
 
                 //on ajoute les prets
                 $estPretes = EstPrete::where("materiel_id", $item["id"])->get()->toArray();
