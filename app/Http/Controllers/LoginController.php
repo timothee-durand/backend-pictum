@@ -160,9 +160,6 @@ class LoginController extends Controller
         }
     }
 
-
-    }
-
     /**
      * Retourne tous les utilisateurs LDAP de l'IUTBM
      * @group Login
@@ -173,7 +170,7 @@ class LoginController extends Controller
     public function getLDAPUsers()
     {
         include(app_path("/Http/Controllers/client_api/UtilsLDAP.php"));
-        $users = getAllUsers(["iutbm"]);
+        $users = getAllUsers(["iutbm", 'personnel_bu_montbe']);
         $response = [];
         foreach ($users as $group) {
             foreach ($group as $user) {
