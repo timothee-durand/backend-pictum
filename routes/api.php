@@ -48,7 +48,7 @@ Route::middleware(['cors', 'force.json'])->group(function () {
         Route::apiResource('indisponibilites', 'IndisponibiliteController', ["only"=>["index", "show"]]);
         Route::apiResource('creneaux', 'CreneauxController', ["only"=>["index"]]);
 
-        Route::get("gestionnaires/{id}/rdv", "GestionnaireController@getRendezVous");
+        Route::post("gestionnaires/{id}/rdv", "GestionnaireController@getRendezVous");
 
         Route::post("send-mail-contact-admin", "MailPersoController@contactAdmin");
 

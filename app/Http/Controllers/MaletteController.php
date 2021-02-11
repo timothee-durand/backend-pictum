@@ -142,9 +142,7 @@ class MaletteController extends Controller
      */
 
     protected function storeImage(Request $request) {
-
         $fileName = $request->get('nom') . '.' . $request->file('photo')->extension();
-
         $path = Storage::putFileAs(
             'public/photo-malette', $request->file('photo'), $fileName
         );

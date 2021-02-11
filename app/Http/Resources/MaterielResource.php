@@ -35,7 +35,8 @@ class MaterielResource extends JsonResource
             "departement_id" => $this->departement_id,
             "prets"=>$this->est_prete,
             "jour_dispo"=>$this->dayDispo(),
-            "pro"=>$this->pro
+            "pro"=>$this->pro,
+            "gestionnaire"=>new GestionnaireResource($this->gestionnaire())
         ];
     }
 }

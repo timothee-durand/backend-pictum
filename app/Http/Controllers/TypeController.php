@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Resources\TypeResource;
 use App\Type;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 class TypeController extends Controller
 {
@@ -72,9 +73,18 @@ class TypeController extends Controller
         }
     }
 
+//    protected function storeImage(Request $request) {
+//        $fileName = $request->get('nom') . '.' . $request->file('picto')->extension();
+//        $path = $request->file('picto')->storeAs('public/picto-type', $fileName);
+//        return $path;
+//    }
+
     protected function storeImage(Request $request) {
         $fileName = $request->get('nom') . '.' . $request->file('picto')->extension();
-        $path = $request->file('picto')->storeAs('public/picto-type', $fileName);
+        $path = Storage::putFileAs(
+            'public/picto-type', $request->file('picto'), $fileName
+        );
+        //echo "path : ".$path.", filename : ".$fileName;
         return $path;
     }
 
@@ -126,11 +136,13 @@ class TypeController extends Controller
      */
     public function update(Request $request, Type $type)
     {
-        echo json_encode($request->picto);
-        if($request->picto != null) {
-            $type->picto = $this->storeImage($request->picto);
+        $inputs = $request->input();
+        //echo "picto".json_encode($request);
+        if($request->has("picto")) {
+            $inputs["picto"] = $this->storeImage($request);
+            //echo "picto input :". $inputs["picto"];
         }
-         if($type->update($request->all())){
+         if($type->update($inputs)){
              return response("Update OK");
          }
     }

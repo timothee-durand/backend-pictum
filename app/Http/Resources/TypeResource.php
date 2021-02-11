@@ -3,6 +3,7 @@
 namespace App\Http\Resources;
 
 use Illuminate\Http\Resources\Json\JsonResource;
+use Illuminate\Support\Facades\Storage;
 use function App\Utils\getFullFilePath;
 
 class TypeResource extends JsonResource
@@ -18,7 +19,7 @@ class TypeResource extends JsonResource
         return [
             "id" => $this->id,
             "nom" => $this->nom,
-            "picto" => getFullFilePath($this->picto),
+            "picto" => Storage::url($this->picto),
             "materiels" => $this->materiels
         ];
     }
